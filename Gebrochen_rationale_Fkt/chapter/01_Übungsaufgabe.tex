@@ -1,0 +1,210 @@
+% LTeX: language=de
+
+\subsection{Übungsaufgabe}
+
+\begin{Exercise}{Kurvendiskussion}{}
+
+    Gegeben ist folgende gebrochen rationale Funktion: \qquad $f(x) = \dfrac{9-x^2}{1-x^2}$\\
+
+    Bestimme folgende Eigenschaften der Funktion:
+    \begin{itemize}
+        \item Definitionsmenge $D_f$; Wertemenge $W_f$
+        \item Nullstellen
+        \item Verhalten am Rande der Definitionsmenge; Asymptoten
+        \item Monotonie- und Krümmungsverhalten
+    \end{itemize}
+
+    Fertige zudem eine Zeichnung des Graphen $G_{f}$ an.
+
+\end{Exercise}
+\vspace{1ex}
+
+\begin{solution}{}
+    \begin{equation*}
+        f(x) = \dfrac{-x^{\textbf{\textcolor{myr}{2}}} + 9}{-x^{\textbf{\textcolor{mydarkblue}{2}}} + 1} = \dfrac{z(x)}{n(x)}; \qquad \underbrace{z(x) = -x^2 + 9}_{\text{\textcolor{myg}{\text{\footnotesize{Zähler}}}}}; \qquad \underbrace{n(x) = -x^2 + 1}_{\text{\textcolor{myg}{\text{\footnotesize{Nenner}}}}}
+    \end{equation*}
+    Da $\text{\textbf{\textcolor{myr}{Zählergrad (ZG)}}} \geq \text{\textbf{\textcolor{mydarkblue}{Nennergrad (NG)}}}$ ist $f(x)$ eine \textbf{unecht gebrochen rationale Funktion}.
+    \begin{itemize}[leftmargin=*]
+        \item \begin{minipage}[t]{0.45\linewidth}
+                Zählernullstellen:
+                \begin{align*}
+                    z(x) &= 0 \\
+                    -x^2 + 9 &= 0 &&| + x^2\\
+                    x^2 &= 9 &&| \sqrt[2]{\phantom{x}}\\
+                    x_1 &= - 3 \text{\textit{(e)}} ; \qquad x_2 = 3 \text{\textit{(e)}} &&\\
+                \end{align*}
+                \vspace{1ex}
+                \uuline{$N_1 \left(-3/0\right)$}; \quad \uuline{$N_2 \left(3/0\right)$}\\[2ex]
+                $\Rightarrow$ \href{https://www.mathe-online.at/mathint/fun2/i_Nullstellen.html}{Nullstellen erster Ordnung} bei $x_1$ und $x_2$ jeweils mit Vorzeichenwechsel (VZW), da einfache Vielfachheit der Nst\\[1ex]
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.45\linewidth}
+                Nennernullstellen:
+                \begin{align*}
+                    n(x) &= 0 \\
+                    -x^2 + 1 &= 0 &&| + x^2\\
+                    x^2 &= 1 &&| \sqrt[2]{\phantom{x}}\\
+                    x_3 &= - 1 \text{\textit{(e)}} ; \qquad x_4 = 1 \text{\textit{(e)}} &&\\
+                \end{align*}
+                \vspace{1ex}
+                \uuline{$\mathbb{D}_{f} = \mathbb{R} \backslash \{-1; 1 \}$}\\[2ex]
+                $\Rightarrow$ \href{https://www.geogebra.org/m/Uz6x3YMq}{Polstellen erster Ordnung} bei $x_3$ und $x_4$ jeweils mit VZW, da ungerade Vielfachheit der Nst
+            \end{minipage}
+        \item Symmetrie:\qquad \begin{minipage}[t]{0.7\linewidth}
+                \raisebox{-\height}{\begin{note}
+                    Achsensymetrisch zur y-Achse: \qquad $f(-x) = f(x)$ \\
+                    Punktsymetrisch zum Ursprung: \qquad $f(-x) = -f(x)$
+                \end{note}}
+                \vspace{1ex}
+                \begin{flalign*}
+                    \highlight{f(-x)} &= \dfrac{-(-x)^2 + 9}{-(-x)^2 + 1} = \dfrac{-x^2 + 9}{-x^2 + 1} \highlight{= f(x)}
+                \end{flalign*}
+                \vspace{1ex}
+                $\Rightarrow$ $G_f$ ist achsensymmetrisch zur y-Achse
+            \end{minipage}
+        \item Asymptoten: \qquad \begin{minipage}[t]{0.45\linewidth}
+            $\uuline{\textcolor{myorange}{v_1(x): \ x = -1}}$ \qquad $\uuline{\textcolor{myorange}{v_2(x): \ x = 1}}$\\[-3ex]
+            \begin{flalign*}
+            (&- x^2 &+ &\textcolor{mygr}{0 x} &+ &9) : (- x^2 + \textcolor{mygr}{0 x} + 1)
+                \ = \ 1 + \smash[b]{\underbrace{\dfrac{8}{-x^2 + 1}}_{\text{\textcolor{myg}{\footnotesize Rest}}}} &\\[-0.5ex]
+            \makebox[0pt][l]{\uline{\phantom{$xxxxxxxxxxxxxxx$}}}
+            -(&- x^2 &+ &\textcolor{mygr}{0 x} &+ &1) &\\
+            & \ \text{\textdiscount} & &\text{\textdiscount} & &8 &
+            \end{flalign*}
+            $\uuline{\textcolor{myorange}{h_1(x): \ y = 1}}$
+        \end{minipage}
+        \item Grenzverhalten: \hspace{-2cm}\begin{minipage}[t]{0.80\linewidth}
+                \begin{equation*}
+                    R(x) = \dfrac{8}{-x^{\textbf{\textcolor{mydarkblue}{2}}} + 1}
+                \end{equation*}
+                Da $\text{\textbf{\textcolor{myr}{ZG}}} < \text{\textbf{\textcolor{mydarkblue}{NG}}}$ ist $R(x)$ eine \textbf{echt gebrochen rationale Funktion}. Zur Bestimmung des Grenzverhaltens muss in der Regel zuerst die höchste Potenz ausgeklammert (\textbf{Normierung}) oder $z'(x)$ und $n'(x)$ gebildet (\textbf{Regel von L’Hospital}) werden, außer $\text{\textbf{\textcolor{mydarkblue}{NG}}} = 0 $. \\[-2.0ex]
+                \begin{flalign*}
+                    \lim\limits_{x \to -\infty} R(x) &= \dfrac{8}{-(\textcolor{mypurple}{-\infty})^2 + 1} = 0^- \quad &\rightarrow                     
+                    \parbox[t]{5cm}{Annäherung von \textbf{unten} an \textcolor{myorange}{$h_1(x)$}}
+                    &&\\[0.8ex]
+                    \lim\limits_{x \to +\infty} R(x) &= \dfrac{8}{-(\textcolor{mypurple}{\infty})^2 + 1}= 0^- \quad &\rightarrow
+                    \parbox[t]{5cm}{Annäherung von \textbf{unten} an \textcolor{myorange}{$h_1(x)$}}
+                    &&\\[0.8ex]
+                    \lim\limits_{x \to -1^-} R(x) &= \dfrac{8}{-(\textcolor{mypurple}{-1^-})^2 + 1} = -\infty \quad &\rightarrow 
+                    \parbox[t]{5cm}{Linksseitige Annäherung an \textcolor{myorange}{$v_1(x)$} nach \textbf{unten}}
+                    &&\\[0.8ex]
+                    \lim\limits_{x \to -1^+} R(x) &= \dfrac{8}{-(\textcolor{mypurple}{-1^+})^2 + 1} = \infty \quad &\rightarrow 
+                    \underbrace{\parbox[t]{5cm}{Rechtsseitige Annäherung an \textcolor{myorange}{$v_1(x)$} nach \textbf{oben}}}_{\text{\textcolor{myg}{\footnotesize \parbox[t]{5cm}{Bereits bekannt: Polstelle mit VZW}}}}
+                    &&\\[0.8ex]
+                    \lim\limits_{x \to 1^-} R(x) &= \dfrac{8}{-(\textcolor{mypurple}{1^-})^2 + 1} = \infty \quad &\rightarrow
+                    \underbrace{\parbox[t]{5cm}{Linksseitige Annäherung an \textcolor{myorange}{$v_2(x)$} nach \textbf{oben}}}_{\text{\textcolor{myg}{\footnotesize \parbox[t]{5cm}{Bereits bekannt: \\ Achsensymmetrie zur y-Achse}}}}
+                    &&\\[0.8ex]
+                    \lim\limits_{x \to 1^+} R(x) &= \dfrac{8}{-(\textcolor{mypurple}{1^+})^2 + 1} = -\infty \quad &\rightarrow
+                    \underbrace{\parbox[t]{5cm}{Rechtsseitige Annäherung an \textcolor{myorange}{$v_2(x)$} nach \textbf{unten}}}_{\text{\textcolor{myg}{\footnotesize \parbox[t]{5cm}{Achsensymmetrie zur y-Achse}}}}
+                    &&
+                \end{flalign*}
+            \end{minipage}
+        \item Monotonie- und Krümmungsverhalten: \\[1.5ex]
+        \hspace{2cm} \begin{minipage}[t]{0.95\linewidth}
+            \begin{note}
+                Quotientenregel: \begin{minipage}[t]{0.8\linewidth}
+                    \begin{align*}
+                        f(x) &= \dfrac{\text{\textbf{\textcolor{myr}{Z}}}}{\text{\textbf{\textcolor{mydarkblue}{N}}}} \\[1.5ex]
+                        f'(x) &= \dfrac{\text{\textbf{\textcolor{mydarkblue}{N}}} \cdot \text{\textbf{\textcolor{myr}{Z'}}} - \text{\textbf{\textcolor{myr}{Z}}} \cdot \text{\textbf{\textcolor{mydarkblue}{N'}}}}{(\text{\textbf{\textcolor{mydarkblue}{N}}})^2} = \dfrac{\text{\textbf{\textcolor{mydarkblue}{N}}}\text{\textbf{\textcolor{myr}{AZ}}} - \text{\textbf{\textcolor{myr}{Z}}}\text{\textbf{\textcolor{mydarkblue}{AN}}}}{(\text{\textbf{\textcolor{mydarkblue}{N}}})^2}
+                    \end{align*}
+                \end{minipage}
+            \end{note}
+            \begin{flalign*}
+                f'(x) &= \dfrac{(-x^2 + 1) \cdot (-2x) - (-x^2 + 9)\cdot (-2x)}{(-x^2 + 1)^2} &&\\
+                &= \dfrac{2x^3 - 2x - 2x^3 + 18x}{(-x^2 + 1)^2} &&\\
+                &= \dfrac{16x}{(-x^2 + 1)^2}
+            \end{flalign*}
+            \begin{flalign*}
+                f''(x) &= \dfrac{(-x^2 + 1)^2 \cdot 16 - 16x \cdot 2(-x^2 + 1)(-2x)}{(-x^2 + 1)^4} &&\\
+                &= \dfrac{16(-x^2 + 1)^2 - 64x^2(-x^2 + 1)}{(-x^2 + 1)^4} &&\\
+                &= \dfrac{16(-x^4 + 2x^2 - 1) + 64x^4 - 64x^2}{(-x^2 + 1)^4} &&\\
+                &= \dfrac{-16x^4 + 32x^2 - 16 + 64x^4 - 64x^2}{(-x^2 + 1)^4} &&\\
+                &= \dfrac{48x^4 - 32x^2 - 16}{(-x^2 + 1)^4} &&\\
+                &= \dfrac{16(3x^4 - 2x^2 - 1)}{(-x^2 + 1)^4} &&\\
+                &= \dfrac{16(3x^4 - 3x^2 + x^2 - 1)}{(-x^2 + 1)^4} &&\\
+                &= \dfrac{16(3x^2(x^2 - 1) + (x^2 - 1))}{(-x^2 + 1)^4} &&\\
+                &= \dfrac{16(x^2 - 1)(3x^2 + 1)}{(-x^2 + 1)^4} &&\\
+                &= \dfrac{-16(3x^2 + 1)}{(-x^2 + 1)^3}
+            \end{flalign*}
+        \end{minipage}
+        \item Zeichnung: \\
+        \raisebox{-\height}{
+            \begin{tikzpicture}
+                % Set variables
+                \pgfmathsetmacro{\axisPosWidth}{7};
+                \pgfmathsetmacro{\axisNegWidth}{-7};
+                \pgfmathsetmacro{\axisPosHeight}{7};
+                \pgfmathsetmacro{\axisNegHeight}{-7};
+                \pgfmathsetmacro{\xIncrement}{1.0};
+                \pgfmathsetmacro{\yIncrement}{1.0};
+                \pgfmathsetmacro{\xScale}{2};
+                \pgfmathsetmacro{\yScale}{2};
+                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                % Axis/grid limits
+                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                % Axis environment (PGFPlots)
+                \begin{axis}[
+                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                    axis lines=middle,
+                    axis line style={->, >=stealth},
+                    grid=both,
+                    xlabel={$x$},
+                    ylabel={$f(x)$},
+                    xlabel style={at={(axis description cs:1,0.55)}, anchor=north},
+                    ylabel style={at={(axis description cs:0.55,1)}, anchor=south},
+                    xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                    ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                    yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                    tick label style={font=\scriptsize},
+                    x=1cm,
+                    y=1cm,
+                    minor tick num=1,
+                    scale only axis,
+                    grid=both,
+                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                ]
+
+                % Example rational function
+                \addplot[thick, myb, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                    {(-(\x*\xScale)^2 + 9)/(-(\x*\xScale)^2 + 1)*(1/\yScale)};
+                \node[anchor=north] at (axis cs:{2*(1/\xScale)},{-3*(1/\yScale)}) {\textcolor{myb}{$G_f$}};
+
+                % v_1(x)
+                \addplot[thick, myorange] coordinates {(-1*(1/\xScale), 1*\yLowerLimitGrid) (-1*(1/\xScale), 0.96*\yUpperLimitGrid)};
+                \node[anchor=east] at (axis cs:{-1.25*(1/\xScale)},{12*(1/\yScale)}) {\textcolor{myorange}{$v_1(x)$}};
+
+                % v_2(x)
+                \addplot[thick, myorange] coordinates {(1*(1/\xScale), 1*\yLowerLimitGrid) (1*(1/\xScale),0.96*\yUpperLimitGrid)};
+                \node[anchor=west] at (axis cs:{1.25*(1/\xScale)},{12*(1/\yScale)}) {\textcolor{myorange}{$v_2(x)$}};
+
+                % h_1(x)
+                \addplot[thick, myorange, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                    {1*(1/\yScale)};
+                \node[anchor=south] at (axis cs:{3*(1/\xScale)},{1.20*(1/\yScale)}) {\textcolor{myorange}{$h_1(x)$}};
+
+                % Nullstellen
+                \fill[black] (axis cs:{-3*(1/\xScale)},{0*(1/\yScale)}) circle[radius=2pt]; 
+                \node[anchor=north] at (axis cs:{-3*(1/\xScale)},{-0.1*(1/\yScale)}) {\textcolor{black}{$N_1$}};
+
+                \fill[black] (axis cs:{3*(1/\xScale)},{0*(1/\yScale)}) circle[radius=2pt]; 
+                \node[anchor=north] at (axis cs:{3*(1/\xScale)},{-0.1*(1/\yScale)}) {\textcolor{black}{$N_2$}};
+
+                \end{axis}
+            \end{tikzpicture}
+        }\\[3.0ex]
+    \end{itemize}
+
+\end{solution}
