@@ -21,9 +21,9 @@
 
 \begin{solution}{}
     \begin{equation*}
-        f(x) = \dfrac{-x^{\textbf{\textcolor{myr}{2}}} + 9}{-x^{\textbf{\textcolor{mydarkblue}{2}}} + 1} = \dfrac{z(x)}{n(x)}; \qquad \underbrace{z(x) = -x^2 + 9}_{\text{\textcolor{myg}{\text{\footnotesize{Zähler}}}}}; \qquad \underbrace{n(x) = -x^2 + 1}_{\text{\textcolor{myg}{\text{\footnotesize{Nenner}}}}}
+        f(x) = \dfrac{-x^{\textbf{\textcolor{myr}{2}}} + 9}{-x^{\textbf{\textcolor{myb}{2}}} + 1} = \dfrac{z(x)}{n(x)}; \qquad \underbrace{z(x) = -x^2 + 9}_{\text{\textcolor{myg}{\text{\footnotesize{Zähler}}}}}; \qquad \underbrace{n(x) = -x^2 + 1}_{\text{\textcolor{myg}{\text{\footnotesize{Nenner}}}}}
     \end{equation*}
-    Da $\text{\textbf{\textcolor{myr}{Zählergrad (ZG)}}} \geq \text{\textbf{\textcolor{mydarkblue}{Nennergrad (NG)}}}$ ist $f(x)$ eine \textbf{unecht gebrochen rationale Funktion}.
+    Da $\text{\textbf{\textcolor{myr}{Zählergrad (ZG)}}} \geq \text{\textbf{\textcolor{myb}{Nennergrad (NG)}}}$ ist $f(x)$ eine \textbf{unecht gebrochen rationale Funktion}.
     \begin{itemize}[leftmargin=*]
         \item \begin{minipage}[t]{0.45\linewidth}
                 Zählernullstellen:
@@ -31,9 +31,9 @@
                     z(x) &= 0 \\
                     -x^2 + 9 &= 0 &&| + x^2\\
                     x^2 &= 9 &&| \sqrt[2]{\phantom{x}}\\
-                    x_1 &= - 3 \text{\textit{(e)}} ; \qquad x_2 = 3 \text{\textit{(e)}} &&\\
+                    x_1 &= - 3 \text{\textit{(e)}} ; \qquad x_2 = 3 \text{\textit{(e)}} &&\\[1.5ex]
+                    \mathbb{L} &= \left\{ -3,\ 3 \right\}&&\\
                 \end{align*}
-                \vspace{1ex}
                 \uuline{$N_1 \left(-3/0\right)$}; \quad \uuline{$N_2 \left(3/0\right)$}\\[2ex]
                 $\Rightarrow$ \href{https://www.mathe-online.at/mathint/fun2/i_Nullstellen.html}{Nullstellen erster Ordnung} bei $x_1$ und $x_2$ jeweils mit Vorzeichenwechsel (VZW), da einfache Vielfachheit der Nst\\[1ex]
             \end{minipage}
@@ -44,9 +44,9 @@
                     n(x) &= 0 \\
                     -x^2 + 1 &= 0 &&| + x^2\\
                     x^2 &= 1 &&| \sqrt[2]{\phantom{x}}\\
-                    x_3 &= - 1 \text{\textit{(e)}} ; \qquad x_4 = 1 \text{\textit{(e)}} &&\\
+                    x_3 &= - 1 \text{\textit{(e)}} ; \qquad x_4 = 1 \text{\textit{(e)}} &&\\[1.5ex]
+                    \mathbb{L} &= \left\{ -1,\ 1 \right\}&&\\
                 \end{align*}
-                \vspace{1ex}
                 \uuline{$\mathbb{D}_{f} = \mathbb{R} \backslash \{-1; 1 \}$}\\[2ex]
                 $\Rightarrow$ \href{https://www.geogebra.org/m/Uz6x3YMq}{Polstellen erster Ordnung} bei $x_3$ und $x_4$ jeweils mit VZW, da ungerade Vielfachheit der Nst
             \end{minipage}
@@ -66,7 +66,7 @@
             $\uuline{\textcolor{myorange}{v_1(x): \ x = -1}}$ \qquad $\uuline{\textcolor{myorange}{v_2(x): \ x = 1}}$\\[-3ex]
             \begin{flalign*}
             (&- x^2 &+ &\textcolor{mygr}{0 x} &+ &9) : (- x^2 + \textcolor{mygr}{0 x} + 1)
-                \ = \ 1 + \smash[b]{\underbrace{\dfrac{8}{-x^2 + 1}}_{\text{\textcolor{myg}{\footnotesize Rest}}}} &\\[-0.5ex]
+                \ = \ \smash[b]{\underbrace{1\phantom{\dfrac{1}{1}}}_{\text{\textcolor{myg}{\footnotesize Asymptote}}}} + \smash[b]{\underbrace{\dfrac{8}{-x^2 + 1}}_{\text{\textcolor{myg}{\footnotesize Rest}}}} &\\[-0.5ex]
             \makebox[0pt][l]{\uline{\phantom{$xxxxxxxxxxxxxxx$}}}
             -(&- x^2 &+ &\textcolor{mygr}{0 x} &+ &1) &\\
             & \ \text{\textdiscount} & &\text{\textdiscount} & &8 &
@@ -75,9 +75,9 @@
         \end{minipage}
         \item Grenzverhalten: \hspace{-2cm}\begin{minipage}[t]{0.80\linewidth}
                 \begin{equation*}
-                    R(x) = \dfrac{8}{-x^{\textbf{\textcolor{mydarkblue}{2}}} + 1}
+                    R(x) = \dfrac{8}{-x^{\textbf{\textcolor{myb}{2}}} + 1}
                 \end{equation*}
-                Da $\text{\textbf{\textcolor{myr}{ZG}}} < \text{\textbf{\textcolor{mydarkblue}{NG}}}$ ist $R(x)$ eine \textbf{echt gebrochen rationale Funktion}. Zur Bestimmung des Grenzverhaltens muss in der Regel zuerst die höchste Potenz ausgeklammert (\textbf{Normierung}) oder $z'(x)$ und $n'(x)$ gebildet (\textbf{Regel von L’Hospital}) werden, außer $\text{\textbf{\textcolor{mydarkblue}{NG}}} = 0 $. \\[-2.0ex]
+                Da $\text{\textbf{\textcolor{myr}{ZG}}} < \text{\textbf{\textcolor{myb}{NG}}}$ ist $R(x)$ eine \textbf{echt gebrochen rationale Funktion}. Zur Bestimmung des Grenzverhaltens muss in der Regel zuerst die höchste Potenz ausgeklammert (\textbf{Normierung}) oder $z'(x)$ und $n'(x)$ gebildet (\textbf{Regel von L’Hospital}) werden, außer $\text{\textbf{\textcolor{myb}{NG}}} = 0 $. \\[-2.0ex]
                 \begin{flalign*}
                     \lim\limits_{x \to -\infty} R(x) &= \dfrac{8}{-(\textcolor{mypurple}{-\infty})^2 + 1} = 0^- \quad &\rightarrow                     
                     \parbox[t]{5cm}{Annäherung von \textbf{unten} an \textcolor{myorange}{$h_1(x)$}}
@@ -99,33 +99,292 @@
                     &&
                 \end{flalign*}
             \end{minipage}
-        \item Monotonie- und Krümmungsverhalten: \\[1.5ex]
-        \hspace{2cm} \begin{minipage}[t]{0.95\linewidth}
+        \item Monotonie- und Krümmungsverhalten:\\[1.5ex]
+        \begin{minipage}[t]{0.95\linewidth}
             \begin{note}
                 Quotientenregel: \begin{minipage}[t]{0.8\linewidth}
+                    \vspace{-0.5cm}
                     \begin{align*}
-                        f(x) &= \dfrac{\text{\textbf{\textcolor{myr}{Z}}}}{\text{\textbf{\textcolor{mydarkblue}{N}}}} \\[1.5ex]
-                        f'(x) &= \dfrac{\text{\textbf{\textcolor{mydarkblue}{N}}} \cdot \text{\textbf{\textcolor{myr}{Z'}}} - \text{\textbf{\textcolor{myr}{Z}}} \cdot \text{\textbf{\textcolor{mydarkblue}{N'}}}}{(\text{\textbf{\textcolor{mydarkblue}{N}}})^2} = \dfrac{\text{\textbf{\textcolor{mydarkblue}{N}}}\text{\textbf{\textcolor{myr}{AZ}}} - \text{\textbf{\textcolor{myr}{Z}}}\text{\textbf{\textcolor{mydarkblue}{AN}}}}{(\text{\textbf{\textcolor{mydarkblue}{N}}})^2}
+                        f(x) &= \dfrac{\text{\textbf{\textcolor{myr}{z(x)}}}}{\text{\textbf{\textcolor{myb}{n(x)}}}} \\[1.5ex]
+                        f'(x) &= \dfrac{\text{\textbf{\textcolor{myb}{n(x)}}} \cdot \text{\textbf{\textcolor{myr}{z'(x)}}} - \text{\textbf{\textcolor{myr}{z(x)}}} \cdot \text{\textbf{\textcolor{myb}{n'(x)}}}}{(\text{\textbf{\textcolor{myb}{n(x)}}})^2} = \highlight{\dfrac{\text{\textbf{\textcolor{myb}{N}}}\text{\textbf{\textcolor{myr}{AZ}}} - \text{\textbf{\textcolor{myr}{Z}}}\text{\textbf{\textcolor{myb}{AN}}}}{(\text{\textbf{\textcolor{myb}{N}}})^2}}
                     \end{align*}
                 \end{minipage}
             \end{note}
             \begin{flalign*}
-                f'(x) &= \dfrac{(-x^2 + 1) \cdot (-2x) - (-x^2 + 9)\cdot (-2x)}{(-x^2 + 1)^2} &&\\
-                &= \dfrac{2x^3 - 2x - 2x^3 + 18x}{(-x^2 + 1)^2} &&\\
-                &= \dfrac{16x}{(-x^2 + 1)^2}
+                f'(x) &= \dfrac{(-x^2 + 1) \cdot (-2x) - (-x^2 + 9)\cdot (-2x)}{(-x^2 + 1)^2} &&\\[1.50ex]
+                &= \dfrac{2x^3 - 2x - 2x^3 + 18x}{(-x^2 + 1)^2} &&\\[1.50ex]
+                &= \dfrac{16x}{(-x^2 + 1)^2}; \qquad \textcolor{myr}{z(x) = 16x}; \qquad \textcolor{myb}{n(x) = (-x^2 + 1)^2}&&\\[-2ex]
             \end{flalign*}
+            \begin{minipage}[t]{0.45\linewidth}
+                Zählernullstellen:
+                \begin{align*}
+                    z(x) &= 0 \\
+                    16x &= 0 &&| :16\\
+                    x_1 &= 0 \text{\textit{(e)}} &&\\[1.5ex]
+                    \mathbb{L} &= \left\{ 0 \right\} &&\\
+                \end{align*}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.45\linewidth}
+                Nennernullstellen:
+                \begin{align*}
+                    n(x) &= 0 \\
+                    (-x^2 + 1)^2 &= 0 &&| \sqrt[2]{\phantom{x}}\\
+                    -x^2 + 1 &= 0 &&| + x^2\\
+                    x^2 &= 1 &&| \sqrt[2]{\phantom{x}}\\
+                    x_{2} &= -1 \text{\textit{(d)}}; \quad x_{3} = 1 \text{\textit{(d)}} &&\\[1.5ex]
+                    \mathbb{L} &= \left\{ -1,\ 1 \right\} &&\\
+                \end{align*}
+            \end{minipage}
+            Vorzeichenverlauf (VZ) von $f'(x)$:\\[-1.0ex]
+            \raisebox{-\height}{
+            \hspace{1.0cm}\begin{tikzpicture}
+                % Set variables
+                \pgfmathsetmacro{\axisPosWidth}{5};
+                \pgfmathsetmacro{\axisNegWidth}{-5};
+                \pgfmathsetmacro{\axisPosHeight}{1.5};
+                \pgfmathsetmacro{\axisNegHeight}{-1.5};
+                \pgfmathsetmacro{\xIncrement}{1.0};
+                \pgfmathsetmacro{\yIncrement}{1.0};
+                \pgfmathsetmacro{\xScale}{1};
+                \pgfmathsetmacro{\yScale}{1};
+                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                % Axis/grid limits
+                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                % Axis environment (PGFPlots)
+                \begin{axis}[
+                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                    axis x line=middle,
+                    axis y line=none,
+                    axis line style={->, >=stealth},
+                    grid=both,
+                    xlabel={$x$},
+                    xlabel style={at={(axis description cs:1,0.70)}, anchor=north},
+                    xtick={0},
+                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                    tick label style={font=\scriptsize},
+                    x=1cm,
+                    y=1cm,
+                    minor tick num=1,
+                    scale only axis,
+                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                ]
+
+                % v_1 für x1
+                \addplot[thick, black] coordinates {(0*(1/\xScale), 0.70*\yLowerLimitGrid) (0*(1/\xScale), 0.70*\yUpperLimitGrid)};
+                \node[anchor=south] at (axis cs:{0*(1/\xScale)},{1*(1/\yScale)}) {\textcolor{myr}{$x_1$}};
+
+                % v_2 für x2
+                \addplot[thick, black] coordinates {(-2*(1/\xScale), 0.70*\yLowerLimitGrid) (-2*(1/\xScale),0.70*\yUpperLimitGrid)};
+                \node[anchor=north] at (axis cs:{-2*(1/\xScale)},{-1*(1/\yScale)}) {\textcolor{myb}{$x_2$}};
+
+                % v_3 für x3
+                \addplot[thick, black] coordinates {(2*(1/\xScale), 0.70*\yLowerLimitGrid) (2*(1/\xScale),0.70*\yUpperLimitGrid)};
+                \node[anchor=north] at (axis cs:{2*(1/\xScale)},{-1*(1/\yScale)}) {\textcolor{myb}{$x_3$}};
+
+                % h_1 für Zähler
+                \addplot[thick, myr] coordinates {(0.95*\xLowerLimitGrid*(1/\xScale),-0.50) (-0.1,-0.50)};
+
+                % h_2 für Zähler
+                \addplot[thick, myr] coordinates {(0.95*\xUpperLimitGrid*(1/\xScale),0.50) (0.1,0.50)};
+
+                % h_1 für Nenner
+                \addplot[thick, myb] coordinates {(0.95*\xLowerLimitGrid*(1/\xScale),0.75) (-2.1,0.75)};
+
+                % h_2 für Nenner
+                \addplot[thick, myb] coordinates {(-1.95*(1/\xScale),0.75) (1.95,0.75)};
+
+                % h_3 für Nenner
+                \addplot[thick, myb] coordinates {(0.95*\xUpperLimitGrid*(1/\xScale),0.75) (2.1,0.75)};
+
+                \end{axis}
+            \end{tikzpicture}
+            }\\
+            \begin{tabular}{%
+                        @{} 
+                        >{\centering\arraybackslash}p{1.00cm}
+                        @{}
+                        >{\centering\arraybackslash}p{2.6cm}
+                        @{}
+                        >{\centering\arraybackslash}p{0.80cm}
+                        @{}
+                        >{\centering\arraybackslash}p{1.20cm}
+                        @{}
+                        >{\centering\arraybackslash}p{0.30cm}|
+                        @{}
+                        >{\centering\arraybackslash}p{0.30cm}
+                        @{}
+                        >{\centering\arraybackslash}p{1.20cm}
+                        @{}
+                        >{\centering\arraybackslash}p{0.80cm}
+                        @{}
+                        >{\centering\arraybackslash}p{2.6cm}
+                        @{}
+                        }
+                & \circled{$-$} & & \circled{$-$} & & & \circled{$+$} & & \circled{$+$} \\[1.5ex]
+                \multirow{2}{*}{$G_f$} & $\searrow$ & & $\searrow$ & & & $\nearrow$ & & $\nearrow$ \\[1.0ex]
+                & \multicolumn{3}{c}{\uuline{smf in $\rbrack \ -\infty; \ 0 \ \rbrack$}} & & & \multicolumn{3}{c}{\uuline{sms in $\lbrack \ 0; \ +\infty \ \lbrack$}} \\[1.0ex]
+                & & & & \multicolumn{2}{c}{$\lbrack TiP_1\rbrack$} & & &\\ 
+            \end{tabular}\\[2ex]
+            \uuline{$TiP_1 \left(0/9\right)$}\\[1.5ex]
+            \uuline{$\mathbb{W}_f =\, \rbrack\ -\infty;1\ \lbrack \quad \cup \quad \lbrack\ 9,\ \infty\ \lbrack$}
+        \end{minipage}\\
+
+        \begin{minipage}[t]{0.95\linewidth}
             \begin{flalign*}
-                f''(x) &= \dfrac{(-x^2 + 1)^2 \cdot 16 - 16x \cdot 2(-x^2 + 1)(-2x)}{(-x^2 + 1)^4} &&\\
-                &= \dfrac{16(-x^2 + 1)^2 - 64x^2(-x^2 + 1)}{(-x^2 + 1)^4} &&\\
-                &= \dfrac{16(-x^4 + 2x^2 - 1) + 64x^4 - 64x^2}{(-x^2 + 1)^4} &&\\
-                &= \dfrac{-16x^4 + 32x^2 - 16 + 64x^4 - 64x^2}{(-x^2 + 1)^4} &&\\
-                &= \dfrac{48x^4 - 32x^2 - 16}{(-x^2 + 1)^4} &&\\
-                &= \dfrac{16(3x^4 - 2x^2 - 1)}{(-x^2 + 1)^4} &&\\
-                &= \dfrac{16(3x^4 - 3x^2 + x^2 - 1)}{(-x^2 + 1)^4} &&\\
-                &= \dfrac{16(3x^2(x^2 - 1) + (x^2 - 1))}{(-x^2 + 1)^4} &&\\
-                &= \dfrac{16(x^2 - 1)(3x^2 + 1)}{(-x^2 + 1)^4} &&\\
-                &= \dfrac{-16(3x^2 + 1)}{(-x^2 + 1)^3}
+                f''(x) &= \dfrac{\highlight{(-x^2 + 1)}^2 \cdot 16 - 16x \cdot 2 \cdot \highlight{(-x^2 + 1)} \cdot (-2x)}{(-x^2 + 1)^4} &&\\[1.25ex]
+                &= \dfrac{(-x^2 + 1)\cdot [(-x^2 + 1) \cdot 16 - 4x^2 \cdot 16]}{(-x^2 + 1)^4} &&\\[1.50ex]
+                &= \dfrac{(-x^2 + 1) \cdot \highlight{16} + 4x^2 \cdot \highlight{16}}{(-x^2 + 1)^3} &&\\[1.50ex]
+                &= \dfrac{16 \cdot (-x^2 + 1 + 4x^2)}{(-x^2 + 1)^3} &&\\[1.50ex]
+                &= \dfrac{16 \cdot (3x^2 + 1)}{(-x^2 + 1)^3}; \qquad \textcolor{myr}{z(x) = 16 \cdot (3x^2 + 1)}; \qquad \textcolor{myb}{n(x) = (-x^2 + 1)^3}&&\\[-1ex]
             \end{flalign*}
+            \begin{minipage}[t]{0.45\linewidth}
+                Zählernullstellen:
+                \begin{align*}
+                    z(x) &= 0 \\
+                    16 \cdot (3x^2 + 1) &= 0 &&| :16\\
+                    3x^2 + 1 &= 0 &&| -1\\
+                    3x^2 &= -1 &&| :3\\
+                    x^2 &= -\dfrac{1}{3} &&| \sqrt[2]{\phantom{x}}\\[1.5ex]
+                    \textcolor{myr}{\mathbb{L}} & \textcolor{myr}{= \varnothing} &&\\
+                \end{align*}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.45\linewidth}
+                Nennernullstellen:
+                \begin{align*}
+                    n(x) &= 0 \\
+                    (-x^2 + 1)^3 &= 0 &&| \sqrt[3]{\phantom{x}}\\
+                    -x^2 + 1 &= 0 &&| + x^2\\
+                    x^2 &= 1 &&| \sqrt[2]{\phantom{x}}\\
+                    x_{1} &= -1 \text{\textit{(dr)}}; \quad x_{2} = 1 \text{\textit{(dr)}} &&\\[1.5ex]
+                    \mathbb{L} &= \left\{ -1,\ 1 \right\}&&\\
+                \end{align*}
+            \end{minipage}
+            Vorzeichenverlauf (VZ) von $f''(x)$:\\
+            \raisebox{-\height}{
+            \hspace{1.0cm}\begin{tikzpicture}
+                % Set variables
+                \pgfmathsetmacro{\axisPosWidth}{5};
+                \pgfmathsetmacro{\axisNegWidth}{-5};
+                \pgfmathsetmacro{\axisPosHeight}{1.5};
+                \pgfmathsetmacro{\axisNegHeight}{-1.5};
+                \pgfmathsetmacro{\xIncrement}{1.0};
+                \pgfmathsetmacro{\yIncrement}{1.0};
+                \pgfmathsetmacro{\xScale}{1};
+                \pgfmathsetmacro{\yScale}{1};
+                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                % Axis/grid limits
+                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                % Axis environment (PGFPlots)
+                \begin{axis}[
+                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                    axis x line=middle,
+                    axis y line=none,
+                    axis line style={->, >=stealth},
+                    grid=both,
+                    xlabel={$x$},
+                    xlabel style={at={(axis description cs:1,0.70)}, anchor=north},
+                    xtick={0},
+                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                    tick label style={font=\scriptsize},
+                    x=1cm,
+                    y=1cm,
+                    minor tick num=1,
+                    scale only axis,
+                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                ]
+
+                % v_1 für x1
+                \addplot[thick, black] coordinates {(-2*(1/\xScale), 0.70*\yLowerLimitGrid) (-2*(1/\xScale),0.70*\yUpperLimitGrid)};
+                \node[anchor=north] at (axis cs:{-2*(1/\xScale)},{-1*(1/\yScale)}) {\textcolor{myb}{$x_1$}};
+
+                % v_2 für x2
+                \addplot[thick, black] coordinates {(2*(1/\xScale), 0.70*\yLowerLimitGrid) (2*(1/\xScale),0.70*\yUpperLimitGrid)};
+                \node[anchor=north] at (axis cs:{2*(1/\xScale)},{-1*(1/\yScale)}) {\textcolor{myb}{$x_2$}};
+
+                % h_1 für Zähler
+                \addplot[thick, myr] coordinates {(0.95*\xLowerLimitGrid*(1/\xScale),0.50) (0.95*\xUpperLimitGrid*(1/\xScale),0.50)};
+
+                % h_1 für Nenner
+                \addplot[thick, myb] coordinates {(0.95*\xLowerLimitGrid*(1/\xScale),-0.75) (-2.1,-0.75)};
+
+                % h_2 für Nenner
+                \addplot[thick, myb] coordinates {(-1.95*(1/\xScale),0.75) (1.95,0.75)};
+
+                % h_3 für Nenner
+                \addplot[thick, myb] coordinates {(0.95*\xUpperLimitGrid*(1/\xScale),-0.75) (2.1,-0.75)};
+
+                \end{axis}
+            \end{tikzpicture}
+            }\\
+            \begin{tabular}{%
+                        @{} 
+                        >{\centering\arraybackslash}p{1.00cm}
+                        @{}
+                        >{\centering\arraybackslash}p{2.6cm}
+                        @{}
+                        >{\centering\arraybackslash}p{0.40cm}
+                        @{}
+                        >{\centering\arraybackslash}p{0.40cm}
+                        @{}
+                        >{\centering\arraybackslash}p{1.20cm}
+                        @{}
+                        >{\centering\arraybackslash}p{0.40cm}
+                        @{}
+                        >{\centering\arraybackslash}p{0.40cm}
+                        @{}
+                        >{\centering\arraybackslash}p{1.20cm}
+                        @{}
+                        >{\centering\arraybackslash}p{0.40cm}
+                        @{}
+                        >{\centering\arraybackslash}p{0.40cm}
+                        @{}
+                        >{\centering\arraybackslash}p{2.6cm}
+                        @{}
+                        }
+                & \circled{$-$} & & & \multicolumn{4}{c}{\circled{$+$}} & & & \circled{$-$} \\[1.0ex]
+                \multirow{2}{*}{$G_f$} & $\curvearrowright$ & & & \multicolumn{4}{c}{$\curvearrowleft$} & & &  $\curvearrowright$ \\[1.5ex]
+                & \parbox[l]{0.95\linewidth}{%
+                        \uuline{rechtsgekrümmt} \\
+                        \uuline{in $\rbrack -\infty; \ -1 \ \lbrack$}%
+                } 
+                & & &
+                \multicolumn{4}{l}{\parbox[c]{0.15\linewidth}{%
+                        \uuline{linksgekrümmt} \\
+                        \uuline{in $\rbrack -1; \ 1 \ \lbrack$}%
+                }}
+                & & &
+                \parbox[c]{0.95\linewidth}{%
+                        \uuline{rechtsgekrümmt} \\
+                        \uuline{in $\rbrack 1; \ \infty \ \lbrack$}%
+                }\\[1.0ex]
+                & & & & & & & &\\ 
+            \end{tabular}\\[2ex]
         \end{minipage}
         \item Zeichnung: \\
         \raisebox{-\height}{
@@ -177,10 +436,10 @@
                     restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
                 ]
 
-                % Example rational function
+                % Funktion
                 \addplot[thick, myb, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
                     {(-(\x*\xScale)^2 + 9)/(-(\x*\xScale)^2 + 1)*(1/\yScale)};
-                \node[anchor=north] at (axis cs:{2*(1/\xScale)},{-3*(1/\yScale)}) {\textcolor{myb}{$G_f$}};
+                \node[anchor=north] at (axis cs:{2.5*(1/\xScale)},{-3*(1/\yScale)}) {\textcolor{myb}{$G_f$}};
 
                 % v_1(x)
                 \addplot[thick, myorange] coordinates {(-1*(1/\xScale), 1*\yLowerLimitGrid) (-1*(1/\xScale), 0.96*\yUpperLimitGrid)};
@@ -201,6 +460,10 @@
 
                 \fill[black] (axis cs:{3*(1/\xScale)},{0*(1/\yScale)}) circle[radius=2pt]; 
                 \node[anchor=north] at (axis cs:{3*(1/\xScale)},{-0.1*(1/\yScale)}) {\textcolor{black}{$N_2$}};
+
+                % Extrempunkte
+                \fill[black] (axis cs:{0*(1/\xScale)},{9*(1/\yScale)}) circle[radius=2pt]; 
+                \node[anchor=north] at (axis cs:{0.5*(1/\xScale)},{8.75*(1/\yScale)}) {\textcolor{black}{$TiP_1$}};
 
                 \end{axis}
             \end{tikzpicture}
