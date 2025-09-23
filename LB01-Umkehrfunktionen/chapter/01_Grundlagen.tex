@@ -1,0 +1,172 @@
+% LTeX: language=de
+
+\subsection{Grundlagen}
+
+\vspace{-0.5cm}
+
+\raisebox{-\height}{\incldrawio{01_Umkehrfunktion_Veranschaulichung.drawio}}
+
+\begin{Definition}{Umkehrfunktion}{}
+    Die \textbf{Umkehrfunktion $f^{-1}$} ($\neq \dfrac{1}{f}$) einer Funktion $f$ ordnet jedem Element der Wertemenge $W_{f}$ das zugehörige Element aus $D_{f}$ zu.
+\end{Definition}
+
+\raisebox{-\height}{
+    \begin{tikzpicture}
+        % Set variables
+        \pgfmathsetmacro{\axisPosWidth}{7};
+        \pgfmathsetmacro{\axisNegWidth}{-7};
+        \pgfmathsetmacro{\axisPosHeight}{4};
+        \pgfmathsetmacro{\axisNegHeight}{-3};
+        \pgfmathsetmacro{\xIncrement}{1.0};
+        \pgfmathsetmacro{\yIncrement}{1.0};
+        \pgfmathsetmacro{\xScale}{1};
+        \pgfmathsetmacro{\yScale}{2};
+        \pgfmathsetmacro{\gridxIncrement}{0.5};
+        \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+        % Axis/grid limits
+        \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+        \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+        \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+        \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+        \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+        \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+        \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+        \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+        % Axis environment (PGFPlots)
+        \begin{axis}[
+            xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+            ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+            axis lines=middle,
+            axis line style={->, >=stealth},
+            grid=both,
+            xlabel={$x$},
+            ylabel={$y$},
+            xlabel style={at={(axis description cs:1,0.55)}, anchor=north},
+            ylabel style={at={(axis description cs:0.55,1)}, anchor=south},
+            xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+            ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+            xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+            yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+            tick label style={font=\scriptsize},
+            x=1cm,
+            y=1cm,
+            minor tick num=1,
+            scale only axis,
+            grid=both,
+            restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+        ]
+
+        % G_f
+        \addplot[thick, myb, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+            {(0.5*\x*\xScale + 1)*(1/\yScale)};
+        \node[anchor=north] at (axis cs:{5*(1/\xScale)},{3*(1/\yScale)}) {\textcolor{myb}{$G_f$}};
+
+        % G_f^{-1}
+        \addplot[thick, myr, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+            {(2.0*\x*\xScale - 2)*(1/\yScale)};
+        \node[anchor=north] at (axis cs:{3*(1/\xScale)},{6*(1/\yScale)}) {\textcolor{myr}{$G_f^{-1}$}};
+
+        % Winkelhalbierende
+        \addplot[thick, myg, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+            {(\x*\xScale)*(1/\yScale)};
+
+        % Qudranten
+        \node[anchor=north] at (axis cs:{6.5*(1/\xScale)},{8*(1/\yScale)}) {\textcolor{black}{$\Rom{1}$}};
+        \node[anchor=north] at (axis cs:{-6.5*(1/\xScale)},{8*(1/\yScale)}) {\textcolor{black}{$\Rom{2}$}};
+        \node[anchor=north] at (axis cs:{-6.5*(1/\xScale)},{-5*(1/\yScale)}) {\textcolor{black}{$\Rom{3}$}};
+        \node[anchor=north] at (axis cs:{6.5*(1/\xScale)},{-5*(1/\yScale)}) {\textcolor{black}{$\Rom{4}$}};
+
+        \end{axis}
+    \end{tikzpicture}
+}\\[3.0ex]
+
+\begin{itemize}
+    \item $G_f^{-1}$ entsteht aus $G_f$ durch Spiegelung an der \texthl{\textbf{Winkelhalbierenden}} \\ des \Rom{1} und \Rom{3} Qudranten.
+    \item $D = W_{f}$ \qquad und \qquad $W_{f^{-1}} = D_{f}$
+    \item \begin{minipage}[t]{0.65\linewidth}
+        \raisebox{-\height}{
+            \begin{tikzpicture}
+                % Set variables
+                \pgfmathsetmacro{\axisPosWidth}{5};
+                \pgfmathsetmacro{\axisNegWidth}{-3};
+                \pgfmathsetmacro{\axisPosHeight}{3};
+                \pgfmathsetmacro{\axisNegHeight}{-2.5};
+                \pgfmathsetmacro{\xIncrement}{1.0};
+                \pgfmathsetmacro{\yIncrement}{1.0};
+                \pgfmathsetmacro{\xScale}{1};
+                \pgfmathsetmacro{\yScale}{1};
+                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                % Axis/grid limits
+                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                % Axis environment (PGFPlots)
+                \begin{axis}[
+                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                    axis lines=middle,
+                    axis line style={->, >=stealth},
+                    grid=both,
+                    xlabel={$x$},
+                    ylabel={$y$},
+                    xlabel style={at={(axis description cs:1,0.55)}, anchor=north},
+                    ylabel style={at={(axis description cs:0.45,1)}, anchor=south},
+                    xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                    ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                    yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                    tick label style={font=\scriptsize},
+                    x=1cm,
+                    y=1cm,
+                    minor tick num=1,
+                    scale only axis,
+                    grid=both,
+                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                ]
+
+                % G_g
+                \addplot[thick, myb, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                    {((\x*\xScale)^2)*(1/\yScale)};
+                \node[anchor=north] at (axis cs:{2*(1/\xScale)},{3*(1/\yScale)}) {\textcolor{myb}{$G_g$}};
+
+                % G_g^{-1}
+                \addplot[thick, myr, samples=1000, domain=0:0.96*\xUpperLimitGrid]
+                    {(sqrt(\x*\xScale))*(1/\yScale)};
+                \addplot[thick, myr, samples=1000, domain=0:0.96*\xUpperLimitGrid]
+                    {(-sqrt(\x*\xScale))*(1/\yScale)};
+                \node[anchor=north] at (axis cs:{3*(1/\xScale)},{1.5*(1/\yScale)}) {\textcolor{myr}{$G_g^{-1}$}};
+
+                \end{axis}
+            \end{tikzpicture}
+        }\\[3.0ex]
+        \end{minipage}
+        \begin{minipage}[t]{0.3\linewidth}
+            \vspace{2.5cm}
+            $g$ ist auf $\rbrack \ -\infty; \ 0 \ \rbrack$ umkehrbar sowie auf $\lbrack \ 0; \ +\infty \ \lbrack$
+        \end{minipage}\\
+        Eine Funktion ist genau dann umkehrbar, falls jdes Element der Wertemenge \textbf{genau einmal} getroffen wird. \\
+        \vspace{-1.0cm}
+        \begin{tightcenter}
+            $\Leftrightarrow$
+        \end{tightcenter}
+        \vspace{-0.5cm}
+        Eine Funktion ist genau dann umkehrbar, falls sie \texthl{\textbf{streng monoton}} (zunehmend oder abhnehmend) ist.
+    \item es gilt: \begin{minipage}[t]{0.80\linewidth}
+        \begin{flalign*}
+            f(f^{-1}(x)) &= x \\[1.0ex]
+            f^{-1}(f(x)) &= x
+        \end{flalign*}
+    \end{minipage}
+\end{itemize}
