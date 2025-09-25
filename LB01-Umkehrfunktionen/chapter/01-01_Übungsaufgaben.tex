@@ -1,0 +1,520 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 15/1}{}
+    \begin{enumerate}
+        \item \begin{enumerate}[label=\alph*)]
+            \item[c)] {
+                $f(x) = -x^2 + 2; \qquad D_{f} = \left[ -1; 1 \right[$\\[2.0ex]
+                \begin{minipage}[t]{0.30\linewidth}
+                    \vspace{-0.80cm}
+                    \begin{align*}
+                        f'(x) &= -2x & \\[2.0ex]
+                        f'(x) &= 0 & \\[1.0ex]
+                        -2 x &= 0 & | \qquad :(-2)\\[1.0ex]
+                        x &= 0 &
+                    \end{align*}
+                \end{minipage}
+                \hspace{1.5cm}
+                \begin{minipage}[t]{0.30\linewidth}
+                    Skizze (Zeichnung):\\{
+                    \raisebox{-\height}{
+                    \begin{tikzpicture}[
+                            declare function={
+                                f_f1(\x) = (-2*(\x*\xScale))*(1/\yScale);
+                            }
+                        ]
+                        % Set variables
+                        \pgfmathsetmacro{\axisPosWidth}{2};
+                        \pgfmathsetmacro{\axisNegWidth}{-2};
+                        \pgfmathsetmacro{\axisPosHeight}{1};
+                        \pgfmathsetmacro{\axisNegHeight}{-1};
+                        \pgfmathsetmacro{\xIncrement}{1.0};
+                        \pgfmathsetmacro{\yIncrement}{1.0};
+                        \pgfmathsetmacro{\xScale}{1};
+                        \pgfmathsetmacro{\yScale}{2};
+                        \pgfmathsetmacro{\gridxIncrement}{0.5};
+                        \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                        % Axis/grid limits
+                        \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                        \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                        % Axis environment (PGFPlots)
+                        \begin{axis}[
+                            xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                            ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                            axis lines=middle,
+                            axis line style={->, >=stealth},
+                            grid=both,
+                            xlabel={$x$},
+                            ylabel={$y$},
+                            xlabel style={at={(axis description cs:1,0.7)}, anchor=north},
+                            ylabel style={at={(axis description cs:0.55,1)}, anchor=south},
+                            xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                            ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                            xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                            yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                            tick label style={font=\scriptsize},
+                            x=1cm,
+                            y=1cm,
+                            minor tick num=1,
+                            scale only axis,
+                            grid=both,
+                            restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                        ]
+
+                        % G_f-1
+                        \addplot[thick, myb, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                            {f_f1(x)};
+                        \node[anchor=north] at (axis cs:{1.5*(1/\xScale)},{-0.5*(1/\yScale)}) {\textcolor{myb}{$G_{f^{-1}}$}};
+                        \end{axis}
+                    \end{tikzpicture}
+                    }\\[2.0ex]
+                    }
+                \end{minipage}\\
+                \begin{itemize}[leftmargin=*]
+                    \item $G_{f}$ ist sms in $\left[ \ -1; 0 \ \right[$ und smf in $\left[ \ 0; 1 \ \right[$
+                    \item $G_{f}$ ist umkehrbar in $\left[ \ -1; 0 \ \right[$ und $\left[ \ 0; 1 \ \right[$
+                    \item {bilde die Umkehrfunktion $f^{-1}$: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            y &= -x^2 + 2 && \\[1.0ex]
+                            x & = -y^2 + 2 &&| \qquad -2\\[1.0ex]
+                            x - 2 & = -y^2 &&| \qquad :(-1)\\[1.0ex]
+                            y^2 & = - x + 2 &&| \qquad \pm\sqrt[2]{\phantom{x}}\\[1.5ex]
+                            \uuline{y_{1} = -\sqrt[2]{-x + 2}} \text{\textit{(e)}}; & \qquad \uuline{y_{2} = \sqrt[2]{-x + 2}} \text{\textit{(e)}} &&
+                        \end{align*}
+                        }\\
+                        $\rightarrow$ 2 mögliche Terme für $f^{-1}$}\\
+                        \raisebox{-\height}{
+                        \begin{tikzpicture}[
+                                declare function={
+                                    w_1(\x) = (\x*\xScale)*(1/\yScale);
+                                    f_f(\x) = (-(\x*\xScale)^2+2)*(1/\yScale);
+                                    f_f1(\x) = (sqrt(-(\x*\xScale) + 2))*(1/\yScale);
+                                    f_f2(\x) = (-sqrt(-(\x*\xScale) + 2))*(1/\yScale);
+                                }
+                            ]
+
+                            % Set variables
+                            \pgfmathsetmacro{\axisPosWidth}{5};
+                            \pgfmathsetmacro{\axisNegWidth}{-3};
+                            \pgfmathsetmacro{\axisPosHeight}{3};
+                            \pgfmathsetmacro{\axisNegHeight}{-1.5};
+                            \pgfmathsetmacro{\xIncrement}{1.0};
+                            \pgfmathsetmacro{\yIncrement}{1.0};
+                            \pgfmathsetmacro{\xScale}{1};
+                            \pgfmathsetmacro{\yScale}{1};
+                            \pgfmathsetmacro{\gridxIncrement}{0.5};
+                            \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                            % Axis/grid limits
+                            \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                            \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                            \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                            \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                            \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                            \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                            \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                            \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                            % Axis environment (PGFPlots)
+                            \begin{axis}[
+                                xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                                ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                                axis lines=middle,
+                                axis line style={->, >=stealth},
+                                grid=both,
+                                xlabel={$x$},
+                                ylabel={$y$},
+                                xlabel style={at={(axis description cs:1,0.55)}, anchor=north},
+                                ylabel style={at={(axis description cs:0.45,1)}, anchor=south},
+                                xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                                ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                                xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                                yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                                tick label style={font=\scriptsize},
+                                x=1cm,
+                                y=1cm,
+                                minor tick num=1,
+                                scale only axis,
+                                grid=both,
+                                restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                            ]
+
+                            % G_f
+                            \addplot[thick, myb, samples=1000, domain=-1:1]
+                                {f_f(x)};
+                            \node[anchor=north] at (axis cs:{1*(1/\xScale)},{2*(1/\yScale)}) {\textcolor{myb}{$G_f$}};
+
+                            % G_f^{-1}
+                            \addplot[thick, myr, samples=1000, domain=1:2]
+                                {f_f1(x)};
+                            \addplot[thick, myr, samples=1000, domain=1:2]
+                                {f_f2(x)};
+                            \node[anchor=north] at (axis cs:{2*(1/\xScale)},{1.0*(1/\yScale)}) {\textcolor{myr}{$G_{f^{-1}}$}};
+
+                            % Winkelhalbierende
+                            \addplot[thick, myg, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                                {w_1(x)};
+                            \end{axis}
+                        \end{tikzpicture}
+                        }\\[3.0ex]
+                        $D_{f_{1}} = W_{f_{1}^{-1}} = \left[ \ -1; 0 \ \right[ \quad \Rightarrow \quad f^{-1}(x) = -\sqrt[2]{-x + 2}$ \quad auf \quad $\left[ \ -1; 0 \ \right[$\\[2.0ex]
+                        $D_{f_{2}} = W_{f_{2}^{-1}} = \left[ \ 0; 1 \ \right[ \quad \Rightarrow \quad f^{-1}(x) = \sqrt[2]{-x + 2}$ \quad auf \quad $\left[ \ 0; 1 \ \right[$
+                \end{itemize}
+            }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 15/2}{}
+    \begin{enumerate}
+        \item [2.]\begin{enumerate}[label=\alph*)]
+            \item[b)] {
+                $f(x) = \dfrac{1}{2} \cdot x^2 - \dfrac{1}{2} \cdot x - 1; \qquad D_{f} = \left[ \ \dfrac{1}{2}; \infty \ \right[$\\
+                \begin{itemize}[leftmargin=*]
+                    \item Umkehrfunktion: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            y &= \dfrac{1}{2} \cdot x^2 - \dfrac{1}{2} \cdot x - 1 && \\[1.5ex]
+                            x & = \dfrac{1}{2} \cdot y^2 - \dfrac{1}{2} \cdot y - 1 &&| \qquad -x\\[2.0ex]
+                            0 &= \dfrac{1}{2} \cdot y^2 - \dfrac{1}{2} \cdot y - 1 - x && \\[1.5ex]
+                        \end{align*}\\
+                        \begin{align*}
+                            y_{1, 2} &= \dfrac{\dfrac{1}{2} \pm \sqrt{\left(-\dfrac{1}{2}\right)^2 - 4 \cdot \dfrac{1}{2} \cdot (-x - 1)}}{2 \cdot \dfrac{1}{2}}\\[1.5ex]
+                            y_{1} &= \dfrac{1}{2} - \sqrt[2]{2 \cdot x + \SI{2.25}{}} \text{\textit{(e)}}; & y_{2} &= \dfrac{1}{2} + \sqrt[2]{2 \cdot x + \SI{2.25}{}} \text{\textit{(e)}}&&
+                        \end{align*}\\
+                        $\Rightarrow \quad f^{-1}(x) = \dfrac{1}{2} + \sqrt[2]{2 \cdot x +
+                        \SI{2.25}{}}$ \quad auf \quad $\left[ \ \dfrac{1}{2}; \infty \ \right[$\\
+                        }
+                    \item Wertemenge von $f$: \\{
+                        \vspace{-1.0ex}
+                        \begin{align*}
+                            2 \cdot x + \SI{2.25}{} &= 0 &&| -\SI{2.25}{}\\[1.0ex]
+                            2 \cdot x &= -\SI{2.25}{} &&| :2\\[1.0ex]
+                            x &= -\dfrac{9}{8} &&
+                        \end{align*}\\
+                        $D_{f^{-1}} = \uuline{W_{f} = \left] \ -\dfrac{9}{8}; \infty \ \right[}$\\
+                        }
+                    \item Definitions- und Wertemenge von $f^{-1}$: \\[2.0ex]{
+                        $W_{f} = \uuline{D_{f^{-1}} = \left] \ -\dfrac{9}{8}; \infty \ \right[}$\\[1.0ex]
+                        $D_{f} = \uuline{W_{f^{-1}} = \left] \ \dfrac{1}{2}; \infty \ \right[}$\\[-1.0ex]
+                        }
+                    \item Zeichnung: \\[-2.0ex]{
+                        \begin{minipage}[t]{0.8\linewidth}
+                            \raisebox{-\height}{
+                            \begin{tikzpicture}[
+                                    declare function={
+                                        f_b(\x) = (0.5*(\x*\xScale)^2 - 0.5*(\x*\xScale) - 1)*(1/\yScale);
+                                        f_b1(\x) = (0.5 + sqrt(2*(\x*\xScale) + 2.25))*(1/\yScale);
+                                    }
+                                ]
+
+                                % Set variables
+                                \pgfmathsetmacro{\axisPosWidth}{5};
+                                \pgfmathsetmacro{\axisNegWidth}{-4};
+                                \pgfmathsetmacro{\axisPosHeight}{5};
+                                \pgfmathsetmacro{\axisNegHeight}{-2};
+                                \pgfmathsetmacro{\xIncrement}{1.0};
+                                \pgfmathsetmacro{\yIncrement}{1.0};
+                                \pgfmathsetmacro{\xScale}{1};
+                                \pgfmathsetmacro{\yScale}{1};
+                                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                                % Axis/grid limits
+                                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                                % Axis environment (PGFPlots)
+                                \begin{axis}[
+                                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                                    axis lines=middle,
+                                    axis line style={->, >=stealth},
+                                    grid=both,
+                                    xlabel={$x$},
+                                    ylabel={$y$},
+                                    xlabel style={at={(axis description cs:1,0.35)}, anchor=north},
+                                    ylabel style={at={(axis description cs:0.50,1)}, anchor=south},
+                                    xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                                    ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                                    yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                                    tick label style={font=\scriptsize},
+                                    x=1cm,
+                                    y=1cm,
+                                    minor tick num=1,
+                                    scale only axis,
+                                    grid=both,
+                                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                                ]
+
+                                % G_f_b
+                                \addplot[thick, myb, samples=1000, domain=0.5:0.96*\xUpperLimitGrid]
+                                    {f_b(x)};
+                                \node[anchor=north] at (axis cs:{3*(1/\xScale)},{1*(1/\yScale)}) {\textcolor{myb}{$G_{f}$}};
+
+                                % G_f_b^{-1}
+                                \addplot[thick, myr, samples=1000, domain=-1.125:5.000]
+                                    {f_b1(x)};
+                                \node[anchor=north] at (axis cs:{-1*(1/\xScale)},{2*(1/\yScale)}) {\textcolor{myr}{$G_{f^{-1}}$}};
+
+                                % P1
+                                \addplot[only marks, mark=x, mark size=3pt] coordinates {(4,5)};
+                                \node[anchor=north east] at (axis cs:4,5) {$P_{1}(4,5)$};
+
+                                % P2
+                                \addplot[only marks, mark=x, mark size=3pt] coordinates {(5,4)};
+                                \node[anchor=north east] at (axis cs:5,4) {$P_{2}(5,4)$};
+
+                                % Definitionslücken
+                                \addplot[only marks, mark=o, mark size=2pt, thick] coordinates {(-1.125,0.500)};
+                                \addplot[only marks, mark=o, mark size=2pt, thick] coordinates {(0.500,-1.125)};
+
+                                % Winkelhalbierende
+                                \addplot[thick, myg, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                                    {(\x*\xScale)*(1/\yScale)};
+                                \end{axis}
+                            \end{tikzpicture}
+                            }\\[2.0ex]
+                        \end{minipage}
+                    }
+                \end{itemize}
+                }
+            \item[e)] {
+                $f(x) = \dfrac{1 - x}{x}; \qquad D_{f} = \mathbb{R} \setminus \{0\}$\\[-1.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Umkehrfunktion:\\{
+                        \vspace{-3.0ex}
+                        \begin{align*}
+                            y &= \dfrac{1}{x} - 1 && \\[1.5ex]
+                            x & = \dfrac{1}{y} - 1&&| \qquad +1\\[1.5ex]
+                            x + 1 & = \dfrac{1}{y} &&| \qquad \cdot y\\[1.5ex]
+                            y \cdot (x + 1) & = 1 &&| \qquad : (x + 1)\\[1.5ex]
+                            y & = \dfrac{1}{x + 1} &&
+                        \end{align*}\\
+                        $\Rightarrow \quad f^{-1}(x) = \dfrac{1}{x + 1}$ \quad auf \quad $\mathbb{R} \setminus \{0\}$\\
+                        }
+                    \item Wertemenge von $f$: \\{
+                        \vspace{-3.0ex}
+                        \begin{align*}
+                            x + 1 & = 0 &&| -1\\[1.0ex]
+                            x &= -1 &&
+                        \end{align*}
+                        $D_{f^{-1}} = \uuline{W_{f} = \mathbb{R} \setminus \{-1\}}$
+                        }
+                    \item Definitions- und Wertemenge von $f^{-1}$:\\[2.0ex]{
+                        $W_{f} = \uuline{D_{f^{-1}} = \mathbb{R} \setminus \{-1\}}$\\[1.0ex]
+                        $D_{f} = \uuline{W_{f^{-1}} = \mathbb{R} \setminus \{0\}}$
+                        }
+                    \item Zeichnung: \\[-2.0ex]{
+                        \raisebox{-\height}{
+                        \begin{tikzpicture}[
+                                declare function={
+                                    f_e(\x) = (1/(\x*\xScale) - 1)*(1/\yScale);
+                                    f_e1(\x) = (1/(\x*\xScale + 1))*(1/\yScale);
+                                }
+                            ]
+                            % Set variables
+                            \pgfmathsetmacro{\axisPosWidth}{6};
+                            \pgfmathsetmacro{\axisNegWidth}{-7};
+                            \pgfmathsetmacro{\axisPosHeight}{3};
+                            \pgfmathsetmacro{\axisNegHeight}{-3};
+                            \pgfmathsetmacro{\xIncrement}{1.0};
+                            \pgfmathsetmacro{\yIncrement}{1.0};
+                            \pgfmathsetmacro{\xScale}{1};
+                            \pgfmathsetmacro{\yScale}{1};
+                            \pgfmathsetmacro{\gridxIncrement}{0.5};
+                            \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                            % Axis/grid limits
+                            \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                            \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                            \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                            \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                            \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                            \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                            \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                            \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                            % Axis environment (PGFPlots)
+                            \begin{axis}[
+                                xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                                ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                                axis lines=middle,
+                                axis line style={->, >=stealth},
+                                grid=both,
+                                xlabel={$x$},
+                                ylabel={$y$},
+                                xlabel style={at={(axis description cs:1,0.60)}, anchor=north},
+                                ylabel style={at={(axis description cs:0.55,1)}, anchor=south},
+                                xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                                ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                                xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                                yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                                tick label style={font=\scriptsize},
+                                x=1cm,
+                                y=1cm,
+                                minor tick num=1,
+                                scale only axis,
+                                grid=both,
+                                restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                            ]
+                            % G_f_e
+                            \addplot[thick, myb, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                                {f_e(x)};
+                            \node[anchor=north] at (axis cs:{4.5*(1/\xScale)},{-0.25*(1/\yScale)}) {\textcolor{myb}{$G_f$}};
+
+                            % G_f_e^{-1}
+                            \addplot[thick, myr, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                                {f_e1(x)};
+                            \node[anchor=north] at (axis cs:{4.5*(1/\xScale)},{1*(1/\yScale)}) {\textcolor{myr}{$G_{f^{-1}}$}};
+
+                            % P1
+                            \addplot[only marks, mark=x, mark size=3pt] coordinates {(-7,-0.17)};
+                            \node[anchor=south west] at (axis cs:-7,-0.17) {$P_{1}(-7,-\dfrac{1}{7})$};
+
+                            % P2
+                            \addplot[only marks, mark=x, mark size=3pt] coordinates {(-7,-1.14)};
+                            \node[anchor=north west] at (axis cs:-7,-1.14) {$P_{2}(-7,-\dfrac{8}{7})$};
+
+                            % v_1(x)
+                            \addplot[thick, myorange] coordinates {(0*(1/\xScale), 1*\yLowerLimitGrid) (0*(1/\xScale), 0.96*\yUpperLimitGrid)};
+
+                            % v_2(x)
+                            \addplot[thick, myorange] coordinates {(-1*(1/\xScale), 1*\yLowerLimitGrid) (-1*(1/\xScale), 0.96*\yUpperLimitGrid)};
+
+                            % h_1(x)
+                            \addplot[thick, myorange, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                                {-1*(1/\yScale)};
+                    
+                            % h_2(x)
+                            \addplot[thick, myorange, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                                {0*(1/\yScale)};
+
+                            % Winkelhalbierende
+                            \addplot[thick, myg, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                                {(\x*\xScale)*(1/\yScale)};
+                            \end{axis}
+                        \end{tikzpicture}
+                        }\\[2.0ex]
+                    }
+                \end{itemize}
+                }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 15/4}{}
+    \begin{enumerate}
+        \item [4.]\begin{enumerate}[label=\alph*)]
+            \item[c)] {
+                $f(x) = \sqrt[2]{2 \cdot (x +1)}; \qquad D_{f} = \left[ -1; \infty \right[$\\[-1.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Monotonieverlauf:\\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            f(x) &= \left[2 \cdot (x +1)\right]^{\frac{1}{2}} -1 && \\[1.5ex]
+                            f'(x) &= \dfrac{1}{2} \cdot \left[2 \cdot (x +1)\right]^{-\frac{1}{2}} \cdot 2 && \\[1.5ex]
+                            f'(x) &= \dfrac{1}{\sqrt[2]{2 \cdot (x +1)}}; \qquad z(x) = 1; \qquad n(x) = \sqrt[2]{2 \cdot (x +1)} &&
+                        \end{align*}\\[1.0ex]
+                        $f'(x) = 0 \qquad \Rightarrow \text{keine Nst, da} \ z(x) = 1$ \quad \textcolor{myg}{\text{\} \quad \footnotesize const. = unabhängig von $x$}}\\
+                        \begin{minipage}[t]{\linewidth}
+                            \begin{align*}
+                                n(x) &= 0 && \\[1.0ex]
+                                \sqrt[2]{2 \cdot (x +1)} &= 0 &&| ^2\\[1.0ex]
+                                2 \cdot (x +1) &= 0 &&| :2\\[1.0ex]
+                                x +1 &= 0 &&| -1\\[1.0ex]
+                                x_{1} &= -1 &&
+                            \end{align*}
+                        \end{minipage}\\[2.0ex]
+                        $w(x) = 2 \cdot (x + 1) \quad \textcolor{myg}{\text{\}\quad \footnotesize Radikand} \ (\geq 0!)}$\\[2.0ex]
+                        \begin{tabularx}{\linewidth}{c|X|X|X}
+                            & $-\infty < x < -1$ & $x = -1$ & $-1 < x < \infty$ \\ \hline
+                            $w(x)$ & $-$ & $0$ & $+$ \\ \hline
+                            $f'(x)$ & n. d. & n. d. & $+$ \\                   
+                        \end{tabularx}\\[3.0ex]
+                        $\Rightarrow \uuline{D_{f^{-1}} = \left] \ -1; \infty \ \right[}$\\[2.0ex]
+                        \begin{tabularx}{\linewidth}{c|X|X|X}
+                            & $-\infty < x < -1$ & $x = -1$ & $-1 < x < \infty$ \\ \hline
+                            $z(x)$ & $+$ & $+$ & $+$ \\ \hline
+                            $n(x)$ & n. d. & $0$ & $+$ \\ \hline
+                            $f'(x)$ & n. d. & n. d. & $+$ \\ \hline
+                            $G_{f}$ & n. d. & n. d. & $\nearrow$ \\      
+                        \end{tabularx}\\[3.0ex]
+                        $\Rightarrow \quad G_{f}$ ist sms auf $\left] \ -1; \infty \ \right[$\\[1.0ex]
+                        $\Rightarrow \quad G_{f}$ ist umkehrbar auf $\left] \ -1; \infty \ \right[$\\
+                        }
+                    \item Umkehrfunktion $f^{-1}$:\\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            y &= \sqrt[2]{2 \cdot (x +1)} - 1&& \\[1.5ex]
+                            x & = \sqrt[2]{2 \cdot (y +1)} - 1 &&| \qquad +1\\[1.5ex]
+                            x + 1 & = \sqrt[2]{2 \cdot (y +1)} &&| \qquad ^2\\[1.5ex]
+                            (x + 1)^2 & = 2 \cdot (y +1) &&| \qquad :2\\[1.5ex]
+                            \dfrac{1}{2} \cdot (x + 1)^2 & = y +1 &&| \qquad -1\\[1.5ex]
+                            y & = \dfrac{1}{2} \cdot (x + 1)^2 - 1 &&
+                        \end{align*}\\
+                        $\Rightarrow \quad f^{-1}(x) = \dfrac{1}{2} \cdot (x + 1)^2 - 1$ \quad auf \quad $\left] \ -1; \infty \ \right[$\\
+                        }                        
+                \end{itemize}
+            }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 15/5}{}
+    \begin{enumerate}
+        \item [5.]\begin{enumerate}[label=\alph*)]
+            \item[c)] {
+                $f(x) = x^{2} - 1; \qquad D_{f} = \left\{1; 2; 3; 4 \right\}$\\[1.0ex]
+                $g(x) = \sqrt[2]{x+1}; \qquad D_{g} = \left\{0; 3; 8; 15 \right\}$\\[-1.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Prüfung $f^{-1}(x) = g(x)$:\\{
+                        \vspace{-3.0ex}
+                        \begin{minipage}[t]{0.45\linewidth}
+                            \begin{align*}
+                                f(1) &= 1^{2} - 1 = 0 &&\\[1.5ex]
+                                f(2) &= 2^{2} - 1 = 3 &&\\[1.5ex]
+                                f(3) &= 3^{2} - 1 = 8 &&\\[1.5ex]
+                                f(4) &= 4^{2} - 1 = 15 &&\\[3.0ex]
+                            \end{align*}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.45\linewidth}
+                            \begin{align*}
+                                g(0) &= \sqrt[2]{0 + 1} = 1 &&\\[1.5ex]
+                                g(3) &= \sqrt[2]{3 + 1} = 2 &&\\[1.5ex]
+                                g(8) &= \sqrt[2]{8 + 1} = 3 &&\\[1.5ex]
+                                g(15) &= \sqrt[2]{15 + 1} = 4 &&\\[3.0ex]
+                            \end{align*}
+                        \end{minipage}\\
+                        $W_{f} = \uuline{D_{f^{-1}} = \left\{0; 3; 8; 15 \right\}}$\\[1.0ex]
+                        $D_{f} = \uuline{W_{f^{-1}} = \left\{1; 2; 3; 4 \right\}}$\\[1.0ex]
+                        $\Rightarrow \quad \uuline{f^{-1} = g(x)}$\\
+                        }                    
+                \end{itemize}
+            }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}

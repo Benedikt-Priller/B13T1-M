@@ -1,0 +1,249 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+\vspace{1.0ex}
+\begin{Exercise}{ln-Funktion}{}
+    \begin{enumerate}
+    \item [b)]{
+        $g(x) = ln\left(\dfrac{4 \cdot x}{x^{2} + 4}\right);$ \qquad $w(x) = \dfrac{4 \cdot x}{x^{2} + 4};$ \qquad $z(x) = 4 \cdot x;$ \qquad $n(x) = x^{2} + 4$\\[-2.0ex]
+        \begin{itemize}[leftmargin=*]
+            \item Definitionsmenge $D_{g}$:\\[2.0ex]{
+                \vspace{-2.0ex}
+                \begin{minipage}[t]{0.45\linewidth}
+                    \begin{itemize}
+                        \item Zählernullstellen:\\[-2.0ex]{
+                            \begin{align*}
+                                z(x) &= 0 \\[2.0ex]
+                                4 \cdot x &= 0 &&| \quad :4\\[1.5ex]
+                                x_{1} &= 0 \quad \text{\textit{(e)}}&&
+                            \end{align*}
+                            }
+                    \end{itemize}
+                \end{minipage}
+                \hfill
+                \begin{minipage}[t]{0.45\linewidth}
+                    \begin{itemize}
+                        \item Nennernullstellen:\\[-2.0ex]{
+                            \begin{align*}
+                                n(x) &= 0 \\[2.0ex]
+                                x^{2} + 4 &= 0 &&| \quad -4\\[1.5ex]
+                                x^{2} &= -4 &&| \quad \sqrt[2]{\phantom{x}}\\[1.5ex]
+                                &\textcolor{myr}{\text{keine Lösung in} \ \mathbb{R}} &
+                            \end{align*}\\[-2.0ex]
+                            $D_{w} = \mathbb{R}$\\
+                        }
+                    \end{itemize}
+                \end{minipage}\\
+                \begin{tabularx}{0.5\linewidth}{c|l|l|l}
+                    & $-\infty < x < 0$ & $x = 0$ & $0 < x < \infty$ \\ \hline
+                    $z(x)$ & $-$ & $0$ & $+$ \\ \hline
+                    $n(x)$ & $+$ & $+$ & $+$ \\ \hline
+                    $w(x)$ & $-$ & $0$ & $+$ \\ \hline
+                    $f(x)$ & n. d. & n. d. & $+$ \\                   
+                \end{tabularx}\\[3.0ex]
+                $\Rightarrow \uuline{D_{g} = \left] \ 0; \infty \ \right[}$\\
+                }
+            \item Nullstellen:\\[2.0ex]{
+                $g(x) = 0$ \qquad $\Rightarrow$ \qquad $w(x) = 1$ \qquad $\Rightarrow$ \qquad $z(x) = n(x)$\\[-1.0ex]
+                \begin{align*}
+                    z(x) &= n(x) &&\\[2.0ex]
+                    4 \cdot x &= x^{2} + 4 &&| \quad -4 \cdot x\\[1.5ex]
+                    0 &= x^{2} - 4 \cdot x + 4 && \\[1.5ex]
+                    0 &= (x - 2)^{2} && \\[1.5ex]
+                    x_{1} & = 2 \quad \text{\textit{(d)}}; \qquad x_{1} \in D_{g} &&
+                \end{align*}
+                }
+            \item Verhalten am Rand von $D_{g}$:\\{
+                \vspace{-2.0ex}
+                \begin{align*}
+                    \lim\limits_{x \to 0^{+}} ln\left(\dfrac{4 \cdot x}{x^{2} + 4}\right) &= \lim\limits_{x \to 0^{+}} ln\left(\overbrace{\dfrac{4}{2 \cdot x}}^{\textcolor{myg}{0^{+}}}\right) &= - \infty &&\\[2.0ex]
+                    \lim\limits_{x \to \infty} ln\left(\dfrac{4 \cdot x}{x^{2} + 4}\right) &= \lim\limits_{x \to \infty} ln\left(\overbrace{\dfrac{4}{2 \cdot x}}^{\textcolor{myg}{0^{+}}}\right) &= -\infty &&
+                \end{align*}
+                }
+        \end{itemize}
+        }
+    \item [c)]{
+        $h(x) = \sqrt[2]{ln\left(x\right) - 1};$ \qquad $w(x) = ln\left(x\right) - 1;$ \qquad $v(x) =ln\left(x\right)$\\[-2.0ex]
+        \begin{itemize}[leftmargin=*]
+            \item Definitionsmenge $D_{h}$:\\{
+                \vspace{-2.0ex}
+                \begin{minipage}[t]{\linewidth}
+                    \vspace{-2.0ex}
+                    \begin{align*}
+                        w(x) &= 0 \\[2.0ex]
+                        ln\left(x\right) - 1 &= 0 &&| \quad +1\\[1.5ex]
+                        ln\left(x\right) &= 1 &&\\[1.5ex]
+                        x_{1} &= e \quad \text{\textit{(e)}}&&
+                    \end{align*}\\[-2.0ex]
+                \end{minipage}\\
+                \begin{tabularx}{\linewidth}{c|l|l|l|l|l|l|l}
+                    & $-\infty < x < 0$ & $x = 0$ & $0 < x < 1$ & $x = 1$ & $1 < x < e$ & $x = e$ & $e < x < \infty$ \\ \hline
+                    $v(x)$ & n. d. & n. d. & $-$ & $0$ & $+$ & $+$ & $+$ \\ \hline
+                    $w(x)$ & n. d. & n. d. & $-$ & $-$ & $-$ & $0$ & $+$ \\ \hline
+                    $h(x)$ & n. d. & n. d. & n. d. & n. d. & n. d. & $0$ & $+$ \\            
+                \end{tabularx}\\[3.0ex]
+                $\Rightarrow \uuline{D_{h} = \left[ \ e; \infty \ \right[}$\\
+                }
+            \item Nullstellen:\\[2.0ex]{
+                $h(x) = 0$ \qquad $\Rightarrow$ \qquad $w(x) = 0$\\[-1.0ex]
+                \begin{align*}
+                    x_{1} &= e \quad \text{\textit{(e)}}; \qquad x_{1} \in D_{h} &&
+                \end{align*}
+                }
+            \item Verhalten am Rand von $D_{h}$:\\{
+                \vspace{-2.0ex}
+                \begin{align*}
+                    \lim\limits_{x \to e^{+}} \sqrt[2]{ln\left(x\right) - 1} &= \lim\limits_{x \to e^{+}} \sqrt[2]{\underbrace{\underbrace{ln\left(x\right)}_{\textcolor{myg}{1^{+}}} - 1}_{\textcolor{myg}{0^{+}}}} &= 0^{+} &&\\[2.0ex]
+                    \lim\limits_{x \to \infty} \sqrt[2]{ln\left(x\right) - 1} &= \lim\limits_{x \to \infty} \sqrt[2]{\underbrace{\underbrace{ln\left(x\right)}_{\textcolor{myg}{+\infty}} - 1}_{\textcolor{myg}{+ \infty}}} &= + \infty &&
+                \end{align*}
+                }
+        \end{itemize}
+        }
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 15/2}{}
+    \begin{enumerate}
+        \item [2.]\begin{enumerate}[label=\alph*)]
+            \item[f)] {
+                $f(x) = \dfrac{1}{2} \cdot e^{-x +1}; \qquad D_{f} = \mathbb{R}$\\
+                \begin{itemize}[leftmargin=*]
+                    \item Umkehrfunktion: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            y &= \dfrac{1}{2} \cdot e^{-x +1} && \\[2.0ex]
+                            x &= \dfrac{1}{2} \cdot e^{-y +1} &&| \quad \cdot 2\\[1.5ex]
+                            2 \cdot x &= e^{-y +1} &&| \quad \ln(\phantom{x})\\[1.5ex]
+                            \ln(2 \cdot x) &= -y +1 &&| \quad + y\\[1.5ex]
+                            y + \ln(2 \cdot x) &= 1 &&| \quad - \ln(2 \cdot x)\\[1.5ex]
+                            y_{1} &= - \ln(2 \cdot x) + 1&&
+                        \end{align*}\\
+                        $\Rightarrow \quad f^{-1}(x) =- \ln(2 \cdot x) + 1$ \quad auf \quad $\mathbb{R}$\\
+                        }
+                    \item Wertemenge von $f$: \\[2.0ex]{
+                        $w(x) = 2 \cdot x;$ \qquad $z(x) = \ln(2 \cdot x)$\\[-2.0ex]
+                        \begin{minipage}[t]{0.25\linewidth}
+                            \begin{align*}
+                                w(x) &= 0 \\[2.0ex]
+                                2 \cdot x &= 0 &&| :2\\[1.0ex]
+                                x_{1} &= 0 &&\\
+                            \end{align*} 
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.25\linewidth}
+                            \begin{align*}
+                                w(x) &= 1 \\[2.0ex]
+                                2 \cdot x &= 1 &&| :2\\[1.0ex]
+                                x_{2} &= \SI{0.50}{} &&\\
+                            \end{align*} 
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.35\linewidth}
+                            \begin{align*}
+                                f^{-1}(x) &= 0 \\[2.0ex]
+                                - \ln(2 \cdot x) + 1 &= 0 &&| + \ln(2 \cdot x)\\[1.5ex]
+                                \ln(2 \cdot x) &= 1 && \\[1.5ex]
+                                2 \cdot x &= e^{1} &&| :2\\[1.5ex]
+                                x_{3} &= \dfrac{e}{2}\\
+                            \end{align*} 
+                        \end{minipage}\\
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|X|X|X|X}
+                            & $-\infty < x < 0$ & $x = 0$ & $0 < x < \SI{0.50}{}$ & $x = \SI{0.50}{}$ & $\SI{0.50}{} < x < \dfrac{e}{2}$ & $x = \dfrac{e}{2}$ & $\dfrac{e}{2} < x < \infty$ \\ \hline
+                            $w(x)$ & $-$ & $0$ & $+$ & $+$ & $+$ & $+$ & $+$ \\ \hline
+                            $z(x)$ & n. d. & n. d. & $-$ & $0$ & $+$ & $+$ & $+$ \\ \hline
+                            $f^{-1}(x)$ & n. d. & n. d. & $+$ & $+$ & $+$ & $0$ & $-$ \\                   
+                        \end{tabularx}\\[3.0ex]
+                        $D_{f^{-1}} = \uuline{W_{f} = \left] \ 0; \infty \ \right[}$\\
+                        }
+                    \item Definitions- und Wertemenge von $f^{-1}$: \\[2.0ex]{
+                        $W_{f} = \uuline{D_{f^{-1}} = \left] \ 0; \infty \ \right[} = \mathbb{R}^{+}$\\[1.0ex]
+                        $D_{f} = \uuline{W_{f^{-1}} = \mathbb{R}}$\\[-1.0ex]
+                        }
+                    \item Zeichnung: \\[-2.0ex]{
+                        \begin{minipage}[t]{0.8\linewidth}
+                            \raisebox{-\height}{
+                            \begin{tikzpicture}[
+                                    declare function={
+                                        f_f(\x) = (0.50*exp(-(\x*\xScale)+1))*(1/\yScale);
+                                        f_f1(\x) = (-ln(2*(\x*\xScale))+1)*(1/\yScale);
+                                    }
+                                ]
+
+                                % Set variables
+                                \pgfmathsetmacro{\axisPosWidth}{8};
+                                \pgfmathsetmacro{\axisNegWidth}{-4};
+                                \pgfmathsetmacro{\axisPosHeight}{5};
+                                \pgfmathsetmacro{\axisNegHeight}{-2};
+                                \pgfmathsetmacro{\xIncrement}{1.0};
+                                \pgfmathsetmacro{\yIncrement}{1.0};
+                                \pgfmathsetmacro{\xScale}{1};
+                                \pgfmathsetmacro{\yScale}{1};
+                                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                                % Axis/grid limits
+                                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                                % Axis environment (PGFPlots)
+                                \begin{axis}[
+                                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                                    axis lines=middle,
+                                    axis line style={->, >=stealth},
+                                    grid=both,
+                                    xlabel={$x$},
+                                    ylabel={$y$},
+                                    xlabel style={at={(axis description cs:1,0.35)}, anchor=north},
+                                    ylabel style={at={(axis description cs:0.35,1)}, anchor=south},
+                                    xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                                    ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                                    yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                                    tick label style={font=\scriptsize},
+                                    x=1cm,
+                                    y=1cm,
+                                    minor tick num=1,
+                                    scale only axis,
+                                    grid=both,
+                                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                                ]
+
+                                % G_f_f
+                                \addplot[thick, myb, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                                    {f_f(x)};
+                                \node[anchor=north] at (axis cs:{3*(1/\xScale)},{0.75*(1/\yScale)}) {\textcolor{myb}{$G_{f}$}};
+
+                                % G_f_f^{-1}
+                                \addplot[thick, myr, samples=1000, domain=0.001:0.96*\xUpperLimitGrid]
+                                    {f_f1(x)};
+                                \node[anchor=north] at (axis cs:{3*(1/\xScale)},{-1*(1/\yScale)}) {\textcolor{myr}{$G_{f^{-1}}$}};
+
+                                % % P1
+                                % \addplot[only marks, mark=x, mark size=3pt] coordinates {(4,5)};
+                                % \node[anchor=north east] at (axis cs:4,5) {$P_{1}(4,5)$};
+
+                                % % P2
+                                % \addplot[only marks, mark=x, mark size=3pt] coordinates {(5,4)};
+                                % \node[anchor=north east] at (axis cs:5,4) {$P_{2}(5,4)$};
+
+                                % Winkelhalbierende
+                                \addplot[thick, myg, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                                    {(\x*\xScale)*(1/\yScale)};
+                                \end{axis}
+                            \end{tikzpicture}
+                            }\\[2.0ex]
+                        \end{minipage}
+                    }
+                \end{itemize}
+                }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}

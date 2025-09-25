@@ -1,0 +1,162 @@
+% LTeX: language=de
+
+\subsubsection{ln-Funktion}
+
+\begin{note}
+   \begin{itemize}
+    \item allgemein gilt: \qquad {
+        \begin{minipage}[t]{0.8\linewidth}
+            \vspace{-3.0ex}
+            \begin{align*}
+                b &= a^{x} & \textcolor{myg}{9} &\textcolor{myg}{= 3^{x}} \\[1.5ex]
+                x &= \log_{a}(b) & \textcolor{myg}{x} &\textcolor{myg}{= \log_{3}(9)}
+            \end{align*}\\[-1.0ex]
+            $\boxed{y = e^{x} \quad \Leftrightarrow \quad x = \log_{e}(y) = \ln(y)}$\\
+        \end{minipage}
+        }
+    \item $\rightarrow ln$ bestimmt den Exponenten einer e-Funktion\\[1.0ex]
+        $f(x) \underbrace{\coloneqq}_{\textcolor{myg}{\text{\footnotesize wird definiert}}} e^{x}$ \qquad \qquad $ x = ln(f(x)) = ln(e^{x}) = x$\\[1.0ex]
+    \item $\rightarrow ln(x)$ ist die \textbf{Umkehrfunktion} von $e^{x}$
+    \item Definitions- und Wertemenge: \\{
+        \begin{minipage}[t]{0.60\linewidth}
+            \raisebox{-\height}{
+            \begin{tikzpicture}[
+                    declare function={
+                        w_1(\x) = (\x*\xScale)*(1/\yScale);
+                        f_f(\x) = (exp(\x*\xScale))*(1/\yScale);
+                        f_g(\x) = (ln(\x*\xScale))*(1/\yScale);
+                    }
+                ]
+
+                % Set variables
+                \pgfmathsetmacro{\axisPosWidth}{4};
+                \pgfmathsetmacro{\axisNegWidth}{-3};
+                \pgfmathsetmacro{\axisPosHeight}{5};
+                \pgfmathsetmacro{\axisNegHeight}{-3};
+                \pgfmathsetmacro{\xIncrement}{1.0};
+                \pgfmathsetmacro{\yIncrement}{1.0};
+                \pgfmathsetmacro{\xScale}{1};
+                \pgfmathsetmacro{\yScale}{1};
+                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                % Axis/grid limits
+                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                % Axis environment (PGFPlots)
+                \begin{axis}[
+                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                    axis lines=middle,
+                    axis line style={->, >=stealth},
+                    grid=both,
+                    xlabel={$x$},
+                    ylabel={$y$},
+                    xlabel style={at={(axis description cs:1,0.45)}, anchor=north},
+                    ylabel style={at={(axis description cs:0.45,1)}, anchor=south},
+                    xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                    ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                    yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                    tick label style={font=\scriptsize},
+                    x=1cm,
+                    y=1cm,
+                    minor tick num=1,
+                    scale only axis,
+                    grid=both,
+                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                ]
+
+                % G_f
+                \addplot[thick, myb, samples=1000, domain=\xLowerLimitGrid:\xUpperLimitGrid]
+                    {f_f(x)};
+                \node[anchor=north] at (axis cs:{1*(1/\xScale)},{2*(1/\yScale)}) {\textcolor{myb}{$G_{e^{x}}$}};
+
+                % G_g
+                \addplot[thick, myr, samples=1000, domain=0.001:\xUpperLimitGrid]
+                    {f_g(x)};
+                \node[anchor=north] at (axis cs:{4.0*(1/\xScale)},{1.0*(1/\yScale)}) {\textcolor{myr}{$G_{ln(x)}$}};
+
+                % P1
+                \addplot[only marks, mark=x, mark size=3pt] coordinates {(0,1)};
+                \node[anchor=south east] at (axis cs:0.0,1.0) {$P_{1}(0,1)$};
+
+                % P2
+                \addplot[only marks, mark=x, mark size=3pt] coordinates {(1,0)};
+                \node[anchor=north west] at (axis cs:1,-0.25) {$P_{2}(1,0)$};
+
+                % Winkelhalbierende
+                \addplot[thick, myg, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                    {w_1(x)};
+                \end{axis}
+            \end{tikzpicture}
+            }\\[3.0ex]   
+        \end{minipage}
+        \begin{minipage}[t]{0.30\linewidth}
+            \vspace{-2.0ex}
+            \begin{align*}
+                D_{e^{x}} &= \mathbb{R} &= W_{ln(x)}\\[1.5ex]
+                W_{e^{x}} &= \mathbb{R}^{+} = \left] \ 0; \infty \right] &= D_{ln(x)}
+            \end{align*}
+        \end{minipage}
+        }
+    \item Eigenschaften von $ln(x)$: \\{
+        \vspace{-2.0ex}
+        \begin{itemize}
+            \item $G_{ln(x)}$ ist sms \\[0.50ex]
+            \item $\lim\limits_{x \to 0^+} ln(x) = -\infty$ \qquad $\lim\limits_{x \to \infty} ln(x) = \infty$\\[0.50ex]
+            \item $\highlight[yellow]{ln(1) = 0}$, da $e^{0} = 1$
+        \end{itemize}
+        }
+   \end{itemize} 
+\end{note}
+
+\begin{Example}{ln-Funktion}{}
+    \begin{enumerate}
+        \item [a)]{
+            $f(x) = ln(x^2 -4);$ \qquad $w(x) = x^2 -4 \quad \textcolor{myg}{\text{\} \quad \footnotesize Argument der ln-Funktion} \ (> 0!)}$\\[-2.0ex]
+            \begin{itemize}[leftmargin=*]
+                \item Definitionsmenge $D_{f}$:\\{
+                    \vspace{-2.0ex}
+                    \begin{align*}
+                        w(x) &= 0 &&\\[2.0ex]
+                        x^2 - 4 &= 0 &&| \quad + 4\\[1.5ex]
+                        x^2 &= 4 &&| \quad \sqrt[2]{\phantom{x}}\\[1.5ex]
+                        x_{1} = -2 \text{\textit{(e)}}; &\quad x_{2} = 2 \text{\textit{(e)}} &&
+                    \end{align*}\\
+                    \begin{tabularx}{0.8\linewidth}{c|l|l|l|l|l}
+                        & $-\infty < x < -2$ & $x = -2$ & $-2 < x < 2$ & $x = 2$ & $2 < x < \infty$ \\ \hline
+                        $w(x)$ & $+$ & $0$ & $-$ & $0$ & $+$ \\ \hline
+                        $f(x)$ & $+$ & n. d. & n. d. & n. d. & $+$ \\                   
+                    \end{tabularx}\\[3.0ex]
+                    $\Rightarrow \uuline{D_{f} = \left] \ -\infty; -2 \ \right[ \quad \cup \quad \left] \ 2; \infty \ \right[}$\\
+                    }
+                \item Nullstellen:\\[2.0ex]{
+                    $f(x) = 0$ \qquad $\Rightarrow$ \quad $w(x) = 1$\\[-1.0ex]
+                    \begin{align*}
+                        w(x) &= 1 \\[1.5ex]
+                        x^2 - 4 &= 1 &&| \quad + 4\\[1.5ex]
+                        x^2 &= 5 &&| \quad \pm\sqrt[2]{\phantom{x}}\\[1.5ex]
+                        x_{1} = -\sqrt[2]{5} \quad \text{\textit{(e)}}; &\quad x_{2} = \sqrt[2]{5} \quad \text{\textit{(e)}} &&\\[1.5ex]
+                        x_{1} \in D_{f}; &\quad x_{2} \in D_{f} &&
+                    \end{align*}
+                    }
+                \item Verhalten am Rand von $D_{f}$:\\{
+                    \vspace{-2.0ex}
+                    \begin{align*}
+                        \lim\limits_{x \to -\infty} ln(\overbrace{x^2 - 4}^{\textcolor{myg}{\infty}}) &= +\infty; \qquad &\lim\limits_{x \to \infty} ln(\overbrace{x^2 - 4}^{\textcolor{myg}{\infty}}) &= +\infty &&\\[2.0ex]
+                        \lim\limits_{x \to -2^-} ln(\overbrace{x^2 - 4}^{\textcolor{myg}{0^{+}}}) &= -\infty; \qquad &\lim\limits_{x \to 2^+} ln(\overbrace{x^2 - 4}^{\textcolor{myg}{0^{+}}}) &= -\infty &&
+                    \end{align*}
+                    }
+            \end{itemize}
+            }
+    \end{enumerate}
+\end{Example}
