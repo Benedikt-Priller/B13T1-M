@@ -6,7 +6,7 @@
     \begin{enumerate}
         \item \begin{enumerate}[label=\alph*)]
             \item[c)] {
-                $f(x) = -x^2 + 2; \qquad D_{f} = \left[ -1; 1 \right[$\\[2.0ex]
+                $f(x) = -x^2 + 2; \qquad D_{f} = \left[ -1; 1 \right]$\\[2.0ex]
                 \begin{minipage}[t]{0.30\linewidth}
                     \vspace{-0.80cm}
                     \begin{align*}
@@ -82,8 +82,8 @@
                     }
                 \end{minipage}\\
                 \begin{itemize}[leftmargin=*]
-                    \item $G_{f}$ ist sms in $\left[ \ -1; 0 \ \right[$ und smf in $\left[ \ 0; 1 \ \right[$
-                    \item $G_{f}$ ist umkehrbar in $\left[ \ -1; 0 \ \right[$ und $\left[ \ 0; 1 \ \right[$
+                    \item $G_{f}$ ist sms in $\left[ \ -1; 0 \ \right]$ und smf in $\left[ \ 0; 1 \ \right]$
+                    \item $G_{f}$ ist umkehrbar in $\left[ \ -1; 0 \ \right]$ und $\left[ \ 0; 1 \ \right]$
                     \item {bilde die Umkehrfunktion $f^{-1}$: \\{
                         \vspace{-2.0ex}
                         \begin{align*}
@@ -91,7 +91,7 @@
                             x & = -y^2 + 2 &&| \qquad -2\\[1.0ex]
                             x - 2 & = -y^2 &&| \qquad :(-1)\\[1.0ex]
                             y^2 & = - x + 2 &&| \qquad \pm\sqrt[2]{\phantom{x}}\\[1.5ex]
-                            \uuline{y_{1} = -\sqrt[2]{-x + 2}} \text{\textit{(e)}}; & \qquad \uuline{y_{2} = \sqrt[2]{-x + 2}} \text{\textit{(e)}} &&
+                            \uuline{y_{1} = -\sqrt[2]{-x + 2}} \quad \text{\textit{(e)}}; & \qquad \uuline{y_{2} = \sqrt[2]{-x + 2}} \quad \text{\textit{(e)}} &&
                         \end{align*}
                         }\\
                         $\rightarrow$ 2 mögliche Terme für $f^{-1}$}\\
@@ -164,13 +164,16 @@
                                 {f_f2(x)};
                             \node[anchor=north] at (axis cs:{2*(1/\xScale)},{1.0*(1/\yScale)}) {\textcolor{myr}{$G_{f^{-1}}$}};
 
+                            % Definitionslücken
+                            \addplot[only marks, mark=o, mark size=2pt, thick] coordinates {(1,1)};
+
                             % Winkelhalbierende
                             \addplot[thick, myg, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
                                 {w_1(x)};
                             \end{axis}
                         \end{tikzpicture}
                         }\\[3.0ex]
-                        $D_{f_{1}} = W_{f_{1}^{-1}} = \left[ \ -1; 0 \ \right[ \quad \Rightarrow \quad f^{-1}(x) = -\sqrt[2]{-x + 2}$ \quad auf \quad $\left[ \ -1; 0 \ \right[$\\[2.0ex]
+                        $D_{f_{1}} = W_{f_{1}^{-1}} = \left[ \ -1; 0 \ \right] \quad \Rightarrow \quad f^{-1}(x) = -\sqrt[2]{-x + 2}$ \quad auf \quad $\left[ \ -1; 0 \ \right]$\\[2.0ex]
                         $D_{f_{2}} = W_{f_{2}^{-1}} = \left[ \ 0; 1 \ \right[ \quad \Rightarrow \quad f^{-1}(x) = \sqrt[2]{-x + 2}$ \quad auf \quad $\left[ \ 0; 1 \ \right[$
                 \end{itemize}
             }

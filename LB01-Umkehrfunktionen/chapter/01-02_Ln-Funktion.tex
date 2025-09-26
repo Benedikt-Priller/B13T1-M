@@ -14,9 +14,9 @@
             $\boxed{y = e^{x} \quad \Leftrightarrow \quad x = \log_{e}(y) = \ln(y)}$\\
         \end{minipage}
         }
-    \item $\rightarrow ln$ bestimmt den Exponenten einer e-Funktion\\[1.0ex]
-        $f(x) \underbrace{\coloneqq}_{\textcolor{myg}{\text{\footnotesize wird definiert}}} e^{x}$ \qquad \qquad $ x = ln(f(x)) = ln(e^{x}) = x$\\[1.0ex]
-    \item $\rightarrow ln(x)$ ist die \textbf{Umkehrfunktion} von $e^{x}$
+    \item $\rightarrow \ln$ bestimmt den Exponenten einer e-Funktion\\[1.0ex]
+        $f(x) \underbrace{\coloneqq}_{\textcolor{myg}{\text{\footnotesize wird definiert}}} e^{x}$ \qquad \qquad $ x = \ln(f(x)) = \ln(e^{x}) = x$\\[1.0ex]
+    \item $\rightarrow \ln(x)$ ist die \textbf{Umkehrfunktion} von $e^{x}$
     \item Definitions- und Wertemenge: \\{
         \begin{minipage}[t]{0.60\linewidth}
             \raisebox{-\height}{
@@ -83,7 +83,7 @@
                 % G_g
                 \addplot[thick, myr, samples=1000, domain=0.001:\xUpperLimitGrid]
                     {f_g(x)};
-                \node[anchor=north] at (axis cs:{4.0*(1/\xScale)},{1.0*(1/\yScale)}) {\textcolor{myr}{$G_{ln(x)}$}};
+                \node[anchor=north] at (axis cs:{3.0*(1/\xScale)},{1.0*(1/\yScale)}) {\textcolor{myr}{$G_{\ln(x)}$}};
 
                 % P1
                 \addplot[only marks, mark=x, mark size=3pt] coordinates {(0,1)};
@@ -103,17 +103,17 @@
         \begin{minipage}[t]{0.30\linewidth}
             \vspace{-2.0ex}
             \begin{align*}
-                D_{e^{x}} &= \mathbb{R} &= W_{ln(x)}\\[1.5ex]
-                W_{e^{x}} &= \mathbb{R}^{+} = \left] \ 0; \infty \right] &= D_{ln(x)}
+                D_{e^{x}} &= \mathbb{R} &= W_{\ln(x)}\\[1.5ex]
+                W_{e^{x}} &= \mathbb{R}^{+} = \left] \ 0; \infty \right] &= D_{\ln(x)}
             \end{align*}
         \end{minipage}
         }
-    \item Eigenschaften von $ln(x)$: \\{
+    \item Eigenschaften von $\ln(x)$: \\{
         \vspace{-2.0ex}
         \begin{itemize}
-            \item $G_{ln(x)}$ ist sms \\[0.50ex]
-            \item $\lim\limits_{x \to 0^+} ln(x) = -\infty$ \qquad $\lim\limits_{x \to \infty} ln(x) = \infty$\\[0.50ex]
-            \item $\highlight[yellow]{ln(1) = 0}$, da $e^{0} = 1$
+            \item $G_{\ln(x)}$ ist sms \\[0.50ex]
+            \item $\lim\limits_{x \to 0^+} \ln(x) = -\infty$ \qquad $\lim\limits_{x \to \infty} \ln(x) = \infty$\\[0.50ex]
+            \item $\highlight[yellow]{\ln(1) = 0}$, da $e^{0} = 1$
         \end{itemize}
         }
    \end{itemize} 
@@ -122,7 +122,7 @@
 \begin{Example}{ln-Funktion}{}
     \begin{enumerate}
         \item [a)]{
-            $f(x) = ln(x^2 -4);$ \qquad $w(x) = x^2 -4 \quad \textcolor{myg}{\text{\} \quad \footnotesize Argument der ln-Funktion} \ (> 0!)}$\\[-2.0ex]
+            $f(x) = \ln(x^2 -4);$ \qquad $w(x) = x^2 -4 \quad \textcolor{myg}{\text{\} \quad \footnotesize Argument der ln-Funktion} \ (> 0!)}$\\[-2.0ex]
             \begin{itemize}[leftmargin=*]
                 \item Definitionsmenge $D_{f}$:\\{
                     \vspace{-2.0ex}
@@ -152,8 +152,8 @@
                 \item Verhalten am Rand von $D_{f}$:\\{
                     \vspace{-2.0ex}
                     \begin{align*}
-                        \lim\limits_{x \to -\infty} ln(\overbrace{x^2 - 4}^{\textcolor{myg}{\infty}}) &= +\infty; \qquad &\lim\limits_{x \to \infty} ln(\overbrace{x^2 - 4}^{\textcolor{myg}{\infty}}) &= +\infty &&\\[2.0ex]
-                        \lim\limits_{x \to -2^-} ln(\overbrace{x^2 - 4}^{\textcolor{myg}{0^{+}}}) &= -\infty; \qquad &\lim\limits_{x \to 2^+} ln(\overbrace{x^2 - 4}^{\textcolor{myg}{0^{+}}}) &= -\infty &&
+                        \lim\limits_{x \to -\infty} \ln(\overbrace{x^2 - 4}^{\textcolor{myg}{\infty}}) &= +\infty; \qquad &\lim\limits_{x \to \infty} \ln(\overbrace{x^2 - 4}^{\textcolor{myg}{\infty}}) &= +\infty &&\\[2.0ex]
+                        \lim\limits_{x \to -2^-} \ln(\overbrace{x^2 - 4}^{\textcolor{myg}{0^{+}}}) &= -\infty; \qquad &\lim\limits_{x \to 2^+} \ln(\overbrace{x^2 - 4}^{\textcolor{myg}{0^{+}}}) &= -\infty &&
                     \end{align*}
                     }
             \end{itemize}
