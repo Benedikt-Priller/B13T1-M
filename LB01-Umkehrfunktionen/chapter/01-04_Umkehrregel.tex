@@ -1,0 +1,49 @@
+% LTeX: language=de
+
+\subsubsection{Umkehrregel}
+
+\begin{note}
+    \begin{align*}
+        f(f^{-1}(x)) &= x &&| \quad \text{Ableiten}\\[1.5ex]
+        f'(f^{-1}(x)) \cdot \left(f^{-1}(x)\right)' &= 1 &&| \quad :f'(f^{-1}(x))\\[1.5ex]
+        \Aboxed{\highlight[yellow]{\left(f^{-1}(x)\right)'\phantom{\dfrac{1}{f}}} &\highlight[yellow]{= \dfrac{1}{f'(f^{-1}(x))}}}\left. \right\} \quad \text{\textcolor{myg}{\footnotesize Umkehrregel}} &&
+    \end{align*}
+\end{note}
+
+\begin{Example}{Umkehrregel bei ln-Funktion}{}
+    $f^{-1}(x) = \ln(x); \qquad f(x) = e^{x}; \qquad f'(x) = e^{x}$\\
+    \vspace{-2.0ex}
+    \begin{align*}
+        \left(\ln(x)\right)' &= \dfrac{1}{e^{\ln(x)}} &&\\[1.5ex]
+        \left(\ln(x)\right)' &= \dfrac{1}{x} &&
+    \end{align*}
+\end{Example}
+
+\begin{Example}{Anwendung verschiedener Regeln}{}
+    \begin{enumerate}[label=\alph*)]
+        \item [a)] {
+            \vspace{-3.0ex}
+            \begin{align*}
+                f_{1}(x) &= \ln\left(3x + 2\right) &&\\[2.0ex]
+                f_{1}'(x) &= \dfrac{1}{\left(3x + 2\right)} \cdot 3 &&\\[-2.0ex]
+            \end{align*}
+            }
+        \item [b)] {
+            \vspace{-3.0ex}
+            \begin{align*}
+                f_{2}(x) &= 3x \cdot \ln(4x) &&\\[2.0ex]
+                f_{2}'(x) &= \overbrace{3 \cdot \ln(4x) + 3x \cdot \dfrac{1}{4x} \cdot \underbrace{4}_{\text{\textcolor{myg}{\footnotesize Kettenregel}}}}^{\textcolor{myg}{\text{\footnotesize Produktregel}}} &&\\[1.5ex]
+                &= 3 \cdot \ln(4x) + 3 && \\[1.5ex]
+                &\left[= \ln(\left(4x\right)^3) + 3 \right]&&\\[-2.0ex]
+            \end{align*}
+            }
+        \item [c)] {
+            \vspace{-3.0ex}
+            \begin{align*}
+                f_{3}(x) &= \dfrac{e^{-x+1}}{\ln(x^2)} &&\\[2.0ex]
+                f_{3}'(x) &= \dfrac{\ln(x^2) \cdot e^{-x+1} \cdot (-1) - e^{-x+1} \cdot \dfrac{1}{x^2} \cdot 2x}{\left[\ln(x^2)\right]^2} && \\[2.0ex]
+                &= \dfrac{e^{-x+1} \cdot \left[-\ln(x^2) - \dfrac{2}{x}\right]}{\left[\ln(x^2)\right]^2} &&\\[-2.0ex]
+            \end{align*}
+            }
+    \end{enumerate}
+\end{Example}

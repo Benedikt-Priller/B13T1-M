@@ -35,11 +35,11 @@
                     \end{itemize}
                 \end{minipage}\\
                 \begin{tabularx}{0.5\linewidth}{c|l|l|l}
-                    & $-\infty < x < 0$ & $x = 0$ & $0 < x < \infty$ \\ \hline
+                    & $-\infty < x < 0$ & $x = 0$ & $0 < x < \infty$\\ \hline
                     $z(x)$ & $-$ & $0$ & $+$ \\ \hline
                     $n(x)$ & $+$ & $+$ & $+$ \\ \hline
                     $w(x)$ & $-$ & $0$ & $+$ \\ \hline
-                    $f(x)$ & n. d. & n. d. & $+$ \\                   
+                    $f(x)$ & n. d. & n. d. & d. \\                   
                 \end{tabularx}\\[3.0ex]
                 $\Rightarrow \uuline{D_{g} = \left] \ 0; \infty \ \right[}$\\
                 }
@@ -56,7 +56,7 @@
             \item Verhalten am Rand von $D_{g}$:\\{
                 \vspace{-2.0ex}
                 \begin{align*}
-                    \lim\limits_{x \to 0^{+}} \ln\left(\dfrac{4 \cdot x}{x^{2} + 4}\right) &= \lim\limits_{x \to 0^{+}} \left[\overbrace{\ln\left(4 \cdot x\right)}^{\textcolor{myg}{-\infty}} - \ln\left(\overbrace{x^{2} + 4}^{\textcolor{myg}{4^{+}}}\right)\right] &= - \infty &&\\[2.0ex]
+                    \lim\limits_{x \to 0^{+}} \ln\left(\dfrac{4 \cdot x}{x^{2} + 4}\right) &= \lim\limits_{x \to 0^{+}} \ln\left(\overbrace{\dfrac{4 \cdot x}{x^{2} + 4}}^{\textcolor{myg}{0^{+}}}\right) &= - \infty &&\\[2.0ex]
                     \lim\limits_{x \to \infty} \ln\left(\dfrac{4 \cdot x}{x^{2} + 4}\right) &= \lim\limits_{x \to \infty} \ln\left(\dfrac{z'(x)}{n'(x)}\right) = \lim\limits_{x \to \infty} \ln\left(\overbrace{\dfrac{4}{2 \cdot x}}^{\textcolor{myg}{0^{+}}}\right) &= -\infty &&
                 \end{align*}
                 }
@@ -93,7 +93,7 @@
             \item Verhalten am Rand von $D_{h}$:\\{
                 \vspace{-2.0ex}
                 \begin{align*}
-                    \lim\limits_{x \to e^{+}} \sqrt[2]{\ln\left(x\right) - 1} &= \lim\limits_{x \to e^{+}} \sqrt[2]{\underbrace{\underbrace{\ln\left(x\right)}_{\textcolor{myg}{1^{+}}} - 1}_{\textcolor{myg}{0^{+}}}} &= 0^{+} &&\\[2.0ex]
+                    \sqrt[2]{\ln\left(e\right) - 1} &= 0 & &&\\[2.0ex]
                     \lim\limits_{x \to \infty} \sqrt[2]{\ln\left(x\right) - 1} &= \lim\limits_{x \to \infty} \sqrt[2]{\underbrace{\underbrace{\ln\left(x\right)}_{\textcolor{myg}{+\infty}} - 1}_{\textcolor{myg}{+ \infty}}} &= + \infty &&
                 \end{align*}
                 }
