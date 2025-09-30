@@ -128,7 +128,7 @@
                 $f(x) = e^{2x-4}-1; \qquad P(f^{-1}(0)/0) \in G_{f}; \qquad Q(0/f^{-1}(0)) \in G_{f^{-1}}$\\[-2.0ex]
                 \begin{itemize}[leftmargin=*]
                     \item Umkehrfunktion: \\{
-                        \vspace{-2.0ex}
+                        \vspace{-3.0ex}
                         \begin{align*}
                             x &= e^{2y -4} - 1 &&| \quad + 1\\[1.5ex]
                             x + 1 &= e^{2y -4} &&\\[1.5ex]
@@ -136,22 +136,21 @@
                             2y &= \ln(x + 1) + 4 && | :2\\[1.5ex]
                             y &= \dfrac{1}{2} \cdot \ln(x + 1) + 2 &&
                         \end{align*}\\[-1.0ex]
-                        $\Rightarrow \quad f^{-1}(x) = \dfrac{1}{2} \cdot \ln(x + 1) + 2$\\
-                    }
+                        $\Rightarrow \quad f^{-1}(x) = \dfrac{1}{2} \cdot \ln(x + 1) + 2$\\[-2.0ex]
+                        }
+                    \item Ableitung: \\[2.0ex]{
+                        $f'(x) = e^{2x-4} \cdot 2$\\[-2.0ex]
+                        }
                     \item Tangentengleichung: \\[2.0ex]{
-                        $f_{T}(x): \quad y = \left(f^{-1}(x)\right)' \cdot x + t$\\
-                        \vspace{-2.0ex}
-                        \begin{align*}
-                            \left(f^{-1}(x)\right)' &= \dfrac{1}{f'\left(f^{-1}(x)\right)} &&
-                        \end{align*}\\[-2.0ex]
+                        $f_{T}(x): \quad y = \left(f^{-1}(x)\right)' \cdot x + t; \qquad \left(f^{-1}(x)\right)' = \dfrac{1}{f'\left(f^{-1}(x)\right)}$\\[2.0ex]
                         $Q$ in $f_{T}$: \\[-2.0ex]
                         \begin{align*}
                             f^{-1}(0) &= \dfrac{1}{f'\left(f^{-1}(0)\right)} \cdot 0 + t &&\\[1.5ex]
-                            \dfrac{1}{2} \cdot \ln(0 + 1) + 2 &= \dfrac{2}{\ln(0 + 1) + 2} \cdot 0 + t &&\\[1.5ex]
-                            2 &= 1 \cdot 0 + t &&\\[1.5ex]
+                            \dfrac{1}{2} \cdot \ln(0 + 1) + 2 &= \dfrac{1}{e^{2 \cdot \left(\dfrac{1}{2} \cdot \ln\left(0 + 1\right) + 2\right) -4} \cdot 2} \cdot 0 + t &&\\[2.0ex]
+                            2 &= \dfrac{1}{2} \cdot 0 + t &&\\[1.5ex]
                             t &= 2 &&
                         \end{align*}\\[-2.0ex]
-                        $\Rightarrow \quad \uuline{f_{T}(x) = x + 2}$\\[-2.0ex]
+                        $\Rightarrow \quad \uuline{f_{T}(x) = \dfrac{1}{2} x + 2}$\\[-2.0ex]
                         }
                 \end{itemize}
                 }
