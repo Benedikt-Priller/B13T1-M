@@ -14,7 +14,7 @@
             \item [b)] {
                 $f(x) = \ln(x + 2) + 3; \qquad D_{f} = \left] \ -2; \infty \ \right[$\\[-2.0ex]
                 \begin{align*}
-                    f'(x) &= \dfrac{1}{\left(x + 2\right) \cdot 1} = \dfrac{1}{x + 2} &&\\[-2.0ex]
+                    f'(x) &= \dfrac{1}{\left(x + 2\right)} \cdot 1 = \dfrac{1}{x + 2} &&\\[-2.0ex]
                 \end{align*}
                 }
             \item [c)] {
@@ -151,6 +151,242 @@
                             t &= 2 &&
                         \end{align*}\\[-2.0ex]
                         $\Rightarrow \quad \uuline{f_{T}(x) = \dfrac{1}{2} x + 2}$\\[-2.0ex]
+                        }
+                    \item Alternativ $f(x) = 0$ zur Berechnung von $x_{P}$ beziehungsweise $y_{Q}$
+                 \end{itemize}
+                }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 20/4}{}
+    \begin{enumerate}
+        \item [4.]\begin{enumerate}[label=\alph*)]
+            $h(x) = -\left(e^{-x} - 1\right)^{2}; \qquad \mathbb{D}_{h} = \left[ \ 0; \infty \ \right[$\\[-1.0ex]
+            \item[a)] {
+                $Q(-\dfrac{4}{9} / \ln(3)) \in h^{-1}$\\[2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Ableitung und Monotonie: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            h'(x) &= -2 \cdot \left(e^{-x} - 1\right) \cdot e^{-x} \cdot (-1) &&\\[1.5ex]
+                            &= 2 \cdot e^{-x} \cdot \left(e^{-x} - 1\right) &
+                        \end{align*}\\[-2.0ex]
+                        $h'(x) = 2 \cdot e^{-x} \cdot \left(e^{-x} - 1\right); \qquad w(x) = 2 \cdot e^{-x}; \qquad z(x) = e^{-x} - 1$\\[-2.0ex]
+                        \begin{minipage}[t]{0.35\linewidth}
+                            \begin{align*}
+                                w(x) &= 0 &&\\[2.0ex]
+                                2 \cdot e^{-x} &= 0 &&| \quad :2\\[1.5ex]
+                                e^{-x} &= 0 &&\\[1.5ex]
+                                -x &= \ln(0) &&| \quad \cdot (-1)\\[1.5ex]
+                                x &= -\ln(0) &&\\[1.5ex]
+                                & \textcolor{myr}{\text{n. d.}} &&
+                            \end{align*}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.50\linewidth}
+                            \begin{align*}
+                                z(x) &= 0 && \\[2.0ex]
+                                e^{-x} - 1 &= 0 &&| \quad + 1\\[1.5ex]
+                                e^{-x} &= 1 &&\\[1.5ex]
+                                -x &= \ln(1) &&| \quad \cdot (-1)\\[1.5ex]
+                                x &= -\ln(1) &&\\[1.5ex]
+                                x_{1} &= 0 &&\\
+                            \end{align*}
+                        \end{minipage}\\
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                            & $-\infty < x < 0$ & $x = 0$ & $0 < x < \infty$ \\ \hline
+                            $w(x)$ & $+$ & $+$ & $+$ \\ \hline
+                            $z(x)$ & $+$ & $0$ & $-$ \\ \hline
+                            $h'(x)$ & $+$ & $0$ & $-$ \\ \hline
+                            $G_{h}$ & $\nearrow$ & HoP & $\searrow$ \\              
+                        \end{tabularx}\\[4.0ex]
+                        $\Rightarrow \quad G_{h}$ ist smf auf $\left[ \ 0; \infty \ \right[$\\[1.0ex]
+                        $\Rightarrow \quad G_{h}$ ist umkehrbar auf $\left[ \ 0; \infty \ \right[$\\[-2.0ex]
+                        }
+                    \item Tangentengleichung: \\[2.0ex]{
+                        $f_{T}(x): \quad y = m \cdot x + t; \qquad m = \left(h^{-1}(x)\right)'; \qquad \left(h^{-1}(x)\right)' = \dfrac{1}{h'\left(h^{-1}(x)\right)}$\\[2.0ex]
+                        $Q$ in $f_{T}$: \\[-2.0ex]
+                        \begin{align*}
+                            \ln(3) &= \dfrac{1}{h'\left(h^{-1}(-\dfrac{4}{9})\right)} \cdot \left(-\dfrac{4}{9}\right) + t &&\\[1.5ex]
+                            \ln(3) &= \dfrac{1}{h'\left(\ln(3)\right)} \cdot \left(-\dfrac{4}{9}\right) + t &&\\[1.5ex]
+                            \ln(3) &= \dfrac{1}{2 \cdot \left(e^{-\ln(3)} -1\right) \cdot e^{-\ln(3)}} \cdot \left(-\dfrac{4}{9}\right) + t &&\\[1.5ex]
+                            \ln(3) &= \dfrac{1}{2 \cdot \left(\dfrac{1}{3} -1\right) \cdot \dfrac{1}{3}} \cdot \left(-\dfrac{4}{9}\right) + t &&\\[1.5ex]
+                            \ln(3) &= - \dfrac{9}{4} \cdot \left(-\dfrac{4}{9}\right) + t &&\\[1.5ex]
+                            \ln(3) &= 1 + t &&| \quad -1\\[1.5ex]
+                            t &= \ln(3) - 1 &&
+                        \end{align*}\\[-2.0ex]
+                        $\Rightarrow \quad \uuline{f_{T}(x) = -\dfrac{9}{4} \cdot x + \ln(3) -1}$\\
+                        }
+                \end{itemize}
+                }
+            \item[b)] {
+                \begin{itemize}[leftmargin=*]
+                    \item Umkehrfunktion: \\[2.0ex]{
+                        $h^{-1}(x): \quad x = -\left(e^{-y} - 1\right)^{2} \qquad | \quad \pm \sqrt[2]{\phantom{x}}$\\
+                        \begin{minipage}[t]{0.45\linewidth}
+                            \begin{align*}
+                                -\sqrt[2]{x} &= -\left(e^{-y} - 1\right) &&| \quad \cdot (-1)\\[1.5ex]
+                                \sqrt[2]{x} &= \left(e^{-y} - 1\right) &&| \quad + 1\\[1.5ex]
+                                \sqrt[2]{x} + 1 &= e^{-y}&&\\[1.5ex]
+                                -y &= \ln(\sqrt[2]{x} + 1) &&| \quad \cdot (-1)\\[1.5ex]
+                                y_{1} &= - \ln(\sqrt[2]{x} + 1) &&\\[1.5ex]
+                            \end{align*}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.45\linewidth}
+                            \begin{align*}
+                                \sqrt[2]{x} &= -\left(e^{-y} - 1\right) &&| \quad \cdot (-1)\\[1.5ex]
+                                -\sqrt[2]{x} &= \left(e^{-y} - 1\right) &&| \quad + 1\\[1.5ex]
+                                -\sqrt[2]{x} + 1 &= e^{-y}&&\\[1.5ex]
+                                -y &= \ln(-\sqrt[2]{x} + 1) &&| \quad \cdot (-1)\\[1.5ex]
+                                y_{2} &= - \ln(-\sqrt[2]{x} + 1) &&\\[1.5ex]
+                            \end{align*}
+                        \end{minipage}\\[-2.0ex]
+                        $\left(\right.\Rightarrow \quad h^{-1}(x) = -\ln(\sqrt[2]{x} + 1)$ \quad auf \quad $\left] \ -\infty; 0 \ \right]\left.\right)$\\[1.0ex]
+                        $\Rightarrow \quad h^{-1}(x) = -\ln(-\sqrt[2]{x} + 1)$ \quad auf \quad $\left[ \ 0; \infty \ \right[$\\[1.0ex]
+                        }
+                \end{itemize}
+                }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 20/3}{}
+    \begin{enumerate}
+        \item [3.]\begin{enumerate}[label=\alph*)]
+            \item[a)] {
+                $f(x) = \sqrt[2]{2 -x}; \qquad D_{f} = \left] \ -\infty; 2 \ \right]$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Umkehrfunktion: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            x &= \sqrt[2]{2 -y} &&| \quad ^{2}\\[1.5ex]
+                            x^{2} &= 2 - y &&| \quad +y\\[1.5ex]
+                            x^{2} + y &= 2 &&| \quad -x^{2}\\[1.5ex]
+                            y &= -x^{2} + 2 &&
+                        \end{align*}\\[-2.0ex]
+                        $\Rightarrow \quad f^{-1}(x) = -x^{2} + 2$\\[-2.0ex]
+                        }
+                    \item Ableitung der Umkehrfunktion: \\[-2.0ex]{
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= -2x &&
+                        \end{align*}
+                        }
+                    \item Umkehrregel: \\[-2.0ex]{
+                        \begin{align*}
+                            f'(x) &= \dfrac{1}{2} \cdot \left(-x + 2\right)^{-\frac{1}{2}} \cdot (-1) \\[1.5ex]
+                            &= -\dfrac{1}{2} \cdot \left(-x + 2\right)^{-\frac{1}{2}}
+                        \end{align*}\\[-2.0ex]
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= \dfrac{1}{f'(f^{-1}(x))} && \\[2.0ex]
+                            &= \dfrac{1}{-\dfrac{1}{2} \cdot \left[-\left(-x^{2} + 2\right) + 2\right]^{-\frac{1}{2}}} && \\[1.5ex]
+                            &= \dfrac{1}{-\dfrac{1}{2} \cdot \left(x^{2}\right)^{-\frac{1}{2}}} && \\[1.5ex]
+                            &= -2 \cdot\dfrac{1}{\left(x^{2}\right)^{-\frac{1}{2}}} && \\[1.5ex]
+                            &= -2 \cdot\dfrac{1}{x^{-1}} && \\[1.5ex]
+                            &= -2 \cdot x &&
+                        \end{align*}
+                        }
+                \end{itemize}
+                }
+            \item[b)] {
+                $f(x) = \ln(e^{x}-1); \qquad D_{f} = \left] \ 0; \infty \ \right[$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Umkehrfunktion: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            x &= \ln(e^{y}-1) &&\\[1.5ex]
+                            e^{x} &= e^{y} - 1 &&| \quad +1\\[1.5ex]
+                            e^{x} + 1 &= e^{y} &&\\[1.5ex]
+                            y &= \ln\left(e^{x} + 1\right) &&
+                        \end{align*}\\[-2.0ex]
+                        $\Rightarrow \quad f^{-1}(x) = \ln\left(e^{x} + 1\right)$\\[-2.0ex]
+                        }
+                    \item Ableitung der Umkehrfunktion: \\[-2.0ex]{
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= \dfrac{1}{e^{x} + 1} \cdot e^{x} \cdot 1&&\\[1.5ex]
+                            &= \dfrac{e^{x}}{e^{x} + 1} &&
+                        \end{align*}
+                        }
+                    \item Umkehrregel: \\[-2.0ex]{
+                        \begin{align*}
+                            f'(x) &= \dfrac{1}{e^{x} - 1} \cdot e^{x} \cdot 1&&\\[1.5ex]
+                            &= \dfrac{e^{x}}{e^{x} - 1} &&
+                        \end{align*}\\[-2.0ex]
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= \dfrac{1}{f'(f^{-1}(x))} && \\[2.0ex]
+                            &= \dfrac{1}{\left(\dfrac{e^{\ln\left(e^{x} + 1\right)}}{e^{\ln\left(e^{x} + 1\right)} - 1}\right)} &&\\[2.0ex]
+                            &= \dfrac{e^{\ln\left(e^{x} + 1\right)} - 1}{e^{\ln\left(e^{x} + 1\right)}} &&\\[1.5ex]
+                            &= \dfrac{e^{x} + 1 - 1}{e^{x} + 1} &&\\[1.5ex]
+                            &= \dfrac{e^{x}}{e^{x} + 1} &&
+                        \end{align*}
+                        }
+                \end{itemize}
+                }
+            \item[c)] {
+                $f(x) = \dfrac{x^3-x^2}{x^{3}}; \qquad D_{f} = \mathbb{R} \setminus \{0\}$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Umkehrfunktion: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            x &= 1 - \dfrac{1}{y} &&| \quad -1\\[1.5ex]
+                            x-1 &= -\dfrac{1}{y} &&| \quad \cdot (-1)\\[1.5ex]
+                            -x + 1 &= \dfrac{1}{y} &&\\[1.5ex]
+                            y &= \dfrac{1}{-x + 1} &&
+                        \end{align*}\\[-2.0ex]
+                        $\Rightarrow \quad f^{-1}(x) = \dfrac{1}{-x + 1}$\\[-2.0ex]
+                        }
+                    \item Ableitung der Umkehrfunktion: \\[-2.0ex]{
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= \dfrac{\left(-x +1\right) \cdot 0 - 1 \cdot (-1)}{\left(-x + 1\right)^{2}}&&\\[1.5ex]
+                            &= \dfrac{1}{\left(-x + 1\right)^{2}} &&
+                        \end{align*}
+                        }
+                    \item Umkehrregel: \\[-2.0ex]{
+                        \begin{align*}
+                            f'(x) &= \dfrac{1}{x^2} &&
+                        \end{align*}\\[-2.0ex]
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= \dfrac{1}{f'(f^{-1}(x))} && \\[2.0ex]
+                            &= \dfrac{1}{\left[\dfrac{1}{\left(\dfrac{1}{-x + 1}\right)^2}\right]} &&\\[2.0ex]
+                            &= \left(\dfrac{1}{-x + 1}\right)^2 &&\\[2.0ex]
+                            &= \dfrac{1}{\left(-x + 1\right)^2} &&
+                        \end{align*}
+                        }
+                \end{itemize}
+                }
+            \item[d)] {
+                $f(x) = 2 e^{-\frac{1}{2}\cdot x^2}; \qquad D_{f} = \left] \ 0; \infty \ \right[$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Umkehrfunktion: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            x &= 2 e^{-\frac{1}{2} \cdot y^2} && | \quad :2\\[1.5ex]
+                            \dfrac{1}{2} \cdot x &= e^{-\frac{1}{2} \cdot y^2} &&\\[1.5ex]
+                            -\dfrac{1}{2} \cdot y^2 &= \ln(\dfrac{1}{2} \cdot x) &&| \quad \cdot (-2)\\[1.5ex]
+                            y^2 &= -2 \cdot \ln(\dfrac{1}{2} \cdot x) &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            y_{1,2} &= \pm \sqrt[2]{-2 \cdot \ln(\dfrac{1}{2} \cdot x)} &&
+                        \end{align*}\\[-1.0ex]
+                        $\left(\Rightarrow \quad f^{-1}(x) = - \sqrt[2]{-2 \cdot \ln(\dfrac{1}{2} \cdot x)}\right.$ auf $\left.\left] \ -\infty; 0 \ \right[\phantom{\sqrt[2]{\ln(\dfrac{1}{2})}}\right)$\\[1.0ex]
+                        $\Rightarrow \quad f^{-1}(x) = \sqrt[2]{-2 \cdot \ln(\dfrac{1}{2} \cdot x)}$ auf $\left] \ 0; \infty \ \right[$\\[-2.0ex]
+                        }
+                    \item Ableitung der Umkehrfunktion: \\[-2.0ex]{
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= \dfrac{1}{2} \cdot \left[-2 \cdot \ln(\dfrac{1}{2} \cdot x)\right]^{-\frac{1}{2}} \cdot (-2) \cdot \dfrac{1}{\dfrac{1}{2}x} \cdot \dfrac{1}{2} && \\[1.5ex]
+                            &= \dfrac{1}{2} \cdot (-2) \cdot 2 \cdot \dfrac{1}{x} \cdot \dfrac{1}{2} \cdot \dfrac{1}{\sqrt[2]{-2 \cdot \ln(\dfrac{1}{2} \cdot x)}}&&\\[1.5ex]
+                            &= -\dfrac{1}{x \cdot \sqrt[2]{-2 \cdot \ln(\dfrac{1}{2} \cdot x)}} &&
+                        \end{align*}
+                        }
+                    \item Umkehrregel: \\[-2.0ex]{
+                        \begin{align*}
+                            f'(x) &= -2x \cdot e^{-\frac{1}{2}\cdot x^2} && 
+                        \end{align*}\\[-2.0ex]
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= \dfrac{1}{f'(f^{-1}(x))} && \\[2.0ex]
+                            &= \dfrac{1}{-2 \cdot \sqrt[2]{-2 \cdot \ln(\dfrac{1}{2} \cdot x)} \cdot e^{-\frac{1}{2}\cdot x\left[\sqrt[2]{-2 \cdot \ln(\frac{1}{2} \cdot x)}\right]^2}} &&\\[2.0ex]
+                            &= -\dfrac{1}{2 \cdot e^{-\frac{1}{2}\cdot x\left[-2 \cdot \ln(\frac{1}{2} \cdot x)\right]} \cdot \sqrt[2]{2 \cdot \ln(\dfrac{1}{2} \cdot x)}} &&\\[2.0ex]
+                            &= -\dfrac{1}{x \cdot \sqrt[2]{-2 \cdot \ln(\dfrac{1}{2} \cdot x)}} &&
+                        \end{align*}
                         }
                 \end{itemize}
                 }
