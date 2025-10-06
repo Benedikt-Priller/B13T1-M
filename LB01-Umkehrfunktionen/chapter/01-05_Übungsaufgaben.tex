@@ -390,6 +390,382 @@
                         }
                 \end{itemize}
                 }
+            \item[e)] {
+                $f(x) = \ln\left(3x^2 -2\right); \qquad D_{f} = \left] \ \sqrt[2]{\frac{2}{3}}; \infty \ \right[$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Umkehrfunktion: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            x &= \ln\left(3y^2 -2\right) &&\\[1.5ex]
+                            e^{x} &= 3y^2 - 2 &&| \quad +2\\[1.5ex]
+                            3y^{2} &= e^{x} + 2 &&| \quad  :3\\[1.5ex]
+                            y^2 &= \dfrac{1}{3} \cdot \left(e^{x} + 2\right) &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            y_{1} = -\sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)} \qquad & \qquad y_{2} = \sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)} &&
+                        \end{align*}\\[-1.0ex]
+                        $\Rightarrow \quad f^{-1}(x) = \sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)}$ \ auf \ $\left] \ \sqrt[2]{\frac{2}{3}}; \infty \ \right[$\\[-1.0ex]
+                        }
+                    \item Ableitung der Umkehrfunktion: \\[-2.0ex]{
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= \dfrac{1}{2} \cdot \left[\frac{1}{3} \cdot \left(e^{x} + 2\right)\right]^{-\frac{1}{2}} \cdot \dfrac{1}{3} \cdot \left(e^{x} \cdot 1\right) && \\[2.0ex]
+                            &= \dfrac{1}{6} \cdot e^{x} \cdot \dfrac{1}{\sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)}} &&\\[2.0ex]
+                            &= \dfrac{e^{x}}{6 \cdot \sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)}}&&
+                        \end{align*}
+                        }
+                    \item Umkehrregel: \\[-2.0ex]{
+                        \begin{align*}
+                            f'(x) &= \dfrac{1}{3x^{2} -2} \cdot 6x && \\[1.5ex]
+                            &= \dfrac{6x}{3x^{2} -2} &&
+                        \end{align*}\\[-2.0ex]
+                        \begin{align*}
+                            \left(f^{-1}(x)\right)' &= \dfrac{1}{f'(f^{-1}(x))} && \\[2.0ex]
+                            &= \dfrac{1}{\left(\dfrac{6 \cdot \left[\sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)}\right]}{3 \cdot \left[\sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)}\right]^{2} -2}\right)} &&\\[2.0ex]
+                            &= \dfrac{3 \cdot \left[\sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)}\right]^{2} -2}{6 \cdot \left[\sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)}\right]} &&\\[2.0ex]
+                            &= \dfrac{3 \cdot \dfrac{1}{3} \cdot \left(e^{x}+2\right) - 2}{6 \cdot \sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)}} && \\[2.0ex]
+                            &= \dfrac{e^{x}}{6 \cdot \sqrt[2]{\frac{1}{3} \cdot \left(e^{x} + 2\right)}}
+                        \end{align*}
+                        }
+                \end{itemize}
+                }
         \end{enumerate}
     \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 21/3}{}
+    \begin{enumerate}
+        \item [3.]\begin{enumerate}[label=\alph*)]
+            \item[a)] {
+                $f(x) = \SI{0.25}{} x^{2} + 3$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Ableitung und Monotonie: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            f'(x) &= \SI{0.5}{} x &&
+                        \end{align*}\\[-2.0ex]
+                        \begin{align*}
+                            f'(x) &= 0 \\[2.0ex]
+                            \SI{0.5}{} x &= 0 &&| \quad \cdot 2\\[1.5ex]
+                            x_{1} &= 0 \text{\textit{(e)}} &&
+                        \end{align*}\\[-2.0ex]
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                            & $-\infty < x < 0$ & $x = 0$ & $0 < x < \infty$ \\ \hline
+                            $f'(x)$ & $-$ & $0$ & $+$ \\ \hline
+                            $G_{f}$ & $\searrow$ & TiP & $\nearrow$ \\              
+                        \end{tabularx}\\[4.0ex]
+                        $\Rightarrow \quad G_{f}$ ist umkehrbar in $\left] \ -\infty; 0 \ \right]$ sowie $\left[ \ 0; \infty \ \right[$\\[-2.0ex]
+                        }
+                \end{itemize}
+                }
+            \item[b)] {
+                $f(x) = \left(x-2\right)^2$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Ableitung und Monotonie: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            f'(x) &= 2 \cdot \left(x-2\right)^{1} \cdot 1&&\\[1.5ex]
+                            &= 2 \cdot \left(x-2\right) &&
+                        \end{align*}\\[-2.0ex]
+                        \begin{align*}
+                            f'(x) &= 0 \\[2.0ex]
+                            2 \cdot \left(x-2\right) &= 0 &&| \quad :2\\[1.5ex]
+                            x-2 &= 0 &&| \quad +2\\[1.5ex]
+                            x_{1} &= 2 \text{\textit{(e)}} &&
+                        \end{align*}\\[-2.0ex]
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                            & $-\infty < x < 2$ & $x = 2$ & $2 < x < \infty$ \\ \hline
+                            $f'(x)$ & $-$ & $0$ & $+$ \\ \hline
+                            $G_{f}$ & $\searrow$ & TiP & $\nearrow$ \\              
+                        \end{tabularx}\\[4.0ex]
+                        $\Rightarrow \quad G_{f}$ ist umkehrbar in $\left] \ -\infty; 2 \ \right]$ sowie $\left[ \ 2; \infty \ \right[$\\[-1.0ex]
+                        }
+                \end{itemize}
+                }
+            \item[c)] {
+                $f(x) = \sqrt[2]{x^2 +3}$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Ableitung und Monotonie: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            f'(x) &= \dfrac{1}{2} \cdot \left(x^{2} +3\right)^{-\frac{1}{2}} \cdot 2x &&\\[1.5ex]
+                            &= \dfrac{x}{\sqrt[2]{x^2 +3}} &&
+                        \end{align*}\\[-1.0ex]
+                        $z(x) = x; \qquad n(x) = \sqrt[2]{x^2 +3}$\\[-2.0ex]
+                        \begin{minipage}[t]{0.35\linewidth}
+                            \begin{align*}
+                                w(x) &= 0 &&\\[2.0ex]
+                                x_{1} &= 0 \ \text{\textit{(e)}} &&
+                            \end{align*}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.50\linewidth}
+                            \begin{align*}
+                                z(x) &= 0 && \\[2.0ex]
+                                \sqrt[2]{x^2 +3} &= 0 &&| \quad + ^{2}\\[1.5ex]
+                                x^2 +3 &= 0 &&| \quad -3\\[1.5ex]
+                                x^{2} &= -3 &&| \quad \sqrt[2]{\phantom{x}}\\[1.5ex]
+                                & \textcolor{myr}{\text{n. d. in } \mathbb{R}} &&\\
+                            \end{align*}
+                        \end{minipage}\\
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                            & $-\infty < x < 0$ & $x = 0$ & $0 < x < \infty$ \\ \hline
+                            $z(x)$ & $-$ & $0$ & $+$ \\ \hline
+                            $n(x)$ & $+$ & $+$ & $+$ \\ \hline
+                            $f'(x)$ & $-$ & $0$ & $+$ \\ \hline
+                            $G_{f}$ & $\searrow$ & TiP & $\nearrow$ \\              
+                        \end{tabularx}\\[4.0ex]
+                        $\Rightarrow \quad G_{f}$ ist umkehrbar in $\left] \ -\infty; 0 \ \right]$ sowie $\left[ \ 0; \infty \ \right[$\\[-1.0ex]
+                        }
+                \end{itemize}
+                }
+            \item[d)] {
+                $f(x) = x^{3} \cdot e^{-x}$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Ableitung und Monotonie: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            f'(x) &= 3x^{2} \cdot e{-x} + x^{3} \cdot e^{-x} \cdot \left(-1\right) &&\\[1.5ex]
+                            &= e^{-x} \cdot \left(3x^{2} - x^{3}\right) && \\[1.5ex]
+                            &= e^{-x} \cdot x^{2} \cdot \left(-x + 3\right) &&
+                        \end{align*}\\[-1.0ex]
+                        $u(x) = e^{-x}; \qquad v(x) = x^{2}; \qquad w(x) = -x + 3$\\[-1.0ex]
+                        \begin{minipage}[t]{0.30\linewidth}
+                            \begin{align*}
+                                u(x) &= 0 &&\\[2.0ex]
+                                e^{-x} &= 0 &&\\[1.5ex]
+                                -x &= \ln\left(0\right) &&| \quad \cdot \left(-1\right)\\[1.5ex]
+                                x &= -\ln\left(0\right) &&\\[1.5ex]
+                                & \textcolor{myr}{\text{n. d.}} &&
+                            \end{align*}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.30\linewidth}
+                            \begin{align*}
+                                v(x) &= 0 &&\\[2.0ex]
+                                x^{2} &= 0 &&| \quad \sqrt[2]{\phantom{x}}\\[1.5ex]
+                                x_{1} &= 0 \ \text{\textit{(d)}} &&
+                            \end{align*}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.30\linewidth}
+                            \begin{align*}
+                                w(x) &= 0 && \\[2.0ex]
+                                -x + 3 &= 0 &&| \quad + x\\[1.5ex]
+                                x_{2} &= 3 \ \text{\textit{(e)}} &&
+                            \end{align*}
+                        \end{minipage}\\
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|X}
+                            & $-\infty < x < 0$ & $x = 0$ & $0 < x < 3$ & $x = 3$ & $3 < x < \infty$ \\ \hline
+                            $u(x)$ & $+$ & $+$ & $+$ & $+$ & $+$ \\ \hline
+                            $v(x)$ & $+$ & $0$ & $+$ & $+$ & $+$ \\ \hline
+                            $w(x)$ & $+$ & $+$ & $+$ & $0$ & $-$ \\ \hline
+                            $f'(x)$ & $+$ & $0$ & $+$ & $0$ & $-$ \\ \hline
+                            $G_{f}$ & $\nearrow$ & TeP & $\nearrow$ & HoP & $\searrow$ \\              
+                        \end{tabularx}\\[4.0ex]
+                        $\Rightarrow \quad G_{f}$ ist umkehrbar in $\left] \ -\infty; 3 \ \right]$ sowie $\left[ \ 3; \infty \ \right[$\\[-1.0ex]
+                        }
+                \end{itemize}
+                }
+            \item[e)] {
+                $f(x) = \dfrac{x^{2}+2}{-x +3}$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Ableitung und Monotonie: \\{
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            f'(x) &= \dfrac{\left(-x+3\right) \cdot 2x - \left(x^{2} +2\right)\cdot \left(-1\right)}{\left(-x+3\right)^{2}} &&\\[1.5ex]
+                            &= \dfrac{-2x^{2} + 6x + x^{2} + 2}{\left(-x+3\right)^{2}} &&\\[1.5ex]
+                            &= \dfrac{-x^{2} + 6x + 2}{\left(-x+3\right)^{2}} &&
+                        \end{align*}\\[-1.0ex]
+                        $z(x) = -x^{2} + 6x + 2; \qquad v(x) = \left(-x+3\right)^{2}$\\[-1.0ex]
+                        \begin{minipage}[t]{0.60\linewidth}
+                            \begin{align*}
+                                z(x) &= 0 &&\\[2.0ex]
+                                -x^{2} + 6x + 2 &= 0 &&\\[1.5ex]
+                                x_{1,2} &= \dfrac{-6 \pm \sqrt[2]{6^{2} - 4\cdot \left(-1\right) \cdot 2}}{2 \cdot {-1}} &&\\[2.0ex]
+                                x_{1} &= \dfrac{-6 + \sqrt[2]{44}}{-2} = 3 -\sqrt[2]{11} \ \text{\textit{(e)}}; &&\\[1.5ex]
+                                x_{2} &= \dfrac{-6 - \sqrt[2]{44}}{-2} = 3 +\sqrt[2]{11} \ \text{\textit{(e)}} &&\\
+                            \end{align*}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.30\linewidth}
+                            \begin{align*}
+                                n(x) &= 0 && \\[2.0ex]
+                                \left(-x+3\right)^{2} &= 0 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                                -x + 3&= 0 &&| \quad + x\\[1.5ex]
+                                x_{3} &= 3 \text{\textit{(d)}} &&
+                            \end{align*}
+                        \end{minipage}\\
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|X|X|X}
+                            & $-\infty < x < 3 -\sqrt{11}$ & $x = 3 -\sqrt{11}$ & $3 -\sqrt{11} < x < 3$ & $x = 3$ & $3 < x < 3 +\sqrt{11}$ & $x = 3 +\sqrt{11}$ & $3 +\sqrt{11} < x < \infty$ \\ \hline
+                            $z(x)$ & $-$ & $0$ & $+$ & $+$ & $+$ & $0$ & $-$ \\ \hline
+                            $n(x)$ & $+$ & $+$ & $+$ & 0 & $+$ & $+$ & $+$ \\ \hline
+                            $f'(x)$ & $-$ & $0$ & $+$ & n. d. & $+$ & $0$ & $-$ \\ \hline
+                            $G_{f}$ & $\searrow$ & TiP & $\nearrow$ & n. d. & $\nearrow$ & HoP & $\searrow$ \\              
+                        \end{tabularx}\\[4.0ex]
+                        $\Rightarrow \quad G_{f}$ ist umkehrbar in $\left] \ -\infty; 3 -\sqrt{11} \ \right]$ sowie $\left[ \ 3 -\sqrt{11}; 3 \ \right[$ sowie $\left] \ 3; 3 +\sqrt{11} \ \right]$ sowie $\left[ \ 3 +\sqrt{11}; \infty \ \right[$
+                        }
+                \end{itemize}
+                }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 21/3}{}
+    \begin{enumerate}
+        \item [12.]\begin{itemize}[leftmargin=*]
+            $g(x) = \ln\left(\dfrac{x^{2}}{-x^{2} +4}\right);  \qquad D_{g} = \left] \ 0; 2 \ \right[; \qquad P(0/\sqrt{2}) \in g^{-1}$\\
+            \item Ableitung und Monotonie: \\{
+                \vspace{-2.0ex}
+                \begin{align*}
+                    g'(x) &= \dfrac{1}{\left(\dfrac{x^{2}}{-x^{2} +4}\right)} \cdot \dfrac{\left(-x^{2} +4\right) \cdot 2x - \left[x^{2} \cdot \left(-2x\right)\right]}{\left(-x^{2} +4\right)^{2}} &&\\[1.5ex]
+                    &= \dfrac{-x^{2} +4}{x^{2}} \cdot \dfrac{\left(-x^{2} +4\right) \cdot 2x - \left[x^{2} \cdot \left(-2x\right)\right]}{\left(-x^{2} +4\right)^{2}} &&\\[1.5ex]
+                    &= \dfrac{2x \cdot 4}{x^{2} \cdot \left(-x^{2} +4\right)} &&\\[1.5ex]
+                    &= \dfrac{8}{x \cdot \left(-x^{2} +4\right)}
+                \end{align*}\\[-1.0ex]
+                $z(x) = 8; \qquad n(x) = x \cdot \left(-x^{2} +4\right); \qquad u(x) = x; \qquad v(x) = -x^{2} +4$\\[-1.0ex]
+                \begin{minipage}[t]{0.20\linewidth}
+                    \begin{align*}
+                        z(x) &> 0 &&\\[2.0ex]
+                        & \text{keine Nst.} &&
+                    \end{align*}
+                \end{minipage}
+                \hfill
+                \begin{minipage}[t]{0.70\linewidth}
+                    \begin{align*}
+                        n(x) &= 0 && \\[2.0ex]
+                        x \cdot \left(-x^{2} +4\right) &= 0 &&
+                    \end{align*}
+                    \vspace{-2.0ex}
+                    \begin{minipage}[t]{0.30\linewidth}
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            u(x) &= 0 && \\[2.0ex]
+                            x_{1} &= 0 \ \text{\textit{(e)}} &&
+                        \end{align*}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{0.60\linewidth}
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            v(x) &= 0 && \\[2.0ex]
+                            -x^{2} +4 &= 0 &&| \quad + x^{2}\\[1.5ex]
+                            x^{2} &= 4 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            x_{2} = -2 \ \text{\textit{(e)}}; \qquad & x_{3} = 2 \ \text{\textit{(e)}} &&\\
+                        \end{align*}
+                    \end{minipage}
+                \end{minipage}
+                \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|>{\columncolor[gray]{0.8}}X|X|X}
+                    & $-\infty < x < -2$ & $x = -2$ & $-2 < x < 0$ & $x = 0$ & $0 < x < 2$ & $x = 2$ & $2 < x < \infty$ \\ \hline
+                    $z(x)$ & $+$ & $-$ & $+$ & $+$ & $+$ & $+$ & $+$ \\ \hline
+                    $u(x)$ & $-$ & $-$ & $-$ & $0$ & $+$ & $+$ & $+$ \\ \hline
+                    $v(x)$ & $-$ & $0$ & $+$ & $+$ & $+$ & $0$ & $-$ \\ \hline
+                    $n(x)$ & $+$ & $0$ & $-$ & $0$ & $+$ & $0$ & $-$ \\ \hline
+                    $g'(x)$ & $+$ & n. d. & $-$ & n. d. & $+$ & n. d. & $-$ \\ \hline
+                    $G_{g}$ & n. d. & n. d. & n. d. & n. d. & $\nearrow$ & n. d. & n. d. \\              
+                \end{tabularx}\\[4.0ex]
+                $\Rightarrow \quad G_{g}$ ist sms in $\left] \ 0; 2 \ \right[$ und damit auf diesem Intervall umkehrbar\\[-1.0ex]
+                }
+            \item Tangentengleichung: \\[2.0ex]{
+                $f_{T}(x): \quad y = m \cdot x + t = \left(f^{-1}(x)\right)' \cdot x + t$\\
+                \vspace{-2.0ex}
+                \begin{align*}
+                    \left(f^{-1}(x)\right)' &= \dfrac{1}{f'\left(f^{-1}(x)\right)} &&
+                \end{align*}\\[-2.0ex]
+                $P$ in $f_{T}$: \\[-2.0ex]
+                \begin{align*}
+                    \sqrt{2} &= \dfrac{1}{f'\left(f^{-1}(0)\right)} \cdot 0 + t &&\\[1.5ex]
+                    \sqrt{2} &= \dfrac{1}{f'(\sqrt{2})} \cdot 0 + t &&\\[1.5ex]
+                    \sqrt{2} &= \dfrac{\sqrt{2} \cdot \left[-\left(\sqrt{2}\right)^{2} +4\right]}{8} \cdot 0 + t &&\\[1.5ex]
+                    \sqrt{2} &= \dfrac{\sqrt{2}}{4} \cdot 0 + t &&\\[1.5ex]
+                    t &= \sqrt{2} &&
+                \end{align*}\\[-2.0ex]
+                $\Rightarrow \quad \uuline{f_{T}(x) = \dfrac{\sqrt{2}}{4} \cdot x + \sqrt{2}}$\\
+                }
+            \item Umkehrfunktion: \\{
+                \vspace{-3.0ex}
+                \begin{align*}
+                    x &= \ln\left(\dfrac{y^{2}}{-y^{2} + 4}\right) &&\\[1.5ex]
+                    e^{x} &= \dfrac{y^{2}}{-y^{2} + 4} &&| \quad \cdot \left(-y^{2} + 4\right)\\[1.5ex]
+                    - e^{x} \cdot y^{2} + e^{x} \cdot 4 &= y^{2} &&| \quad -y^{2}\\[1.5ex]
+                    - e^{x} \cdot y^{2} - 1 \cdot y^{2} + e^{x} \cdot 4 &= 0 && | \quad - \left(e^{x} \cdot 4\right)\\[1.5ex]
+                    y^{2} \cdot \left(- e^{x} - 1\right) &= - \left(e^{x} \cdot 4\right) &&| \quad :\left(- e^{x} - 1\right)\\[1.5ex]
+                    y^{2} &= \dfrac{- \left(e^{x} \cdot 4\right)}{-\left(e^{x} + 1\right)} &&| \quad \sqrt[2]{\phantom{x}}\\[2.0ex]
+                    y_{1} = - \sqrt[2]{\dfrac{e^{x} \cdot 4}{e^{x} + 1}} \ \text{\textit{(e)}} \quad & \qquad y_{2} = \sqrt[2]{\dfrac{e^{x} \cdot 4}{e^{x} + 1}} \ \text{\textit{(e)}} &&
+                \end{align*}\\
+                $D_{g} = \left] \ 0; 2 \ \right[ = W_{g^{-1}} \quad \Rightarrow \quad \uuline{g^{-1}(x) = \sqrt[2]{\dfrac{e^{x} \cdot 4}{e^{x} + 1}}}$\\[-2.0ex]
+                }
+            \item Definitionsmenge der Umkehrfunktion: \\{
+                \vspace{-2.0ex}
+                \begin{align*}
+                    \lim\limits_{x \to 0^{+}} g(x) &= \lim\limits_{x \to 0^{+}} \ln\left(\dfrac{x^{2}}{-x^{2} +4}\right) &= \lim\limits_{x \to 0^{+}} \ln\left(\overbrace{\dfrac{\overbrace{x^{2}}^{\textcolor{myg}{0^{+}}}}{\underbrace{-x^{2}}_{\textcolor{myg}{0^{-}}} +4}}^{\textcolor{myg}{0^{+}}}\right) &= - \infty &&\\[2.0ex]
+                    \lim\limits_{x \to 2^{-}} g(x) &= \lim\limits_{x \to 2^{-}} \ln\left(\dfrac{x^{2}}{-x^{2} +4}\right) &= \lim\limits_{x \to 2^{-}} \ln\left(\overbrace{\dfrac{\overbrace{x^{2}}^{\textcolor{myg}{4^{-}}}}{\underbrace{-x^{2} + 4}_{\textcolor{myg}{0^{+}}}}}^{\textcolor{myg}{\infty}}\right) &= \infty &&
+                \end{align*}\\
+                $\Rightarrow W_{g} = \left] \ -\infty; \infty \ \right[ = \uuline{D_{g^{-1}} = \mathbb{R}}$\\
+            }
+        \end{itemize}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 97/1}{}
+Geänderte Aufgabenstellung: Lediglich Abbleitung bilden\\[-2.0ex]
+\begin{enumerate}
+    \item [1.]\begin{enumerate}[label=\alph*)]
+        \item[b)] {
+            $f(x) = \ln\left(x^{2} -3x -4\right)$\\[-2.0ex]
+            \begin{align*}
+                f'(x) &= \dfrac{1}{x^{2} -3x -4} \cdot \left(2x -3\right) &&\\[2.0ex]
+                &= \dfrac{2x -3}{x^{2} -3x -4} &&
+            \end{align*}
+            }
+        \item[c)] {
+            $f(x) = x \cdot \ln\left(x^{2}\right)$\\[-2.0ex]
+            \begin{align*}
+                f'(x) &= 1 \cdot \ln\left(x^{2}\right) + x \cdot \dfrac{1}{x^{2}} \cdot 2x &&\\[1.5ex]
+                &= \ln\left(x^{2}\right) + 2 &&
+            \end{align*}
+            }
+        \item[d)] {
+            $f(x) = \ln\left(\sqrt[2]{x^{2} -4x}\right)$\\[-2.0ex]
+            \begin{align*}
+                f'(x) &= \dfrac{1}{\sqrt[2]{x^{2} -4x}} \cdot \dfrac{1}{2} \cdot \left(x^{2} -4x\right)^{-\frac{1}{2}} \cdot \left(2x -4\right) &&\\[1.5ex]
+                &= \dfrac{1}{\sqrt[2]{x^{2} -4x}} \cdot \dfrac{1}{2 \cdot \sqrt[2]{x^{2} -4x}} \cdot 2 \cdot \left(x -2\right) &&\\[1.5ex]
+                &= \dfrac{x-2}{x^{2} -4x} &&
+            \end{align*}
+            }
+        \item[e)] {
+            $f(x) = e^{2x} - 2e^{x}$\\[-2.0ex]
+            \begin{align*}
+                f'(x) &= e^{2x} \cdot 2 - 2 \cdot \left(e^{x} \cdot 1\right)\\[1.5ex]
+                &= 2 \cdot e^{2x} - 2 \cdot e^{x} &&\\[1.5ex]
+                &= 2 e^{x} \cdot \left(e^{x} - 1\right) &&
+            \end{align*}
+            }
+        \item[f)] {
+            $f(x) = x^{2} \cdot e^{2x}$\\[-2.0ex]
+            \begin{align*}
+                f'(x) &= 2x \cdot e^{2x} + x^{2} \cdot e^{2x} \cdot 2 &&\\[1.5ex]
+                &= e^{2x} \cdot \left(2x^{2} + 2x\right) &&\\[1.5ex]
+                &= 2e^{2x} \cdot \left(x^{2} + x\right) &&
+            \end{align*}
+            }
+        \item[g)] {
+            $f(x) = \sqrt[2]{e^x - 4}$\\[-2.0ex]
+            \begin{align*}
+                f'(x) &= \dfrac{1}{2} \cdot \left(e^x - 4\right)^{-\frac{1}{2}} \cdot e^{x} \cdot 1 &&\\[1.5ex]
+                &= \dfrac{e^{x}}{2 \cdot \sqrt[2]{e^x - 4}}
+            \end{align*}
+            }
+        \item[h)] {
+            $f(x) = \sqrt[2]{-x} \cdot e^{x}$\\[-2.0ex]
+            \begin{align*}
+                f'(x) &= \dfrac{1}{2} \cdot \left(-x\right)^{-\frac{1}{2}} \cdot e^{x} + \left(-x\right)^{-\frac{1}{2}} \cdot e^{x} \cdot 1 &&\\[1.5ex]
+                &= e^{x} \cdot \left(\dfrac{1}{2 \cdot \sqrt[2]{-x}} + \dfrac{1}{\sqrt[2]{-x}}\right) &&\\[1.5ex]
+                &= e^{x} \cdot \left(\dfrac{1}{2 \cdot \sqrt[2]{-x}} + \dfrac{2}{2 \cdot \sqrt[2]{-x}}\right) &&\\[1.5ex]
+                &= \dfrac{3}{2} \cdot e^{x} \cdot \dfrac{1}{\sqrt[2]{-x}} &&
+            \end{align*}
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 108/1}{}
+Geänderte Aufgabenstellung: Lediglich Abbleitung bilden\\[-2.0ex]
 \end{Exercise}
