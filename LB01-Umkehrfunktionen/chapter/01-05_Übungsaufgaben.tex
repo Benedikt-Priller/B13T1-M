@@ -608,7 +608,7 @@
     \end{enumerate}
 \end{Exercise}
 
-\begin{Exercise}{S. 21/3}{}
+\begin{Exercise}{S. 22/12}{}
     \begin{enumerate}
         \item [12.]\begin{itemize}[leftmargin=*]
             $g(x) = \ln\left(\dfrac{x^{2}}{-x^{2} +4}\right);  \qquad D_{g} = \left] \ 0; 2 \ \right[; \qquad P(0/\sqrt{2}) \in g^{-1}$\\
@@ -677,8 +677,28 @@
                     \sqrt{2} &= \dfrac{\sqrt{2}}{4} \cdot 0 + t &&\\[1.5ex]
                     t &= \sqrt{2} &&
                 \end{align*}\\[-2.0ex]
-                $\Rightarrow \quad \uuline{f_{T}(x) = \dfrac{\sqrt{2}}{4} \cdot x + \sqrt{2}}$\\
+                $\Rightarrow \quad \uuline{f_{T}(x) = \dfrac{\sqrt{2}}{4} \cdot x + \sqrt{2}}$\\[1.0ex]
                 }
+                oder (ohne Umkehrregel und unter Einhaltung $g^{-1}(x)$ nicht zu bilden):\\[2.0ex]
+                $P(0/\sqrt{2}) \in g^{-1} \quad \Rightarrow \quad Q(\sqrt{2}/0) \in g$\\[2.0ex]
+                $f^{-1}_{T}(x): \quad y = m \cdot x + t = g'(x) \cdot x + t$\\[2.0ex]
+                $x_{Q}$ in $f^{-1}_{T}(x)$: \\[-2.0ex]
+                \begin{align*}
+                    0 &= \dfrac{8}{\sqrt{2} \cdot \left[-\left(\sqrt{2}\right)^{2} +4\right]} \cdot \sqrt{2} + t &&\\[1.5ex]
+                    0 &= 2\sqrt{2} \cdot \sqrt{2} + t &&\\[1.5ex]
+                    0 &= 4 + t &&| \quad -4\\[1.5ex]
+                    t &= -4 &&
+                \end{align*}\\[-2.0ex]
+                $\Rightarrow f^{-1}_{T}(x) = 2\sqrt{2}x - 4$\\[-2.0ex]
+                \begin{align*}
+                   f_{T}(x): \quad x &= 2\sqrt{2}y - 4 &&| \quad +4\\[1.5ex]
+                   x + 4 &= 2\sqrt{2}y &&| \quad :2\sqrt{2}\\[1.5ex]
+                   y &= \dfrac{x - 4}{2\sqrt{2}} &&\\[1.5ex]
+                   y &= \dfrac{1}{2\sqrt{2}} \cdot x - \dfrac{4}{2\sqrt{2}} &&\\[1.5ex]
+                   y &= \dfrac{\sqrt{2}}{4} \cdot x + \sqrt{2}&&
+                \end{align*}\\[-2.0ex]
+                $\Rightarrow \quad \uuline{f_{T}(x) = \dfrac{\sqrt{2}}{4} \cdot x + \sqrt{2}}$\\[1.0ex]
+                Begründung: Symmetrie zur Winkelhalbierenden $y=x$\\
             \item Umkehrfunktion: \\{
                 \vspace{-3.0ex}
                 \begin{align*}
@@ -699,7 +719,120 @@
                     \lim\limits_{x \to 2^{-}} g(x) &= \lim\limits_{x \to 2^{-}} \ln\left(\dfrac{x^{2}}{-x^{2} +4}\right) &= \lim\limits_{x \to 2^{-}} \ln\left(\overbrace{\dfrac{\overbrace{x^{2}}^{\textcolor{myg}{4^{-}}}}{\underbrace{-x^{2} + 4}_{\textcolor{myg}{0^{+}}}}}^{\textcolor{myg}{\infty}}\right) &= \infty &&
                 \end{align*}\\
                 $\Rightarrow W_{g} = \left] \ -\infty; \infty \ \right[ = \uuline{D_{g^{-1}} = \mathbb{R}}$\\
-            }
+                }
+            \item Zeichnung zur Veranschaulichung: \\[-2.0ex]{
+                \begin{minipage}[t]{0.8\linewidth}
+                    \raisebox{-\height}{
+                    \begin{tikzpicture}[
+                            declare function={
+                                w1(\x) = (\x*\xScale)*(1/\yScale);
+                                f_g(\x) = (ln(((\x*\xScale)^2)/(-(\x*\xScale)^2+4)))*(1/\yScale);
+                                f_g1_1(\x) = (-sqrt(exp((\x*\xScale))*4)/sqrt(exp((\x*\xScale))+1))*(1/\yScale);
+                                f_g1_2(\x) = (sqrt(exp((\x*\xScale))*4)/sqrt(exp((\x*\xScale))+1))*(1/\yScale);
+                                f_t(\x) = ((sqrt(2)/4)*(\x*\xScale)+sqrt(2))*(1/\yScale);
+                                f_t1(\x) = (2*sqrt(2)*(\x*\xScale)-4)*(1/\yScale);
+                            }
+                        ]
+
+                        % Set variables
+                        \pgfmathsetmacro{\axisPosWidth}{6};
+                        \pgfmathsetmacro{\axisNegWidth}{-6};
+                        \pgfmathsetmacro{\axisPosHeight}{5};
+                        \pgfmathsetmacro{\axisNegHeight}{-2.5};
+                        \pgfmathsetmacro{\xIncrement}{1.0};
+                        \pgfmathsetmacro{\yIncrement}{1.0};
+                        \pgfmathsetmacro{\xScale}{1};
+                        \pgfmathsetmacro{\yScale}{1};
+                        \pgfmathsetmacro{\gridxIncrement}{0.5};
+                        \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                        % Axis/grid limits
+                        \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                        \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                        % Axis environment (PGFPlots)
+                        \begin{axis}[
+                            xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                            ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                            axis lines=middle,
+                            axis line style={->, >=stealth},
+                            grid=both,
+                            xlabel={$x$},
+                            ylabel={$y$},
+                            xlabel style={anchor=west, at={(current axis.right of origin)}},
+                            ylabel style={anchor=south, at={(current axis.above origin)}},
+                            xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                            ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                            xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                            yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                            tick label style={font=\scriptsize},
+                            x=1cm,
+                            y=1cm,
+                            minor tick num=1,
+                            scale only axis,
+                            grid=both,
+                            restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                        ]
+                            
+                        % Graph limits
+                        \pgfmathsetmacro{\xLowerLimitGraph}{\xLowerLimitGrid}
+                        \pgfmathsetmacro{\xUpperLimitGraph}{\xUpperLimitGrid}
+                        
+                        % G_f_g
+                        \pgfmathsetmacro{\Ggay}{4}
+                        \pgfmathsetmacro{\Ggax}{f_g1_2(\Ggay)}
+                        \addplot[thick, myb, samples=1000, domain=0:2]
+                            {f_g(x)};
+                        \node[anchor=north east] at (axis cs:{\Ggax},{\Ggay}) {\textcolor{myb}{$G_{g}$}};
+
+                        % G_f_g^{-1}
+                        \pgfmathsetmacro{\Ggbx}{4}
+                        \pgfmathsetmacro{\Ggby}{f_g1_2(\Ggbx)}
+                        \addplot[thick, myr, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
+                            {f_g1_2(x)};
+                        \node[anchor=north] at (axis cs:{\Ggbx},{\Ggby}) {\textcolor{myr}{$G_{g^{-1}}$}};
+
+                        % G_f_t
+                        \pgfmathsetmacro{\Gtax}{5}
+                        \pgfmathsetmacro{\Gtay}{f_t(\Gtax)}
+                        \addplot[thick, mypurple, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                            {f_t(x)};
+                        \node[anchor=north west] at (axis cs:{\Gtax},{\Gtay}) {\textcolor{mypurple}{$G_{f_{T}}$}};
+
+                        % G_f_t^{-1}
+                        \pgfmathsetmacro{\Gtbx}{3}
+                        \pgfmathsetmacro{\Gtby}{f_t1(\Gtbx)}
+                        \addplot[thick, mypurple, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                            {f_t1(x)};
+                        \node[anchor=north west] at (axis cs:{\Gtbx},{\Gtby}) {\textcolor{mypurple}{$G_{f^{-1}_{T}}$}};
+
+                        % P
+                        \pgfmathsetmacro{\Pax}{0}
+                        \pgfmathsetmacro{\Pay}{f_g1_2(\Pax)}
+                        \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Pax,\Pay)};
+                        \node[anchor=south east] at (axis cs:{\Pax},{\Pay}) {$P_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\Pax}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\Pay}{})$};
+
+                        % Q
+                        \pgfmathsetmacro{\Qax}{sqrt(2)}
+                        \pgfmathsetmacro{\Qay}{f_g(\Qax)}
+                        \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Qax,\Qay)};
+                        \node[anchor=south west] at (axis cs:{\Qax},{\Qay}) {$Q(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\Qax}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\Qay}{})$};
+
+                        % Winkelhalbierende
+                        \addplot[thick, myg, samples=1000, domain=\xLowerLimitGrid:0.96*\xUpperLimitGrid]
+                            {w1(x)};
+                        \end{axis}
+                    \end{tikzpicture}
+                    }\\[2.0ex]
+                \end{minipage}
+                }
         \end{itemize}
     \end{enumerate}
 \end{Exercise}
