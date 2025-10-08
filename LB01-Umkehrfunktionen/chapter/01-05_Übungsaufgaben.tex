@@ -682,7 +682,7 @@
                 oder (ohne Umkehrregel und unter Einhaltung $g^{-1}(x)$ nicht zu bilden):\\[2.0ex]
                 $P(0/\sqrt{2}) \in g^{-1} \quad \Rightarrow \quad Q(\sqrt{2}/0) \in g$\\[2.0ex]
                 $f^{-1}_{T}(x): \quad y = m \cdot x + t = g'(x) \cdot x + t$\\[2.0ex]
-                $x_{Q}$ in $f^{-1}_{T}(x)$: \\[-2.0ex]
+                $Q$ in $f^{-1}_{T}(x)$: \\[-2.0ex]
                 \begin{align*}
                     0 &= \dfrac{8}{\sqrt{2} \cdot \left[-\left(\sqrt{2}\right)^{2} +4\right]} \cdot \sqrt{2} + t &&\\[1.5ex]
                     0 &= 2\sqrt{2} \cdot \sqrt{2} + t &&\\[1.5ex]
@@ -889,10 +889,11 @@ Geänderte Aufgabenstellung: Lediglich Abbleitung bilden\\[-2.0ex]
         \item[h)] {
             $f(x) = \sqrt[2]{-x} \cdot e^{x}$\\[-2.0ex]
             \begin{align*}
-                f'(x) &= \dfrac{1}{2} \cdot \left(-x\right)^{-\frac{1}{2}} \cdot e^{x} + \left(-x\right)^{-\frac{1}{2}} \cdot e^{x} \cdot 1 &&\\[1.5ex]
-                &= e^{x} \cdot \left(\dfrac{1}{2 \cdot \sqrt[2]{-x}} + \dfrac{1}{\sqrt[2]{-x}}\right) &&\\[1.5ex]
-                &= e^{x} \cdot \left(\dfrac{1}{2 \cdot \sqrt[2]{-x}} + \dfrac{2}{2 \cdot \sqrt[2]{-x}}\right) &&\\[1.5ex]
-                &= \dfrac{3}{2} \cdot e^{x} \cdot \dfrac{1}{\sqrt[2]{-x}} &&
+                f'(x) &= \dfrac{1}{2} \cdot \left(-x\right)^{-\frac{1}{2}} \cdot \left(-1\right) \cdot e^{x} + \left(-x\right)^{\frac{1}{2}} \cdot e^{x} \cdot 1 &&\\[1.5ex]
+                &= e^{x} \cdot \left(-\dfrac{1}{2 \cdot \sqrt[2]{-x}} + \sqrt[2]{-x}\right) &&\\[1.5ex]
+                &= e^{x} \cdot \left(\dfrac{-1}{2 \cdot \sqrt[2]{-x}} + \dfrac{2 \cdot \sqrt[2]{-x} \cdot \sqrt[2]{-x}}{2 \cdot \sqrt[2]{-x}}\right) &&\\[1.5ex]
+                &= e^{x} \cdot \left(\dfrac{-1 + 2 \cdot \left(-x\right)}{2 \cdot \sqrt[2]{-x}}\right) &&\\[1.5ex]
+                &= e^{x} \cdot \left(\dfrac{-2x -1}{2 \cdot \sqrt[2]{-x}}\right) &&
             \end{align*}
             }
     \end{enumerate}
