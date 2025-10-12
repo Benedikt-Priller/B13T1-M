@@ -1,0 +1,164 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 31/2}{}
+    \begin{enumerate}
+        \item [2.]\begin{enumerate}[label=\alph*)]
+            \item[a)] {
+                $f(x) = \arctan\left(\sqrt[2]{x-3}\right)$; \qquad $u(x) = \sqrt[2]{x-3}$; \qquad $v(x) = x-3$ \\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Bestimmung der Definitionsmenge $D_{f}$: \\[1.0ex]{
+                        $v(x) \geq 0:$\\[-2.0ex]
+                        \begin{minipage}[t]{0.4\linewidth}
+                            \vspace{-6.0ex}
+                            \begin{align*}
+                                v(x) &= 0 &&\\[2.0ex]
+                                x - 3 &= 0 &&| \quad \sqrt[2]{\phantom{x}}\\[1.5ex]
+                                x_{1} &= 3 \ \text{\textit{(e)}} && \\[-1.0ex]
+                            \end{align*}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.5\linewidth}
+                            \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                                & $-\infty < x < 3$ & $x = 3$ & $3 < x < \infty$ \\ \hline
+                                $v(x)$ & $-$ & $0$ & $+$ \\ \hline
+                                $u(x)$ & n. d. & $0$ & $+$ \\              
+                            \end{tabularx}  
+                        \end{minipage}
+                        $\Rightarrow \quad \uuline{D_{f} = \left[ \ 3; \infty \ \right[}$
+                        }\\[-1.0ex]
+                    \item Nullstellen: \\[1.0ex]{
+                        $f(x) = 0$ \qquad $\Rightarrow$ \qquad $u(x) = 0$\\[-2.0ex]
+                        \begin{align*}
+                            x_{1} &= 3 \ \text{\textit{(e)}}; \qquad x_{1} \in D_{f} &&
+                        \end{align*}
+                        $\uuline{N_{1}\left(3 / 0\right)}$\\[-1.0ex]
+                        }
+                \end{itemize}
+                }
+            \item[b)] {
+                $f(x) = \arctan\left(x^{2} - 16\right)$; \qquad $u(x) = x^{2} - 16$\\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Bestimmung der Definitionsmenge $D_{f}$: \\[1.0ex]{
+                        $\Rightarrow \quad \uuline{D_{f} = \mathbb{R}}$
+                        }\\[-1.0ex]
+                    \item Nullstellen: \\[1.0ex]{
+                        $f(x) = 0$ \qquad $\Rightarrow$ \qquad $u(x) = 0$\\[-2.0ex]
+                        \begin{align*}
+                            x^{2} - 16 &= 0 &&| \quad + 16\\[1.5ex]
+                            x^{2} &= 16 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            x_{1} = -4 \ \text{\textit{(e)}}; \qquad x_{1} \in D_{f} \quad & \quad x_{2} = 4 \ \text{\textit{(e)}}; \qquad x_{2} \in D_{f} &&
+                        \end{align*}
+                        $\uuline{N_{1}\left(-4 / 0\right); \quad N_{2}\left(4 / 0\right)}$\\[-1.0ex]
+                        }
+                \end{itemize}
+                }
+            \item[c)] {
+                $f(x) = \dfrac{1}{\arctan\left(\dfrac{1}{x}\right)}$; \\[2.0ex]
+                $z_{1}(x) = 1$; \qquad $n_{1}(x) = \arctan\left(\dfrac{1}{x}\right)$; \qquad $u(x) = \dfrac{1}{x}$;\qquad $z_{2}(x) = 1$; \qquad $n_{2}(x) = x$ \\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Bestimmung der Definitionsmenge $D_{f}$: \\[1.0ex]{
+                        $n_{1}(x) \neq 0$ für $n_{2}(x) \neq 0$:\\[-2.0ex]
+                        \begin{minipage}[t]{0.3\linewidth}
+                            \vspace{-6.0ex}
+                            \begin{align*}
+                                x_{1} &= 0 \ \text{\textit{(e)}} && \\[-1.0ex]
+                            \end{align*}
+                        \end{minipage}
+                        \hfill
+                        \begin{minipage}[t]{0.6\linewidth}
+                            \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                                & $-\infty < x < 0$ & $x = 0$ & $0 < x < \infty$ \\ \hline
+                                $z_{2}(x)$ & $1$ & $1$ & $1$ \\ \hline
+                                $n_{2}(x)$ & $-$ & $0$ & $+$ \\ \hline
+                                $u(x)$ & $-$ & n. d. & $+$ \\ \hline
+                                $z_{1}(x)$ & $1$ & $1$ & $1$ \\ \hline
+                                $n_{1}(x)$ & $-$ & $0$ & $+$ \\ \hline
+                                $f(x)$ & $-$ & n. d. & $+$ \\            
+                            \end{tabularx}  
+                        \end{minipage}
+                        $\Rightarrow \quad \uuline{D_{f} = \mathbb{R} \setminus \{0\}}$
+                        }\\[-1.0ex]
+                    \item Nullstellen: \\[1.0ex]{
+                        $z_{1}(x) > 0 \quad \Rightarrow \quad$ keine Nullstellen\\[-1.0ex]
+                        }
+                \end{itemize}
+                }
+            \item[d)] {
+                $f(x) = \arctan\left(\sqrt[2]{4x^{2} -1}\right)$; \qquad $u(x) = \sqrt[2]{4x^{2} -1}$; \qquad $v(x) = 4x^{2} -1$ \\[-2.0ex]
+                \begin{itemize}[leftmargin=*]
+                    \item Bestimmung der Definitionsmenge $D_{f}$: \\[1.0ex]{
+                        $v(x) \geq 0:$\\[-2.0ex]
+                        \begin{minipage}[t]{1.0\linewidth}
+                            \vspace{-2.0ex}
+                            \begin{align*}
+                                v(x) &= 0 &&\\[2.0ex]
+                                4x^{2} - 1 &= 0 &&| \quad + 1\\[1.5ex]
+                                4x^{2} &= 1 &&| \quad :4\\[1.5ex]
+                                x^{2} &= \dfrac{1}{4} &&| \quad \sqrt[2]{\phantom{x}}\\[1.5ex]
+                                x_{1} = -\dfrac{1}{2} \ \text{\textit{(e)}}; \qquad x_{1} \in D_{f}; \quad & \quad x_{2} = \dfrac{1}{2} \ \text{\textit{(e)}}; \qquad x_{2} \in D_{f} &&\\[-1.0ex]
+                            \end{align*}
+                        \end{minipage}
+                        \begin{minipage}[t]{1.0\linewidth}
+                            \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|X}
+                                & $-\infty < x < -\dfrac{1}{2}$ & $x = -\dfrac{1}{2}$ & $-\dfrac{1}{2} < x < \dfrac{1}{2}$ & $x = \dfrac{1}{2}$ & $ \dfrac{1}{2} < x < \infty$ \\ \hline
+                                $v(x)$ & $+$ & $0$ & $-$ & $0$ & $+$ \\ \hline
+                                $u(x)$ & $+$ & $0$ & n. d. & $0$ & $+$ \\ \hline
+                                $f(x)$ & $+$ & $0$ & n .d. & $0$ & $+$ \\              
+                            \end{tabularx}  
+                        \end{minipage}\\[3.0ex]
+                        $\Rightarrow \quad \uuline{D_{f} = \left[ \ 3; \infty \ \right[}$
+                        }\\[-1.0ex]
+                    \item Nullstellen: \\[1.0ex]{
+                        $f(x) = 0$ \qquad $\Rightarrow$ \qquad $u(x) = 0$ \qquad $\Rightarrow$ \qquad $v(x) = 0$\\[-2.0ex]
+                        \begin{align*}
+                            x_{1} = -\dfrac{1}{2} \ \text{\textit{(e)}}; \qquad x_{1} \in D_{f}; \quad & \quad x_{2} = \dfrac{1}{2} \ \text{\textit{(e)}}; \qquad x_{2} \in D_{f} && \\[-1.0ex]
+                        \end{align*}
+                        $\uuline{N_{1}\left(-\dfrac{1}{2} / 0\right); \quad N_{2}\left(\dfrac{1}{2} / 0\right)}$\\[-1.0ex]
+                        }
+                \end{itemize}
+                }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 32/4}{}
+    \begin{enumerate}
+        \item [4.]\begin{enumerate}[label=\alph*)]
+            \item[a)] {
+                $f(x) = \arctan\left(x^{2} + 7\right)$; \qquad $D_{f} = \mathbb{R}$ \\[-2.0ex]
+                \begin{align*}
+                    f'(x) &= \dfrac{1}{1 + \left(x^{2} + 7\right)^{2}} \cdot 2x &&\\[1.5ex]
+                    &= \dfrac{2x}{1 + x^{4} + 2x^{2} \cdot 7 + 49} && \\[1.5ex]
+                    &\uuline{= \dfrac{2x}{x^{4} + 14x^{2} + 50}} &&
+                \end{align*}
+                }
+            \item[b)] {
+                $f(x) = \arctan\left(\sqrt[2]{x + \dfrac{1}{2}}\right)$; \qquad $D_{f} = \left[ \ -\dfrac{1}{2}; \infty \ \right[$ \\[-1.0ex]
+                \begin{align*}
+                    f'(x) &= \dfrac{1}{1 + \left(\sqrt[2]{x + \dfrac{1}{2}}\right)^{2}} \cdot \dfrac{1}{2} \cdot \left(x + \dfrac{1}{2}\right)^{-\frac{1}{2}} \cdot 1 &&\\[1.5ex]
+                    &= \dfrac{1}{x + \dfrac{3}{2}} \cdot \dfrac{1}{2 \cdot \sqrt[2]{x + \dfrac{1}{2}}} && \\[1.5ex]
+                    &= \dfrac{1}{\left(x + \dfrac{3}{2}\right) \cdot 2 \cdot \sqrt[2]{x + \dfrac{1}{2}}} && \\[1.5ex]
+                    &\uuline{= \dfrac{1}{{\left(2x + 3\right) \cdot \sqrt[2]{x + \dfrac{1}{2}}}}} && 
+                \end{align*}
+                }
+            \item[c)] {
+                $f(x) = \arctan\left(e^{x}\right)$; \qquad $D_{f} = \mathbb{R}$ \\[-2.0ex]
+                \begin{align*}
+                    f'(x) &= \dfrac{1}{1 + \left(e^{x}\right)^{2}} \cdot e^{x} \cdot 1 &&\\[1.5ex]
+                    &\uuline{= \dfrac{e^{x}}{e^{2x} + 1}} &&
+                \end{align*}
+                }
+            \item[d)] {
+                $f(x) = \arctan\left(x\right) + \arctan\left(\dfrac{1}{x}\right)$; \qquad $D_{f} = \mathbb{R} \setminus \{ 0 \}$ \\[-2.0ex]
+                \begin{align*}
+                    f'(x) &= \dfrac{1}{1 + \left(x\right)^{2}} \cdot 1 + \dfrac{1}{1 + \left(\dfrac{1}{x}\right)^{2}} \cdot \left(-1\right) \cdot \dfrac{1}{x^{2}} &&\\[1.5ex]
+                    &= \dfrac{1}{x^{2} + 1} + \left(-1\right) \cdot  \dfrac{1}{1 + \dfrac{1}{x^{2}}} \cdot \dfrac{1}{x^{2}} && \\[1.5ex]
+                    &= \dfrac{1}{x^{2} + 1} - \dfrac{1}{x^{2} + 1} && \\[1.5ex]
+                    &\uuline{= 0} &&
+                \end{align*}
+                }
+        \end{enumerate}
+    \end{enumerate}
+\end{Exercise}
