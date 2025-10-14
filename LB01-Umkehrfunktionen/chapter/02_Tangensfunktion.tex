@@ -1,3 +1,217 @@
 % LTeX: language=de
 
 \subsection{Tangens- und Arcustangens-Funktion}
+
+\begin{minipage}[t]{0.45\linewidth}
+    $f(x) = \tan\left(x\right)$\\[-2.0ex]
+    \begin{itemize}[leftmargin=*]
+        \item Hauptzweig der Tangens-Funktion\\[-2.0ex]{
+            \raisebox{-\height}{
+            \begin{tikzpicture}[
+                    declare function={
+                        f_f(\x) = (tan(deg(\x*\xScale)))*(1/\yScale);
+                    }
+                ]
+
+                % Set variables
+                \pgfmathsetmacro{\axisPosWidth}{2.5};
+                \pgfmathsetmacro{\axisNegWidth}{-2.5};
+                \pgfmathsetmacro{\axisPosHeight}{2.5};
+                \pgfmathsetmacro{\axisNegHeight}{-2.5};
+                \pgfmathsetmacro{\xIncrement}{1.0};
+                \pgfmathsetmacro{\yIncrement}{1.0};
+                \pgfmathsetmacro{\xScale}{1};
+                \pgfmathsetmacro{\yScale}{2};
+                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                % Axis/grid limits
+                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                % Axis environment (PGFPlots)
+                \begin{axis}[
+                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                    axis lines=middle,
+                    axis line style={->, >=stealth},
+                    grid=both,
+                    xlabel={$x$},
+                    ylabel={$y$},
+                    xlabel style={anchor=west, at={(current axis.right of origin)}},
+                    ylabel style={anchor=south, at={(current axis.above origin)}},
+                    xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                    ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                    yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                    tick label style={font=\scriptsize},
+                    x=1cm,
+                    y=1cm,
+                    minor tick num=1,
+                    scale only axis,
+                    grid=both,
+                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                ]
+                    
+                % Graph limits
+                \pgfmathsetmacro{\xLowerLimitGraph}{-pi/2*(1/\xScale)}
+                \pgfmathsetmacro{\xUpperLimitGraph}{pi/2*(1/\xScale)}
+                
+                % G_f
+                \pgfmathsetmacro{\Gfax}{1}
+                \pgfmathsetmacro{\Gfay}{f_f(\Gfax)}
+                \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
+                    {f_f(x)};
+                \node[anchor=south east] at (axis cs:{\Gfax},{\Gfay}) {\textcolor{myb}{$G_{f}$}};
+
+                % v_1 für x1
+                \pgfmathsetmacro{\Gtax}{-pi/2}
+                \addplot[thick, myorange] coordinates {(\Gtax*(1/\xScale),\yLowerLimitGrid) (\Gtax*(1/\xScale),\yUpperLimitGrid)};
+                \node[anchor=south east] at (axis cs:{\Gtax},{0}) {\textcolor{myorange}{$-\frac{\pi}{2}$}};
+
+                % v_2 für x2
+                \pgfmathsetmacro{\Gtbx}{pi/2}
+                \addplot[thick, myorange] coordinates {(\Gtbx*(1/\xScale),\yLowerLimitGrid) (\Gtbx*(1/\xScale),\yUpperLimitGrid)};
+                \node[anchor=south west] at (axis cs:{\Gtbx},{0}) {\textcolor{myorange}{$\frac{\pi}{2}$}};
+                \end{axis}
+            \end{tikzpicture}
+            }\\[2.0ex]
+            $D_{f} = \left] \ -\dfrac{\pi}{2}; +\dfrac{\pi}{2} \ \right[$; \qquad $W_{f} = \mathbb{R}$\\[2.0ex]
+            senkrechte Asymptoten:\\[1.5ex]
+            $x = - \dfrac{\pi}{2}$; \qquad $x = \dfrac{\pi}{2}$\\[-2.0ex]
+            }
+        \item Verhalten am Rand von $D_{f}$:\\[-1.0ex]{
+            \vspace{-2.0ex}
+            \begin{align*}
+                \lim\limits_{x \to -\frac{\pi}{2}^{+}} \tan\left(x\right) &= - \infty &&\\[1.5ex]
+                \lim\limits_{x \to +\frac{\pi}{2}^{-}} \tan\left(x\right) &= \infty &&
+            \end{align*}
+            }
+        \item Besondere Punkte in $D_{f}$:\\{
+            $\boxed{\highlight[yellow]{\tan\left(0\right) = 0}}$\\[1.0ex]
+            $\tan\left(-\dfrac{\pi}{4}\right) = -1$; \qquad $\tan\left(\dfrac{\pi}{4}\right) = 1$
+        }
+        \item Punktsymmetrie zum Ursprung: \\[-1.0ex]{
+            \vspace{-2.0ex}
+            \begin{align*}
+                \tan\left(x\right) &= -\tan\left(-x\right) &&
+            \end{align*}
+            }
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\linewidth}
+    $g(x) = \arctan\left(x\right)$\\[-2.0ex]
+    \begin{itemize}[leftmargin=*]
+        \item Hauptzweig der Arcustangens-Funktion\\[-2.0ex]{
+            \raisebox{-\height}{
+            \begin{tikzpicture}[
+                    declare function={
+                        f_g(\x) = (rad(atan(\x*\xScale)))*(1/\yScale);
+                    }
+                ]
+
+                % Set variables
+                \pgfmathsetmacro{\axisPosWidth}{3.0};
+                \pgfmathsetmacro{\axisNegWidth}{-3.0};
+                \pgfmathsetmacro{\axisPosHeight}{2.5};
+                \pgfmathsetmacro{\axisNegHeight}{-2.5};
+                \pgfmathsetmacro{\xIncrement}{1.0};
+                \pgfmathsetmacro{\yIncrement}{1.0};
+                \pgfmathsetmacro{\xScale}{2.0};
+                \pgfmathsetmacro{\yScale}{1};
+                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                % Axis/grid limits
+                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                % Axis environment (PGFPlots)
+                \begin{axis}[
+                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                    axis lines=middle,
+                    axis line style={->, >=stealth},
+                    grid=both,
+                    xlabel={$x$},
+                    ylabel={$y$},
+                    xlabel style={anchor=west, at={(current axis.right of origin)}},
+                    ylabel style={anchor=south, at={(current axis.above origin)}},
+                    xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                    ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                    yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                    tick label style={font=\scriptsize},
+                    x=1cm,
+                    y=1cm,
+                    minor tick num=1,
+                    scale only axis,
+                    grid=both,
+                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                ]
+                    
+                % Graph limits
+                \pgfmathsetmacro{\xLowerLimitGraph}{\xLowerLimitGrid}
+                \pgfmathsetmacro{\xUpperLimitGraph}{\xUpperLimitGrid}
+                
+                % G_f
+                \pgfmathsetmacro{\Ggax}{1}
+                \pgfmathsetmacro{\Ggay}{f_g(\Ggax)}
+                \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
+                    {f_g(x)};
+                \node[anchor=north west] at (axis cs:{\Ggax},{\Ggay}) {\textcolor{myb}{$G_{g}$}};
+
+                % h_1 für y1
+                \pgfmathsetmacro{\Gtay}{-pi/2*(1/\yScale)}
+                \addplot[thick, myorange] coordinates {(\xLowerLimitGraph,\Gtay) (\xUpperLimitGraph,\Gtay)};
+                \node[anchor=north west] at (axis cs:{0},{\Gtay}) {\textcolor{myorange}{$-\frac{\pi}{2}$}};
+
+                % h_2 für y2
+                \pgfmathsetmacro{\Gtby}{pi/2*(1/\yScale)}
+                \addplot[thick, myorange] coordinates {(\xLowerLimitGraph,\Gtby) (\xUpperLimitGraph,\Gtby)};
+                \node[anchor=south west] at (axis cs:{0},{\Gtby}) {\textcolor{myorange}{$\frac{\pi}{2}$}};
+                \end{axis}
+            \end{tikzpicture}
+            }\\[2.0ex]
+            $D_{g} = \mathbb{R}$; \qquad $W_{g} = \left] \ -\dfrac{\pi}{2}; +\dfrac{\pi}{2} \ \right[$\\[2.0ex]
+            waagerechte Asymptoten:\\[1.5ex]
+            $y = - \dfrac{\pi}{2}$; \qquad $y = \dfrac{\pi}{2}$\\[-2.0ex]
+            }
+        \item Verhalten am Rand von $D_{g}$: \\[-1.0ex]{
+            \vspace{-2.0ex}
+            \begin{align*}
+                \lim\limits_{x \to -\infty} \arctan\left(x\right) &= - {\dfrac{\pi}{2}}^{+} &&\\[2.0ex]
+                \lim\limits_{x \to \infty} \arctan\left(x\right) &= + {\dfrac{\pi}{2}}^{-} &&\\[-4.0ex]
+            \end{align*}
+            }
+        \item Besondere Punkte in $D_{g}$:\\{
+            $\boxed{\highlight[yellow]{\arctan\left(0\right) = 0}}$\\[1.0ex]
+            $\arctan\left(-1\right) = -\dfrac{\pi}{4}$; \qquad $\arctan\left(1\right) = \dfrac{\pi}{4}$
+        }
+        \item Punktsymmetrie zum Ursprung: \\[-1.0ex]{
+            \vspace{-2.0ex}
+            \begin{align*}
+                \arctan\left(x\right) &= -\arctan\left(-x\right) && \\[1.5ex]
+                \arctan\left(x\right) &= -\arctan\left(x\right) &&
+            \end{align*}
+            }
+    \end{itemize}
+\end{minipage}
+\begin{Example}{Umformung Arcustangens-Funktion}{}
+    $\arctan\left(-\dfrac{x^{2} -1}{-x + 3}\right) = - \arctan\left(\dfrac{x^{2} -1}{-x + 3}\right) = \arctan\left(\dfrac{-x^{2} + 1}{-x + 3}\right) = \arctan\left(\dfrac{x^{2} -1}{x - 3}\right)$
+\end{Example}

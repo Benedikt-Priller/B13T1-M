@@ -1,0 +1,274 @@
+% LTeX: language=de
+
+\subsubsection{Musterkurvendiskussion einer Arcustangensfunktion}
+
+\begin{Example}{Kurvendiskussion einer Arcustangensfunktion}{}
+$f(x) = \arctan\left(\sqrt[2]{-x^{2} +1}\right)$; \qquad $u(x) = \sqrt[2]{-x^{2} +1}$; \qquad $v(x) = -x^{2} +1$
+\begin{itemize}
+    \item Definitionsmenge: \\{
+        Einschränkungen: \qquad Bruch $\left(n(x) \neq 0\right)$; Wurzel $\left(r(x) \geq 0\right)$; ln-Funktion $\left(a(x) > 0\right)$\\[1.0ex]
+        $v(x) \geq 0:$\\[-2.0ex]
+        \begin{minipage}[t]{0.35\linewidth}
+            \vspace{-2.0ex}
+            \begin{align*}
+                v(x) &= 0 &&\\[2.0ex]
+                -x^{2} + 1 &= 0 &&| \quad + x^{2}\\[1.5ex]
+                x^{2} &=  1 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[-2.0ex]
+            \end{align*}
+            $x_{1} = -1 \ \text{\textit{(e)}}; \quad x_{2} = 1 \ \text{\textit{(e)}}$\\
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.60\linewidth}
+            \raisebox{-\height}{
+            \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|X}
+                & $-\infty < x < -1$ & $x = -1$ & $-1 < x < 1$ & $x = 1$ & $1 < x < \infty$ \\ \hline
+                $v(x)$ & $-$ & $0$ & $+$ & $0$ & $-$ \\ \hline
+                $u(x)$ & n. d. & $0$ & $+$ & $0$ & n. d. \\ \hline
+                $f(x)$ & n. d. & $0$ & $+$ & $0$ & n. d. \\
+            \end{tabularx}
+            }
+        \end{minipage}
+        $\Rightarrow \quad \uuline{D_{f} = \left[ \ -1; 1 \ \right]}$
+        }
+    \item Symmetrie: \\[-2.0ex]{
+        \begin{itemize}
+            \item Achsensymmetrie zur y-Achse: \quad $\highlight[yellow]{f(-x) = f(x)}$\\[-1.0ex]{
+                \begin{align*}
+                    f(-x) &= \arctan\left(\sqrt[2]{-\left(-x\right)^{2} +1}\right) &&\\[1.5ex]
+                    &= \arctan\left(\sqrt[2]{-x^{2} +1}\right) && \\[1.5ex]
+                    &= f(x) &&
+                \end{align*}
+                oder:
+                \begin{align*}
+                    \arctan\left(\sqrt[2]{-\left(-x\right)^{2} +1}\right) &= \arctan\left(\sqrt[2]{-x^{2} +1}\right) &&\\[1.5ex]
+                    \arctan\left(\sqrt[2]{-x^{2} +1}\right) &= \arctan\left(\sqrt[2]{-x^{2} +1}\right) \quad \text{\textit{(wahr)}} &&
+                \end{align*}
+                $\Rightarrow \quad \uuline{f(x) \text{ ist achsensymmetrisch zur y-Achse}}$
+                }
+            \item Punktsymmetrie zum Ursprung: \quad $\highlight[yellow]{f(-x) = -f(x)}$
+        \end{itemize}
+        }
+    \item Schnittpunkte mit den Koordinatenachsen: \\[-2.0ex]{
+        \begin{itemize}
+            \item $y$-Achse: \quad $f(0) = \arctan\left(\sqrt[2]{-\left(0\right)^{2} +1}\right) = \dfrac{\pi}{4}$
+            \item $x$-Achse: \quad $f(x) = 0$ \\[-2.0ex]{
+                \begin{align*}
+                    \arctan\left(\sqrt[2]{-\left(x\right)^{2} +1}\right) &= 0 &&\\[1.5ex]
+                    \sqrt[2]{-\left(x\right)^{2} +1} &= 0 &&| \quad ^{2}\\[1.5ex]
+                    -\left(x\right)^{2} +1 &= 0 &&| \quad + x^{2}\\[1.5ex]
+                    x^{2} &= 1 &&| \quad \pm \sqrt[2]{\phantom{x}}
+                \end{align*}
+                $x_{1} = -1 \ \text{\textit{(e)}}; \quad x_{2} = 1 \ \text{\textit{(e)}}$
+                }
+        \end{itemize}
+        }
+    \item Grenzverhalten und Asymptoten: \\[-3.0ex]{
+        \begin{itemize}
+            \item bei \textbf{geschlossenen} Rändern von $D_{f}$: \quad Randwert in  $f(x)$ einsetzen \\[1.0ex]{
+                $f(-1) = f(1) = 0$\\[1.0ex]
+                keine Asymptoten
+                }
+            \item bei \textbf{offenen} Rändern von $D_{f}$: \quad $\lim\limits f(x)$ verwenden \\[-2.0ex]{
+                \begin{itemize}
+                    \item für waagerechte Asymptoten gilt: \quad $\lim\limits_{x \to \pm \infty} f(x) = \text{Zahl}$\\[-1.0ex]
+                    \item für senkrechte Asymptoten gilt: \quad $\lim\limits_{x \to \text{Zahl}} f(x) = \pm \infty$
+                \end{itemize}
+                }
+        \end{itemize}
+        }
+    \item Monotonie und Extrema: \\[-2.0ex]{
+        \begin{align*}
+            f'(x) &= \dfrac{1}{1 + \left(\sqrt[2]{- x^{2} + 1}\right)^{2}} \cdot \dfrac{1}{2} \cdot \dfrac{1}{\sqrt[2]{- x^{2} + 1}} \cdot \left(-2x\right) &&\\[1.5ex]
+            &= \dfrac{-x}{\left(-x^{2} + 2\right) \cdot \sqrt[2]{- x^{2} + 1}} && \\[-2.0ex]
+        \end{align*}
+        $f'(x) = 0$; \qquad $x_{1} = 0 \ \text{\textit{(e)}}$\\[1.0ex]
+        Relevante Informationen: \\[-3.0ex]{
+        \begin{itemize}
+            \item $D_{f} = \left[ \ -1; 1 \ \right]$
+            \item $f'(x) = 0$
+            \item Defintionslücken von $f'(x)$ \\[1.0ex]{
+                $n(x) = \left(-x^{2} + 2\right) \cdot \sqrt[2]{- x^{2} + 1}$; \quad $u(x) = -x^{2} + 2$; \quad $v(x) = \sqrt[2]{- x^{2} + 1}$\\[1.0ex]
+                $n(x) \neq 0$ und $u(x) \neq 0$: \\[1.0ex]
+                \qquad $x_{1} = -\sqrt{2} \ \text{\textit{(e)}}; \quad x_{2} = \sqrt{2}\ \text{\textit{(e)}}; \quad x_{3} = -1 \ \text{\textit{(e)}}; \quad x_{4} = 1 \ \text{\textit{(e)}}$ \\[1.0ex]
+                \qquad $x_{1} \not\in D_{f}$; \quad $x_{2} \not\in D_{f}$; \quad $x_{3} \in D_{f}$; \quad $x_{4} \in D_{f}$ \\
+                \begin{minipage}[t]{1.00\linewidth}
+                    \raisebox{-\height}{
+                    \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|X}
+                        & $x = -1$ & $-1 < x < 0$ & $x = 0$ & $0 < x < 1$ & $x = 1$ \\ \hline
+                        $z(x)$ & $+$ & $+$ & $0$ & $-$ & $-$ \\ \hline
+                        $u(x)$ & $+$ & $+$ & $+$ & $+$ & $+$ \\ \hline
+                        $v(x)$ & $0$ & $+$ & $+$ & $+$ & $0$ \\ \hline
+                        $n(x)$ & $0$ & $+$ & $+$ & $+$ & $0$ \\ \hline
+                        $f(x)$ & n. d. & $+$ & $0$ & $-$ & n. d. \\ \hline
+                        $G_{f}$ &  & $\nearrow$ & HoP & $\searrow$ & \\
+                    \end{tabularx}
+                    }
+                \end{minipage}\\
+                }
+        \end{itemize}
+        }
+        $\Rightarrow \quad G_{f}$ ist sms in $\left[ \ -1; 0 \ \right]$\\[1.0ex]
+        $\Rightarrow \quad G_{f}$ ist smf in $\left[ \ 0; 1 \ \right]$\\[1.0ex]
+        Extrema: \\[-3.0ex]{
+            \begin{itemize}
+                \item Am Rand (immer vorhanden bei geschlossener Definitionsmenge): \\[1.0ex]{
+                    $T_{1}\left(-1 / 0\right); \quad T_{2}\left(1 / 0\right)$
+                    }
+                \item Hochpunkte: \\[1.0ex]{
+                    $M_{1}\left(0 / \frac{\pi}{4}\right)$
+                }
+                \item Tiefpunkte
+            \end{itemize}
+        }
+        }
+    \item Krümmung und Wendepunkte: \\[-2.0ex]{
+        \begin{align*}
+            f''(x) &= \dfrac{\left(-1\right) \cdot \left(-x^{2} + 2\right) \cdot \sqrt[2]{-x^{2} + 1} - \left(-x\right) \cdot \left[-2x \cdot \sqrt[2]{-x^{2} + 1} + \dfrac{-x^{2} + 2}{2 \cdot \sqrt[2]{-x^{2} + 1}} \cdot \left(-2x\right)\right]}{\left[\left(-x^{2} + 2\right) \cdot \sqrt[2]{-x^{2} + 1}\right]^{2}} &&\\[2.0ex]
+            &= \dfrac{\left(-1\right) \cdot \left(-x^{2} + 2\right) \cdot \sqrt[2]{-x^{2} + 1} +x \cdot \sqrt[2]{-x^{2} + 1} \cdot \left[-2x + \dfrac{-x^{2} + 2}{2 \cdot \left(\sqrt[2]{-x^{2} + 1}\right)^{2}} \cdot \left(-2x\right)\right]}{\left(-x^{2} + 2\right)^{2} \cdot \left(\sqrt[2]{-x^{2} + 1}\right)^{2}} &&\\[2.0ex]
+            &= \dfrac{\left(-1\right) \cdot \left(-x^{2} + 2\right) +x \cdot \left(-x^{2} + 2\right) \cdot \left[\dfrac{-2x}{-x^{2} + 2} + \dfrac{-2x}{2 \cdot \left(\sqrt[2]{-x^{2} + 1}\right)^{2}}\right]}{\left(-x^{2} + 2\right)^{2} \cdot \sqrt[2]{-x^{2} + 1}} &&\\[2.0ex]
+            &= \dfrac{- 1 +x \cdot \left[\dfrac{-2x}{-x^{2} + 2} + \dfrac{-x}{\sqrt[2]{-x^{2} + 1}}\right]}{\left(-x^{2} + 2\right) \cdot \sqrt[2]{-x^{2} + 1}} &&\\[2.0ex]
+            &= \dfrac{2x^{4}-x^{2}-2}{\left(-x^{2} + 2\right)^{2} \cdot \left(-x^{2} + 1\right)^{\frac{3}{2}}} &&
+        \end{align*}
+        }
+        $z(x) = 2x^{4}-x^{2}-2$; \qquad $n(x) = \left(-x^{2} + 2\right)^{2} \cdot \left(-x^{2} + 1\right)^{\frac{3}{2}}$; \\[2.0ex]
+        $u(x) = \left(-x^{2} + 2\right)^{2}$; \qquad $v(x) = \left(-x^{2} + 1\right)^{\frac{3}{2}}$\\[2.0ex]
+        $f''(x) = 0 \qquad \Rightarrow \quad z(x) = 0$\\[-2.0ex]
+        \begin{align*}
+            2x^{4}-x^{2}-2 &= 0; \qquad z = x^{2}&&
+        \end{align*}
+        \begin{align*}
+            2z^{2} - z - 2 &= 0 &&\\[1.5ex]
+            z_{1, 2} &= \dfrac{1 \pm \sqrt{\left(-1\right)^{2} - 4 \cdot 2 \cdot \left(-2\right)}}{2 \cdot 2} = \dfrac{1 \pm \sqrt{17}}{4} &&
+        \end{align*}
+        \begin{minipage}[t]{0.4\linewidth}
+            \begin{align*}
+                z_{1} &= \dfrac{1 - \sqrt{17}}{4} &&\\[2.0ex]
+                x^{2} &= \dfrac{1 - \sqrt{17}}{4} &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                & \textcolor{myr}{\text{n. d. in } \mathbb{R}} 
+            \end{align*}
+        \end{minipage}
+        \hfill
+        \vrule
+        \hfill
+        \begin{minipage}[t]{0.55\linewidth}
+            \begin{align*}
+                z_{2} &= \dfrac{1 + \sqrt{17}}{4} &&\\[2.0ex]
+                x^{2} &= \dfrac{1 + \sqrt{17}}{4} &&| \quad \pm \sqrt[2]{\phantom{x}}
+            \end{align*}
+            $x_{1} = -\sqrt{\dfrac{1 + \sqrt{17}}{4}} \ \text{\textit{(e)}}; \quad x_{2} = \sqrt{\dfrac{1 + \sqrt{17}}{4}} \ \text{\textit{(e)}}$\\[2.0ex]
+            $x_{1} \not\in D_{f}$; \quad $x_{2} \not\in D_{f}$;
+        \end{minipage}\\[2.0ex]
+        \begin{minipage}[t]{1.00\linewidth}
+            \raisebox{-\height}{
+            \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                & $x = -1$ & $-1 < x < 1$ & $x = 1$ \\ \hline
+                $z(x)$ & $-$ & $-$ & $-$ \\ \hline
+                $u(x)$ & $+$ & $+$ & $+$ \\ \hline
+                $v(x)$ & $0$ & $+$ & $0$ \\ \hline
+                $n(x)$ & $0$ & $+$ & $0$ \\ \hline
+                $f''(x)$ & n. d. & $-$ & n. d. \\ \hline
+                $G_{f}$ &  & r. g. & \\
+            \end{tabularx}
+            }
+        \end{minipage}\\[2.0ex]
+        $\Rightarrow$ \qquad $G_{f}$ ist rechtsgekrümmt in $\left[ \ -1; 1 \ \right]$
+    \item Wertemenge: \\[1.0ex]{
+        $G_{f}$ ist sms in $\left[ \ -1; 0 \ \right]$ und smf in $\left[ \ 0; 1 \ \right]$\\[1.0ex]
+        $\Rightarrow$ \qquad maximaler Wert bei $M_{1}$; \quad minimaler Wert bei $T_{1}$ oder $T_{2}$\\[1.0ex]
+        $\Rightarrow \qquad \uuline{W_{f} = \left[ \ 0; \dfrac{\pi}{4} \ \right]}$
+        }
+    \item Zeichnung: \\[-2.0ex]{
+            \raisebox{-\height}{
+            \begin{tikzpicture}[
+                    declare function={
+                        f_f(\x) = rad(atan(sqrt(-(\x*\xScale)^2 + 1)))*(1/\yScale);
+                    }
+                ]
+
+                % Set variables
+                \pgfmathsetmacro{\axisPosWidth}{5.0};
+                \pgfmathsetmacro{\axisNegWidth}{-5.0};
+                \pgfmathsetmacro{\axisPosHeight}{3.0};
+                \pgfmathsetmacro{\axisNegHeight}{-0.5};
+                \pgfmathsetmacro{\xIncrement}{1.0};
+                \pgfmathsetmacro{\yIncrement}{1.0};
+                \pgfmathsetmacro{\xScale}{0.5};
+                \pgfmathsetmacro{\yScale}{0.5};
+                \pgfmathsetmacro{\gridxIncrement}{0.5};
+                \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                % Axis/grid limits
+                \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                % Axis environment (PGFPlots)
+                \begin{axis}[
+                    xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                    ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                    axis lines=middle,
+                    axis line style={->, >=stealth},
+                    grid=both,
+                    xlabel={$x$},
+                    ylabel={$y$},
+                    xlabel style={anchor=west, at={(current axis.right of origin)}},
+                    ylabel style={anchor=south, at={(current axis.above origin)}},
+                    xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                    ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                    xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                    yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                    tick label style={font=\scriptsize},
+                    x=1cm,
+                    y=1cm,
+                    minor tick num=1,
+                    scale only axis,
+                    grid=both,
+                    restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                ]
+                    
+                % Graph limits
+                \pgfmathsetmacro{\xLowerLimitGraph}{-1*(1/\xScale)}
+                \pgfmathsetmacro{\xUpperLimitGraph}{1*(1/\xScale)}
+                
+                % G_f
+                \pgfmathsetmacro{\Gfax}{0.5*(1/\xScale)}
+                \pgfmathsetmacro{\Gfay}{f_f(\Gfax)}
+                \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
+                    {f_f(x)};
+                \node[anchor=south west] at (axis cs:{\Gfax},{\Gfay}) {\textcolor{myb}{$G_{f}$}};
+
+                % T_1
+                \pgfmathsetmacro{\Tax}{\xLowerLimitGraph}
+                \pgfmathsetmacro{\Tay}{f_f(\Tax)}
+                \pgfmathsetmacro{\TaxLabel}{\Tax*\xScale}
+                \pgfmathsetmacro{\TayLabel}{\Tay*\yScale}
+                \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Tax,\Tay)};
+                \node[anchor=south east] at (axis cs:{\Tax},{\Tay}) {$T_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\TaxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\TayLabel}{})$};
+
+                % T_2
+                \pgfmathsetmacro{\Tbx}{\xUpperLimitGraph}
+                \pgfmathsetmacro{\Tby}{f_f(\Tbx)}
+                \pgfmathsetmacro{\TbxLabel}{\Tbx*\xScale}
+                \pgfmathsetmacro{\TbyLabel}{\Tby*\yScale}
+                \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Tbx,\Tby)};
+                \node[anchor=south west] at (axis cs:{\Tbx},{\Tby}) {$T_{2}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\TbxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\TbyLabel}{})$};
+
+                % M_1
+                \pgfmathsetmacro{\Max}{0}
+                \pgfmathsetmacro{\May}{f_f(\Max)}
+                \pgfmathsetmacro{\MaxLabel}{\Max*\xScale}
+                \pgfmathsetmacro{\MayLabel}{\May*\yScale}
+                \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Max,\May)};
+                \node[anchor=south east] at (axis cs:{\Max},{\May}) {$M_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\MaxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\MayLabel}{})$};
+                \end{axis}
+            \end{tikzpicture}
+            }
+        }
+\end{itemize}
+\end{Example}

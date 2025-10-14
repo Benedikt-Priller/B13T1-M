@@ -1,0 +1,428 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 107/3}{}
+\begin{enumerate}
+    \item [2.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[g)] {
+            $f(x) = \arctan\left(\dfrac{1}{x+2}\right)$; \qquad $u(x) = \dfrac{1}{x+2}$; \qquad $z(x) = 1$; \qquad $n(x) = x+2$ \\[-2.0ex]
+            \begin{itemize}[leftmargin=*]
+                \item Definitionsmenge: \\[1.0ex]{
+                    $n(x) \neq 0:$\\[-4.0ex]
+                    \begin{align*}
+                        n(x) &= 0 &&\\[2.0ex]
+                        x + 2 &= 0 &&| \quad -2\\[1.5ex]
+                        x_{1} &= -2 \ \text{\textit{(e)}}&&
+                    \end{align*}
+                    $\Rightarrow \quad \uuline{D_{f} = \mathbb{R} \setminus \left\{ -2 \right\}}$; \qquad Polstelle erster Ordnung mit VZW bei $x_{1} = -2$
+                    }
+                \item Symmetrie: \\[1.0ex]{
+                    $D_{f}$ nicht symmetrisch \quad $\Rightarrow$ \quad \uuline{keine Symmetrie vorhanden}\\[-2.0ex]
+                    }
+                \item Nullstellen: \\[1.0ex]{
+                    $f(x) = 0$ \qquad $\Rightarrow$ \qquad $u(x) = 0$\\[-2.0ex]
+                    \begin{align*}
+                        z(x) > 0 \quad \Rightarrow \quad \text{keine Nullstellen}
+                    \end{align*}
+                    }
+                \item Grenzverhalten: \\[-2.0ex]{
+                    \begin{align*}
+                        \lim\limits_{x \to -\infty} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{-\infty}}}\right]}^{\textcolor{myg}{0^{-}}}\right) &= 0^{-}; \qquad \qquad \lim\limits_{x \to +\infty} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{+\infty}}}\right]}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+} &&\\[2.0ex]
+                        \lim\limits_{x \to -2^{-}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{-}}}}\right]}^{\textcolor{myg}{-\infty}}\right) &= - \dfrac{\pi}{2}^{+}; \qquad \qquad \lim\limits_{x \to -2^{+}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{+}}}}\right]}^{\textcolor{myg}{+\infty}}\right) &= \dfrac{\pi}{2}^{-} &&
+                    \end{align*}
+                    }
+                \item Asymptoten: \\[-2.0ex]{
+                    \begin{itemize}
+                        \item Senkrechte Asymptoten: \quad {
+                            \vspace{-5.0ex}
+                            \begin{align*}
+                                v_{1}(x): \quad &x = - 2
+                            \end{align*}
+                            }
+                        \item Waagerechte Asymptoten: \quad {
+                            \vspace{-5.0ex}
+                            \begin{align*}
+                                h_{1}(x): \quad &y = - \dfrac{\pi}{2}\\[1.5ex]
+                                h_{2}(x): \quad &y = \dfrac{\pi}{2}
+                            \end{align*}
+                            }
+                    \end{itemize}
+                    }
+                \item Monotonie: \\[-2.0ex]{
+                    \begin{align*}
+                        f'(x) &= \dfrac{1}{1 + \left(\dfrac{1}{x+2}\right)^{2}} \cdot \dfrac{\left(x+2\right) \cdot 0 - 1 \cdot 1}{\left(x+2\right)^{2}} &&\\[1.5ex]
+                        &= \dfrac{1}{1 + \dfrac{1}{\left(x+2\right)^{2}}} \cdot \dfrac{-1}{\left(x+2\right)^{2}} &&\\[1.5ex]
+                        &= \dfrac{-1}{1 + \left(x+2\right)^{2}} &&\\[-2.0ex]
+                    \end{align*}
+                    $z(x) = -1$; \qquad $n(x) = \left(x+2\right)^{2}$\\[1.0ex]
+                    $f'(x) = 0 \qquad \Rightarrow \qquad z(x) < 0 \qquad \Rightarrow$ \quad keine Nullstellen\\[1.0ex]
+                    \begin{minipage}[t]{0.4\linewidth}
+                        \begin{align*}
+                            n(x) &= 0 \\[2.0ex]
+                            \left(x+2\right)^{2} &= 0 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            x+2 &= 0 &&| \quad -2\\[1.5ex]
+                            x_{1} &= -2 \ \text{\textit{(d)}} &&\\[-1.5ex]
+                        \end{align*}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{0.55\linewidth}
+                        \raisebox{-\height}{
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                            & $-\infty < x < -2$ & $x = -2$ & $-2 < x < \infty$ \\ \hline
+                            $z(x)$ & $-$ & $-$ & $-$ \\ \hline
+                            $n(x)$ & $+$ & $0$ & $+$ \\ \hline
+                            $f'(x)$ & $-$ & n. d. & $-$ \\ \hline
+                            $G_{f}$ & $\searrow$ &  & $\searrow$ \\
+                        \end{tabularx}
+                        }  
+                    \end{minipage}
+                    $\Rightarrow \qquad G_{f}$ ist smf in $\left] \ -\infty; -2 \ \right[$ sowie $\left] \ -2; \infty \ \right[$\\[-2.0ex]
+                    }
+                \item Krümmung: \\[-2.0ex]{
+                    \begin{align*}
+                        f''(x) &= \dfrac{\left(x+2\right)^{2} \cdot 0 - \left(-1\right) \cdot 2 \cdot \left(x+2\right) \cdot 1}{\left[\left(x+2\right)^{2}\right]^{2}} &&\\[1.5ex]
+                        &= \dfrac{2 \cdot \left(x + 2\right)}{\left(x+2\right)^{4}} &&\\[1.5ex]
+                        &= \dfrac{2}{\left(x+2\right)^{3}} && \\[-1.5ex]
+                    \end{align*}
+                    $z(x) = 2$; \qquad $n(x) = \left(x+2\right)^{3}$\\[1.0ex]
+                    $f''(x) = 0 \qquad \Rightarrow \qquad z(x) > 0 \qquad \Rightarrow$ \quad keine Nullstellen\\[1.0ex]
+                    \begin{minipage}[t]{0.4\linewidth}
+                        \begin{align*}
+                            n(x) &= 0 \\[2.0ex]
+                            \left(x+2\right)^{3} &= 0 &&| \quad \pm \sqrt[3]{\phantom{x}}\\[1.5ex]
+                            x+2 &= 0 &&| \quad -2\\[1.5ex]
+                            x_{1} &= -2 \ \text{\textit{(dr)}} &&\\[-1.5ex]
+                        \end{align*}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{0.55\linewidth}
+                        \raisebox{-\height}{
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                            & $-\infty < x < -2$ & $x = -2$ & $-2 < x < \infty$ \\ \hline
+                            $z(x)$ & $+$ & $-$ & $+$ \\ \hline
+                            $n(x)$ & $-$ & $0$ & $+$ \\ \hline
+                            $f''(x)$ & $-$ & n. d. & $+$ \\ \hline
+                            $G_{f}$ & r. g. &  & l. g. \\
+                        \end{tabularx}
+                        }
+                    \end{minipage}
+                    $\Rightarrow \qquad G_{f}$ ist rechtsgekrümmt in $\left] \ -\infty; -2 \ \right[$ \\[1.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist linksgekrümmt in $\left] \ -2; +\infty \ \right[$\\[-2.0ex]
+                    }
+                \item Extrem- und Wendepunkte: \qquad keine vorhanden
+                \item Zeichnung: \\[-2.0ex]{
+                    \raisebox{-\height}{
+                    \begin{tikzpicture}[
+                            declare function={
+                                f_f(\x) = rad(atan(1/((\x*\xScale) + 2))))*(1/\yScale);
+                            }
+                        ]
+
+                        % Set variables
+                        \pgfmathsetmacro{\axisPosWidth}{4.0};
+                        \pgfmathsetmacro{\axisNegWidth}{-8.0};
+                        \pgfmathsetmacro{\axisPosHeight}{3.0};
+                        \pgfmathsetmacro{\axisNegHeight}{-3.0};
+                        \pgfmathsetmacro{\xIncrement}{1.0};
+                        \pgfmathsetmacro{\yIncrement}{1.0};
+                        \pgfmathsetmacro{\xScale}{1.0};
+                        \pgfmathsetmacro{\yScale}{1.0};
+                        \pgfmathsetmacro{\gridxIncrement}{0.5};
+                        \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                        % Axis/grid limits
+                        \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                        \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                        % Axis environment (PGFPlots)
+                        \begin{axis}[
+                            xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                            ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                            axis lines=middle,
+                            axis line style={->, >=stealth},
+                            grid=both,
+                            xlabel={$x$},
+                            ylabel={$y$},
+                            xlabel style={anchor=west, at={(current axis.right of origin)}},
+                            ylabel style={anchor=south, at={(current axis.above origin)}},
+                            xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                            ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                            xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                            yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                            tick label style={font=\scriptsize},
+                            x=1cm,
+                            y=1cm,
+                            minor tick num=1,
+                            scale only axis,
+                            grid=both,
+                            restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                        ]
+                            
+                        % Graph limits
+                        \pgfmathsetmacro{\xLowerLimitGraph}{\xLowerLimitAxis}
+                        \pgfmathsetmacro{\xUpperLimitGraph}{\xUpperLimitAxis}
+                        
+                        % G_f
+                        \pgfmathsetmacro{\Gfax}{0.5*(1/\xScale)}
+                        \pgfmathsetmacro{\Gfay}{f_f(\Gfax)}
+                        \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
+                            {f_f(x)};
+                        \node[anchor=south west] at (axis cs:{\Gfax},{\Gfay}) {\textcolor{myb}{$G_{f}$}};
+
+                        % v_1 für x1
+                        \pgfmathsetmacro{\Gtax}{-2*(1/\xScale)}
+                        \addplot[thick, myorange] coordinates {(\Gtax*(1/\xScale),\yLowerLimitGrid) (\Gtax*(1/\xScale),\yUpperLimitGrid)};
+                        \node[anchor=south east] at (axis cs:{\Gtax},{0}) {\textcolor{myorange}{$v_{1}$}};
+                        \end{axis}
+                    \end{tikzpicture}
+                    }
+                    }
+            \end{itemize}
+            }
+        \item[h)] {
+            $f(x) = \arctan\left(\sqrt[2]{\dfrac{1}{x^{2}+4}}\right)$; \\[1.5ex]
+            $u(x) = \sqrt[2]{\dfrac{1}{x^{2}+4}}$; \qquad $v(x) = \dfrac{1}{x^{2}+4}$; \qquad $z(x) = 1$; \qquad $n(x) = x^{2}+4$ \\[-2.0ex]
+            \begin{itemize}[leftmargin=*]
+                \item Definitionsmenge: \\[1.0ex]{
+                    \begin{minipage}[t]{0.5\linewidth}
+                        $n(x) \neq 0:$\\[-4.0ex]
+                        \begin{align*}
+                            n(x) &= 0 &&\\[2.0ex]
+                            x^{2} + 4 &= 0 &&| \quad -4\\[1.5ex]
+                            x^{2} &= -4 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            & \textcolor{myr}{\text{n. d. in } \mathbb{R}}\\[-1.5ex]
+                        \end{align*}
+                    \end{minipage}
+                    \begin{minipage}[t]{0.5\linewidth}
+                        $v(x) \geq 0:$\\[-4.0ex]
+                        \begin{align*}
+                            v(x) &= 0 \qquad \Rightarrow \quad z(x) > 0&&
+                        \end{align*}
+                        $\Rightarrow$ \quad keine Nullstellen\\[-1.0ex]
+                        \raisebox{-\height}{
+                        \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                            & $-\infty < x < -4$ & $x = -4$ & $-4 < x < \infty$ \\ \hline
+                            $z(x)$ & $+$ & $+$ & $+$ \\ \hline
+                            $n(x)$ & $+$ & $+$ & $+$ \\ \hline
+                            $v(x)$ & $+$ & $+$ & $+$ \\
+                        \end{tabularx}
+                        }\\[2.0ex]
+                    \end{minipage}
+                    $\Rightarrow \quad \uuline{D_{f} = \mathbb{R}}$\\[-2.0ex]
+                    }
+                \item Symmetrie: \\[-4.0ex]{
+                    \begin{align*}
+                        f(-x) &= f(x) &&\\[2.0ex]
+                        \arctan\left(\sqrt[2]{\dfrac{1}{\left(-x\right)^{2}+4}}\right) &= \arctan\left(\sqrt[2]{\dfrac{1}{x^{2}+4}}\right) &&\\[1.5ex]
+                        \arctan\left(\sqrt[2]{\dfrac{1}{x^{2}+4}}\right) &= \arctan\left(\sqrt[2]{\dfrac{1}{x^{2}+4}}\right) \quad \text{\textit{(wahr)}} &&
+                    \end{align*}
+                    $\Rightarrow$ \quad $G_f$ ist achsensymmetrischzur y-Achse\\[-2.0ex]
+                    }
+                \item Nullstellen: \qquad $u(x) > 0$ \qquad $\Rightarrow$ \qquad $f(x) > 0$ \qquad $\Rightarrow$ \quad keine Nullstellen\\[-2.0ex]
+                \item Grenzverhalten: \\[-2.0ex]{
+                    \begin{align*}
+                        \lim\limits_{x \to -\infty} \arctan\left(\overbrace{\sqrt[2]{\dfrac{1}{\underbrace{x^{2}+4}_{\textcolor{myg}{+\infty}}}}}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+}; \qquad \qquad \lim\limits_{x \to +\infty} \arctan\left(\overbrace{\sqrt[2]{\dfrac{1}{\underbrace{x^{2}+4}_{\textcolor{myg}{+\infty}}}}}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+} &&\\[-2.0ex]
+                    \end{align*}
+                    }
+                \item Asymptoten: \\[-2.0ex]{
+                    \begin{itemize}
+                        \item Waagerechte Asymptoten: \quad {
+                            \vspace{-5.0ex}
+                            \begin{align*}
+                                h_{1}(x): \quad &y = 0
+                            \end{align*}
+                            }
+                    \end{itemize}
+                    }
+                \item Monotonie: \\[-2.0ex]{
+                    \begin{align*}
+                        f'(x) &= \dfrac{1}{1 + \left(\sqrt[2]{\dfrac{1}{x^{2}+4}}\right)^{2}} \cdot \dfrac{1}{2} \cdot \dfrac{1}{\dfrac{1}{x^{2}+4}} \cdot \dfrac{\left(x^{2} + 4\right) \cdot 0 - 1 \cdot 2x}{\left(x^{2} + 4\right)^{2}} &&\\[1.5ex]
+                        &= \dfrac{1}{1 + \dfrac{1}{x^{2}+4}} \cdot \dfrac{1}{2} \cdot \left(x^{2}+4\right) \cdot \dfrac{-2x}{\left(x^{2} + 4\right)^{2}} &&\\[1.5ex]
+                        &= \dfrac{1}{1 + \dfrac{1}{x^{2}+4}} \cdot \dfrac{-x}{x^{2} + 4} &&\\[1.5ex]
+                        &= \dfrac{-x}{x^{2} + 4 + 1} &&\\[1.5ex]
+                        &= \dfrac{-x}{x^{2} + 5} &&\\[-2.0ex]
+                    \end{align*}
+                    $z(x) = -x$; \qquad $n(x) = x^{2} + 5$\\[1.0ex]
+                    $f'(x) = 0$\\
+                    \begin{minipage}[t]{0.4\linewidth}
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            z(x) &= 0 \\[2.0ex]
+                            -x &= 0 &&\\[1.5ex]
+                            x_{1} &= 0 \ \text{\textit{(e)}}&&\\[-2.0ex]
+                        \end{align*}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{0.55\linewidth}
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            n(x) &= 0 \\[2.0ex]
+                            x^{2} + 5 &= 0 &&| \quad -5\\[1.5ex]
+                            x^{2} &= -5 &&| \quad \pm \sqrt{-5}\\[1.5ex]
+                            & \textcolor{myr}{\text{n. d. in } \mathbb{R}}\\[-1.5ex]
+                        \end{align*}
+                    \end{minipage}
+                    \raisebox{-\height}{
+                    \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                        & $-\infty < x < 0$ & $x = 0$ & $0 < x < \infty$ \\ \hline
+                        $z(x)$ & $+$ & $0$ & $-$ \\ \hline
+                        $n(x)$ & $+$ & $+$ & $+$ \\ \hline
+                        $f'(x)$ & $+$ & $0$ & $-$ \\ \hline
+                        $G_{f}$ & $\nearrow$ & HoP & $\searrow$ \\
+                    \end{tabularx}
+                    }\\[2.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist sms in $\left] \ -\infty; 0 \ \right]$ \\[1.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist smf in $\left[ \ 0; \infty \ \right[$\\[-2.0ex]
+                    }
+                \item Krümmung: \\[-2.0ex]{
+                    \begin{align*}
+                        f''(x) &= \dfrac{\left(x^{2} + 5\right) \cdot \left(-1\right) - \left(-x\right) \cdot 2x}{\left(x^{2} + 5\right)^{2}} &&\\[1.5ex]
+                        &= \dfrac{-x^{2} - 5 + 2x^{2}}{\left(x^{2} + 5\right)^{2}} &&\\[1.5ex]
+                        &= \dfrac{x^{2} - 5}{\left(x^{2} + 5\right)^{2}} &&\\[-2.0ex]
+                    \end{align*}
+                    $z(x) = x^{2} - 5$; \qquad $n(x) = \left(x^{2} + 5\right)^{2}$\\[1.0ex]
+                    $f''(x) = 0$\\
+                    \begin{minipage}[t]{0.4\linewidth}
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            z(x) &= 0 \\[2.0ex]
+                            x^{2} - 5 &= 0 &&| \quad +5\\[1.5ex]
+                            x^{2} &= 5 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[-1.5ex]
+                        \end{align*}
+                        $x_{1} = -\sqrt[2]{5} \ \text{\textit{(e)}}; \quad x_{2} = \sqrt[2]{5} \ \text{\textit{(e)}}$\\
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{0.55\linewidth}
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            n(x) &= 0 \\[2.0ex]
+                            \left(x^{2} + 5\right)^{2} &= 0 &&| \quad \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            x^{2} + 5 &= 0 &&| \quad -5\\[1.5ex]
+                            x^{2} &= -5 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            & \textcolor{myr}{\text{n. d. in } \mathbb{R}}\\[-1.5ex]
+                        \end{align*}
+                    \end{minipage}
+                    \raisebox{-\height}{
+                    \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|X}
+                        & $-\infty < x < -\sqrt[2]{5}$ & $x = -\sqrt[2]{5}$ & $-\sqrt[2]{5} < x < \sqrt[2]{5}$ & $x = \sqrt[2]{5}$ & $\sqrt[2]{5} < x < \infty$ \\ \hline
+                        $z(x)$ & $-$ & $0$ & $+$ & $0$ & $-$ \\ \hline
+                        $n(x)$ & $+$ & $+$ & $+$ & $+$ & $+$ \\ \hline
+                        $f''(x)$ & $-$ & $0$ & $+$ & $0$ & $-$ \\ \hline
+                        $G_{f}$ & r. g. & $W_{1}$ & l. g. & $W_{2}$ & r. g. \\
+                    \end{tabularx}
+                    }\\[2.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist rechtsgekrümmt in $\left] \ -\infty; -\sqrt[2]{5} \ \right]$ sowie $\left[ \ \sqrt[2]{5}; +\infty \ \right[$ \\[1.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist linksgekrümmt in $\left[ \ -\sqrt[2]{5}; \sqrt[2]{5}\ \right]$\\[-2.0ex]
+                    }
+                \item Extrem- und Wendepunkte: \\[-3.0ex]{
+                    \begin{itemize}
+                        \item Hochpunkt: \quad $H_{1}(0 \ / \ \SI{0.46}{})$
+                        \item Wendepunkte: \quad $W_{1}(-\sqrt[2]{5} \ / \ \SI{0.32}{})$; \quad $W_{2}(\sqrt[2]{5} \ / \ \SI{0.32}{})$
+                    \end{itemize}
+                }
+                \item Zeichnung: \\[-2.0ex]{
+                    \raisebox{-\height}{
+                    \begin{tikzpicture}[
+                            declare function={
+                                f_f(\x) = rad(atan(sqrt(1/((\x*\xScale)^2 + 4)))))*(1/\yScale);
+                            }
+                        ]
+
+                        % Set variables
+                        \pgfmathsetmacro{\axisPosWidth}{6.0};
+                        \pgfmathsetmacro{\axisNegWidth}{-6.0};
+                        \pgfmathsetmacro{\axisPosHeight}{3.0};
+                        \pgfmathsetmacro{\axisNegHeight}{-1.0};
+                        \pgfmathsetmacro{\xIncrement}{1.0};
+                        \pgfmathsetmacro{\yIncrement}{1.0};
+                        \pgfmathsetmacro{\xScale}{1.0};
+                        \pgfmathsetmacro{\yScale}{0.25};
+                        \pgfmathsetmacro{\gridxIncrement}{0.5};
+                        \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                        % Axis/grid limits
+                        \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                        \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                        % Axis environment (PGFPlots)
+                        \begin{axis}[
+                            xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                            ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                            axis lines=middle,
+                            axis line style={->, >=stealth},
+                            grid=both,
+                            xlabel={$x$},
+                            ylabel={$y$},
+                            xlabel style={anchor=west, at={(current axis.right of origin)}},
+                            ylabel style={anchor=south, at={(current axis.above origin)}},
+                            xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                            ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                            xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                            yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                            tick label style={font=\scriptsize},
+                            x=1cm,
+                            y=1cm,
+                            minor tick num=1,
+                            scale only axis,
+                            grid=both,
+                            restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                        ]
+                            
+                        % Graph limits
+                        \pgfmathsetmacro{\xLowerLimitGraph}{\xLowerLimitAxis}
+                        \pgfmathsetmacro{\xUpperLimitGraph}{\xUpperLimitAxis}
+                        
+                        % G_f
+                        \pgfmathsetmacro{\Gfax}{0.5*(1/\xScale)}
+                        \pgfmathsetmacro{\Gfay}{f_f(\Gfax)}
+                        \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
+                            {f_f(x)};
+                        \node[anchor=south west] at (axis cs:{\Gfax},{\Gfay}) {\textcolor{myb}{$G_{f}$}};
+    
+                        % H_1
+                        \pgfmathsetmacro{\Hax}{0}
+                        \pgfmathsetmacro{\Hay}{f_f(\Hax)}
+                        \pgfmathsetmacro{\HaxLabel}{\Hax*\xScale}
+                        \pgfmathsetmacro{\HayLabel}{\Hay*\yScale}
+                        \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Hax,\Hay)};
+                        \node[anchor=south east] at (axis cs:{\Hax},{\Hay}) {$H_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\HaxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\HayLabel}{})$};
+
+                        % W_1
+                        \pgfmathsetmacro{\Wax}{-sqrt(5)}
+                        \pgfmathsetmacro{\Way}{f_f(\Wax)}
+                        \pgfmathsetmacro{\WaxLabel}{\Wax*\xScale}
+                        \pgfmathsetmacro{\WayLabel}{\Way*\yScale}
+                        \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Wax,\Way)};
+                        \node[anchor=south east] at (axis cs:{\Wax},{\Way}) {$W_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\WaxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\WayLabel}{})$};
+    
+                        % W_2
+                        \pgfmathsetmacro{\Wbx}{sqrt(5)}
+                        \pgfmathsetmacro{\Wby}{f_f(\Wax)}
+                        \pgfmathsetmacro{\WbxLabel}{\Wbx*\xScale}
+                        \pgfmathsetmacro{\WbyLabel}{\Wby*\yScale}
+                        \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Wbx,\Wby)};
+                        \node[anchor=south west] at (axis cs:{\Wbx},{\Wby}) {$W_{2}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\WbxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\WbyLabel}{})$};
+                        \end{axis}
+                    \end{tikzpicture}
+                    }
+                    }
+            \end{itemize}
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}

@@ -1,3 +1,47 @@
 % LTeX: language=de
 
-\subsubsection{Ableitung der Arcustangens-Funktion}
+\subsubsection{Ableitung der Arcustangensfunktion}
+\vspace{-1.0ex}
+\begin{itemize}
+    \item Ableitung der Tangensfunktion: \\[-2.5ex]{
+        \begin{align*}
+            f(x) &= \tan\left(x\right) = \dfrac{\sin\left(x\right)}{\cos\left(x\right)} &&\\[2.0ex]
+            f'(x) &= \dfrac{\cos\left(x\right) \cdot \cos\left(x\right) - \sin\left(x\right) \cdot \left(-\sin\left(x\right)\right)}{\left(\cos\left(x\right)\right)^{2}} &&\\[1.5ex]
+            &= \dfrac{\left(\cos\left(x\right)\right)^{2} + \left(\sin\left(x\right)\right)^{2}}{\left(\cos\left(x\right)\right)^{2}} \quad \left(= \dfrac{1}{\left(\cos\left(x\right)\right)^{2}}\right) &&\\[1.5ex]
+            &= \dfrac{\left(\cos\left(x\right)\right)^{2}}{\left(\cos\left(x\right)\right)^{2}} + \dfrac{\left(\sin\left(x\right)\right)^{2}}{\left(\cos\left(x\right)\right)^{2}} &&\\[1.5ex]
+            \Aboxed{\highlight[yellow]{f'(x)} &\highlight[yellow]{= 1 + \left(\tan\left(x\right)\right)^{2}}} &&\\[-6.0ex]
+        \end{align*}
+        }
+    \item Umkehrfunktion: \qquad $\boxed{\highlight[yellow]{f^{-1}(x) = \arctan\left(x\right)}}$
+    \item Ableitung der Arcustangensfunktion mit Umkehrregel: \\[-3.0ex]{
+        \begin{align*}
+            \left(f^{-1}(x)\right)' &= \dfrac{1}{f'\left(f^{-1}(x)\right)} &&\\[2.0ex]
+            \left(\arctan\left(x\right)\right)' &= \dfrac{1}{1 + \left[\tan\left(\arctan\left(x\right)\right)\right]^{2}} = \dfrac{1}{1 + \left(x\right)^{2}} &&\\[1.5ex]
+            \Aboxed{\highlight[yellow]{\phantom{\dfrac{1}{\left(\right)^{2}}} \left(\arctan\left(x\right)\right)'} &\highlight[yellow]{= \dfrac{1}{1 + \left(x\right)^{2}}}} &&
+        \end{align*}
+        }
+\end{itemize}
+
+\begin{Example}{Ableitung von Arcustangensfunktionen}{}
+    \begin{enumerate}[leftmargin=*,label=\alph*)]
+        \item {
+            $f(x) = \arctan\left(\sqrt[2]{-x^{2} + 25}\right)$\\[-2.0ex]
+            \begin{align*}
+                f'(x) &= \dfrac{1}{1 + \left(\sqrt[2]{-x^{2} + 25}\right)^{2}} \cdot \dfrac{1}{2} \cdot \left(-x^{2} + 25\right)^{-\frac{1}{2}} \cdot \left(-2x\right) &&\\[1.5ex]
+                &= \dfrac{1}{1 + 25 - x^{2}} \cdot \dfrac{-x}{\sqrt{- x^{2} + 25}} &&\\[1.5ex]
+                &= \dfrac{1}{- x^{2} + 26} \cdot \dfrac{-x}{\sqrt{- x^{2} + 25}} &&\\[1.5ex]
+                &\uuline{= \dfrac{-x}{\left(-x^{2} + 26\right) \cdot \sqrt{- x^{2} + 25}}} &&\\[-2.0ex]
+            \end{align*}
+            }
+        \item {
+            $f(x) = \arctan\left(x^{2} + \dfrac{1}{x}\right)$; \qquad $D_{f} = \mathbb{R} \setminus \{ 0 \}$ \\[-2.0ex]
+            \begin{align*}
+                f'(x) &= \dfrac{1}{1 + \left(x^{2} + \dfrac{1}{x}\right)^{2}} \cdot \left(2x - \dfrac{1}{x^{2}}\right) &&\\[1.5ex]
+                &= \dfrac{2x - \dfrac{1}{x^{2}}}{1 + x^{4} + 2 \cdot x^{2} \cdot \dfrac{1}{x} + \dfrac{1}{x^{2}}} &&\\[1.5ex]
+                &= \dfrac{2x - \dfrac{1}{x^{2}}}{x^{4} + 2x + 1 + \dfrac{1}{x^{2}}} &&\\[1.5ex]
+                &= \dfrac{\dfrac{1}{x^{2}} \cdot \left(2x^{3} - 1\right)}{\dfrac{1}{x^{2}} \cdot \left(x^{6} + 2x^{3} + x^{2} +1\right)} &&\\[1.5ex]
+                &\uuline{= \dfrac{2x^{3} - 1}{x^{6} + 2x^{3} + x^{2} +1}} &&
+            \end{align*}
+        }
+    \end{enumerate}
+\end{Example}
