@@ -29,7 +29,7 @@
                 \item Grenzverhalten: \\[-2.0ex]{
                     \begin{align*}
                         \lim\limits_{x \to -\infty} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{-\infty}}}\right]}^{\textcolor{myg}{0^{-}}}\right) &= 0^{-}; \qquad \qquad \lim\limits_{x \to +\infty} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{+\infty}}}\right]}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+} &&\\[2.0ex]
-                        \lim\limits_{x \to -2^{-}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{-}}}}\right]}^{\textcolor{myg}{-\infty}}\right) &= - \dfrac{\pi}{2}^{+}; \qquad \qquad \lim\limits_{x \to -2^{+}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{+}}}}\right]}^{\textcolor{myg}{+\infty}}\right) &= \dfrac{\pi}{2}^{-} &&
+                        \lim\limits_{x \to -2^{-}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{-}}}}\right]}^{\textcolor{myg}{-\infty}}\right) &= - \dfrac{\pi}{2}^{+}; \qquad \qquad \lim\limits_{x \to -2^{+}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{+}}}}\right]}^{\textcolor{myg}{+\infty}}\right) &= \dfrac{\pi}{2}^{-} && \\[-2.0ex]
                     \end{align*}
                     }
                 \item Asymptoten: \\[-2.0ex]{
@@ -43,8 +43,7 @@
                         \item Waagerechte Asymptoten: \quad {
                             \vspace{-5.0ex}
                             \begin{align*}
-                                h_{1}(x): \quad &y = - \dfrac{\pi}{2}\\[1.5ex]
-                                h_{2}(x): \quad &y = \dfrac{\pi}{2}
+                                h_{1}(x): \quad &y = 0
                             \end{align*}
                             }
                     \end{itemize}
@@ -55,14 +54,14 @@
                         &= \dfrac{1}{1 + \dfrac{1}{\left(x+2\right)^{2}}} \cdot \dfrac{-1}{\left(x+2\right)^{2}} &&\\[1.5ex]
                         &= \dfrac{-1}{1 + \left(x+2\right)^{2}} &&\\[-2.0ex]
                     \end{align*}
-                    $z(x) = -1$; \qquad $n(x) = \left(x+2\right)^{2}$\\[1.0ex]
+                    $z(x) = -1$; \qquad $n(x) = 1 + \left(x+2\right)^{2}$\\[1.0ex]
                     $f'(x) = 0 \qquad \Rightarrow \qquad z(x) < 0 \qquad \Rightarrow$ \quad keine Nullstellen\\[1.0ex]
                     \begin{minipage}[t]{0.4\linewidth}
                         \begin{align*}
                             n(x) &= 0 \\[2.0ex]
-                            \left(x+2\right)^{2} &= 0 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
-                            x+2 &= 0 &&| \quad -2\\[1.5ex]
-                            x_{1} &= -2 \ \text{\textit{(d)}} &&\\[-1.5ex]
+                            1 + \left(x+2\right)^{2} &= 0 &&| \quad -1\\[1.5ex]
+                            \left(x+2\right)^{2} &= -1 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            & \textcolor{myr}{\text{n. d. in } \mathbb{R}}\\[-1.5ex]
                         \end{align*}
                     \end{minipage}
                     \hfill
@@ -71,8 +70,8 @@
                         \begin{tabularx}{0.95\linewidth}{c|X|X|X}
                             & $-\infty < x < -2$ & $x = -2$ & $-2 < x < \infty$ \\ \hline
                             $z(x)$ & $-$ & $-$ & $-$ \\ \hline
-                            $n(x)$ & $+$ & $0$ & $+$ \\ \hline
-                            $f'(x)$ & $-$ & n. d. & $-$ \\ \hline
+                            $n(x)$ & $+$ & $+$ & $+$ \\ \hline
+                            $f'(x)$ & $-$ & $-$ & $-$ \\ \hline
                             $G_{f}$ & $\searrow$ &  & $\searrow$ \\
                         \end{tabularx}
                         }  
@@ -81,32 +80,39 @@
                     }
                 \item Krümmung: \\[-2.0ex]{
                     \begin{align*}
-                        f''(x) &= \dfrac{\left(x+2\right)^{2} \cdot 0 - \left(-1\right) \cdot 2 \cdot \left(x+2\right) \cdot 1}{\left[\left(x+2\right)^{2}\right]^{2}} &&\\[1.5ex]
-                        &= \dfrac{2 \cdot \left(x + 2\right)}{\left(x+2\right)^{4}} &&\\[1.5ex]
-                        &= \dfrac{2}{\left(x+2\right)^{3}} && \\[-1.5ex]
+                        f''(x) &= \dfrac{\left[1 + \left(x+2\right)^{2}\right] \cdot 0 - \left(-1\right) \cdot 2 \cdot \left(x+2\right) \cdot 1}{\left[1 + \left(x+2\right)^{2}\right]^{2}} &&\\[1.5ex]
+                        &= \dfrac{2 \cdot \left(x + 2\right)}{1 + \left(x+2\right)^{4}} &&\\[-1.5ex]
                     \end{align*}
-                    $z(x) = 2$; \qquad $n(x) = \left(x+2\right)^{3}$\\[1.0ex]
+                    $z(x) = 2 \cdot \left(x + 2\right)$; \qquad $n(x) = 1 + \left(x+2\right)^{4}$\\[1.0ex]
                     $f''(x) = 0 \qquad \Rightarrow \qquad z(x) > 0 \qquad \Rightarrow$ \quad keine Nullstellen\\[1.0ex]
                     \begin{minipage}[t]{0.4\linewidth}
+                        \vspace{-2.0ex}
                         \begin{align*}
                             n(x) &= 0 \\[2.0ex]
-                            \left(x+2\right)^{3} &= 0 &&| \quad \pm \sqrt[3]{\phantom{x}}\\[1.5ex]
-                            x+2 &= 0 &&| \quad -2\\[1.5ex]
-                            x_{1} &= -2 \ \text{\textit{(dr)}} &&\\[-1.5ex]
+                            1 + \left(x+2\right)^{4} &= 0 &&| \quad - 1\\[1.5ex]
+                            \left(x+2\right)^{4} &= -1 &&| \quad \pm \sqrt[4]{\phantom{x}}\\[1.5ex]
+                            & \textcolor{myr}{\text{n. d. in } \mathbb{R}}\\[-1.5ex]
                         \end{align*}
                     \end{minipage}
                     \hfill
                     \begin{minipage}[t]{0.55\linewidth}
-                        \raisebox{-\height}{
-                        \begin{tabularx}{0.95\linewidth}{c|X|X|X}
-                            & $-\infty < x < -2$ & $x = -2$ & $-2 < x < \infty$ \\ \hline
-                            $z(x)$ & $+$ & $-$ & $+$ \\ \hline
-                            $n(x)$ & $-$ & $0$ & $+$ \\ \hline
-                            $f''(x)$ & $-$ & n. d. & $+$ \\ \hline
-                            $G_{f}$ & r. g. &  & l. g. \\
-                        \end{tabularx}
-                        }
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            z(x) &= 0\\[2.0ex]
+                            2 \cdot \left(x + 2\right) &= 0 &&| \quad :2\\[1.5ex]
+                            x + 2 &= 0 &&| \quad -2\\[1.5ex]
+                            x_{1} &= -2 \ \text{\textit{(e)}}&&\\[-2.0ex]
+                        \end{align*}
                     \end{minipage}
+                    \raisebox{-\height}{
+                    \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                        & $-\infty < x < -2$ & $x = -2$ & $-2 < x < \infty$ \\ \hline
+                        $z(x)$ & $-$ & $0$ & $+$ \\ \hline
+                        $n(x)$ & $+$ & $+$ & $+$ \\ \hline
+                        $f''(x)$ & $-$ & $0$ & $+$ \\ \hline
+                        $G_{f}$ & r. g. &  & l. g. \\
+                    \end{tabularx}
+                    }\\[2.0ex]
                     $\Rightarrow \qquad G_{f}$ ist rechtsgekrümmt in $\left] \ -\infty; -2 \ \right[$ \\[1.0ex]
                     $\Rightarrow \qquad G_{f}$ ist linksgekrümmt in $\left] \ -2; +\infty \ \right[$\\[-2.0ex]
                     }
@@ -176,11 +182,35 @@
                         \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
                             {f_f(x)};
                         \node[anchor=south west] at (axis cs:{\Gfax},{\Gfay}) {\textcolor{myb}{$G_{f}$}};
+        
+                        % Definitionslücken
+                        \pgfmathsetmacro{\Dfax}{-1.98*(1/\xScale)}
+                        \pgfmathsetmacro{\Dfay}{f_f(\Dfax)}
+                        \addplot[only marks, mark=o, mark size=2pt, thick] coordinates {(\Dfax,\Dfay)};
+    
+                        \pgfmathsetmacro{\Dfbx}{-2.02*(1/\xScale)}
+                        \pgfmathsetmacro{\Dfby}{f_f(\Dfbx)}
+                        \addplot[only marks, mark=o, mark size=2pt, thick] coordinates {(\Dfbx,\Dfby)};
 
                         % v_1 für x1
                         \pgfmathsetmacro{\Gtax}{-2*(1/\xScale)}
                         \addplot[thick, myorange] coordinates {(\Gtax*(1/\xScale),\yLowerLimitGrid) (\Gtax*(1/\xScale),\yUpperLimitGrid)};
-                        \node[anchor=south east] at (axis cs:{\Gtax},{0}) {\textcolor{myorange}{$v_{1}$}};
+                        \node[anchor=south east] at (axis cs:{\Gtax},{0}) {\textcolor{myorange}{$G_{v_{1}}$}};
+
+                        % % h_1 für y1
+                        % \pgfmathsetmacro{\Gtay}{-pi/2*(1/\yScale)}
+                        % \addplot[thick, myorange] coordinates {(\xLowerLimitGraph,\Gtay) (\xUpperLimitGraph,\Gtay)};
+                        % \node[anchor=north west] at (axis cs:{0},{\Gtay}) {\textcolor{myorange}{$G_{h_{1}}$}};
+
+                        % h_2 für y2
+                        \pgfmathsetmacro{\Gtby}{0*(1/\yScale)}
+                        \addplot[thick, myorange] coordinates {(\xLowerLimitGraph,\Gtby) (\xUpperLimitGraph,\Gtby)};
+                        \node[anchor=north west] at (axis cs:{0},{\Gtby}) {\textcolor{myorange}{$G_{h_{1}}$}};
+
+                        % % h_3 für y3
+                        % \pgfmathsetmacro{\Gtcy}{pi/2*(1/\yScale)}
+                        % \addplot[thick, myorange] coordinates {(\xLowerLimitGraph,\Gtcy) (\xUpperLimitGraph,\Gtcy)};
+                        % \node[anchor=south west] at (axis cs:{0},{\Gtcy}) {\textcolor{myorange}{$G_{h_{3}}$}};
                         \end{axis}
                     \end{tikzpicture}
                     }
@@ -232,7 +262,7 @@
                         \lim\limits_{x \to -\infty} \arctan\left(\overbrace{\sqrt[2]{\dfrac{1}{\underbrace{x^{2}+4}_{\textcolor{myg}{+\infty}}}}}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+}; \qquad \qquad \lim\limits_{x \to +\infty} \arctan\left(\overbrace{\sqrt[2]{\dfrac{1}{\underbrace{x^{2}+4}_{\textcolor{myg}{+\infty}}}}}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+} &&\\[-2.0ex]
                     \end{align*}
                     }
-                \item Asymptoten: \\[-2.0ex]{
+                \item Asymptoten: \\[-3.0ex]{
                     \begin{itemize}
                         \item Waagerechte Asymptoten: \quad {
                             \vspace{-5.0ex}
@@ -313,14 +343,14 @@
                     \raisebox{-\height}{
                     \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|X}
                         & $-\infty < x < -\sqrt[2]{5}$ & $x = -\sqrt[2]{5}$ & $-\sqrt[2]{5} < x < \sqrt[2]{5}$ & $x = \sqrt[2]{5}$ & $\sqrt[2]{5} < x < \infty$ \\ \hline
-                        $z(x)$ & $-$ & $0$ & $+$ & $0$ & $-$ \\ \hline
+                        $z(x)$ & $+$ & $0$ & $-$ & $0$ & $+$ \\ \hline
                         $n(x)$ & $+$ & $+$ & $+$ & $+$ & $+$ \\ \hline
                         $f''(x)$ & $-$ & $0$ & $+$ & $0$ & $-$ \\ \hline
-                        $G_{f}$ & r. g. & $W_{1}$ & l. g. & $W_{2}$ & r. g. \\
+                        $G_{f}$ & l. g. & $W_{1}$ & r. g. & $W_{2}$ & l. g. \\
                     \end{tabularx}
                     }\\[2.0ex]
-                    $\Rightarrow \qquad G_{f}$ ist rechtsgekrümmt in $\left] \ -\infty; -\sqrt[2]{5} \ \right]$ sowie $\left[ \ \sqrt[2]{5}; +\infty \ \right[$ \\[1.0ex]
-                    $\Rightarrow \qquad G_{f}$ ist linksgekrümmt in $\left[ \ -\sqrt[2]{5}; \sqrt[2]{5}\ \right]$\\[-2.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist linksgekrümmt in $\left] \ -\infty; -\sqrt[2]{5} \ \right]$ sowie $\left[ \ \sqrt[2]{5}; +\infty \ \right[$ \\[1.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist rechtsgekrümmt in $\left[ \ -\sqrt[2]{5}; \sqrt[2]{5}\ \right]$\\[-2.0ex]
                     }
                 \item Extrem- und Wendepunkte: \\[-3.0ex]{
                     \begin{itemize}
@@ -394,6 +424,11 @@
                             {f_f(x)};
                         \node[anchor=south west] at (axis cs:{\Gfax},{\Gfay}) {\textcolor{myb}{$G_{f}$}};
     
+                        % h_1 für y1
+                        \pgfmathsetmacro{\Gtay}{0*(1/\yScale)}
+                        \addplot[thick, myorange] coordinates {(\xLowerLimitGraph,\Gtay) (\xUpperLimitGraph,\Gtay)};
+                        \node[anchor=north west] at (axis cs:{0},{\Gtay}) {\textcolor{myorange}{$G_{h_{1}}$}};
+
                         % H_1
                         \pgfmathsetmacro{\Hax}{0}
                         \pgfmathsetmacro{\Hay}{f_f(\Hax)}
