@@ -15,7 +15,7 @@
                         x + 2 &= 0 &&| \quad -2\\[1.5ex]
                         x_{1} &= -2 \ \text{\textit{(e)}}&&
                     \end{align*}
-                    $\Rightarrow \quad \uuline{D_{f} = \mathbb{R} \setminus \left\{ -2 \right\}}$; \qquad Polstelle erster Ordnung mit VZW bei $x_{1} = -2$
+                    $\Rightarrow \quad \uuline{D_{f} = \mathbb{R} \setminus \left\{ -2 \right\}}$;
                     }
                 \item Symmetrie: \\[1.0ex]{
                     $D_{f}$ nicht symmetrisch \quad $\Rightarrow$ \quad \uuline{keine Symmetrie vorhanden}\\[-2.0ex]
@@ -26,20 +26,14 @@
                         z(x) > 0 \quad \Rightarrow \quad \text{keine Nullstellen}
                     \end{align*}
                     }
-                \item Grenzverhalten: \\[-2.0ex]{
+                \item Grenzverhalten: \\[-3.0ex]{
                     \begin{align*}
                         \lim\limits_{x \to -\infty} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{-\infty}}}\right]}^{\textcolor{myg}{0^{-}}}\right) &= 0^{-}; \qquad \qquad \lim\limits_{x \to +\infty} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{+\infty}}}\right]}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+} &&\\[2.0ex]
-                        \lim\limits_{x \to -2^{-}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{-}}}}\right]}^{\textcolor{myg}{-\infty}}\right) &= - \dfrac{\pi}{2}^{+}; \qquad \qquad \lim\limits_{x \to -2^{+}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{+}}}}\right]}^{\textcolor{myg}{+\infty}}\right) &= \dfrac{\pi}{2}^{-} && \\[-2.0ex]
+                        \lim\limits_{x \to -2^{-}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{-}}}}\right]}^{\textcolor{myg}{-\infty}}\right) &= - \dfrac{\pi}{2}^{+}; \qquad \qquad \lim\limits_{x \to -2^{+}} \arctan\left(\overbrace{\left[\dfrac{1}{\underbrace{x+2}_{\textcolor{myg}{0^{+}}}}\right]}^{\textcolor{myg}{+\infty}}\right) &= \dfrac{\pi}{2}^{-} && \\[-3.0ex]
                     \end{align*}
                     }
                 \item Asymptoten: \\[-2.0ex]{
                     \begin{itemize}
-                        \item Senkrechte Asymptoten: \quad {
-                            \vspace{-5.0ex}
-                            \begin{align*}
-                                v_{1}(x): \quad &x = - 2
-                            \end{align*}
-                            }
                         \item Waagerechte Asymptoten: \quad {
                             \vspace{-5.0ex}
                             \begin{align*}
@@ -48,7 +42,7 @@
                             }
                     \end{itemize}
                     }
-                \item Monotonie: \\[-2.0ex]{
+                \item Monotonie: \\[-3.0ex]{
                     \begin{align*}
                         f'(x) &= \dfrac{1}{1 + \left(\dfrac{1}{x+2}\right)^{2}} \cdot \dfrac{\left(x+2\right) \cdot 0 - 1 \cdot 1}{\left(x+2\right)^{2}} &&\\[1.5ex]
                         &= \dfrac{1}{1 + \dfrac{1}{\left(x+2\right)^{2}}} \cdot \dfrac{-1}{\left(x+2\right)^{2}} &&\\[1.5ex]
@@ -76,7 +70,7 @@
                         \end{tabularx}
                         }  
                     \end{minipage}
-                    $\Rightarrow \qquad G_{f}$ ist smf in $\left] \ -\infty; -2 \ \right[$ sowie $\left] \ -2; \infty \ \right[$\\[-2.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist smf in $\left] \ -\infty; -2 \ \right[$ \quad sowie \quad $\left] \ -2; \infty \ \right[$\\[-2.0ex]
                     }
                 \item Krümmung: \\[-2.0ex]{
                     \begin{align*}
@@ -179,10 +173,12 @@
                         % G_f
                         \pgfmathsetmacro{\Gfax}{0.5*(1/\xScale)}
                         \pgfmathsetmacro{\Gfay}{f_f(\Gfax)}
-                        \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
+                        \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:-2.02*(1/\xScale)]
+                            {f_f(x)};
+                        \addplot[thick, myb, samples=1000, domain=-1.98*(1/\xScale):\xUpperLimitGraph]
                             {f_f(x)};
                         \node[anchor=south west] at (axis cs:{\Gfax},{\Gfay}) {\textcolor{myb}{$G_{f}$}};
-        
+    
                         % Definitionslücken
                         \pgfmathsetmacro{\Dfax}{-1.98*(1/\xScale)}
                         \pgfmathsetmacro{\Dfay}{f_f(\Dfax)}
@@ -191,26 +187,12 @@
                         \pgfmathsetmacro{\Dfbx}{-2.02*(1/\xScale)}
                         \pgfmathsetmacro{\Dfby}{f_f(\Dfbx)}
                         \addplot[only marks, mark=o, mark size=2pt, thick] coordinates {(\Dfbx,\Dfby)};
-
-                        % v_1 für x1
-                        \pgfmathsetmacro{\Gtax}{-2*(1/\xScale)}
-                        \addplot[thick, myorange] coordinates {(\Gtax*(1/\xScale),\yLowerLimitGrid) (\Gtax*(1/\xScale),\yUpperLimitGrid)};
-                        \node[anchor=south east] at (axis cs:{\Gtax},{0}) {\textcolor{myorange}{$G_{v_{1}}$}};
-
-                        % % h_1 für y1
-                        % \pgfmathsetmacro{\Gtay}{-pi/2*(1/\yScale)}
-                        % \addplot[thick, myorange] coordinates {(\xLowerLimitGraph,\Gtay) (\xUpperLimitGraph,\Gtay)};
-                        % \node[anchor=north west] at (axis cs:{0},{\Gtay}) {\textcolor{myorange}{$G_{h_{1}}$}};
-
-                        % h_2 für y2
+    
+                        % h_1 für y1
                         \pgfmathsetmacro{\Gtby}{0*(1/\yScale)}
                         \addplot[thick, myorange] coordinates {(\xLowerLimitGraph,\Gtby) (\xUpperLimitGraph,\Gtby)};
                         \node[anchor=north west] at (axis cs:{0},{\Gtby}) {\textcolor{myorange}{$G_{h_{1}}$}};
 
-                        % % h_3 für y3
-                        % \pgfmathsetmacro{\Gtcy}{pi/2*(1/\yScale)}
-                        % \addplot[thick, myorange] coordinates {(\xLowerLimitGraph,\Gtcy) (\xUpperLimitGraph,\Gtcy)};
-                        % \node[anchor=south west] at (axis cs:{0},{\Gtcy}) {\textcolor{myorange}{$G_{h_{3}}$}};
                         \end{axis}
                     \end{tikzpicture}
                     }
@@ -257,9 +239,9 @@
                     $\Rightarrow$ \quad $G_f$ ist achsensymmetrischzur y-Achse\\[-2.0ex]
                     }
                 \item Nullstellen: \qquad $u(x) > 0$ \qquad $\Rightarrow$ \qquad $f(x) > 0$ \qquad $\Rightarrow$ \quad keine Nullstellen\\[-2.0ex]
-                \item Grenzverhalten: \\[-2.0ex]{
+                \item Grenzverhalten: \\[-3.0ex]{
                     \begin{align*}
-                        \lim\limits_{x \to -\infty} \arctan\left(\overbrace{\sqrt[2]{\dfrac{1}{\underbrace{x^{2}+4}_{\textcolor{myg}{+\infty}}}}}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+}; \qquad \qquad \lim\limits_{x \to +\infty} \arctan\left(\overbrace{\sqrt[2]{\dfrac{1}{\underbrace{x^{2}+4}_{\textcolor{myg}{+\infty}}}}}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+} &&\\[-2.0ex]
+                        \lim\limits_{x \to -\infty} \arctan\left(\overbrace{\sqrt[2]{\dfrac{1}{\underbrace{x^{2}+4}_{\textcolor{myg}{+\infty}}}}}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+}; \qquad \qquad \lim\limits_{x \to +\infty} \arctan\left(\overbrace{\sqrt[2]{\dfrac{1}{\underbrace{x^{2}+4}_{\textcolor{myg}{+\infty}}}}}^{\textcolor{myg}{0^{+}}}\right) &= 0^{+} &&\\[-5.0ex]
                     \end{align*}
                     }
                 \item Asymptoten: \\[-3.0ex]{
@@ -274,15 +256,18 @@
                     }
                 \item Monotonie: \\[-2.0ex]{
                     \begin{align*}
-                        f'(x) &= \dfrac{1}{1 + \left(\sqrt[2]{\dfrac{1}{x^{2}+4}}\right)^{2}} \cdot \dfrac{1}{2} \cdot \dfrac{1}{\dfrac{1}{x^{2}+4}} \cdot \dfrac{\left(x^{2} + 4\right) \cdot 0 - 1 \cdot 2x}{\left(x^{2} + 4\right)^{2}} &&\\[1.5ex]
-                        &= \dfrac{1}{1 + \dfrac{1}{x^{2}+4}} \cdot \dfrac{1}{2} \cdot \left(x^{2}+4\right) \cdot \dfrac{-2x}{\left(x^{2} + 4\right)^{2}} &&\\[1.5ex]
-                        &= \dfrac{1}{1 + \dfrac{1}{x^{2}+4}} \cdot \dfrac{-x}{x^{2} + 4} &&\\[1.5ex]
-                        &= \dfrac{-x}{x^{2} + 4 + 1} &&\\[1.5ex]
-                        &= \dfrac{-x}{x^{2} + 5} &&\\[-2.0ex]
+                        f'(x) &= \dfrac{1}{1 + \left(\sqrt[2]{\dfrac{1}{x^{2}+4}}\right)^{2}} \cdot \dfrac{1}{2} \cdot \dfrac{1}{\sqrt[2]{\dfrac{1}{x^{2}+4}}} \cdot \dfrac{\left(x^{2} + 4\right) \cdot 0 - 1 \cdot 2x}{\left(x^{2} + 4\right)^{2}} &&\\[1.5ex]
+                        &= \dfrac{1}{1 + \dfrac{1}{x^{2}+4}} \cdot \dfrac{1}{2} \cdot \sqrt[2]{\dfrac{x^{2}+4}{1}} \cdot \dfrac{-2x}{\left(x^{2} + 4\right)^{2}} &&\\[1.5ex]
+                        &= \dfrac{1}{1 + \dfrac{1}{x^{2}+4}} \cdot \sqrt[2]{x^{2}+4} \cdot \dfrac{-x}{\left(x^{2} + 4\right)^{2}} &&\\[1.5ex]
+                        &= \dfrac{1}{1 + \dfrac{1}{x^{2}+4}} \cdot \dfrac{-x}{\left(x^{2} + 4\right)^{\frac{3}{2}}} &&\\[1.5ex]
+                        &= \dfrac{-x}{\left(x^{2} + 4\right)^{\frac{3}{2}} + \left(x^{2} + 4\right)^{\frac{1}{2}}} &&\\[1.5ex]
+                        &= \dfrac{-x}{\left(x^{2} + 4\right)^{\frac{1}{2}} \cdot \left[\left(x^{2} + 4\right)^{1} + 1 \right]} &&\\[1.5ex]
+                        &= \dfrac{-x}{\left(x^{2} + 4\right)^{\frac{1}{2}} \cdot \left(x^{2} + 5 \right)} &&\\[-2.0ex]
                     \end{align*}
-                    $z(x) = -x$; \qquad $n(x) = x^{2} + 5$\\[1.0ex]
-                    $f'(x) = 0$\\
-                    \begin{minipage}[t]{0.4\linewidth}
+                    $z(x) = -x$; \\[1.0ex]
+                    $n(x) = \left(x^{2} + 4\right)^{\frac{1}{2}} \cdot \left(x^{2} + 5 \right)$; \qquad $u(x) = \left(x^{2} + 4\right)^{\frac{1}{2}}$; \qquad $v(x) = x^{2} + 5$\\[1.5ex]
+                    $f'(x) = 0:$\\
+                    \begin{minipage}[t]{0.20\linewidth}
                         \vspace{-2.0ex}
                         \begin{align*}
                             z(x) &= 0 \\[2.0ex]
@@ -291,12 +276,23 @@
                         \end{align*}
                     \end{minipage}
                     \hfill
-                    \begin{minipage}[t]{0.55\linewidth}
+                    \begin{minipage}[t]{0.35\linewidth}
                         \vspace{-2.0ex}
                         \begin{align*}
-                            n(x) &= 0 \\[2.0ex]
+                            u(x) &= 0 \\[2.0ex]
+                            \left(x^{2} + 4\right)^{\frac{1}{2}} &= 0 &&| \quad ^{2}\\[1.5ex]
+                            x^{2} + 4 &= 0 &&| \quad - 4\\[1.5ex]
+                            x^{2} &= -4 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            & \textcolor{myr}{\text{n. d. in } \mathbb{R}}\\[-1.5ex]
+                        \end{align*}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{0.25\linewidth}
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            v(x) &= 0 \\[2.0ex]
                             x^{2} + 5 &= 0 &&| \quad -5\\[1.5ex]
-                            x^{2} &= -5 &&| \quad \pm \sqrt{-5}\\[1.5ex]
+                            x^{2} &= -5 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
                             & \textcolor{myr}{\text{n. d. in } \mathbb{R}}\\[-1.5ex]
                         \end{align*}
                     \end{minipage}
@@ -304,6 +300,8 @@
                     \begin{tabularx}{0.95\linewidth}{c|X|X|X}
                         & $-\infty < x < 0$ & $x = 0$ & $0 < x < \infty$ \\ \hline
                         $z(x)$ & $+$ & $0$ & $-$ \\ \hline
+                        $u(x)$ & $+$ & $+$ & $+$ \\ \hline
+                        $v(x)$ & $+$ & $+$ & $+$ \\ \hline
                         $n(x)$ & $+$ & $+$ & $+$ \\ \hline
                         $f'(x)$ & $+$ & $0$ & $-$ \\ \hline
                         $G_{f}$ & $\nearrow$ & HoP & $\searrow$ \\
@@ -314,27 +312,68 @@
                     }
                 \item Krümmung: \\[-2.0ex]{
                     \begin{align*}
-                        f''(x) &= \dfrac{\left(x^{2} + 5\right) \cdot \left(-1\right) - \left(-x\right) \cdot 2x}{\left(x^{2} + 5\right)^{2}} &&\\[1.5ex]
-                        &= \dfrac{-x^{2} - 5 + 2x^{2}}{\left(x^{2} + 5\right)^{2}} &&\\[1.5ex]
-                        &= \dfrac{x^{2} - 5}{\left(x^{2} + 5\right)^{2}} &&\\[-2.0ex]
+                        f''(x) &= \dfrac{\left(x^{2} + 4\right)^{\frac{1}{2}} \cdot \left(x^{2} + 5 \right) \cdot \left(-1\right) - \left(-x\right) \cdot \left[\dfrac{1}{2} \cdot \dfrac{1}{\left(x^{2} + 4\right)^{\frac{1}{2}}} \cdot 2x \cdot \left(x^{2} + 5\right) + \left(x^{2} + 4\right)^{\frac{1}{2}} \cdot 2x\right]}{\left[\left(x^{2} + 4\right)^{\frac{1}{2}} \cdot \left(x^{2} + 5 \right)\right]^{2}} &&\\[2.0ex]
+                        &= \dfrac{\left(x^{2} + 4\right)^{\frac{1}{2}} \cdot \left(x^{2} + 5 \right) \cdot \left(-1\right) + x \cdot \left[\dfrac{1}{\left(x^{2} + 4\right)^{\frac{1}{2}}} \cdot x \cdot \left(x^{2} + 5\right) + \left(x^{2} + 4\right)^{\frac{1}{2}} \cdot 2x\right]}{\left[\left(x^{2} + 4\right)^{\frac{1}{2}}\right]^{2} \cdot \left(x^{2} + 5 \right)^{2}} &&\\[2.0ex]
+                        &= \dfrac{\left(x^{2} + 4\right) \cdot \left(x^{2} + 5 \right) \cdot \left(-1\right) + x \cdot \left[1 \cdot x \cdot \left(x^{2} + 5\right) + \left(x^{2} + 4\right) \cdot 2x\right]}{\left(x^{2} + 4\right)^{\frac{1}{2}} \cdot \left[\left(x^{2} + 4\right)^{\frac{1}{2}}\right]^{2} \cdot \left(x^{2} + 5 \right)^{2}} &&\\[2.0ex]
+                        &= \dfrac{\left(x^{4} + 5 x^{2} + 4x^{2} + 20\right) \cdot \left(-1\right) + x \cdot \left[x^{3} + 5x + 2x^{3} + 8x\right]}{\left(x^{2} + 4\right)^{\frac{3}{2}} \cdot \left(x^{2} + 5 \right)^{2}} &&\\[-2.0ex]
                     \end{align*}
-                    $z(x) = x^{2} - 5$; \qquad $n(x) = \left(x^{2} + 5\right)^{2}$\\[1.0ex]
-                    $f''(x) = 0$\\
-                    \begin{minipage}[t]{0.4\linewidth}
+                    \begin{align*}
+                        f''(x) &= \dfrac{\left(x^{4} + 9 x^{2} + 20\right) \cdot \left(-1\right) + x \cdot \left[3x^{3} + 13x\right]}{\left(x^{2} + 4\right)^{\frac{3}{2}} \cdot \left(x^{2} + 5 \right)^{2}} &&\\[2.0ex]
+                        &= \dfrac{-x^{4} - 9 x^{2} - 20 + 3x^{4} + 13x^{2}}{\left(x^{2} + 4\right)^{\frac{3}{2}} \cdot \left(x^{2} + 5 \right)^{2}} &&\\[2.0ex]
+                        &= \dfrac{2x^{4} + 4x^{2} - 20}{\left(x^{2} + 4\right)^{\frac{3}{2}} \cdot \left(x^{2} + 5 \right)^{2}} &&\\[2.0ex]
+                        &= \dfrac{2 \cdot \left(x^{4} + 2x^{2} - 10\right)}{\left(x^{2} + 4\right)^{\frac{3}{2}} \cdot \left(x^{2} + 5 \right)^{2}} &&\\[-2.0ex]
+                    \end{align*}
+                    $z(x) = 2 \cdot \left(x^{4} + 2x^{2} - 10\right)$; \\[1.0ex]
+                    $n(x) = \left(x^{2} + 4\right)^{\frac{3}{2}} \cdot \left(x^{2} + 5 \right)^{2}$; \qquad $u(x) = \left(x^{2} + 4\right)^{\frac{3}{2}}$; \qquad $v(x) = \left(x^{2} + 5 \right)^{2}$\\[1.0ex]
+                    $f''(x) = 0:$\\[-1.0ex]
+                    \vspace{-2.0ex}
+                    \begin{align*}
+                        z(x) &= 0 \\[2.0ex]
+                        2 \cdot \left(x^{4} + 2x^{2} - 10\right) &= 0 &&| \quad :2\\[1.5ex]
+                        x^{4} + 2x^{2} - 10 &= 0; && z = x^{2}\\[-1.5ex]
+                    \end{align*}
+                    \begin{align*}
+                        z^{2} + 2z - 10 &= 0 &&\\[2.0ex]
+                        z_{1,2} &= \dfrac{-2 \pm \sqrt[2]{2^{2} - 4 \cdot 1 \cdot \left(-10\right)}}{2 \cdot 1} && \\[2.0ex]
+                        &= \dfrac{-2 \pm 2\sqrt[2]{11}}{2} && \\[-2.0ex]
+                    \end{align*}
+                    \begin{minipage}[t]{0.35\linewidth}
                         \vspace{-2.0ex}
                         \begin{align*}
-                            z(x) &= 0 \\[2.0ex]
-                            x^{2} - 5 &= 0 &&| \quad +5\\[1.5ex]
-                            x^{2} &= 5 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[-1.5ex]
+                            z_{1} &= -1 - \sqrt[2]{11} &&\\[2.0ex]
+                            x^{2} &= -1 - \sqrt[2]{11} &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            & \textcolor{myr}{\text{n. d. in } \mathbb{R}} && \\[-2.0ex]
                         \end{align*}
-                        $x_{1} = -\sqrt[2]{5} \ \text{\textit{(e)}}; \quad x_{2} = \sqrt[2]{5} \ \text{\textit{(e)}}$\\
                     \end{minipage}
                     \hfill
-                    \begin{minipage}[t]{0.55\linewidth}
+                    \vrule
+                    \hfill
+                    \begin{minipage}[t]{0.60\linewidth}
                         \vspace{-2.0ex}
                         \begin{align*}
-                            n(x) &= 0 \\[2.0ex]
-                            \left(x^{2} + 5\right)^{2} &= 0 &&| \quad \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            z_{2} &= -1 + \sqrt[2]{11} &&\\[2.0ex]
+                            x^{2} &= -1 + \sqrt[2]{11} &&| \quad \pm \sqrt[2]{\phantom{x}} && \\[-1.5ex]
+                        \end{align*}
+                        $x_{1} = -\sqrt{-1 + \sqrt{11}} \ \text{\textit{(e)}}; \quad x_{1} \approx \SI{-1.52}{}$\\[2.0ex]
+                        $x_{2} = \sqrt{-1 + \sqrt{11}} \ \text{\textit{(e)}}; \quad x_{2} \approx \SI{1.52}{}$\\[-1.0ex]
+                    \end{minipage}\\[2.0ex]
+                    $n(x) = 0:$\\[-1.0ex]
+                    \begin{minipage}[t]{0.45\linewidth}
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            u(x) &= 0 \\[2.0ex]
+                            \left(x^{2} + 4\right)^{\frac{3}{2}} &= 0 &&| \quad ^{\frac{2}{3}}\\[1.5ex]
+                            x^{2} + 4 &= 0 &&| \quad -4\\[1.5ex]
+                            x^{2} &= -4 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
+                            & \textcolor{myr}{\text{n. d. in } \mathbb{R}}\\[-1.5ex]
+                        \end{align*}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{0.45\linewidth}
+                        \vspace{-2.0ex}
+                        \begin{align*}
+                            v(x) &= 0 \\[2.0ex]
+                            \left(x^{2} + 5 \right)^{2} &= 0 &&| \quad \sqrt[2]{\phantom{x}}\\[1.5ex]
                             x^{2} + 5 &= 0 &&| \quad -5\\[1.5ex]
                             x^{2} &= -5 &&| \quad \pm \sqrt[2]{\phantom{x}}\\[1.5ex]
                             & \textcolor{myr}{\text{n. d. in } \mathbb{R}}\\[-1.5ex]
@@ -342,20 +381,22 @@
                     \end{minipage}
                     \raisebox{-\height}{
                     \begin{tabularx}{0.95\linewidth}{c|X|X|X|X|X}
-                        & $-\infty < x < -\sqrt[2]{5}$ & $x = -\sqrt[2]{5}$ & $-\sqrt[2]{5} < x < \sqrt[2]{5}$ & $x = \sqrt[2]{5}$ & $\sqrt[2]{5} < x < \infty$ \\ \hline
+                        & $-\infty < x < x_{1}$ & $x = x_{1}$ & $x_{1} < x < x_{2}$ & $x = x_{2}$ & $x_{2} < x < \infty$ \\ \hline
                         $z(x)$ & $+$ & $0$ & $-$ & $0$ & $+$ \\ \hline
+                        $u(x)$ & $+$ & $+$ & $+$ & $+$ & $+$ \\ \hline
+                        $v(x)$ & $+$ & $+$ & $+$ & $+$ & $+$ \\ \hline
                         $n(x)$ & $+$ & $+$ & $+$ & $+$ & $+$ \\ \hline
                         $f''(x)$ & $-$ & $0$ & $+$ & $0$ & $-$ \\ \hline
                         $G_{f}$ & l. g. & $W_{1}$ & r. g. & $W_{2}$ & l. g. \\
                     \end{tabularx}
                     }\\[2.0ex]
-                    $\Rightarrow \qquad G_{f}$ ist linksgekrümmt in $\left] \ -\infty; -\sqrt[2]{5} \ \right]$ sowie $\left[ \ \sqrt[2]{5}; +\infty \ \right[$ \\[1.0ex]
-                    $\Rightarrow \qquad G_{f}$ ist rechtsgekrümmt in $\left[ \ -\sqrt[2]{5}; \sqrt[2]{5}\ \right]$\\[-2.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist linksgekrümmt in $\left] \ -\infty; -\sqrt{-1 + \sqrt{11}} \ \right]$ sowie $\left[ \ \sqrt{-1 + \sqrt{11}}; +\infty \ \right[$ \\[1.0ex]
+                    $\Rightarrow \qquad G_{f}$ ist rechtsgekrümmt in $\left[ \ -\sqrt{-1 + \sqrt{11}}; \sqrt{-1 + \sqrt{11}} \ \right]$\\[-2.0ex]
                     }
                 \item Extrem- und Wendepunkte: \\[-3.0ex]{
                     \begin{itemize}
                         \item Hochpunkt: \quad $H_{1}(0 \ / \ \SI{0.46}{})$
-                        \item Wendepunkte: \quad $W_{1}(-\sqrt[2]{5} \ / \ \SI{0.32}{})$; \quad $W_{2}(\sqrt[2]{5} \ / \ \SI{0.32}{})$
+                        \item Wendepunkte: \quad $W_{1}(-\sqrt{-1 + \sqrt{11}} \ / \ \SI{0.38}{})$; \quad $W_{2}(\sqrt{-1 + \sqrt{11}} \ / \ \SI{0.38}{})$
                     \end{itemize}
                 }
                 \item Zeichnung: \\[-2.0ex]{
@@ -435,23 +476,23 @@
                         \pgfmathsetmacro{\HaxLabel}{\Hax*\xScale}
                         \pgfmathsetmacro{\HayLabel}{\Hay*\yScale}
                         \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Hax,\Hay)};
-                        \node[anchor=south east] at (axis cs:{\Hax},{\Hay}) {$H_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\HaxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\HayLabel}{})$};
+                        \node[anchor=south east, xshift=0ex, yshift=0.25cm] at (axis cs:{\Hax},{\Hay}) {$H_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\HaxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\HayLabel}{})$};
 
                         % W_1
-                        \pgfmathsetmacro{\Wax}{-sqrt(5)}
+                        \pgfmathsetmacro{\Wax}{-sqrt(-1 + sqrt(11))}
                         \pgfmathsetmacro{\Way}{f_f(\Wax)}
                         \pgfmathsetmacro{\WaxLabel}{\Wax*\xScale}
                         \pgfmathsetmacro{\WayLabel}{\Way*\yScale}
                         \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Wax,\Way)};
-                        \node[anchor=south east] at (axis cs:{\Wax},{\Way}) {$W_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\WaxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\WayLabel}{})$};
+                        \node[anchor=south east, xshift=0ex, yshift=0ex] at (axis cs:{\Wax},{\Way}) {$W_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\WaxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\WayLabel}{})$};
     
                         % W_2
-                        \pgfmathsetmacro{\Wbx}{sqrt(5)}
+                        \pgfmathsetmacro{\Wbx}{sqrt(-1 + sqrt(11))}
                         \pgfmathsetmacro{\Wby}{f_f(\Wax)}
                         \pgfmathsetmacro{\WbxLabel}{\Wbx*\xScale}
                         \pgfmathsetmacro{\WbyLabel}{\Wby*\yScale}
                         \addplot[only marks, mark=x, mark size=3pt] coordinates {(\Wbx,\Wby)};
-                        \node[anchor=south west] at (axis cs:{\Wbx},{\Wby}) {$W_{2}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\WbxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\WbyLabel}{})$};
+                        \node[anchor=south west, xshift=0ex, yshift=0ex] at (axis cs:{\Wbx},{\Wby}) {$W_{2}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\WbxLabel}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\WbyLabel}{})$};
                         \end{axis}
                     \end{tikzpicture}
                     }
