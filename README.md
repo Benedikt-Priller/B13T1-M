@@ -10,3 +10,7 @@
 
 - [Umkehrfunktionen](./LB01-Umkehrfunktionen/01_Umkehrfunktionen.pdf)
 - [Arcustangens](./LB01-Umkehrfunktionen/02_Arcustangens.pdf)
+
+### LB06-Zufall
+
+- [Stochastik](./LB06-Zufall/01_Stochastik.pdf)
