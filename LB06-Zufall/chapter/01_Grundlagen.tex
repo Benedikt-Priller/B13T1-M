@@ -3,7 +3,7 @@
 \subsection{Grundlagen}
 
 \begin{note}{}
-Ein \texthl{\textbf{Zufallsexperiment (ZE)}} ist ein Vorgang / Epxeriment dessen Resultate / Ergebnisse (mindestens 2 verschiedene) zufällig eintreten und das beliebig of wiederholbar ist.\\[-1.0ex]
+Ein \texthl{\textbf{Zufallsexperiment (ZE)}} ist ein Vorgang / Epxeriment dessen Resultate / Ergebnisse (mindestens 2 verschiedene) \uline{zufällig eintreten} und das \uline{beliebig oft wiederholbar} ist.\\[-1.0ex]
 
 Alle möglichen \texthl{\textbf{Ergebnisse}} eines ZEs werden in der \texthl{\textbf{Ergebnismenge (Ergebnisraum) $\Omega$}} (\textcolor{myg}{``Omega''}) zusammengefasst: 
 \begin{equation*} 
@@ -12,7 +12,7 @@ Alle möglichen \texthl{\textbf{Ergebnisse}} eines ZEs werden in der \texthl{\te
 Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
 
 \begin{Example}{Würfelwurf}{}
-    \vspace{-3.0ex}
+    \vspace{-1cm}
     \begin{align*}
         \tikzmarknode{aa}{} 
         \overbrace{\Omega_{1}}^{\mathclap{\textcolor{myg}{\text{\footnotesize feinster Ergebnisraum}}}}
@@ -34,7 +34,8 @@ Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
         &= 4 \\[1.0ex]
         \Omega_{5} 
         &= \{\text{gerade}; \text{Primzahl}\} 
-        & \textcolor{myr}{\mathrlap{\text{\footnotesize\shortstack[l]{kein Ergebnisraum, da $2$\\ beiden zugeordnet werden kann}}}} &
+        \qquad \qquad \textcolor{myr}{\mathrlap{\text{\parbox[t]{5cm}{\footnotesize kein Ergebnisraum, da $2$\\ beiden zugeordnet werden kann}}}}
+        & &
     \end{align*}
     \begin{tikzpicture}[remember picture, overlay,font=\footnotesize, color=myg]
         \draw[-latex] ([anchor=north west, xshift=0mm, yshift=0mm]aa) coordinate (r)
@@ -51,23 +52,26 @@ Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
 \end{note}
 
 \begin{Exercise}{S. 147/1}{}
-\begin{enumerate}
-    \item [1.]\begin{enumerate}[label=\alph*),leftmargin=*]
-        \item[c)] {
-            \begin{minipage}[t]{0.45\linewidth}
+\begin{enumerate}[leftmargin=*]
+    \item [1.]{
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            \texthl{\textbf{Baumdiagramme}} veranschaulichen mehrstufige ZEs (d. h. mehrere Aktionen)
+            \begin{minipage}[t]{0.35\linewidth}
             \raisebox{-\height}{
             \begin{tikzpicture}[
                 grow=right,
-                level distance=25mm,
+                level distance=20mm,
                 level 1/.style={sibling distance=24mm},
-                level 2/.style={sibling distance=8mm},
+                level 2/.style={sibling distance=7mm},
                 edge quotes/.style={auto, font=\footnotesize},
                 every node/.style={circle}
             ]
             \node (root) {}
             child { node (B) {$b$} {}
-                child { node (BR) {$r$} {}}
+                child { node (BB) {$b$} {}}
                 child { node (BG) {$g$} {}}
+                child { node (BR) {$r$} {}}
             }
             child { node (G) {$g$} {}
                 child { node (GR) {$r$} {}}
@@ -79,34 +83,70 @@ Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
                 child { node (RG) {$g$} {}}
                 child { node (RB) {$b$} {}}
             };
+
+            % ---- level descriptions ----
+            % \node[above=3.5mm of R] {\footnotesize \textbf{1. Ziehen}};
+            % \node[above=-5mm of RB] {\footnotesize \textbf{2. Ziehen}};
+
             \end{tikzpicture}
             }
             \end{minipage}
             \hfill
-            \begin{minipage}[t]{0.45\linewidth}
+            \begin{minipage}[t]{0.55\linewidth}
                 \vspace{-2.0ex}
                 \begin{align*}
-                    \Omega &= {\begin{array}{l}
-                                \{ rr; \ rg; \ rb\\
-                                gr; \ gg; \ gb\\
-                                br; \ bg \}
+                    \Omega &= {\begin{array}[t]{l}
+                                \{ rb; \ rg; \ rr\\
+                                gb \ gg; \ gr\\
+                                bb; \ bg; \ br \}
                                 \end{array}}
                                 \\
-                    \abs{\Omega} &= 8
+                    \abs{\Omega} &= 9
                 \end{align*}
-                $E_{1}$: ``zwei gleiche Kugeln''\\
-                $E_{1} = \{ rr; \ gg \}$\\[1.5ex]
-                $E_{2}$: ``mindestens eine blaue Kugel''\\
-                $E_{2} = \{ rb; \ gb; \ br; \ bg \}$ \\[1.5ex]
-                $E_{3}$: ``zweite Kugel ist grün''\\
-                $E_{3} = \{ rg; \ gg; \ bg \}$
             \end{minipage}
             }
-    \end{enumerate}
-    \item [2.]\begin{enumerate}[label=\alph*),leftmargin=*]
-        \item[a)] {
-            Ohne zurücklegen, da das Ereignis zwei blaue Kugeln zu ziehen fehlt.
+        \item[b)] {
+            Ein \texthl{\textbf{Ereignis}} ist eine Teilmenge von $\Omega$, d. h. jedes Element in $E$ muss in $\Omega$ liegen.\\[1.0ex]
+            z. B.: \qquad {
+                \begin{minipage}[t]{0.7\linewidth}
+                    \vspace{-5.0ex}
+                    \begin{align*}
+                        A &= \{ rr; \ br; \ gr \} \quad \textcolor{myg}{\text{\footnotesize (aufzählende Mengenschreibweise)}}\\
+                        \abs{A} &= 3 \\
+                        A: & \ \text{``Die zweite gezogene Kugel ist rot''}
+                \end{align*}
+                \end{minipage}
+            }\\[1.0ex]
+            \begin{itemize}[leftmargin=*]
+                \item {
+                    \texthl{\textbf{Sicheres Ereignis}}: tritt immer ein
+                    \begin{align*}
+                        &E_{1}: \ \text{``Beim ersten Ziehen wird} \ r \text{,} \ b \ \text{oder} \ g \ \text{gezogen''}\\
+                        &E_{1} = \Omega
+                    \end{align*}
+                    }
+                \item {
+                    \texthl{\textbf{Unmögliches Ereignis}}: tritt nie ein
+                    \begin{align*}
+                        &E_{2}: \ \text{``Die zweite gezogene Kugel ist schwarz''}\\
+                        &E_{2} = \{ \ \} = \emptyset \quad \textcolor{myg}{\text{\}\quad \footnotesize Leere Menge}}
+                    \end{align*}
+                    }
+                \item {
+                    \texthl{\textbf{Elementarereignis}}: enthält genau ein Element aus $\Omega$
+                    \begin{align*}
+                        &E_{3}: \ \text{``Zwei blaue Kugeln werden gezogen''}\\
+                        &E_{3} = \{ bb \}
+                    \end{align*}
+                    }
+            \end{itemize}
+            \begin{align*}
+                E_{1} &= \{ rr; \ bb; \ gg \} & \abs{E_{1}} = 3 &&\\
+                E_{2} &= \{ bb; \ rb; \ gb; \ br; bg \} & \abs{E_{2}} = 5 &&\\
+                E_{3} &= \{ rg; \ gg; \ bg \} & \abs{E_{3}} = 3 &&
+            \end{align*}
             }
     \end{enumerate}
+    }
 \end{enumerate}
 \end{Exercise}

@@ -5,8 +5,151 @@
 \begin{Exercise}{S. 147/1}{}
 \begin{enumerate}
     \item [1.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[c)] {
+            \begin{minipage}[t]{0.35\linewidth}
+            \raisebox{-\height}{
+            \begin{tikzpicture}[
+                grow=right,
+                level distance=20mm,
+                level 1/.style={sibling distance=24mm},
+                level 2/.style={sibling distance=8mm},
+                level 3/.style={sibling distance=8mm},
+                edge quotes/.style={auto, font=\footnotesize},
+                every node/.style={circle}
+            ]
+            \node (root) {}
+            child { node (B) {$b$} {}
+                child { node (BR) {$r$} {}}
+                child { node (BG) {$g$} {}}
+            }
+            child { node (G) {$g$} {}
+                child { node (GR) {$r$} {}}
+                child { node (GG) {$g$} {}}
+                child { node (GB) {$b$} {}}
+            }
+            child { node (R) {$r$} {}
+                child { node (RR) {$r$} {}}
+                child { node (RG) {$g$} {}}
+                child { node (RB) {$b$} {}}
+            };
+            \end{tikzpicture}
+            }
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.55\linewidth}
+                \vspace{-2.0ex}
+                \begin{align*}
+                    \Omega &= {\begin{array}[t]{l}
+                                \{ rb; \ rg; \ rr\\
+                                gb \ gg; \ gr\\
+                                bg; \ br \}
+                                \end{array}}
+                                \\
+                    \abs{\Omega} &= 8
+                \end{align*}
+                \begin{itemize}
+                    \item {
+                        $E_{1}$: ``zwei gleiche Kugeln''\\
+                        $E_{1} = \{ rr; \ gg \}$
+                        }
+                    \item {
+                        $E_{2}$: ``mindestens eine blaue Kugel''\\
+                        $E_{2} = \{ rb; \ gb; \ bg; \ br \}$
+                        }
+                    \item {
+                        $E_{3}$: ``zweite Kugel ist grün''\\
+                        $E_{3} = \{ rg; \ gg; \ bg \}$
+                    }
+                \end{itemize}
+            \end{minipage}
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 147/2}{}
+\begin{enumerate}
+    \item [2.]\begin{enumerate}[label=\alph*),leftmargin=*]
         \item[a)] {
-            Ja
+            Es wurde ohne zurücklegen gespielt, da das Ereignis zwei blaue Kugeln zu ziehen fehlt.
+            }
+        \item[b)] {
+            \begin{minipage}[t]{0.45\linewidth}
+                Ohne zurücklegen:\\
+                \raisebox{-\height}{
+                \begin{tikzpicture}[
+                    grow=right,
+                    level distance=18mm,
+                    level 1/.style={sibling distance=16mm},
+                    level 2/.style={sibling distance=8mm},
+                    edge quotes/.style={auto, font=\footnotesize},
+                    every node/.style={circle}
+                ]
+                \node (root) {}
+                child { node (B) {$b$} {}
+                    child { node (BR) {$r$} {}
+                        child { node (BRR) {$r$} {}}
+                    }
+                }
+                child { node (R) {$r$} {}
+                    child { node (RR) {$r$} {}
+                        child { node (RRB) {$b$} {}}
+                    }
+                    child { node (RB) {$b$} {}
+                        child { node (RBR) {$r$} {}}
+                    }
+                };
+                \end{tikzpicture}
+                } 
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.45\linewidth}
+                Mit zurücklegen:\\
+                \raisebox{-\height}{
+                \begin{tikzpicture}[
+                    grow=right,
+                    level distance=18mm,
+                    level 1/.style={sibling distance=34mm},
+                    level 2/.style={sibling distance=16mm},
+                    level 3/.style={sibling distance=8mm},
+                    edge quotes/.style={auto, font=\footnotesize},
+                    every node/.style={circle}
+                ]
+                \node (root) {}
+                child { node (B) {$b$} {}
+                    child { node (BR) {$r$} {}
+                        child { node (BRB) {$b$} {}}
+                        child { node (BRR) {$r$} {}}
+                    }
+                    child { node (BB) {$b$} {}
+                        child { node (BBR) {$r$} {}}
+                        child { node (BBB) {$b$} {}}
+                    }
+                }
+                child { node (R) {$r$} {}
+                    child { node (RR) {$r$} {}
+                        child { node (RRB) {$b$} {}}
+                        child { node (RRR) {$r$} {}}
+                    }
+                    child { node (RB) {$b$} {}
+                        child { node (RBR) {$r$} {}}
+                        child { node (RBB) {$b$} {}}
+                    }
+                };
+                \end{tikzpicture}
+                } 
+            \end{minipage}
+            }
+        \item [$\text{c}_{1}$)] {
+            $\Omega = \{ rr; \ rb; \ rg; \ br; bg \}$
+            }
+        \item [$\text{c}_{2}$)] {
+            \begin{align*}
+                E_{1} &= \{ rg; \ bg \} &&\\
+                E_{2} &= \{ rr \} &&\\
+                E_{3} &= \{ rb; \ br; \ bg \} &&\\
+                E_{4} &= \{ rb \} &&\\
+            \end{align*}
             }
     \end{enumerate}
 \end{enumerate}
