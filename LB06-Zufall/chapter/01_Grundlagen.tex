@@ -49,3 +49,64 @@ Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
     \vspace{-2.0ex}
 \end{Example}
 \end{note}
+
+\begin{Exercise}{S. 147/1}{}
+\begin{enumerate}
+    \item [1.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[c)] {
+            \begin{minipage}[t]{0.45\linewidth}
+            \raisebox{-\height}{
+            \begin{tikzpicture}[
+                grow=right,
+                level distance=25mm,
+                level 1/.style={sibling distance=24mm},
+                level 2/.style={sibling distance=8mm},
+                edge quotes/.style={auto, font=\footnotesize},
+                every node/.style={circle}
+            ]
+            \node (root) {}
+            child { node (B) {$b$} {}
+                child { node (BR) {$r$} {}}
+                child { node (BG) {$g$} {}}
+            }
+            child { node (G) {$g$} {}
+                child { node (GR) {$r$} {}}
+                child { node (GG) {$g$} {}}
+                child { node (GB) {$b$} {}}
+            }
+            child { node (R) {$r$} {}
+                child { node (RR) {$r$} {}}
+                child { node (RG) {$g$} {}}
+                child { node (RB) {$b$} {}}
+            };
+            \end{tikzpicture}
+            }
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.45\linewidth}
+                \vspace{-2.0ex}
+                \begin{align*}
+                    \Omega &= {\begin{array}{l}
+                                \{ rr; \ rg; \ rb\\
+                                gr; \ gg; \ gb\\
+                                br; \ bg \}
+                                \end{array}}
+                                \\
+                    \abs{\Omega} &= 8
+                \end{align*}
+                $E_{1}$: ``zwei gleiche Kugeln''\\
+                $E_{1} = \{ rr; \ gg \}$\\[1.5ex]
+                $E_{2}$: ``mindestens eine blaue Kugel''\\
+                $E_{2} = \{ rb; \ gb; \ br; \ bg \}$ \\[1.5ex]
+                $E_{3}$: ``zweite Kugel ist grün''\\
+                $E_{3} = \{ rg; \ gg; \ bg \}$
+            \end{minipage}
+            }
+    \end{enumerate}
+    \item [2.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            Ohne zurücklegen, da das Ereignis zwei blaue Kugeln zu ziehen fehlt.
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
