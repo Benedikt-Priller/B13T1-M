@@ -100,9 +100,9 @@ Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
                 \vspace{-2.0ex}
                 \begin{align*}
                     \Omega &= {\begin{array}[t]{l}
-                                \{ rb; \ rg; \ rr\\
-                                gb \ gg; \ gr\\
-                                bb; \ bg; \ br \}
+                                \{ (r; b); \ (r; g); \ (r; r)\\
+                                (g; b); \ (g; g); \ (g; r)\\
+                                (b; g); \ (b; r) \}
                                 \end{array}}
                                 \\
                     \abs{\Omega} &= 9
@@ -115,7 +115,7 @@ Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
                 \begin{minipage}[t]{0.7\linewidth}
                     \vspace{-5.0ex}
                     \begin{align*}
-                        A &= \{ rr; \ br; \ gr \} \quad \textcolor{myg}{\text{\footnotesize (aufzählende Mengenschreibweise)}}\\
+                        A &= \{ (r; r); \ (b; r); \ (g; r) \} \quad \textcolor{myg}{\text{\footnotesize (aufzählende Mengenschreibweise)}}\\
                         \abs{A} &= 3 \\
                         A: & \ \text{``Die zweite gezogene Kugel ist rot''}
                 \end{align*}
@@ -140,14 +140,14 @@ Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
                     \texthl{\textbf{Elementarereignis}}: enthält genau ein Element aus $\Omega$
                     \begin{align*}
                         &E_{3}: \ \text{``Zwei blaue Kugeln werden gezogen''}\\
-                        &E_{3} = \{ bb \}
+                        &E_{3} = \{ (b; b) \}
                     \end{align*}
                     }
             \end{itemize}
             \begin{align*}
-                E_{1} &= \{ rr; \ bb; \ gg \} & \abs{E_{1}} = 3 &&\\
-                E_{2} &= \{ bb; \ rb; \ gb; \ br; bg \} & \abs{E_{2}} = 5 &&\\
-                E_{3} &= \{ rg; \ gg; \ bg \} & \abs{E_{3}} = 3 &&
+                E_{1} &= \{ (r; r); \ (b; b); \ (g; g) \} & \abs{E_{1}} = 3 &&\\
+                E_{2} &= \{ (b; b); \ (r; b); \ (g; b); \ (b; r); \ (b; g) \} & \abs{E_{2}} = 5 &&\\
+                E_{3} &= \{ (r; g); \ (g; g); \ (b; g) \} & \abs{E_{3}} = 3 &&
             \end{align*}
             }
     \end{enumerate}

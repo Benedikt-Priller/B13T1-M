@@ -40,9 +40,9 @@
                 \vspace{-2.0ex}
                 \begin{align*}
                     \Omega &= {\begin{array}[t]{l}
-                                \{ rb; \ rg; \ rr\\
-                                gb \ gg; \ gr\\
-                                bg; \ br \}
+                                \{ (r; b); \ (r; g); \ (r; r)\\
+                                (g; b); \ (g; g); \ (g; r)\\
+                                (b; g); \ (b; r) \}
                                 \end{array}}
                                 \\
                     \abs{\Omega} &= 8
@@ -50,15 +50,15 @@
                 \begin{itemize}
                     \item {
                         $E_{1}$: ``zwei gleiche Kugeln''\\
-                        $E_{1} = \{ rr; \ gg \}$
+                        $E_{1} = \{ (r; r); \ (g; g) \}$
                         }
                     \item {
                         $E_{2}$: ``mindestens eine blaue Kugel''\\
-                        $E_{2} = \{ rb; \ gb; \ bg; \ br \}$
+                        $E_{2} = \{ (r; b); \ (g; b); \ (b; g); \ (b; r) \}$
                         }
                     \item {
                         $E_{3}$: ``zweite Kugel ist grün''\\
-                        $E_{3} = \{ rg; \ gg; \ bg \}$
+                        $E_{3} = \{ (r; g); \ (g; g); \ (b; g) \}$
                     }
                 \end{itemize}
             \end{minipage}
@@ -141,13 +141,13 @@
             \end{minipage}
             }
         \item [$\text{c}_{1}$)] {
-            $\Omega = \{ rr; \ rb; \ rg; \ br; bg \}$
+            $\Omega = \{ (r; r); \ (r; b); \ (r; g); \ (b; r); \ (b; g) \}$
             }
-        \item [$\text{c}_{2}$)] {\vspace{-2.0ex}\begin{align*}
-                E_{1} &= \{ rg; \ bg \} &&\\
-                E_{2} &= \{ rr \} &&\\
-                E_{3} &= \{ rb; \ br; \ bg \} &&\\
-                E_{4} &= \{ rb \} &&\\
+        \item [$\text{c}_{2}$)] {\begin{align*}
+                E_{1} &= \{ (r; g); \ (b; g) \} &&\\
+                E_{2} &= \{ (r; r) \} &&\\
+                E_{3} &= \{ (r; b); \ (b; r); \ (b; g) \} &&\\
+                E_{4} &= \{ (r; b) \} &&\\
             \end{align*}
             }
     \end{enumerate}
@@ -186,16 +186,16 @@
             \begin{minipage}[t]{0.45\linewidth}
                 $\Omega = \begin{array}[t]{l}
                     \{ 6; \\
-                    \bar{6} \land 6; \ \bar{6} \land \bar{6}; \\ 
-                    \bar{6} \land \bar{6} \land 6; \ \bar{6} \land \bar{6} \land \bar{6} \}
+                    (\bar{6};  6); \ (\bar{6}; \bar{6}); \\ 
+                    (\bar{6}; \bar{6}; 6); \ (\bar{6}; \bar{6}; \bar{6}) \}
                 \end{array}$
             \end{minipage}
             }
         \item [c)] {\vspace{-2.0ex}\begin{align*}
-                E_{1} &= \{ 6; \ \bar{6} \land 6; \ \bar{6} \land \bar{6} \land 6 \} &&\\
-                E_{2} &= \{ \bar{6} \land 6; \ \bar{6} \land \bar{6} \land 6; \bar{6} \land \bar{6} \land \bar{6} \} &&\\
-                E_{3} &= \{ 6; \ \bar{6} \land 6 \} &&\\
-                E_{4} &= \{ \bar{6} \land \bar{6} \land \bar{6} \} &&\\
+                E_{1} &= \{ 6; \ (\bar{6}; 6); \ (\bar{6}; \bar{6}; 6) \} &&\\
+                E_{2} &= \{ (\bar{6}; 6); \ (\bar{6}; \bar{6}; 6); \ (\bar{6}; \bar{6}; \bar{6}) \} &&\\
+                E_{3} &= \{ 6; \ (\bar{6}; 6) \} &&\\
+                E_{4} &= \{ (\bar{6}; \bar{6}; \bar{6}) \} &&\\
             \end{align*}
             }
     \end{enumerate}
@@ -210,182 +210,51 @@
             \qquad $\Rightarrow$ \quad Zufallsexperiment
             }
         \item[b)] {
-            % \raisebox{-\height}{
-            % \begin{tikzpicture}[
-            %     grow=right,
-            %     level distance=18mm,
-            %     level 1/.style={sibling distance=64mm},
-            %     level 2/.style={sibling distance=22mm},
-            %     level 3/.style={sibling distance=8mm},
-            %     edge quotes/.style={auto, font=\footnotesize},
-            %     every node/.style={rectangle, rounded corners}
-            % ]
-            % \node (root) {}
-            % child { node (F) {$\SI{0.50}{}$}
-            %     child { node (FF) {$\SI{0.50}{}$}
-            %         child { node (FFF) {$\SI{0.50}{}$}
-            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
-            %         }
-            %         child { node (FFE) {$\SI{1.00}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{1}{4}$}
-            %         }
-            %         child { node (FFZ) {$\SI{2.00}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{2}{4}$}
-            %         }
-            %         edge from parent node[below, font=\footnotesize] {$\frac{2}{5}$}
-            %     }
-            %     child { node (FZ) {$\SI{2.00}{}$}
-            %         child { node (FZZ) {$\SI{2.00}{}$}
-            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
-            %         }
-            %         child { node (FZE) {$\SI{1.00}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{1}{4}$}
-            %         }
-            %         child { node (FZF) {$\SI{0.50}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{2}{4}$}
-            %         }
-            %         edge from parent node[below, font=\footnotesize] {$\frac{2}{5}$}
-            %     }
-            %     child { node (FE) {$\SI{1.00}{}$}
-            %         child { node (FEZ) {$\SI{2.00}{}$}
-            %             edge from parent node[below, font=\footnotesize] {$\frac{2}{4}$}
-            %         }
-            %         child { node (FEF) {$\SI{0.50}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{2}{4}$}
-            %         }
-            %         edge from parent node[below, font=\footnotesize] {$\frac{1}{5}$}
-            %     }
-            %     edge from parent node[below, font=\footnotesize] {$\frac{3}{6}$}
-            % }
-            % child { node (Z) {$\SI{2.00}{}$}
-            %     child { node (ZF) {$\SI{0.50}{}$}
-            %         child { node (ZFF) {$\SI{0.50}{}$}
-            %             edge from parent node[below, font=\footnotesize] {$\frac{2}{4}$}
-            %         }
-            %         child { node (ZFE) {$\SI{1.00}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{1}{4}$}
-            %         }
-            %         child { node (ZFZ) {$\SI{2.00}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{1}{4}$}
-            %         }
-            %         edge from parent node[below, font=\footnotesize] {$\frac{3}{5}$}
-            %     }
-            %     child { node (ZZ) {$\SI{2.00}{}$}
-            %         child { node (ZZE) {$\SI{1.00}{}$}
-            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
-            %         }
-            %         child { node (ZZF) {$\SI{0.50}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{3}{4}$}
-            %         } 
-            %         edge from parent node[above, font=\footnotesize] {$\frac{1}{5}$}
-            %     }
-            %     child { node (ZE) {$\SI{1.00}{}$}
-            %         child { node (ZEZ) {$\SI{2.00}{}$}
-            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
-            %         }
-            %         child { node (ZEF) {$\SI{0.50}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{3}{4}$}
-            %         }
-            %         edge from parent node[above, font=\footnotesize] {$\frac{1}{5}$}
-            %     }
-            %     edge from parent node[above, font=\footnotesize] {$\frac{2}{6}$}
-            % }
-            % child { node (E) {$\SI{1.00}{}$}
-            %     child { node (EZ) {$\SI{2.00}{}$}
-            %         child { node (EZZ) {$\SI{2.00}{}$}
-            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
-            %         }
-            %         child { node (EZF) {$\SI{0.50}{}$}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{3}{4}$}
-            %         }
-            %         edge from parent node[below, font=\footnotesize] {$\frac{2}{5}$}
-            %     }
-            %     child { node (EF) {$\SI{0.50}{}$}
-            %         child { node (EFZ) {$\SI{2.00}{}$} {}
-            %             edge from parent node[below, font=\footnotesize] {$\frac{2}{4}$}
-            %         }
-            %         child { node (EFF) {$\SI{0.50}{}$} {}
-            %             edge from parent node[above, font=\footnotesize] {$\frac{2}{4}$}
-            %         }
-            %         edge from parent node[above, font=\footnotesize] {$\frac{3}{5}$}
-            %     }
-            %     edge from parent node[above, font=\footnotesize] {$\frac{1}{6}$}
-            % };
-
-            % \node[anchor=north west] at ($(EFF)+(2,0)$) {
-            %     \begin{minipage}[t]{4.5cm}
-            %     \centering
-            %     \renewcommand{\arraystretch}{1.2} % nicer vertical spacing
-            %     \[
-            %     \begin{array}{lccccc}
-            %         \omega & P(\omega) & E_1 & E_2 & E_3 \\
-            %         \{R;D;Z\}             & 0.015 & \bullet & \bullet &         \\
-            %         \{R;D;\bar{Z}\}       & 0.135 & \bullet &         &         \\
-            %         \{R;T;Z\}             & 0.03  & \bullet & \bullet &         \\
-            %         \{R;T;\bar{Z}\}       & 0.02  & \bullet &         &         \\
-            %         \{\bar{R};D;Z\}       & \textcolor{blue}{0.04} &         & \bullet &         \\
-            %         \{\bar{R};D;\bar{Z}\} & 0.04  &         &         & \bullet \\
-            %         \{\bar{R};T;Z\}       & 0.432 & \bullet & \bullet &         \\
-            %         \{\bar{R};T;\bar{Z}\} & 0.288 & \bullet &         &         \\
-            %                             & 1     &         &         &         \\
-            %     \end{array}
-            %     \]
-            %     \end{minipage}
-            % };
-
-            % \end{tikzpicture}
-            % }
-            $F = \SI{0.50}{}$; $E = \SI{1.00}{}$; $Z = \SI{2.00}{}$\\[1.0ex]
+            $F = \SI{0.50}{\text{\euro}}$; $E = \SI{1.00}{\text{\euro}}$; $Z = \SI{2.00}{\text{\euro}}$\\[1.0ex]
             \raisebox{-\height}{
             \begin{forest}
             for tree={
                 grow'=0,                % grow to the right
                 parent anchor=east, 
                 child anchor=west,
+                tier/.option=level, 
                 l sep=12mm,             % level distance
                 s sep=2mm,              % minimal sibling separation (can be auto-fitted)
                 font=\footnotesize,
                 rectangle, rounded corners, draw,
                 align=center,
                 edge+={-},
-                edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}}, % default empty
+                edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}} % default empty
             },
             [{}, draw=none  % root
             [F, edge label={node[pos=0.5, above] {$\frac{3}{6}$}}
                 [F, edge label={node[midway, above] {$\frac{2}{5}$}}
-                [F, edge label={node[midway, above] {$\frac{1}{4}$}}, name=FFF ]
-                [E, edge label={node[pos=0.8, above] {$\frac{1}{4}$}}, name=FFE ]
-                [Z, edge label={node[midway, below] {$\frac{2}{4}$}}, name=FFZ ]
+                    [F, edge label={node[midway, above] {$\frac{1}{4}$}}, name=FFF ]
+                    [E, edge label={node[pos=0.8, above] {$\frac{1}{4}$}}, name=FFE ]
+                    [Z, edge label={node[midway, below] {$\frac{2}{4}$}}, name=FFZ ]
                 ]
-                [Z, edge label={node[midway, above] {$\frac{2}{5}$}}
-                [Z, edge label={node[midway, above] {$\frac{1}{4}$}}, name=FZZ ]
-                [E, edge label={node[pos=0.8, above] {$\frac{1}{4}$}}, name=FZE ]
-                [F, edge label={node[midway, below] {$\frac{2}{4}$}}, name=FZF ]
+                [Z, edge label={node[midway, above] {$\frac{2}{5}$}}, name=FZ 
+                    [\phantom{X}, draw=none]
                 ]
                 [E, edge label={node[midway, below] {$\frac{1}{5}$}}
-                [Z, edge label={node[midway, above] {$\frac{2}{4}$}}, name=FEZ ]
-                [F, edge label={node[midway, below] {$\frac{2}{4}$}}, name=FEF ]
+                    [Z, edge label={node[midway, above] {$\frac{2}{4}$}}, name=FEZ ]
+                    [F, edge label={node[midway, below] {$\frac{2}{4}$}}, name=FEF ]
                 ]
             ]
             [Z, edge label={node[pos=0.5, above] {$\frac{2}{6}$}}
-                [F, edge label={node[midway, above] {$\frac{3}{5}$}}
-                [F, edge label={node[midway, above] {$\frac{2}{4}$}}, name=ZFF ]
-                [E, edge label={node[pos=0.8, above] {$\frac{1}{4}$}}, name=ZFE ]
-                [Z, edge label={node[midway, below] {$\frac{1}{4}$}}, name=ZFZ ]
+                [F, edge label={node[midway, above] {$\frac{3}{5}$}}, name=ZF
+                    [\phantom{X}, draw=none]
                 ]
-                [Z, edge label={node[midway, above] {$\frac{1}{5}$}}
-                [E, edge label={node[midway, above] {$\frac{1}{4}$}}, name=ZZE ]
-                [F, edge label={node[midway, below] {$\frac{3}{4}$}}, name=ZZF ]
+                [Z, edge label={node[pos=0.8, above] {$\frac{1}{5}$}}, name=ZZ
+                    [\phantom{X}, draw=none]
                 ]
-                [E, edge label={node[midway, below] {$\frac{1}{5}$}}
-                [Z, edge label={node[midway, above] {$\frac{1}{4}$}}, name=ZEZ ]
-                [F, edge label={node[midway, below] {$\frac{3}{4}$}}, name=ZEF ]
+                [E, edge label={node[midway, below] {$\frac{1}{5}$}}, name=ZE
+                    [\phantom{X}, draw=none]
                 ]
             ]
             [E, edge label={node[pos=0.5, above] {$\frac{1}{6}$}}
-                [Z, edge label={node[midway, above] {$\frac{2}{5}$}}
-                [Z, edge label={node[midway, above] {$\frac{1}{4}$}}, name=EZZ ]
-                [F, edge label={node[midway, below] {$\frac{3}{4}$}}, name=EZF ]
+                [Z, edge label={node[midway, above] {$\frac{2}{5}$}}, name=EZ
+                    [\phantom{X}, draw=none]
                 ]
                 [F, edge label={node[midway, above] {$\frac{3}{5}$}}
                 [Z, edge label={node[midway, above] {$\frac{2}{4}$}}, name=EFZ ]
@@ -398,28 +267,22 @@
                 \textbf{$\omega$} & \textbf{$P(\omega)$} & \textbf{$\Sigma$} & \textbf{$E_1$} & \textbf{$E_2$} & \textbf{$E_3$} \\ \hline
                 \end{tabular}
             };
+            \coordinate (xbase) at ($(FFF.east)+(0.5,-1.25)$);
             \foreach \l/\om/\p/\s/\eone/\etwo/\ethree in {
-                FFF/    \{F \land F \land F\}/  \SI{0.05}{}/  \SI{1.50}{}/  \bullet/    \bullet/,
-                FFE/    \{F \land F \land E\}/  \SI{0.05}{}/  \SI{2.00}{}/  \bullet/        /,
-                FFZ/    \{F \land F \land Z\}/  \SI{0.10}{}/  \SI{3.00}{}/  \bullet/    \bullet/,
-                FZZ/    \{F \land Z \land Z\}/  \SI{0.05}{}/  \SI{4.50}{}/      /  \bullet/,
-                FZE/    \{F \land Z \land E\}/  \SI{0.05}{}/  \SI{3.50}{}/      /      /,
-                FZF/    \{F \land Z \land F\}/  \SI{0.10}{}/  \SI{3.00}{}/  \bullet/    \bullet/,
-                FEZ/    \{F \land E \land Z\}/  \SI{0.05}{}/  \SI{3.50}{}/      /  \bullet/,
-                FEF/    \{F \land E \land F\}/  \SI{0.10}{}/  \SI{3.00}{}/  \bullet/    \bullet/,
-                ZFF/    \{Z \land F \land F\}/  \SI{0.10}{}/  \SI{3.00}{}/  \bullet/    \bullet/,
-                ZFE/    \{Z \land F \land E\}/  \SI{0.05}{}/  \SI{2.50}{}/      /      /,
-                ZFZ/    \{Z \land F \land Z\}/  \SI{0.05}{}/  \SI{4.00}{}/      /  \bullet/,
-                ZZE/    \{Z \land Z \land E\}/  \SI{0.02}{}/  \SI{5.00}{}/      /  \bullet/,
-                ZZF/    \{Z \land Z \land F\}/  \SI{0.06}{}/  \SI{4.50}{}/  \bullet/    \bullet/,
-                ZEZ/    \{Z \land E \land Z\}/  \SI{0.02}{}/  \SI{5.00}{}/      /  \bullet/,
-                ZEF/    \{Z \land E \land F\}/  \SI{0.06}{}/  \SI{4.50}{}/  \bullet/    \bullet/,
-                EZZ/    \{E \land Z \land Z\}/  \SI{0.02}{}/  \SI{5.00}{}/      /  \bullet/,
-                EZF/    \{E \land Z \land F\}/  \SI{0.06}{}/  \SI{4.50}{}/  \bullet/    \bullet/,
-                EFZ/    \{E \land F \land Z\}/  \SI{0.06}{}/  \SI{4.50}{}/      /  \bullet/,
-                EFF/    \{E \land F \land F\}/  \SI{0.04}{}/  \SI{3.50}{}/  \bullet/    \bullet/
+                FFF/    \{(F; F; F)\}/  \frac{1}{20}/   \SI{1.50}{}/          /           /   \bullet,
+                FFE/    \{(F; F; E)\}/  \frac{1}{20}/   \SI{2.00}{}/          /           /   \bullet,
+                FFZ/    \{(F; F; Z)\}/  \frac{1}{10}/   \SI{3.00}{}/  \bullet /   \bullet /   \bullet,
+                FZ/     \{(F; Z)\}/     \frac{1}{5}/    \SI{2.50}{}/          /   \bullet /   ,
+                FEZ/    \{(F; E; Z)\}/  \frac{1}{20}/   \SI{3.50}{}/  \bullet /   \bullet /   \bullet,
+                FEF/    \{(F; E; F)\}/  \frac{1}{20}/   \SI{2.00}{}/          /           /   \bullet,
+                ZF/     \{(Z; F)\}/     \frac{1}{5}/    \SI{2.50}{}/          /   \bullet /   ,
+                ZZ/     \{(Z; Z)\}/     \frac{1}{15}/   \SI{4.00}{}/  \bullet /   \bullet /   ,
+                ZE/     \{(Z; E)\}/     \frac{1}{15}/   \SI{3.00}{}/  \bullet /   \bullet /   ,
+                EZ/     \{(E; Z)\}/     \frac{1}{15}/   \SI{3.00}{}/  \bullet /   \bullet /   ,
+                EFZ/    \{(E; F; Z)\}/  \frac{1}{20}/   \SI{3.50}{}/  \bullet /   \bullet /   \bullet,
+                EFF/    \{(E; F; F)\}/  \frac{1}{20}/   \SI{2.00}{}/          /           /   \bullet
                 } {
-                \node[right=5mm of \l, anchor=west] {
+                \node[anchor=west] (myNode) at (xbase |- \l) {
                     \begin{tabular}{p{1.75cm} | p{0.7cm} | p{0.7cm} | p{0.7cm} | p{0.7cm} | l}
                         $\om$ & $\p$ & $\s$ & $\eone$ & $\etwo$ & $\ethree$
                     \end{tabular}
@@ -434,17 +297,62 @@
             \end{forest}
             }\\[1.0ex]
             $\Omega = \begin{array}[t]{l}
-                \{ F \land F \land F; \ F \land F \land E; \ F \land F \land Z; \\
-                F \land Z \land Z; \ F \land Z \land E; \ F \land Z \land F; \\
-                F \land E \land Z; \ F \land E \land F; \\
-                Z \land F \land F; \ Z \land F \land E; \ Z \land F \land Z; \\
-                Z \land Z \land E; \ Z \land Z \land F; \\
-                Z \land E \land Z; \ Z \land E \land F; \\
-                E \land Z \land Z; \ E \land Z \land F; \\
-                E \land F \land Z; \ E \land F \land F
+                \{ (F; F; F); \ (F; F; E); \ (F; F; Z); \ (F; Z); \ (F; E; Z); \ (F; E; F); \\
+                (Z; F); \ (Z; Z); \ (Z; E); \\
+                (E; Z;); (E; F; Z); \ (E; F; F)
                 \}
             \end{array}$
             }
+        \item[c)] {
+            \begin{minipage}[t]{0.45\linewidth}
+                \begin{align*}
+                    E_{1} &= \begin{array}[t]{l}
+                        \{ (F; F; Z); \ (F; E; Z);\\
+                        (Z; F); \ (Z; Z); \ (Z; E); \\
+                        (E; Z); \\
+                        (E; F; Z); \ (E; F; F)
+                        \} \end{array}&&\\
+                    E_{3} &= \begin{array}[t]{l}
+                        \{ (F; F; F); \ (F; F; E); \ (F; F; Z); \\
+                        (F; E; Z); \ (F; E; F);\\
+                        (E; F; Z); \ (E; F; F)
+                        \} \end{array}&&\\
+                \end{align*}
+            \end{minipage}
+            \begin{minipage}[t]{0.45\linewidth}
+                \begin{align*}
+                E_{2} &= \begin{array}[t]{l}
+                        \{ (F; F; Z); \ (F; Z); \ (F; E; Z);\\
+                        (Z; F); \ (Z; Z); \ (Z; E); \\
+                        (E; Z); \\
+                        (E; F; Z); \ (E; F; F)
+                    \} \end{array}&&\\
+                \end{align*}
+            \end{minipage}
+            }
+        \item[d)] {
+            Maximaler Gewinn (für Paul): \quad $\Delta G = \SI{4.00}{} - \SI{2.50}{} = \SI{1.50}{\text{\euro}}$\\[1.0ex]
+            Maximaler Verlust (für Paul): \quad $\Delta V = \SI{1.50}{} - \SI{2.50}{} = -\SI{1.00}{\text{\euro}}$\\[-1.0ex]
+            }
+        \item[e)] {
+            \begin{itemize}[leftmargin=*]
+                \item Vorteilhaft für Paul ($\Sigma > \SI{2.50}{\text{\euro}}$) sind $40 \%$ der Ereignisse
+                \item Neutral für Paul ($\Sigma = \SI{2.50}{\text{\euro}}$) sind $20 \%$ der Ereignisse
+                \item Nachteilig für Paul ($\Sigma < \SI{2.50}{\text{\euro}}$) sind $20 \%$ der Ereignisse
+                \item Durchschnittliches Ergebnis:
+                    \begin{align*}
+                        \overline{\Sigma} &= \sum_{\omega \in \Omega} P(\omega) \cdot \Sigma(\omega) \\
+                        &= \dfrac{1}{20} \cdot \SI{1.50}{} + \dfrac{1}{20} \cdot \SI{2.00}{} + \dfrac{1}{10} \cdot \SI{3.00}{} \\[1.5ex]
+                        &\quad + \dfrac{1}{5} \cdot \SI{2.50}{}\\[1.5ex]
+                        &\quad + \dfrac{1}{20} \cdot \SI{3.50}{} + \dfrac{1}{20} \cdot \SI{2.00}{} \\[1.5ex]
+                        &\quad + \dfrac{1}{5} \cdot \SI{2.50}{}\\[1.5ex]
+                        &\quad + \dfrac{1}{15} \cdot \SI{4.00}{} + \dfrac{1}{15} \cdot \SI{3.00}{} + \dfrac{1}{15} \cdot \SI{3.00}{} \\[1.5ex]
+                        &\quad + \dfrac{1}{20} \cdot \SI{3.50}{} + \dfrac{1}{20} \cdot \SI{2.00}{} \\[1.5ex]
+                        &\uuline{= \SI{2.65}{}}
+                    \end{align*}
+                    $\Rightarrow$ im Durchschnitt gewinnt Paul $\SI{0.15}{\text{\euro}}$ pro Spiel 
+            \end{itemize}
+        }
     \end{enumerate}
 \end{enumerate}
 \end{Exercise}
