@@ -143,13 +143,307 @@
         \item [$\text{c}_{1}$)] {
             $\Omega = \{ rr; \ rb; \ rg; \ br; bg \}$
             }
-        \item [$\text{c}_{2}$)] {
-            \begin{align*}
+        \item [$\text{c}_{2}$)] {\vspace{-2.0ex}\begin{align*}
                 E_{1} &= \{ rg; \ bg \} &&\\
                 E_{2} &= \{ rr \} &&\\
                 E_{3} &= \{ rb; \ br; \ bg \} &&\\
                 E_{4} &= \{ rb \} &&\\
             \end{align*}
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 147/4}{}
+\begin{enumerate}
+    \item [4.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            \begin{minipage}[t]{0.45\linewidth}
+                \raisebox{-\height}{
+                \begin{tikzpicture}[
+                    grow=right,
+                    level distance=18mm,
+                    level 1/.style={sibling distance=16mm},
+                    level 2/.style={sibling distance=8mm},
+                    edge quotes/.style={auto, font=\footnotesize},
+                    every node/.style={circle}
+                ]
+                \node (root) {}
+                child { node (N) {$\bar{6}$} {}
+                    child { node (NN) {$\bar{6}$} {}
+                        child { node (NNN) {$\bar{6}$} {}}
+                        child { node (NNS) {$6$} {}}
+                    }
+                    child { node (NS) {$6$} {}
+                    }
+                }
+                child { node (S) {$6$} {}
+                };
+                \end{tikzpicture}
+                } 
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.45\linewidth}
+                $\Omega = \begin{array}[t]{l}
+                    \{ 6; \\
+                    \bar{6} \land 6; \ \bar{6} \land \bar{6}; \\ 
+                    \bar{6} \land \bar{6} \land 6; \ \bar{6} \land \bar{6} \land \bar{6} \}
+                \end{array}$
+            \end{minipage}
+            }
+        \item [c)] {\vspace{-2.0ex}\begin{align*}
+                E_{1} &= \{ 6; \ \bar{6} \land 6; \ \bar{6} \land \bar{6} \land 6 \} &&\\
+                E_{2} &= \{ \bar{6} \land 6; \ \bar{6} \land \bar{6} \land 6; \bar{6} \land \bar{6} \land \bar{6} \} &&\\
+                E_{3} &= \{ 6; \ \bar{6} \land 6 \} &&\\
+                E_{4} &= \{ \bar{6} \land \bar{6} \land \bar{6} \} &&\\
+            \end{align*}
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 147/5}{}
+\begin{enumerate}
+    \item [5.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            Es gibt mehrere verschiedene Resultate, die zufällig eintreten. Der Vorgang ist zudem beliebig oft wiederholbar.
+            \qquad $\Rightarrow$ \quad Zufallsexperiment
+            }
+        \item[b)] {
+            % \raisebox{-\height}{
+            % \begin{tikzpicture}[
+            %     grow=right,
+            %     level distance=18mm,
+            %     level 1/.style={sibling distance=64mm},
+            %     level 2/.style={sibling distance=22mm},
+            %     level 3/.style={sibling distance=8mm},
+            %     edge quotes/.style={auto, font=\footnotesize},
+            %     every node/.style={rectangle, rounded corners}
+            % ]
+            % \node (root) {}
+            % child { node (F) {$\SI{0.50}{}$}
+            %     child { node (FF) {$\SI{0.50}{}$}
+            %         child { node (FFF) {$\SI{0.50}{}$}
+            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
+            %         }
+            %         child { node (FFE) {$\SI{1.00}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{1}{4}$}
+            %         }
+            %         child { node (FFZ) {$\SI{2.00}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{2}{4}$}
+            %         }
+            %         edge from parent node[below, font=\footnotesize] {$\frac{2}{5}$}
+            %     }
+            %     child { node (FZ) {$\SI{2.00}{}$}
+            %         child { node (FZZ) {$\SI{2.00}{}$}
+            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
+            %         }
+            %         child { node (FZE) {$\SI{1.00}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{1}{4}$}
+            %         }
+            %         child { node (FZF) {$\SI{0.50}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{2}{4}$}
+            %         }
+            %         edge from parent node[below, font=\footnotesize] {$\frac{2}{5}$}
+            %     }
+            %     child { node (FE) {$\SI{1.00}{}$}
+            %         child { node (FEZ) {$\SI{2.00}{}$}
+            %             edge from parent node[below, font=\footnotesize] {$\frac{2}{4}$}
+            %         }
+            %         child { node (FEF) {$\SI{0.50}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{2}{4}$}
+            %         }
+            %         edge from parent node[below, font=\footnotesize] {$\frac{1}{5}$}
+            %     }
+            %     edge from parent node[below, font=\footnotesize] {$\frac{3}{6}$}
+            % }
+            % child { node (Z) {$\SI{2.00}{}$}
+            %     child { node (ZF) {$\SI{0.50}{}$}
+            %         child { node (ZFF) {$\SI{0.50}{}$}
+            %             edge from parent node[below, font=\footnotesize] {$\frac{2}{4}$}
+            %         }
+            %         child { node (ZFE) {$\SI{1.00}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{1}{4}$}
+            %         }
+            %         child { node (ZFZ) {$\SI{2.00}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{1}{4}$}
+            %         }
+            %         edge from parent node[below, font=\footnotesize] {$\frac{3}{5}$}
+            %     }
+            %     child { node (ZZ) {$\SI{2.00}{}$}
+            %         child { node (ZZE) {$\SI{1.00}{}$}
+            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
+            %         }
+            %         child { node (ZZF) {$\SI{0.50}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{3}{4}$}
+            %         } 
+            %         edge from parent node[above, font=\footnotesize] {$\frac{1}{5}$}
+            %     }
+            %     child { node (ZE) {$\SI{1.00}{}$}
+            %         child { node (ZEZ) {$\SI{2.00}{}$}
+            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
+            %         }
+            %         child { node (ZEF) {$\SI{0.50}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{3}{4}$}
+            %         }
+            %         edge from parent node[above, font=\footnotesize] {$\frac{1}{5}$}
+            %     }
+            %     edge from parent node[above, font=\footnotesize] {$\frac{2}{6}$}
+            % }
+            % child { node (E) {$\SI{1.00}{}$}
+            %     child { node (EZ) {$\SI{2.00}{}$}
+            %         child { node (EZZ) {$\SI{2.00}{}$}
+            %             edge from parent node[below, font=\footnotesize] {$\frac{1}{4}$}
+            %         }
+            %         child { node (EZF) {$\SI{0.50}{}$}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{3}{4}$}
+            %         }
+            %         edge from parent node[below, font=\footnotesize] {$\frac{2}{5}$}
+            %     }
+            %     child { node (EF) {$\SI{0.50}{}$}
+            %         child { node (EFZ) {$\SI{2.00}{}$} {}
+            %             edge from parent node[below, font=\footnotesize] {$\frac{2}{4}$}
+            %         }
+            %         child { node (EFF) {$\SI{0.50}{}$} {}
+            %             edge from parent node[above, font=\footnotesize] {$\frac{2}{4}$}
+            %         }
+            %         edge from parent node[above, font=\footnotesize] {$\frac{3}{5}$}
+            %     }
+            %     edge from parent node[above, font=\footnotesize] {$\frac{1}{6}$}
+            % };
+
+            % \node[anchor=north west] at ($(EFF)+(2,0)$) {
+            %     \begin{minipage}[t]{4.5cm}
+            %     \centering
+            %     \renewcommand{\arraystretch}{1.2} % nicer vertical spacing
+            %     \[
+            %     \begin{array}{lccccc}
+            %         \omega & P(\omega) & E_1 & E_2 & E_3 \\
+            %         \{R;D;Z\}             & 0.015 & \bullet & \bullet &         \\
+            %         \{R;D;\bar{Z}\}       & 0.135 & \bullet &         &         \\
+            %         \{R;T;Z\}             & 0.03  & \bullet & \bullet &         \\
+            %         \{R;T;\bar{Z}\}       & 0.02  & \bullet &         &         \\
+            %         \{\bar{R};D;Z\}       & \textcolor{blue}{0.04} &         & \bullet &         \\
+            %         \{\bar{R};D;\bar{Z}\} & 0.04  &         &         & \bullet \\
+            %         \{\bar{R};T;Z\}       & 0.432 & \bullet & \bullet &         \\
+            %         \{\bar{R};T;\bar{Z}\} & 0.288 & \bullet &         &         \\
+            %                             & 1     &         &         &         \\
+            %     \end{array}
+            %     \]
+            %     \end{minipage}
+            % };
+
+            % \end{tikzpicture}
+            % }
+            $F = \SI{0.50}{}$; $E = \SI{1.00}{}$; $Z = \SI{2.00}{}$\\[1.0ex]
+            \raisebox{-\height}{
+            \begin{forest}
+            for tree={
+                grow'=0,                % grow to the right
+                parent anchor=east, 
+                child anchor=west,
+                l sep=12mm,             % level distance
+                s sep=2mm,              % minimal sibling separation (can be auto-fitted)
+                font=\footnotesize,
+                rectangle, rounded corners, draw,
+                align=center,
+                edge+={-},
+                edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}}, % default empty
+            },
+            [{}, draw=none  % root
+            [F, edge label={node[pos=0.5, above] {$\frac{3}{6}$}}
+                [F, edge label={node[midway, above] {$\frac{2}{5}$}}
+                [F, edge label={node[midway, above] {$\frac{1}{4}$}}, name=FFF ]
+                [E, edge label={node[pos=0.8, above] {$\frac{1}{4}$}}, name=FFE ]
+                [Z, edge label={node[midway, below] {$\frac{2}{4}$}}, name=FFZ ]
+                ]
+                [Z, edge label={node[midway, above] {$\frac{2}{5}$}}
+                [Z, edge label={node[midway, above] {$\frac{1}{4}$}}, name=FZZ ]
+                [E, edge label={node[pos=0.8, above] {$\frac{1}{4}$}}, name=FZE ]
+                [F, edge label={node[midway, below] {$\frac{2}{4}$}}, name=FZF ]
+                ]
+                [E, edge label={node[midway, below] {$\frac{1}{5}$}}
+                [Z, edge label={node[midway, above] {$\frac{2}{4}$}}, name=FEZ ]
+                [F, edge label={node[midway, below] {$\frac{2}{4}$}}, name=FEF ]
+                ]
+            ]
+            [Z, edge label={node[pos=0.5, above] {$\frac{2}{6}$}}
+                [F, edge label={node[midway, above] {$\frac{3}{5}$}}
+                [F, edge label={node[midway, above] {$\frac{2}{4}$}}, name=ZFF ]
+                [E, edge label={node[pos=0.8, above] {$\frac{1}{4}$}}, name=ZFE ]
+                [Z, edge label={node[midway, below] {$\frac{1}{4}$}}, name=ZFZ ]
+                ]
+                [Z, edge label={node[midway, above] {$\frac{1}{5}$}}
+                [E, edge label={node[midway, above] {$\frac{1}{4}$}}, name=ZZE ]
+                [F, edge label={node[midway, below] {$\frac{3}{4}$}}, name=ZZF ]
+                ]
+                [E, edge label={node[midway, below] {$\frac{1}{5}$}}
+                [Z, edge label={node[midway, above] {$\frac{1}{4}$}}, name=ZEZ ]
+                [F, edge label={node[midway, below] {$\frac{3}{4}$}}, name=ZEF ]
+                ]
+            ]
+            [E, edge label={node[pos=0.5, above] {$\frac{1}{6}$}}
+                [Z, edge label={node[midway, above] {$\frac{2}{5}$}}
+                [Z, edge label={node[midway, above] {$\frac{1}{4}$}}, name=EZZ ]
+                [F, edge label={node[midway, below] {$\frac{3}{4}$}}, name=EZF ]
+                ]
+                [F, edge label={node[midway, above] {$\frac{3}{5}$}}
+                [Z, edge label={node[midway, above] {$\frac{2}{4}$}}, name=EFZ ]
+                [F, edge label={node[midway, below] {$\frac{2}{4}$}}, name=EFF]
+                ]
+            ]
+            ]
+            \node[anchor=south west] at ($(FFF.east)+(0.5,0.25)$) {
+                \begin{tabular}{p{1.75cm} | p{0.7cm} | p{0.7cm} | p{0.7cm} | p{0.7cm} | l}
+                \textbf{$\omega$} & \textbf{$P(\omega)$} & \textbf{$\Sigma$} & \textbf{$E_1$} & \textbf{$E_2$} & \textbf{$E_3$} \\ \hline
+                \end{tabular}
+            };
+            \foreach \l/\om/\p/\s/\eone/\etwo/\ethree in {
+                FFF/    \{F \land F \land F\}/  \SI{0.05}{}/  \SI{1.50}{}/  \bullet/    \bullet/,
+                FFE/    \{F \land F \land E\}/  \SI{0.05}{}/  \SI{2.00}{}/  \bullet/        /,
+                FFZ/    \{F \land F \land Z\}/  \SI{0.10}{}/  \SI{3.00}{}/  \bullet/    \bullet/,
+                FZZ/    \{F \land Z \land Z\}/  \SI{0.05}{}/  \SI{4.50}{}/      /  \bullet/,
+                FZE/    \{F \land Z \land E\}/  \SI{0.05}{}/  \SI{3.50}{}/      /      /,
+                FZF/    \{F \land Z \land F\}/  \SI{0.10}{}/  \SI{3.00}{}/  \bullet/    \bullet/,
+                FEZ/    \{F \land E \land Z\}/  \SI{0.05}{}/  \SI{3.50}{}/      /  \bullet/,
+                FEF/    \{F \land E \land F\}/  \SI{0.10}{}/  \SI{3.00}{}/  \bullet/    \bullet/,
+                ZFF/    \{Z \land F \land F\}/  \SI{0.10}{}/  \SI{3.00}{}/  \bullet/    \bullet/,
+                ZFE/    \{Z \land F \land E\}/  \SI{0.05}{}/  \SI{2.50}{}/      /      /,
+                ZFZ/    \{Z \land F \land Z\}/  \SI{0.05}{}/  \SI{4.00}{}/      /  \bullet/,
+                ZZE/    \{Z \land Z \land E\}/  \SI{0.02}{}/  \SI{5.00}{}/      /  \bullet/,
+                ZZF/    \{Z \land Z \land F\}/  \SI{0.06}{}/  \SI{4.50}{}/  \bullet/    \bullet/,
+                ZEZ/    \{Z \land E \land Z\}/  \SI{0.02}{}/  \SI{5.00}{}/      /  \bullet/,
+                ZEF/    \{Z \land E \land F\}/  \SI{0.06}{}/  \SI{4.50}{}/  \bullet/    \bullet/,
+                EZZ/    \{E \land Z \land Z\}/  \SI{0.02}{}/  \SI{5.00}{}/      /  \bullet/,
+                EZF/    \{E \land Z \land F\}/  \SI{0.06}{}/  \SI{4.50}{}/  \bullet/    \bullet/,
+                EFZ/    \{E \land F \land Z\}/  \SI{0.06}{}/  \SI{4.50}{}/      /  \bullet/,
+                EFF/    \{E \land F \land F\}/  \SI{0.04}{}/  \SI{3.50}{}/  \bullet/    \bullet/
+                } {
+                \node[right=5mm of \l, anchor=west] {
+                    \begin{tabular}{p{1.75cm} | p{0.7cm} | p{0.7cm} | p{0.7cm} | p{0.7cm} | l}
+                        $\om$ & $\p$ & $\s$ & $\eone$ & $\etwo$ & $\ethree$
+                    \end{tabular}
+                };
+            }
+            \node[anchor=south west] at ($(EFF.east)+(0.5,-1.25)$) {
+                \begin{tabular}{p{1.75cm} | p{0.7cm} | p{0.7cm} | p{0.7cm} | p{0.7cm} | l}
+                    \hline
+                    & $\SI{1.00}{}$ & & & & \\
+                \end{tabular}
+            };
+            \end{forest}
+            }\\[1.0ex]
+            $\Omega = \begin{array}[t]{l}
+                \{ F \land F \land F; \ F \land F \land E; \ F \land F \land Z; \\
+                F \land Z \land Z; \ F \land Z \land E; \ F \land Z \land F; \\
+                F \land E \land Z; \ F \land E \land F; \\
+                Z \land F \land F; \ Z \land F \land E; \ Z \land F \land Z; \\
+                Z \land Z \land E; \ Z \land Z \land F; \\
+                Z \land E \land Z; \ Z \land E \land F; \\
+                E \land Z \land Z; \ E \land Z \land F; \\
+                E \land F \land Z; \ E \land F \land F
+                \}
+            \end{array}$
             }
     \end{enumerate}
 \end{enumerate}

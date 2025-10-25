@@ -61,7 +61,7 @@ Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
             \raisebox{-\height}{
             \begin{tikzpicture}[
                 grow=right,
-                level distance=20mm,
+                level distance=25mm,
                 level 1/.style={sibling distance=24mm},
                 level 2/.style={sibling distance=7mm},
                 edge quotes/.style={auto, font=\footnotesize},
@@ -85,8 +85,12 @@ Jedes Resultat des ZEs ist dabei genau einem Ergebnis $\omega_i$ zugeordnet.
             };
 
             % ---- level descriptions ----
-            % \node[above=3.5mm of R] {\footnotesize \textbf{1. Ziehen}};
-            % \node[above=-5mm of RB] {\footnotesize \textbf{2. Ziehen}};
+            \begin{scope}[every node/.style={inner sep=0pt, outer sep=0pt}]
+                % Center of first level (between B and R)
+                \node[font=\footnotesize\bfseries, anchor=base] at ($ (R) + (0,12mm) $) {1. Ziehung};
+                % Center of second level (between BB and RB)
+                \node[font=\footnotesize\bfseries, anchor=base] at ($ (RB) + (0,5mm) $) {2. Ziehung};
+            \end{scope}
 
             \end{tikzpicture}
             }
