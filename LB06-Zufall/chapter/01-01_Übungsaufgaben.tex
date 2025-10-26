@@ -160,26 +160,31 @@
         \item[a)] {
             \begin{minipage}[t]{0.45\linewidth}
                 \raisebox{-\height}{
-                \begin{tikzpicture}[
-                    grow=right,
-                    level distance=18mm,
-                    level 1/.style={sibling distance=16mm},
-                    level 2/.style={sibling distance=8mm},
-                    edge quotes/.style={auto, font=\footnotesize},
-                    every node/.style={circle}
+                \begin{forest}
+                for tree={
+                    grow'=0,                % grow to the right
+                    parent anchor=east, 
+                    child anchor=west,
+                    tier/.option=level, 
+                    l sep=12mm,             % level distance
+                    s sep=2mm,              % minimal sibling separation (can be auto-fitted)
+                    font=\footnotesize,
+                    rectangle, rounded corners, draw,
+                    align=center,
+                    edge+={-},
+                    edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}} % default empty
+                },
+                [{}, draw=none  % root
+                [$6$, edge label={node[midway, above] {$\frac{1}{6}$}}]
+                [$\bar{6}$, edge label={node[midway, below] {$\frac{5}{6}$}}
+                    [$6$, edge label={node[midway, above] {$\frac{1}{6}$}}]
+                    [$\bar{6}$, edge label={node[midway, below] {$\frac{5}{6}$}}
+                        [$6$, edge label={node[midway, above] {$\frac{1}{6}$}}]
+                        [$\bar{6}$, edge label={node[midway, below] {$\frac{5}{6}$}}]
+                    ]
                 ]
-                \node (root) {}
-                child { node (N) {$\bar{6}$} {}
-                    child { node (NN) {$\bar{6}$} {}
-                        child { node (NNN) {$\bar{6}$} {}}
-                        child { node (NNS) {$6$} {}}
-                    }
-                    child { node (NS) {$6$} {}
-                    }
-                }
-                child { node (S) {$6$} {}
-                };
-                \end{tikzpicture}
+                ]
+                \end{forest}
                 } 
             \end{minipage}
             \hfill
@@ -234,7 +239,7 @@
                     [Z, edge label={node[midway, below] {$\frac{2}{4}$}}, name=FFZ ]
                 ]
                 [Z, edge label={node[midway, above] {$\frac{2}{5}$}}, name=FZ 
-                    [\phantom{X}, draw=none]
+                    [\phantom{X}, draw=none, no edge]
                 ]
                 [E, edge label={node[midway, below] {$\frac{1}{5}$}}
                     [Z, edge label={node[midway, above] {$\frac{2}{4}$}}, name=FEZ ]
@@ -243,18 +248,18 @@
             ]
             [Z, edge label={node[pos=0.5, above] {$\frac{2}{6}$}}
                 [F, edge label={node[midway, above] {$\frac{3}{5}$}}, name=ZF
-                    [\phantom{X}, draw=none]
+                    [\phantom{X}, draw=none, no edge]
                 ]
                 [Z, edge label={node[pos=0.8, above] {$\frac{1}{5}$}}, name=ZZ
-                    [\phantom{X}, draw=none]
+                    [\phantom{X}, draw=none, no edge]
                 ]
                 [E, edge label={node[midway, below] {$\frac{1}{5}$}}, name=ZE
-                    [\phantom{X}, draw=none]
+                    [\phantom{X}, draw=none, no edge]
                 ]
             ]
             [E, edge label={node[pos=0.5, above] {$\frac{1}{6}$}}
                 [Z, edge label={node[midway, above] {$\frac{2}{5}$}}, name=EZ
-                    [\phantom{X}, draw=none]
+                    [\phantom{X}, draw=none, no edge]
                 ]
                 [F, edge label={node[midway, above] {$\frac{3}{5}$}}
                 [Z, edge label={node[midway, above] {$\frac{2}{4}$}}, name=EFZ ]
@@ -337,7 +342,7 @@
         \item[e)] {
             \begin{itemize}[leftmargin=*]
                 \item Vorteilhaft für Paul ($\Sigma > \SI{2.50}{\text{\euro}}$) sind $40 \%$ der Ereignisse
-                \item Neutral für Paul ($\Sigma = \SI{2.50}{\text{\euro}}$) sind $20 \%$ der Ereignisse
+                \item Neutral für Paul ($\Sigma = \SI{2.50}{\text{\euro}}$) sind $40 \%$ der Ereignisse
                 \item Nachteilig für Paul ($\Sigma < \SI{2.50}{\text{\euro}}$) sind $20 \%$ der Ereignisse
                 \item Durchschnittliches Ergebnis:
                     \begin{align*}
