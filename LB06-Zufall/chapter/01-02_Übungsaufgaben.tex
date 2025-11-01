@@ -1,0 +1,309 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 152/1}{}
+\begin{enumerate}[leftmargin=*]
+    \item [1.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            \begin{minipage}[t]{0.20\linewidth}
+                $E_{1} = \overline{L} \cup \overline{W}$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}     
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (L) at (-0.7,1.0);
+                \coordinate (W) at (0.7,1.0);
+
+                \begin{scope}
+                    \clip (-2,0) rectangle (2,2);
+                    \fill[pattern=north east lines, pattern color=myg] (-2,0) rectangle (2,2);
+                    \fill[white] (L) ellipse (1 and 0.7);
+                    \fill[white] (W) ellipse (1 and 0.7);
+                \end{scope}
+
+                \draw[thick] (L) ellipse (1 and 0.7) node at (-1.2,1.0) {$L$};
+                \draw[thick] (W) ellipse (1 and 0.7) node at (1.2,1.0) {$W$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            \begin{minipage}[t]{0.3\linewidth}
+                Alle anderen Teilnehmer neben Läufer und Werfer
+            \end{minipage}
+            }
+        \item[b)] {
+            \begin{minipage}[t]{0.20\linewidth}
+                $E_{2} = L \setminus W$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}     
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (L) at (-0.7,1.0);
+                \coordinate (W) at (0.7,1.0);
+
+                \begin{scope}
+                    \clip (L) ellipse (1 and 0.7);
+                    \fill[pattern=north east lines, pattern color=myg] (L) ellipse (1 and 0.7);
+                \end{scope}
+
+                \fill[white] (W) ellipse (1 and 0.7);
+
+                \draw[thick] (L) ellipse (1 and 0.7) node at (-1.2,1.0) {$L$};
+                \draw[thick] (W) ellipse (1 and 0.7) node at (1.2,1.0) {$W$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            \begin{minipage}[t]{0.3\linewidth}
+                Läufer, die aber keine Werfer sind
+            \end{minipage}
+            }
+        \item[c)] {
+            \begin{minipage}[t]{0.20\linewidth}
+                $E_{3} = W \setminus \overline{L}$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}     
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (L) at (-0.7,1.0);
+                \coordinate (W) at (0.7,1.0);
+
+                \fill[white] (L) ellipse (1 and 0.7);
+                \fill[white] (W) ellipse (1 and 0.7);
+
+                \begin{scope}
+                    \clip (L) ellipse (1 and 0.7);
+                    \fill[pattern=north east lines, pattern color=myg] (W) ellipse (1 and 0.7);
+                \end{scope}
+
+                \draw[thick] (L) ellipse (1 and 0.7) node at (-1.2,1.0) {$L$};
+                \draw[thick] (W) ellipse (1 and 0.7) node at (1.2,1.0) {$W$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            \begin{minipage}[t]{0.3\linewidth}
+                Läufer, die auch Werfer sind
+            \end{minipage}
+            }
+        \item[d)] {
+            \begin{minipage}[t]{0.35\linewidth}
+                $E_{4} = (L \cap W) \cup (\overline{L} \cap W)$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}     
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (L) at (-0.7,1.0);
+                \coordinate (W) at (0.7,1.0);
+
+                \fill[white] (L) ellipse (1 and 0.7);
+                \fill[white] (W) ellipse (1 and 0.7);
+
+                \begin{scope}
+                    \clip (W) ellipse (1 and 0.7);
+                    \fill[pattern=north east lines, pattern color=myg] (W) ellipse (1 and 0.7);
+                \end{scope}
+
+                \draw[thick] (L) ellipse (1 and 0.7) node at (-1.2,1.0) {$L$};
+                \draw[thick] (W) ellipse (1 and 0.7) node at (1.2,1.0) {$W$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            \begin{minipage}[t]{0.25\linewidth}
+                Werfer
+            \end{minipage}
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 152/2}{}
+\begin{enumerate}[leftmargin=*]
+    \item [2.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            $E_{1} = A \cap B$
+            }
+        \item[b)] {
+            $E_{2} = A \cup B$
+            }
+        \item[c)] {
+            $E_{3} = \overline{A \cup B}$; \qquad $E_{3} = \overline{A} \cap \overline{B}$
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 152/5}{}
+\begin{enumerate}
+    \item [5.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            \raisebox{-\height+0.5\baselineskip}{
+            \begin{forest}
+            for tree={
+                grow'=0,                % grow to the right
+                parent anchor=east, 
+                child anchor=west,
+                tier/.option=level, 
+                l sep=12mm,             % level distance
+                s sep=2mm,              % minimal sibling separation (can be auto-fitted)
+                font=\footnotesize,
+                rectangle, rounded corners, draw,
+                align=center,
+                edge+={-},
+                edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}} % default empty
+            },
+            [{}, draw=none  % root
+            [B1, edge label={node[pos=0.5, above] {$\frac{1}{4}$}}
+                [G2, edge label={node[midway, above] {$\frac{1}{3}$}}, name=B1G2]
+                [R3, edge label={node[pos=0.8, above] {$\frac{1}{3}$}}, name=B1R3]
+                [R4, edge label={node[midway, below] {$\frac{1}{3}$}}, name=B1R4]
+            ]
+            [G2, edge label={node[pos=0.5, above] {$\frac{1}{4}$}}
+                [B1, edge label={node[midway, above] {$\frac{1}{3}$}}, name=G2B1]
+                [R3, edge label={node[pos=0.8, above] {$\frac{1}{3}$}}, name=G2R3]
+                [R4, edge label={node[midway, below] {$\frac{1}{3}$}}, name=G2R4]
+            ]
+            [R3, edge label={node[pos=0.5, above] {$\frac{1}{4}$}}
+                [B1, edge label={node[midway, above] {$\frac{1}{3}$}}, name=R3B1]
+                [G2, edge label={node[pos=0.8, above] {$\frac{1}{3}$}}, name=R3G2]
+                [R4, edge label={node[midway, below] {$\frac{1}{3}$}}, name=R3R4]
+            ]
+            [R4, edge label={node[pos=0.5, above] {$\frac{1}{4}$}}
+                [B1, edge label={node[midway, above] {$\frac{1}{3}$}}, name=R4B1]                
+                [G2, edge label={node[pos=0.8, above] {$\frac{1}{3}$}}, name=R4G2]
+                [R3, edge label={node[midway, below] {$\frac{1}{3}$}}, name=R4R3]
+            ]
+            ]
+            \node[anchor=south west] at ($(B1G2.east)+(0.5,0.25)$) {
+                \begin{tabular}{p{1.2cm} | p{0.7cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | l}
+                \textbf{$\omega$} & \textbf{$P(\omega)$} & \textbf{$A$} & \textbf{$B$} & \textbf{$C$} & \textbf{$D$} & \textbf{$E$} & \textbf{$F$} & \textbf{$G$} \\ \hline
+                \end{tabular}
+            };
+            \coordinate (xbase) at ($(B1G2.east)+(0.5,-1.25)$);
+            \foreach \l/\om/\p/\a/\b/\c/\d/\e/\f/\g in {
+                B1G2/   \{B1G2\}/   \frac{1}{12}/           /           /   \bullet  /           /       /   \bullet /   \bullet,
+                B1R3/   \{B1R3\}/   \frac{1}{12}/  \bullet  /           /   \bullet  /           /       /   \bullet /   \bullet,
+                B1R4/   \{B1R4\}/   \frac{1}{12}/  \bullet  /           /   \bullet  /           /       /   \bullet /   \bullet,
+                G2B1/   \{G2B1\}/   \frac{1}{12}/           /           /            / \bullet   /       /           /   \bullet,
+                G2R3/   \{G2R3\}/   \frac{1}{12}/  \bullet  /           /   \bullet  /           /       /   \bullet /   \bullet,
+                G2R4/   \{G2R4\}/   \frac{1}{12}/  \bullet  /   \bullet /   \bullet  /           / \bullet/   \bullet /  \bullet,
+                R3B1/   \{R3B1\}/   \frac{1}{12}/  \bullet  /           /            / \bullet   /       /           /   \bullet,
+                R3G2/   \{R3G2\}/   \frac{1}{12}/  \bullet  /           /            /           /       /           /   \bullet,
+                R3R4/   \{R3R4\}/   \frac{1}{12}/  \bullet  /   \bullet /   \bullet  /           / \bullet/   \bullet /  \bullet,
+                R4B1/   \{R4B1\}/   \frac{1}{12}/  \bullet  /           /            / \bullet   /       /           /   \bullet,
+                R4G2/   \{R4G2\}/   \frac{1}{12}/  \bullet  /   \bullet /            /           / \bullet/   \bullet /  \bullet,
+                R4R3/   \{R4R3\}/   \frac{1}{12}/  \bullet  /   \bullet /            /           / \bullet/   \bullet /  \bullet
+                } {
+                \node[anchor=west] (myNode) at (xbase |- \l) {
+                    \begin{tabular}{p{1.2cm} | p{0.7cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | l}
+                        $\om$ & $\p$ & $\a$ & $\b$ & $\c$ & $\d$ & $\e$& $\f$ & $\g$
+                    \end{tabular}
+                };
+            }
+            \node[anchor=south west] at ($(R4R3.east)+(0.5,-1.25)$) {
+                \begin{tabular}{p{1.2cm} | p{0.7cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | p{0.5cm} | l}
+                    \hline
+                    & $\SI{1.00}{}$ &  & & & & & & \\
+                \end{tabular}
+            };
+            \end{forest}
+            }\\[1.0ex]
+            \begin{minipage}[t]{0.45\linewidth}
+                $\Omega = \{ \begin{array}[t]{l}
+                    B1G2; \ B1R3; \ B1R4; \\
+                    G2B1; \ G2R3; \ G2R4; \\
+                    R3B1; \ R3G2; \ R3R4; \\
+                    R4B1; \ R4G2; \ R4R3 \
+                    \}
+                \end{array}$
+            \end{minipage}
+            \begin{minipage}[t]{0.45\linewidth}
+                $\abs{\Omega} = 12$
+            \end{minipage}
+            }
+        \item[b)] {
+            \begin{minipage}[t]{0.45\linewidth}
+                \begin{align*}
+                    A &= \{\begin{array}[t]{l}
+                        B1R1; \ B1R4; \\
+                        G2R3; \ G2R4; \\
+                        R3B1; \ R3G2; \ R3R4; \\
+                        R4B1; \ R4G2; \ R4R3 \ \} 
+                    \end{array}&&
+                \end{align*}
+            \end{minipage}
+            \begin{minipage}[t]{0.45\linewidth}
+                \begin{align*}
+                B &= \{\begin{array}[t]{l}
+                        G2R4; \\
+                        R3R4; \\
+                        R4G2; \ R4R3 \
+                    \} \end{array}&&
+                \end{align*}
+            \end{minipage}
+            \begin{minipage}[t]{0.40\linewidth}
+                \begin{align*}
+                C &= \{\begin{array}[t]{l}
+                        B1G2; \ B1R3; \ B1R4; \\
+                        G2R3; \ G2R4; \\
+                        R3R4 \
+                    \} \end{array}&&
+                \end{align*}
+            \end{minipage}
+            \begin{minipage}[t]{0.25\linewidth}
+                \begin{align*}
+                D &= \{\begin{array}[t]{l}
+                        G2B1; \\
+                        R3B1; \\
+                        R4B1 \
+                    \} \end{array}&&
+                \end{align*}
+            \end{minipage}
+            \begin{minipage}[t]{0.25\linewidth}
+                \begin{align*}
+                E &= \{\begin{array}[t]{l}
+                        G2R4; \\
+                        R3R4; \\
+                        R4G2; \ R4R3 \
+                    \} \end{array}&&
+                \end{align*}
+            \end{minipage}
+            \begin{minipage}[t]{0.40\linewidth}
+                \begin{align*}
+                F &= \{\begin{array}[t]{l}
+                        B1G2; \ B1R3; \ B1R4; \\
+                        G2R3; \ G2R4; \\
+                        R3R4; \\
+                        R4G2; \ R4R3 \
+                    \} \end{array}&&\\[-1.5ex]
+                \end{align*}
+            \end{minipage}
+            \begin{minipage}[t]{0.25\linewidth}
+                \begin{align*}
+                G &= \Omega
+                \end{align*}
+            \end{minipage}
+            }
+        \item[c)] {
+            $A \cap D = \{ \ R3B1; \ R4B1 \ \}$ \quad $\Rightarrow$ \quad vereinbar\\[1.0ex]
+            $(B \cap D) \cap C = \emptyset$ \quad $\Rightarrow$ \quad nicht vereinbar\\[1.0ex]
+            $(A \cup C) \cap (\overline{B \cap D}) = \{\begin{array}[t]{l}
+                        B1G2; \ B1R1; \ B1R4; \\
+                        G2R3; \ G2R4; \\
+                        R3B1; \ R3G2; \ R3R4; \\
+                        R4B1; \ R4G2; \ R4R3 \ \} 
+                    \end{array}$ \quad $\Rightarrow$ \quad vereinbar
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}

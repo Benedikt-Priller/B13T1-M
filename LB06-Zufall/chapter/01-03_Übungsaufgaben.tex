@@ -1,0 +1,310 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 153/1}{}
+\begin{enumerate}[leftmargin=*]
+    \item [1.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            \begin{minipage}[t]{0.55\linewidth}
+                $\Omega = \{ \begin{array}[t]{l}
+                    1,1; \ 1,2; \ 1,3; \ 1,4; \ 1,5; \ 1,6; \\
+                    2,1; \ 2,2; \ 2,3; \ 2,4; \ 2,5; \ 2,6; \\
+                    3,1; \ 3,2; \ 3,3; \ 3,4; \ 3,5; \ 3,6; \\
+                    4,1; \ 4,2; \ 4,3; \ 4,4; \ 4,5; \ 4,6; \\
+                    5,1; \ 5,2; \ 5,3; \ 5,4; \ 5,5; \ 5,6; \\
+                    6,1; \ 6,2; \ 6,3; \ 6,4; \ 6,5; \ 6,6 \
+                    \}
+                \end{array}$
+            \end{minipage}
+            \begin{minipage}[t]{0.40\linewidth}
+                $\Omega = \{ \ i,j \ | \ i,j \in \{1; \dots 6\} \ \}$
+            \end{minipage}
+            }
+        \item [b)] {
+            \vspace{-2.0ex}
+            \begin{align*}
+                E_{1} &= \{ \begin{array}[t]{l}
+                    1,1; \ 1,2; \ 1,3; \\
+                    2,1; \ 2,2; \\
+                    3,1 \
+                    \}
+                \end{array}\\
+                E_{2} &= \{ \ 6,6 \ \}\\
+                E_{3} &= \{ \ 2,6; \ 3,4; \ 4,3; \ 6,2 \ \}
+            \end{align*} 
+            }
+        \item [c)] {
+            Die Augensumme der gewürfelten Zahl ist 1.
+            }
+        \item [d)] {
+            Die Augensumme der beiden Zahlen ist mindestens 2.
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 153/2}{}
+\begin{enumerate}[leftmargin=*]
+    \item [2.]\begin{itemize}[leftmargin=*]
+        \item {``A und B'': \qquad $E_{1} = A \cap B$}
+        \item {``A oder B'': \qquad $E_{2} = A \cup B$}
+        \item {``Nicht A'': \qquad $E_{3} = \overline{A}$}
+        \item {``Weder A noch B'': \qquad $E_{4} = \overline{A} \cap \overline{B}$}
+    \end{itemize}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 153/3}{}
+\begin{enumerate}[leftmargin=*]
+    \item [3.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            $E_{1} = A \cap B$
+            }
+        \item[b)] {
+            $E_{2} = A \cup B$
+            }
+        \item[c)] {
+            $E_{3} = \overline{A}$
+            }
+        \item[d)] {
+            $E_{4} = A \cap \overline{B}$
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 153/6}{}
+\begin{enumerate}[leftmargin=*]
+    \item [6.]{
+        \vspace{-2.0ex}
+        \begin{align*}
+            E_{1} &= (\overline{A \cup B}) \cup (A \cap B)\\
+            E_{2} &= \overline{D}\\
+            E_{3} &= \overline{E} \cup (E \cap F)\\
+            E_{4} &= (G \cap \overline{H}) \cup (\overline{G} \cap H)
+        \end{align*}
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 153/7}{}
+\begin{enumerate}[leftmargin=*]
+    \item [7.]\begin{itemize}[leftmargin=*]
+        \item {
+            \begin{minipage}[t]{0.20\linewidth}
+                $\overline{B}$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (A) at (-0.7,1.0);
+                \coordinate (B) at (0.7,1.0);
+
+                \fill[pattern=north east lines, pattern color=myg] (-2,0) rectangle (2,2);
+                \fill[white] (B) ellipse (1 and 0.7);
+
+                \draw[thick] (A) ellipse (1 and 0.7) node at (-1.2,1.0) {$A$};
+                \draw[thick] (B) ellipse (1 and 0.7) node at (1.2,1.0) {$B$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            }
+        \item {
+            \begin{minipage}[t]{0.20\linewidth}
+                $A \cup B$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (A) at (-0.7,1.0);
+                \coordinate (B) at (0.7,1.0);
+
+                \begin{scope}
+                    \fill[pattern=north east lines, pattern color=myg] (A) ellipse (1 and 0.7);
+                    \fill[pattern=north east lines, pattern color=myg] (B) ellipse (1 and 0.7);
+                \end{scope}
+
+                \draw[thick] (A) ellipse (1 and 0.7) node at (-1.2,1.0) {$A$};
+                \draw[thick] (B) ellipse (1 and 0.7) node at (1.2,1.0) {$B$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            }
+        \item {
+            \begin{minipage}[t]{0.20\linewidth}
+                $A \cup \overline{B}$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (A) at (-0.7,1.0);
+                \coordinate (B) at (0.7,1.0);
+
+                \fill[pattern=north east lines, pattern color=myg] (A) ellipse (1 and 0.7);
+                \fill [white] (B) ellipse (1 and 0.7);
+
+                \draw[thick] (A) ellipse (1 and 0.7) node at (-1.2,1.0) {$A$};
+                \draw[thick] (B) ellipse (1 and 0.7) node at (1.2,1.0) {$B$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            }
+        \item {
+            \begin{minipage}[t]{0.20\linewidth}
+                $\overline{A \cap B}$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (A) at (-0.7,1.0);
+                \coordinate (B) at (0.7,1.0);
+
+                \fill[pattern=north east lines, pattern color=myg] (-2,0) rectangle (2,2);
+                \begin{scope}
+                    \clip (A) ellipse (1 and 0.7);
+                    \clip (B) ellipse (1 and 0.7);
+                    \fill[white] (A) ellipse (1 and 0.7);
+                \end{scope}
+                
+                \draw[thick] (A) ellipse (1 and 0.7) node at (-1.2,1.0) {$A$};
+                \draw[thick] (B) ellipse (1 and 0.7) node at (1.2,1.0) {$B$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            }
+        \item {
+            \begin{minipage}[t]{0.20\linewidth}
+                $\overline{A \cup B}$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (A) at (-0.7,1.0);
+                \coordinate (B) at (0.7,1.0);
+                
+                \fill[pattern=north east lines, pattern color=myg] (-2,0) rectangle (2,2);
+                \fill [white] (A) ellipse (1 and 0.7);
+                \fill [white] (B) ellipse (1 and 0.7);
+
+                \draw[thick] (A) ellipse (1 and 0.7) node at (-1.2,1.0) {$A$};
+                \draw[thick] (B) ellipse (1 and 0.7) node at (1.2,1.0) {$B$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            }
+        \item {
+            \begin{minipage}[t]{0.20\linewidth}
+                $\overline{\overline{A} \cap \overline{B}} = A \cup B$:
+            \end{minipage}
+            \begin{minipage}[t]{0.35\linewidth}
+                \raisebox{-\height+0.5\baselineskip}{
+                \begin{tikzpicture}[scale=1.0]
+
+                \coordinate (A) at (-0.7,1.0);
+                \coordinate (B) at (0.7,1.0);
+
+                \begin{scope}
+                    \fill[pattern=north east lines, pattern color=myg] (A) ellipse (1 and 0.7);
+                    \fill[pattern=north east lines, pattern color=myg] (B) ellipse (1 and 0.7);
+                \end{scope}
+
+                \draw[thick] (A) ellipse (1 and 0.7) node at (-1.2,1.0) {$A$};
+                \draw[thick] (B) ellipse (1 and 0.7) node at (1.2,1.0) {$B$};
+
+                \draw[thick] (-2,0) rectangle (2,2) node[below left] {$\Omega$};
+                \end{tikzpicture}
+                }\\
+            \end{minipage}
+            }
+    \end{itemize}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 153/9}{}
+\begin{enumerate}[leftmargin=*]
+    \item [9.]{
+        \vspace{-2.0ex}
+        \begin{align*}
+            &\Omega = \{ \ 1; \ 2; \ 3; \ 4; \ 5; \ 6; \ 7; \ 8 \ \} &\\
+            &E_{1} = \{ \ 1; \ 2; \ 3; \ 4 \ \} \qquad \overline{E_{1}} = \{ \ 5; \ 6; \ 7; \ 8 \ \}\\
+            &E_{2} = \{ \ 2; \ 4; \ 6; \ 8 \ \} \qquad \overline{E_{2}} = \{ \ 1; \ 3; \ 5; \ 7 \ \}\\[1.5ex]
+            &E_{1} \cap E_{2} = \{ \ 2; \ 4 \ \} &&\\
+            &E_{1} \cap \overline{E_{2}} = \{ \ 1; \ 3 \ \} &&\\
+            &\overline{E_{1}} \cap E_{2} = \{ \ 6; \ 8 \ \} &&\\
+            &\overline{E_{1}} \cap \overline{E_{2}} = \{ \ 5; \ 7 \ \} &&
+        \end{align*}
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 153/10}{}
+\begin{enumerate}[leftmargin=*]
+    \item [10.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            Falsch, da sich $A$ und $\overline{A}$ gegenseitig ausschließen
+            }
+        \item[b)] {
+            Falsch, es tritt $A \cap \overline{B}$ ein
+            }
+        \item[c)] {
+            Wahr, da $A \cap \overline{B} \in A \cup B$ ein
+            }
+        \item[d)] {
+            Wahr
+            }
+        \item[e)] {
+            Wahr
+            }
+        \item[f)] {
+            Falsch, da $\overline{A} \cap B \in A \cup B$
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 154/14}{}
+\begin{enumerate}[leftmargin=*]
+    \item [14.]{\begin{itemize}[leftmargin=*]
+        \item {Frau: \qquad $E_{1} = \overline{\overline{M} \cup Z} = M \cap \overline{Z}$ \qquad $\Rightarrow$ \quad mit Milch ohne Zucker}\\[-1.5ex]
+        \item {Tochter: \qquad $E_{2} = \overline{\overline{M} \cup \overline{Z}} = M \cap Z$ \qquad $\Rightarrow$ \quad mit Milch und Zucker}\\[-1.5ex]
+        \item {Mann: \qquad $E_{3} = \overline{M \cap \overline{Z}} = \overline{M} \cup Z$ \qquad $\Rightarrow$ \quad ohne Milch oder mit Zucker}\\[-1.5ex]
+        \end{itemize}
+        Nur die Bestellung von Frau und Tochter sind eindeutig. Bei Herr Mayer gibt es mehrere Möglichkeiten, die zufriedenstellend sind.
+        }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 156/ Test B - 2}{}
+\begin{enumerate}[leftmargin=*]
+    \item [2.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            Nie wahr, da $A$ und $\overline{A}$ sich gegenseitig ausschließen und unvereinbar sind $A \cap \overline{A} = \emptyset$
+            }
+        \item[b)] {
+            Immer wahr, da $A \in \Omega$ und die Vereinigungsmenge folglich immer $\Omega$ ist
+            }
+        \item[c)] {
+            Nur wahr, wenn $A = \emptyset$ 
+            }
+        \item[d)] {
+            Nur wahr, wenn $A = B$ (Ansonsten gilt: $\overline{A} \cup \overline{B} = \overline{A \cap B} \neq \overline{A \cup B}$)           
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
