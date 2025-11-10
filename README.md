@@ -14,3 +14,8 @@
 ### LB06-Zufall
 
 - [Stochastik](./LB06-Zufall/01_Stochastik.pdf)
+
+
+### LB07-Wahrscheinlichkeit
+
+- [Wahrscheinlichkeiten](./LB07-Wahrscheinlichkeit/02_Wahrscheinlichkeiten.pdf)
