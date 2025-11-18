@@ -1,0 +1,136 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 180/3}{}
+\begin{enumerate}[leftmargin=*]
+    \item [3.]{
+        \begin{minipage}[t]{0.45\linewidth}
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+            \begin{align*}
+                P(A) &= \dfrac{P\left(A \cap B\right)}{P(B)} \\[1.5ex]
+                \SI{0.8}{} &= \dfrac{\SI{0.25}{}}{\SI{0.35}{}} \\[1.5ex]
+                \dfrac{8}{10} &= \dfrac{5}{7} \\[1.5ex]
+                \dfrac{56}{70} &= \dfrac{50}{70}\quad \textit{(f)}
+            \end{align*}
+            $\Rightarrow \quad \text{stochastisch abhängig}$
+            }
+        \end{enumerate}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.45\linewidth}
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[b)] {
+            \begin{align*}
+                \SI{0.1}{} &= \dfrac{\SI{0.04}{}}{\SI{0.4}{}} \\[1.5ex]
+                \dfrac{1}{10} &= \dfrac{1}{40} \quad \textit{(w)}
+            \end{align*}
+            $\Rightarrow \quad \text{stochastisch unabhängig}$
+            }
+        \end{enumerate}
+        \end{minipage}
+        }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 180/4}{}
+\begin{enumerate}[leftmargin=*]
+    \item [4.] {
+        \begin{minipage}[t]{0.4\linewidth}
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+                \raisebox{-\height}{
+                \begin{forest}
+                for tree={
+                    grow'=0,                % grow to the right
+                    parent anchor=east, 
+                    child anchor=west,
+                    tier/.option=level, 
+                    l sep=12mm,             % level distance
+                    s sep=2mm,              % minimal sibling separation (can be auto-fitted)
+                    font=\footnotesize,
+                    rectangle, rounded corners, draw,
+                    align=center,
+                    edge+={-},
+                    edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}} % default empty
+                },
+                [{}, draw=none  % root
+                [$A$, edge label={node[midway, above] {$\frac{6}{10}$}}
+                    [$B$, edge label={node[midway, above] {$\frac{5}{12}$}}]
+                    [$\overline{B}$, edge label={node[midway, below] {$\frac{7}{12}$}}]
+                ]
+                [$\overline{A}$, edge label={node[midway, below] {$\frac{4}{10}$}}
+                    [$B$, edge label={node[midway, above] {$\frac{9}{12}$}}]
+                    [$\overline{B}$, edge label={node[midway, below] {$\frac{3}{12}$}}]
+                ]
+                ]
+                \end{forest}
+                }
+                }
+        \end{enumerate}
+        \end{minipage}
+        \begin{minipage}[t]{0.6\linewidth}
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[b)] {
+                \raisebox{-\height}{
+                \begin{forest}
+                for tree={
+                    grow'=0,                % grow to the right
+                    parent anchor=east, 
+                    child anchor=west,
+                    tier/.option=level, 
+                    l sep=12mm,             % level distance
+                    s sep=2mm,              % minimal sibling separation (can be auto-fitted)
+                    font=\footnotesize,
+                    rectangle, rounded corners, draw,
+                    align=center,
+                    edge+={-},
+                    edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}} % default empty
+                },
+                [{}, draw=none  % root
+                [$B$, edge label={node[midway, above] {$\frac{11}{20}$}}
+                    [$A$, edge label={node[midway, above] {$\frac{5}{11}$}}]
+                    [$\overline{A}$, edge label={node[midway, below] {$\frac{6}{11}$}}]
+                ]
+                [$\overline{B}$, edge label={node[midway, below] {$\frac{9}{20}$}}
+                    [$A$, edge label={node[midway, above] {$\frac{7}{9}$}}]
+                    [$\overline{A}$, edge label={node[midway, below] {$\frac{2}{9}$}}]
+                ]
+                ]
+                \end{forest}
+                }
+                }
+        \end{enumerate}
+        \end{minipage}\\[1.5ex]
+        \begin{align*}
+            P(A) &= \dfrac{P\left(A \cap B\right)}{P(B)} \\[1.5ex]
+            \dfrac{6}{10} &= \dfrac{\SI{0.25}{}}{\SI{0.55}{}} \\[1.5ex]
+            \dfrac{6}{10} &= \dfrac{5}{11} \\[1.5ex]
+            \dfrac{66}{110} &= \dfrac{50}{110} \quad \textit{(f)} \qquad \Rightarrow \quad \text{stochastisch abhängig}
+        \end{align*}
+        }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 180/2}{}
+\begin{enumerate}[leftmargin=*]
+    \item [2.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            Falsch
+            }
+        \item [b)] {
+            Falsch
+            }
+        \item [c)] {
+            Wahr
+            }
+        \item [d)] {
+            Wahr
+            }
+        \item [e)] {
+            Wahr
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
