@@ -1,0 +1,207 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 181/2}{}
+\begin{enumerate}[leftmargin=*]
+    \item [2.]{
+        $M$: Männlich; \quad $W$: Weiblich; \quad $R$: Raucher; \quad $\overline{R}$: Nichtraucher;
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            \begin{minipage}[t]{0.45\linewidth}
+                \centering
+                \renewcommand{\arraystretch}{2.0}
+                \begin{tabularx}{1.00\linewidth}[t]{@{} >{\centering\arraybackslash}X 
+                                                |>{\centering\arraybackslash}X 
+                                                |>{\centering\arraybackslash}X 
+                                                |>{\centering\arraybackslash}X @{}}
+                    $\Omega$ & $M$ & $W$ & $\Sigma$ \\ \hline
+                    $R$ & \cellcolor{mylightgray} $\dfrac{12}{100}$ & $\dfrac{3}{100}$& \cellcolor{mylightgray} $\dfrac{15}{100}$ \\ \hline
+                    $\overline{R}$ & $\dfrac{33}{100}$ & $\dfrac{52}{100}$ & $\dfrac{85}{100}$ \\ \hline
+                    $\Sigma$ & $\dfrac{45}{100}$ & \cellcolor{mylightgray} $\dfrac{55}{100}$ & \cellcolor{mylightorange} $\dfrac{100}{100}$
+                \end{tabularx}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.45\linewidth}
+                \raisebox{-\height}{
+                \begin{forest}
+                for tree={
+                    grow'=0,                % grow to the right
+                    parent anchor=east, 
+                    child anchor=west,
+                    tier/.option=level, 
+                    l sep=12mm,             % level distance
+                    s sep=4mm,              % minimal sibling separation (can be auto-fitted)
+                    font=\footnotesize,
+                    rectangle, rounded corners, draw,
+                    align=center,
+                    edge+={-},
+                    edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}} % default empty
+                },
+                [{}, draw=none  % root
+                [$M$, edge label={node[midway, above] {$\frac{45}{100}$}}
+                    [$R$, edge label={node[midway, above] {$\frac{12}{45}$}}]
+                    [$\overline{R}$, edge label={node[midway, below] {$\frac{33}{45}$}}]
+                ]
+                [$W$, edge label={node[midway, below] {$\frac{55}{100}$}}
+                    [$R$, edge label={node[midway, above] {$\frac{3}{55}$}}]
+                    [$\overline{R}$, edge label={node[midway, below] {$\frac{52}{55}$}}]
+                ]
+                ]
+                \end{forest}
+                }
+            \end{minipage}
+            }
+        \item [b)] {
+            \begin{itemize}[leftmargin=*]
+                \item $A = W \cap R$: \qquad \begin{minipage}[t]{0.6\linewidth}
+                    ``Weibliche Raucher''\\[-2.0ex]
+                    \begin{align*}
+                        P(W \cap R) &= \dfrac{3}{100}
+                    \end{align*}
+                \end{minipage}
+                \item $B = W \cap \overline{R}$: \qquad \begin{minipage}[t]{0.6\linewidth}
+                    ``Weibliche Nichtraucher''\\[-2.0ex]
+                    \begin{align*}
+                        P(W \cap \overline{R}) &= \dfrac{52}{100}
+                    \end{align*}
+                \end{minipage}
+                \item $C = \overline{\overline{W} \cap R} = W \cup \overline{R}$: \qquad \begin{minipage}[t]{0.6\linewidth}
+                    ``Weiblich oder Nichtraucher (also auch inklusive weibliche Nichtraucher)''\\[-2.0ex]
+                    \begin{align*}
+                        P(W \cup \overline{R}) &= P(W) + P(\overline{R}) - P(W \cap \overline{R})&&\\[1.5ex]
+                        &= \dfrac{55}{100} + \dfrac{85}{100} - \dfrac{52}{100} = \dfrac{88}{100}
+                    \end{align*}
+                \end{minipage}
+                \item $D = R \cap \overline{W} = R \cap M$: \qquad \begin{minipage}[t]{0.6\linewidth}
+                    ``Männliche Raucher''\\[-2.0ex]
+                    \begin{align*}
+                        P(R \cap M) &= \dfrac{12}{100}&&
+                    \end{align*}
+                \end{minipage}
+            \end{itemize}
+            }
+        \end{enumerate}
+        }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 181/4}{}
+\begin{enumerate}[leftmargin=*]
+    \item [4.]{
+        $E_{1} = \left\{ \ 1; \ 2 \ \right\}$; \quad $E_{2} = \left\{ \ 2; \ 3; \ 4 \ \right\}$; \quad $\Omega = \left\{ \ 1; \ 2; \ 3; \ 4; \ 5; \ 6 \ \right\}$
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            \begin{minipage}[t]{0.45\linewidth}
+                \centering
+                \renewcommand{\arraystretch}{2.0}
+                \begin{tabularx}{1.00\linewidth}[t]{@{} >{\centering\arraybackslash}X 
+                                                |>{\centering\arraybackslash}X 
+                                                |>{\centering\arraybackslash}X 
+                                                |>{\centering\arraybackslash}X @{}}
+                    $\Omega$ & $E_{1}$ & $\overline{E_{1}}$ & $\Sigma$ \\ \hline
+                    $E_{2}$ & \cellcolor{mylightgray} $\dfrac{10}{100}$ & $\dfrac{40}{100}$& \cellcolor{mylightgray} $\dfrac{50}{100}$ \\ \hline
+                    $\overline{E_{2}}$ & $\dfrac{30}{100}$ & $\dfrac{20}{100}$ & $\dfrac{50}{100}$ \\ \hline
+                    $\Sigma$ & \cellcolor{mylightgray} $\dfrac{40}{100}$ & $\dfrac{60}{100}$ & \cellcolor{mylightorange} $\dfrac{100}{100}$
+                \end{tabularx}
+                \vspace{0.5cm}
+            \end{minipage}
+            }\\
+        \begin{minipage}[t]{0.45\linewidth}
+            \begin{enumerate}[label=\alph*),leftmargin=*]
+                \item[b) ] {
+                    \begin{align*}
+                        \overline{E_{1}} &= \left\{ \ 3; \ 4; \ 5; \ 6 \ \right\} &&\\[1.5ex]
+                        \overline{E_{2}} &= \left\{ \ 1; \ 5; \ 6 \ \right\} &&\\[1.5ex]
+                        E_{1} \cup E_{2} &= \left\{ \ 1; \ 2; \ 3; \ 4 \ \right\} &&\\[1.5ex]
+                        \overline{E_{1}} \cap \overline{E_{2}} = \overline{E_{1} \cup E_{2}} &= \left\{ \ 5; \ 6 \ \right\} &&\\[1.5ex]
+                        \overline{E_{1}} \cup \overline{E_{2}} = \overline{E_{1} \cap E_{2}} &= \left\{ \ 2 \ \right\} &&\\[1.5ex]
+                        E_{1} \cap \overline{E_{2}} &= \left\{ \ 1 \right\} &&\\[1.5ex]
+                        \overline{E_{1}} \cap E_{2} &= \left\{ \ 3; \ 4 \right\}
+                    \end{align*}
+                    }
+            \end{enumerate}
+        \end{minipage}
+        \begin{minipage}[t]{0.45\linewidth}
+            \begin{enumerate}[label=\alph*),leftmargin=*]
+                \item[c)] {
+                    \begin{align*}
+                        P(\overline{E_{1}}) &= \dfrac{60}{100} &&\\[1.5ex]
+                        P(\overline{E_{2}}) &= \dfrac{50}{100} &&\\[1.5ex]
+                        P(E_{1} \cup E_{2}) &= P(E_{1}) + P(E_{2}) - P(E_{1} \cap E_{2}) &&\\[1.5ex]
+                        &= \dfrac{40}{100} + \dfrac{50}{100} - \dfrac{10}{100} = \dfrac{80}{100} &&\\[1.5ex]
+                        P(\overline{E_{1}} \cap \overline{E_{2}}) &= \dfrac{20}{100} &&\\[1.5ex]
+                        P(\overline{E_{1}} \cup \overline{E_{2}}) &= \dfrac{100}{100} - \dfrac{10}{100} = \dfrac{90}{100} &&\\[1.5ex]
+                        P(E_{1} \cap \overline{E_{2}}) &= \dfrac{30}{100} &&\\[1.5ex]
+                        P(\overline{E_{1}} \cap E_{2}) &= \dfrac{40}{100}
+                    \end{align*}
+                }
+            \end{enumerate}
+        \end{minipage}
+        \end{enumerate}
+        }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 181/6}{}
+\begin{enumerate}[leftmargin=*]
+    \item [6.]{
+        $M$: Mädchen; \quad $J$: Jungs; \quad $A$: Aufgabe gelöst; \quad $\overline{A}$: Aufgabe nicht gelöst;\\[1.0ex]
+        \begin{minipage}[t]{0.40\linewidth}
+            \centering
+            \renewcommand{\arraystretch}{2.0}
+            \begin{tabularx}{1.00\linewidth}[t]{@{} >{\centering\arraybackslash}X 
+                                            |>{\centering\arraybackslash}X 
+                                            |>{\centering\arraybackslash}X 
+                                            |>{\centering\arraybackslash}X @{}}
+                $\Omega$ & $M$ & $J$ & $\Sigma$ \\ \hline
+                $A$ & $\dfrac{520}{1000}$ & \cellcolor{mylightgray} $\dfrac{180}{1000}$& \cellcolor{mylightgray} $\dfrac{700}{1000}$ \\ \hline
+                $\overline{A}$ & \cellcolor{mylightgray} $\dfrac{50}{1000}$ & $\dfrac{250}{1000}$ & $\dfrac{300}{1000}$ \\ \hline
+                $\Sigma$ &$\dfrac{570}{1000}$ & $\dfrac{430}{1000}$ & \cellcolor{mylightorange} $\dfrac{1000}{1000}$
+            \end{tabularx}
+            \vspace{0.5cm}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.52\linewidth}
+            $P(M \cap A) = \dfrac{520}{1000} = \SI{52}{\percent}$\\[1.5ex]
+            Satz von Sylvester:
+            \begin{align*}
+                P(M \cup A) &= P(M) + P(A) - P(M \cap A) &&
+            \end{align*}
+            \begin{align*}
+                \dfrac{520}{1000} + \dfrac{180}{1000} + \dfrac{50}{1000} &= \dfrac{570}{1000} + \dfrac{700}{1000} - \dfrac{520}{1000} &&\\[1.5ex]
+                \dfrac{750}{1000} &= \dfrac{750}{1000} \quad \textit{(w)}&&
+            \end{align*}
+        \end{minipage}
+        }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 181/7}{}
+\begin{enumerate}[leftmargin=*]
+    \item [7.]{
+        $W$: Teilnehmer an Weinprobe; \quad $\overline{W}$: Kein Teilnehmer an Weinprobe; \\
+        $K$: Teilnehmer für Kabinenbahn; \quad $\overline{K}$: Kein Teilnehmer für Kabinenbahn;\\[1.0ex]
+        \begin{minipage}[t]{0.40\linewidth}
+            \centering
+            \renewcommand{\arraystretch}{2.0}
+            \begin{tabularx}{1.00\linewidth}[t]{@{} >{\centering\arraybackslash}X 
+                                            |>{\centering\arraybackslash}X 
+                                            |>{\centering\arraybackslash}X 
+                                            |>{\centering\arraybackslash}X @{}}
+                $\Omega$ & $W$ & $\overline{W}$ & $\Sigma$ \\ \hline
+                $K$ & \cellcolor{mylightgray} $\dfrac{1}{5}$ & $\dfrac{1}{5}$& $\dfrac{2}{5}$ \\ \hline
+                $\overline{K}$ & \cellcolor{mylightgray} $\dfrac{2}{5}$ & \cellcolor{mylightgray} $\dfrac{1}{5}$ & $\dfrac{3}{5}$ \\ \hline
+                $\Sigma$ & $\dfrac{3}{5}$ & $\dfrac{2}{5}$ & \cellcolor{mylightorange} $\dfrac{5}{5}$
+            \end{tabularx}
+            \vspace{0.5cm}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.52\linewidth}
+            Der Kabinenbahnbetreiber kann sich auf \\[1.5ex]
+            $P(K) = \dfrac{2}{5} \quad (\SI{40}{\percent})$ \\[1.5ex]
+            der Teilnehmer einstellen.
+        \end{minipage}
+        }
+\end{enumerate}
+\end{Exercise}
