@@ -16,9 +16,9 @@
                                                 |>{\centering\arraybackslash}X 
                                                 |>{\centering\arraybackslash}X @{}}
                     $\Omega$ & $M$ & $W$ & $\Sigma$ \\ \hline
-                    $R$ & \cellcolor{mylightgray} $\dfrac{12}{100}$ & $\dfrac{3}{100}$& \cellcolor{mylightgray} $\dfrac{15}{100}$ \\ \hline
-                    $\overline{R}$ & $\dfrac{33}{100}$ & $\dfrac{52}{100}$ & $\dfrac{85}{100}$ \\ \hline
-                    $\Sigma$ & $\dfrac{45}{100}$ & \cellcolor{mylightgray} $\dfrac{55}{100}$ & \cellcolor{mylightorange} $\dfrac{100}{100}$
+                    $R$ & \cellcolor{mylightgray} $\dfrac{54}{1000}$ & $\dfrac{96}{1000}$& \cellcolor{mylightgray} $\dfrac{150}{1000}$ \\ \hline
+                    $\overline{R}$ & $\dfrac{396}{1000}$ & $\dfrac{454}{1000}$ & $\dfrac{850}{1000}$ \\ \hline
+                    $\Sigma$ & $\dfrac{450}{1000}$ & \cellcolor{mylightgray} $\dfrac{550}{1000}$ & \cellcolor{mylightorange} $\dfrac{1000}{1000}$
                 \end{tabularx}
             \end{minipage}
             \hfill
@@ -39,13 +39,13 @@
                     edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}} % default empty
                 },
                 [{}, draw=none  % root
-                [$M$, edge label={node[midway, above] {$\frac{45}{100}$}}
-                    [$R$, edge label={node[midway, above] {$\frac{12}{45}$}}]
-                    [$\overline{R}$, edge label={node[midway, below] {$\frac{33}{45}$}}]
+                [$M$, edge label={node[midway, above] {$\frac{450}{1000}$}}
+                    [$R$, edge label={node[midway, above] {$\frac{54}{450}$}}]
+                    [$\overline{R}$, edge label={node[midway, below] {$\frac{396}{450}$}}]
                 ]
-                [$W$, edge label={node[midway, below] {$\frac{55}{100}$}}
-                    [$R$, edge label={node[midway, above] {$\frac{3}{55}$}}]
-                    [$\overline{R}$, edge label={node[midway, below] {$\frac{52}{55}$}}]
+                [$W$, edge label={node[midway, below] {$\frac{550}{1000}$}}
+                    [$R$, edge label={node[midway, above] {$\frac{96}{550}$}}]
+                    [$\overline{R}$, edge label={node[midway, below] {$\frac{454}{550}$}}]
                 ]
                 ]
                 \end{forest}
@@ -57,26 +57,26 @@
                 \item $A = W \cap R$: \qquad \begin{minipage}[t]{0.6\linewidth}
                     ``Weibliche Raucher''\\[-2.0ex]
                     \begin{align*}
-                        P(W \cap R) &= \dfrac{3}{100}
+                        P(W \cap R) &= \dfrac{96}{1000}
                     \end{align*}
                 \end{minipage}
                 \item $B = W \cap \overline{R}$: \qquad \begin{minipage}[t]{0.6\linewidth}
                     ``Weibliche Nichtraucher''\\[-2.0ex]
                     \begin{align*}
-                        P(W \cap \overline{R}) &= \dfrac{52}{100}
+                        P(W \cap \overline{R}) &= \dfrac{454}{1000}
                     \end{align*}
                 \end{minipage}
                 \item $C = \overline{\overline{W} \cap R} = W \cup \overline{R}$: \qquad \begin{minipage}[t]{0.6\linewidth}
                     ``Weiblich oder Nichtraucher (also auch inklusive weibliche Nichtraucher)''\\[-2.0ex]
                     \begin{align*}
                         P(W \cup \overline{R}) &= P(W) + P(\overline{R}) - P(W \cap \overline{R})&&\\[1.5ex]
-                        &= \dfrac{55}{100} + \dfrac{85}{100} - \dfrac{52}{100} = \dfrac{88}{100}
+                        &= \dfrac{550}{1000} + \dfrac{850}{1000} - \dfrac{454}{1000} = \dfrac{946}{1000}
                     \end{align*}
                 \end{minipage}
                 \item $D = R \cap \overline{W} = R \cap M$: \qquad \begin{minipage}[t]{0.6\linewidth}
                     ``Männliche Raucher''\\[-2.0ex]
                     \begin{align*}
-                        P(R \cap M) &= \dfrac{12}{100}&&
+                        P(R \cap M) &= \dfrac{54}{1000}&&
                     \end{align*}
                 \end{minipage}
             \end{itemize}
@@ -163,7 +163,7 @@
         \end{minipage}
         \hfill
         \begin{minipage}[t]{0.52\linewidth}
-            $P(M \cap A) = \dfrac{520}{1000} = \SI{52}{\percent}$\\[1.5ex]
+            $P = \dfrac{520}{570} \approx \SI{91}{\percent}$\\[1.5ex]
             Satz von Sylvester:
             \begin{align*}
                 P(M \cup A) &= P(M) + P(A) - P(M \cap A) &&
