@@ -1,0 +1,44 @@
+% Document setup
+\documentclass[
+	ngerman,		% Default language, [ngerman, english, british, american, spanish]
+	footnotes=multiple,
+	parskip=half,
+	numbers=noendperiod,
+    11pt
+]{scrartcl}
+\pdfminorversion=5
+\usepackage[utf8]{inputenc}
+
+% Spell and grammar checking in Visual Studio Code - add to each file at the top
+% LTeX: language=de
+
+% Metadaten
+\newcommand{\titel}{F12 - Mathematik}
+\newcommand{\untertitel}{F12 - Mathematik}
+\newcommand{\autorName}{Benedikt Priller}
+\newcommand{\aktuelleVersion}{1.0.0}
+\newcommand{\class}{F12}
+\newcommand{\schoolsubject}{Mathematik}
+\newcommand{\templatedir}{../latex-template-generic/}
+\newcommand{\basecolor}{myb}
+
+% Import template
+\input{\templatedir packages}
+\input{\templatedir pagestyles/basic_transcript}
+\input{\templatedir macros}
+\input{\templatedir elements}
+\input{\templatedir letterfonts}
+
+% Begin the document
+\begin{document}
+\newcommand{\CurrentSectionNumber}{1}
+\setcounter{section}{\CurrentSectionNumber-1}
+
+\begin{center}
+	\LARGE{Zusammenfassung Mathematik}
+\end{center}
+
+\input{chapter/01_Analysis.tex}
+% \input{chapter/02_Geometrie.tex}
+
+\end{document}

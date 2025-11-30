@@ -11,6 +11,10 @@
 - [Umkehrfunktionen](./LB01-Umkehrfunktionen/01_Umkehrfunktionen.pdf)
 - [Arcustangens](./LB01-Umkehrfunktionen/02_Arcustangens.pdf)
 
+### LB02-Vertiefung Integral
+
+- [Vertiefung Integral](./LB02-Vertiefung_Integral/Vertiefung_Integral.pdf)
+
 ### LB06-Zufall
 
 - [Stochastik](./LB06-Zufall/01_Stochastik.pdf)
@@ -19,3 +23,7 @@
 ### LB07-Wahrscheinlichkeit
 
 - [Wahrscheinlichkeiten](./LB07-Wahrscheinlichkeit/02_Wahrscheinlichkeiten.pdf)
+
+### Zusammenfassung
+
+- [Zusammenfassung](./Zusammenfassung/Zusammenfassung_Mathe.pdf)

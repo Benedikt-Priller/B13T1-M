@@ -1,0 +1,300 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 53/2}{}
+\begin{enumerate}[leftmargin=*]
+    \item [2.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item [a)] {
+            $f(x) = -\dfrac{1}{4} x^{2} - x + 4$; \quad $I = \left[ \ -6; -2 \  \right]$; \quad $n = 5$ \\
+            \begin{itemize}[leftmargin=*]
+                \item Ableitung und Monotonie: \\[-2.0ex]{
+                    \begin{align*}
+                        f'(x) &= -\dfrac{1}{2} x - 1 &&
+                    \end{align*}
+                    \begin{align*}
+                        f'(x) &= 0 \\[2.0ex]
+                        -\dfrac{1}{2} x - 1 &= 0 &&| \quad + 1\\[1.5ex]
+                        -\dfrac{1}{2} x &= 1 &&| \quad \cdot (-2)\\[1.5ex]
+                        x_{1} &= -2 \quad \text{\textit{(e)}} &&
+                    \end{align*}\\[-2.0ex]
+                    \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                        & $-\infty < x < -2$ & $x = -2$ & $-2 < x < \infty$ \\ \hline
+                        $f'(x)$ & $+$ & $0$ & $-$ \\ \hline
+                        $G_{f}$ & $\nearrow$ & HoP & $\searrow$ \\           
+                    \end{tabularx}\\[3.0ex]
+                    $\Rightarrow \quad G_{f}$ ist sms in $\left] \ -\infty; -2 \ \right]$ und smf in $\left[ \ -2; \infty \ \right[$\\[-1.0ex]
+                    }
+                \item Ober- und Untersumme: \\[-2.0ex]{
+                    \begin{align*}
+                        O &= \dfrac{4}{5} \cdot \left[f\left(-\frac{26}{5}\right) + f\left(-\frac{22}{5}\right) + f\left(-\frac{18}{5}\right) + f\left(-\frac{14}{5}\right) + f\left(-\frac{10}{5}\right)\right] && \\[1.5ex]
+                        &= \dfrac{4}{5} \cdot \left[\dfrac{61}{25} + \dfrac{89}{25} + \dfrac{109}{25} + \dfrac{121}{25} + \dfrac{125}{25} \right] && \\[1.5ex]
+                        &\uuline{= \dfrac{404}{25}} = \SI{16.16}{} &&
+                    \end{align*}\\[-2.0ex]
+                    \begin{align*}
+                        U &= O - \dfrac{4}{5} \cdot f\left(-\frac{10}{5}\right) + \dfrac{4}{5} \cdot f\left(-\frac{30}{5}\right) && \\[1.5ex]
+                        &= \dfrac{404}{25} - \dfrac{4}{5} \cdot \dfrac{125}{25} + \dfrac{4}{5} \cdot \dfrac{25}{25} && \\[1.5ex]
+                        &\uuline{= \dfrac{324}{25}} = \SI{12.96}{} &&
+                    \end{align*}
+                }
+                \item Zeichnung: \\[-2.0ex]{
+                    \raisebox{-\height}{
+                    \begin{tikzpicture}[
+                            declare function={
+                                f_f(\x) = (-1/4*(\x*\xScale)^2 - (\x*\xScale) + 4)*(1/\yScale);
+                            }
+                        ]
+
+                        % Set variables
+                        \pgfmathsetmacro{\axisPosWidth}{2.0};
+                        \pgfmathsetmacro{\axisNegWidth}{-7.0};
+                        \pgfmathsetmacro{\axisPosHeight}{6.0};
+                        \pgfmathsetmacro{\axisNegHeight}{-1.0};
+                        \pgfmathsetmacro{\xIncrement}{1.0};
+                        \pgfmathsetmacro{\yIncrement}{1.0};
+                        \pgfmathsetmacro{\xScale}{1.0};
+                        \pgfmathsetmacro{\yScale}{1.0};
+                        \pgfmathsetmacro{\gridxIncrement}{0.5};
+                        \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                        % Axis/grid limits
+                        \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                        \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                        % Axis environment (PGFPlots)
+                        \begin{axis}[
+                            xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                            ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                            axis lines=middle,
+                            axis line style={->, >=stealth},
+                            grid=both,
+                            xlabel={$x$},
+                            ylabel={$y$},
+                            xlabel style={anchor=west, at={(current axis.right of origin)}},
+                            ylabel style={anchor=south, at={(current axis.above origin)}},
+                            xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                            ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                            xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                            yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                            tick label style={font=\scriptsize},
+                            x=1cm,
+                            y=1cm,
+                            minor tick num=1,
+                            scale only axis,
+                            grid=both,
+                            restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                        ]
+                            
+                        % Graph limits
+                        \pgfmathsetmacro{\xLowerLimitGraph}{\xLowerLimitAxis}
+                        \pgfmathsetmacro{\xUpperLimitGraph}{\xUpperLimitAxis}
+                        
+                        % Interval and subdivisions
+                        \pgfmathsetmacro{\a}{-6}
+                        \pgfmathsetmacro{\b}{-2}
+                        \pgfmathsetmacro{\n}{5}
+                        \pgfmathsetmacro{\dx}{(\b - \a)/\n}
+                        \pgfmathsetmacro{\nMinusOne}{\n-1}
+
+                        % G_f
+                        \pgfmathsetmacro{\Gfax}{0.5*(1/\xScale)}
+                        \pgfmathsetmacro{\Gfay}{f_f(\Gfax)}
+                        \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
+                            {f_f(x)};
+                        \node[anchor=south west] at (axis cs:{\Gfax},{\Gfay}) {\textcolor{myb}{$G_{f}$}};
+
+                        % H1
+                        \pgfmathsetmacro{\Hax}{-2}
+                        \pgfmathsetmacro{\Hay}{f_f(\Hax)}
+                        \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(\Hax,\Hay)};
+                        \node[anchor=south] at (axis cs:{\Hax},{\Hay}) {$H_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\Hax}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\Hay}{})$};
+
+                        % ----- UPPER SUM -----
+                        \foreach \i in {0,...,\nMinusOne} {
+                            \pgfmathsetmacro{\xleft}{\a + \i*\dx}
+                            \pgfmathsetmacro{\xright}{\xleft + \dx}
+                            \pgfmathsetmacro{\yleft}{f_f(\xleft)}
+                            \pgfmathsetmacro{\yright}{f_f(\xright)}
+                            \pgfmathsetmacro{\ymax}{max(\yleft,\yright)}
+
+                            \addplot[fill=mylightorange, draw=myorange, opacity=0.6]
+                            coordinates {
+                                (\xleft,0) (\xleft,\ymax) (\xright,\ymax) (\xright,0)
+                            } -- cycle;
+                        }
+
+                        % ----- LOWER SUM -----
+                        \foreach \i in {0,...,\nMinusOne} {
+                            \pgfmathsetmacro{\xleft}{\a + \i*\dx}
+                            \pgfmathsetmacro{\xright}{\xleft + \dx}
+                            \pgfmathsetmacro{\yleft}{f_f(\xleft)}
+                            \pgfmathsetmacro{\yright}{f_f(\xright)}
+                            \pgfmathsetmacro{\ymin}{min(\yleft,\yright)}
+
+                            \addplot[fill=mylightgreen, draw=myg, opacity=0.6]
+                            coordinates {
+                                (\xleft,0) (\xleft,\ymin) (\xright,\ymin) (\xright,0)
+                            } -- cycle;
+                        }
+
+                        \end{axis}
+                    \end{tikzpicture}
+                    }
+                    }
+            \end{itemize}
+            }
+        \item [b)] {
+            $f(x) = \dfrac{1}{3} x^{2} - x -3$; \quad $I = \left[ \ 2; 4 \  \right]$; \quad $n = 4$ \\
+            \begin{itemize}[leftmargin=*]
+                \item Ableitung und Monotonie: \\[-2.0ex]{
+                    \begin{align*}
+                        f'(x) &= \dfrac{2}{3} x - 1 &&
+                    \end{align*}
+                    \begin{align*}
+                        f'(x) &= 0 \\[2.0ex]
+                        \dfrac{2}{3} x - 1 &= 0 &&| \quad + 1\\[1.5ex]
+                        \dfrac{2}{3} x &= 1 &&| \quad \cdot \frac{3}{2}\\[1.5ex]
+                        x_{1} &= \frac{3}{2} \quad \text{\textit{(e)}} &&
+                    \end{align*}\\[-2.0ex]
+                    \begin{tabularx}{0.95\linewidth}{c|X|X|X}
+                        & $-\infty < x < \frac{3}{2}$ & $x = \frac{3}{2}$ & $\frac{3}{2} < x < \infty$ \\ \hline
+                        $f'(x)$ & $-$ & $0$ & $+$ \\ \hline
+                        $G_{f}$ & $\searrow$ & TiP & $\nearrow$ \\           
+                    \end{tabularx}\\[3.0ex]
+                    $\Rightarrow \quad G_{f}$ ist smf in $\left] \ -\infty; \frac{3}{2} \ \right]$ und sms in $\left[ \ \frac{3}{2}; \infty \ \right[$\\[-1.0ex]
+                    }
+                \item Ober- und Untersumme: \\[-2.0ex]{
+                    \begin{align*}
+                        O &= \dfrac{2}{4} \cdot \left[f\left(\dfrac{8}{4}\right) + f\left(\dfrac{10}{4}\right) + f\left(\dfrac{12}{4}\right) + f\left(\dfrac{14}{4}\right)\right] && \\[1.5ex]
+                        &= \dfrac{2}{4} \cdot \left[\abs*{-\dfrac{11}{3}} + \abs*{-\dfrac{41}{12}} + \abs*{-3} + \abs*{-\dfrac{29}{12}} \right] && \\[1.5ex]
+                        &\uuline{= \dfrac{25}{4}} = \SI{6.25}{} &&
+                    \end{align*}\\[-2.0ex]
+                    \begin{align*}
+                        U &= O - \dfrac{2}{4} \cdot f\left(\dfrac{8}{4}\right) + \dfrac{2}{4} \cdot f\left(\dfrac{16}{4}\right) && \\[1.5ex]
+                        &= \dfrac{25}{4} - \dfrac{2}{4} \cdot \abs*{-\dfrac{11}{3}} + \dfrac{2}{4} \cdot \abs*{-\dfrac{5}{3}} && \\[1.5ex]
+                        &\uuline{= \dfrac{21}{4}} = \SI{5.25}{} &&
+                    \end{align*}
+                }
+                \item Zeichnung: \\[-2.0ex]{
+                    \raisebox{-\height}{
+                    \begin{tikzpicture}[
+                            declare function={
+                                f_f(\x) = (1/3*(\x*\xScale)^2 - (\x*\xScale) - 3)*(1/\yScale);
+                            }
+                        ]
+
+                        % Set variables
+                        \pgfmathsetmacro{\axisPosWidth}{6.0};
+                        \pgfmathsetmacro{\axisNegWidth}{-2.0};
+                        \pgfmathsetmacro{\axisPosHeight}{1.0};
+                        \pgfmathsetmacro{\axisNegHeight}{-5.0};
+                        \pgfmathsetmacro{\xIncrement}{1.0};
+                        \pgfmathsetmacro{\yIncrement}{1.0};
+                        \pgfmathsetmacro{\xScale}{1.0};
+                        \pgfmathsetmacro{\yScale}{1.0};
+                        \pgfmathsetmacro{\gridxIncrement}{0.5};
+                        \pgfmathsetmacro{\gridyIncrement}{0.5};
+
+                        % Axis/grid limits
+                        \pgfmathsetmacro{\xUpperLimitAxis}{\xIncrement * floor(\axisPosWidth / \xIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitAxis}{\xIncrement * ceil(\axisNegWidth / \xIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitAxis}{\yIncrement * floor(\axisPosHeight /\yIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitAxis}{\yIncrement * ceil(\axisNegHeight / \yIncrement)}
+
+                        \pgfmathsetmacro{\xUpperLimitGrid}{\gridxIncrement * floor(\axisPosWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\xLowerLimitGrid}{\gridxIncrement * ceil(\axisNegWidth / \gridxIncrement)}
+                        \pgfmathsetmacro{\yUpperLimitGrid}{\gridyIncrement * floor(\axisPosHeight / \gridyIncrement)}
+                        \pgfmathsetmacro{\yLowerLimitGrid}{\gridyIncrement * ceil(\axisNegHeight / \gridyIncrement)}
+
+                        % Axis environment (PGFPlots)
+                        \begin{axis}[
+                            xmin=\xLowerLimitGrid, xmax=\xUpperLimitGrid,
+                            ymin=\yLowerLimitGrid, ymax=\yUpperLimitGrid,
+                            axis lines=middle,
+                            axis line style={->, >=stealth},
+                            grid=both,
+                            xlabel={$x$},
+                            ylabel={$y$},
+                            xlabel style={anchor=west, at={(current axis.right of origin)}},
+                            ylabel style={anchor=south, at={(current axis.above origin)}},
+                            xtick={\xLowerLimitAxis,\xLowerLimitAxis+1,...,\xUpperLimitAxis},
+                            ytick={\yLowerLimitAxis,\yLowerLimitAxis+1,...,\yUpperLimitAxis},
+                            xticklabel={\pgfmathparse{\tick*\xScale}\pgfmathprintnumber{\pgfmathresult}},
+                            yticklabel={\pgfmathparse{\tick*\yScale}\pgfmathprintnumber{\pgfmathresult}},
+                            tick label style={font=\scriptsize},
+                            x=1cm,
+                            y=1cm,
+                            minor tick num=1,
+                            scale only axis,
+                            grid=both,
+                            restrict y to domain=\yLowerLimitGrid:\yUpperLimitGrid,
+                        ]
+                            
+                        % Graph limits
+                        \pgfmathsetmacro{\xLowerLimitGraph}{\xLowerLimitAxis}
+                        \pgfmathsetmacro{\xUpperLimitGraph}{\xUpperLimitAxis}
+                        
+                        % Interval and subdivisions
+                        \pgfmathsetmacro{\a}{2}
+                        \pgfmathsetmacro{\b}{4}
+                        \pgfmathsetmacro{\n}{4}
+                        \pgfmathsetmacro{\dx}{(\b - \a)/\n}
+                        \pgfmathsetmacro{\nMinusOne}{\n-1}
+
+                        % G_f
+                        \pgfmathsetmacro{\Gfax}{5*(1/\xScale)}
+                        \pgfmathsetmacro{\Gfay}{f_f(\Gfax)}
+                        \addplot[thick, myb, samples=1000, domain=\xLowerLimitGraph:\xUpperLimitGraph]
+                            {f_f(x)};
+                        \node[anchor=south east] at (axis cs:{\Gfax},{\Gfay}) {\textcolor{myb}{$G_{f}$}};
+
+                        % T1
+                        \pgfmathsetmacro{\Tax}{1.5}
+                        \pgfmathsetmacro{\Tay}{f_f(\Tax)}
+                        \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(\Tax,\Tay)};
+                        \node[anchor=north] at (axis cs:{\Tax},{\Tay}) {$T_{1}(\num[output-decimal-marker = {.},round-mode=places, round-precision=2]{\Tax}{},\ \num[output-decimal-marker = {.},round-mode=places,round-precision=2]{\Tay}{})$};
+
+                        % ----- UPPER SUM -----
+                        \foreach \i in {0,...,\nMinusOne} {
+                            \pgfmathsetmacro{\xleft}{\a + \i*\dx}
+                            \pgfmathsetmacro{\xright}{\xleft + \dx}
+                            \pgfmathsetmacro{\yleft}{f_f(\xleft)}
+                            \pgfmathsetmacro{\yright}{f_f(\xright)}
+                            \pgfmathsetmacro{\ymin}{min(\yleft,\yright)}
+
+                            \addplot[fill=mylightorange, draw=myorange, opacity=0.6]
+                            coordinates {
+                                (\xleft,0) (\xleft,\ymin) (\xright,\ymin) (\xright,0)
+                            } -- cycle;
+                        }
+
+                        % ----- LOWER SUM -----
+                        \foreach \i in {0,...,\nMinusOne} {
+                            \pgfmathsetmacro{\xleft}{\a + \i*\dx}
+                            \pgfmathsetmacro{\xright}{\xleft + \dx}
+                            \pgfmathsetmacro{\yleft}{f_f(\xleft)}
+                            \pgfmathsetmacro{\yright}{f_f(\xright)}
+                            \pgfmathsetmacro{\ymax}{max(\yleft,\yright)}
+
+                            \addplot[fill=mylightgreen, draw=myg, opacity=0.6]
+                            coordinates {
+                                (\xleft,0) (\xleft,\ymax) (\xright,\ymax) (\xright,0)
+                            } -- cycle;
+                        }
+
+                        \end{axis}
+                    \end{tikzpicture}
+                    }
+                    }
+            \end{itemize}
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
