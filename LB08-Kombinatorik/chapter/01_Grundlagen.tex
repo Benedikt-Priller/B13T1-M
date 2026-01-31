@@ -1,0 +1,353 @@
+% LTeX: language=de
+
+\subsection{Grundlagen}
+
+Grundlegende Aufgabenstellung: Bestimme die Anzahl (nicht die Wahrscheinlichkeit)
+
+\begin{note}
+
+Das \texthl{\textbf{allgemeine Zählprinzip}}: Anzahl der Ergebnisse eines mehrstufigen ZE erhält man durch multiplizieren der Anzahl der Ergebnisse jeder Stufe.\\[-1.0ex]
+
+    \begin{Example}{Auswahl von Kleidungskombinationen}{}
+        4 T-Shirts, 3 Hosen, 2 Paar Schuhe\\
+        $\Rightarrow$ Wie viele verschiedene Kombinationen sind möglich?\\
+        \raisebox{-\height}{
+        \begin{forest}
+        for tree={
+            grow=south,                % grow down
+            parent anchor=south, 
+            child anchor=north,
+            tier/.option=level, 
+            l sep=8mm,             % level distance
+            s sep=2mm,              % minimal sibling separation (can be auto-fitted)
+            font=\footnotesize,
+            rectangle, rounded corners, draw,
+            align=center,
+            edge+={-},
+            edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}} % default empty
+        },
+        [{}, draw=none  % root
+        [T1, edge label={}, name=TA
+            [\phantom{X}, draw=none, no edge
+                [\phantom{X}, draw=none, no edge]
+                [\phantom{X}, draw=none, no edge]
+            ]
+            [\phantom{X}, draw=none, no edge
+                [\phantom{X}, draw=none, no edge]
+                [\phantom{X}, draw=none, no edge]
+            ]
+        ]
+        [T2, edge label={}, name=TB
+            [H1, edge label={}, name=HA
+                [S1, edge label={}, name=SA]
+                [S2, edge label={}, name=SB]
+            ]
+            [H2, edge label={}, name=HB
+                [\phantom{X}, draw=none, no edge]
+                [\phantom{X}, draw=none, no edge]
+            ]
+            [H3, edge label={}, name=HC
+                [\phantom{X}, draw=none, no edge]
+                [\phantom{X}, draw=none, no edge]
+            ]
+        ]
+        [T3, edge label={}, name=TC
+            [\phantom{X}, draw=none, no edge
+                [\phantom{X}, draw=none, no edge]
+                [\phantom{X}, draw=none, no edge]
+            ]
+            [\phantom{X}, draw=none, no edge
+                [\phantom{X}, draw=none, no edge]
+                [\phantom{X}, draw=none, no edge]
+            ]
+        ]
+        [T4, edge label={}, name=TD
+            [\phantom{X}, draw=none, no edge
+                [\phantom{X}, draw=none, no edge]
+                [\phantom{X}, draw=none, no edge]
+            ]
+            [\phantom{X}, draw=none, no edge
+                [\phantom{X}, draw=none, no edge]
+                [\phantom{X}, draw=none, no edge]
+            ]
+        ]
+        ]
+        \node[anchor=west] at ($(TD.east)+(1.0,0)$) {
+            \textbf{$4$}
+        };
+        \node[anchor=west] at ($(TD.east)+(1.0,-1.5)$) {
+            \textbf{$3$}
+        };
+        \node[anchor=west] at ($(TD.east)+(1.0,-3.0)$) {
+            \textbf{$2$}
+        };
+        \end{forest}
+        }\\[2.0ex]
+        $\Rightarrow$ $4 \cdot 3 \cdot 2 = 24$ verschiedene Kombinationen\\[1.0ex]
+        Es ergeben sich sogenannte \texthl{\textbf{Tupel}}; \quad z. B. $\underbrace{\text{3-Tupel (T2 / H1 / S1)}}_{\footnotesize \text{\textcolor{myg}{Reihenfolge ist entscheidend; d. h. (T2 / T3 / S1)}}}$\\
+    \end{Example}
+\end{note}
+
+\begin{Exercise}{S. 188/1}{}
+\begin{enumerate}[leftmargin=*]
+    \item [1.] {
+        Serienbrief an 30 Personen; 16 Vorlagentexte; 3 Papiersorten\\[1.0ex]
+        $N = 30 \cdot 16 \cdot 3 = 1440$
+        }
+    \item [2.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            Nummernschild München mit 2 Buchstaben (inklusive Umlaute); 3-stellige Zahlen\\[1.0ex]
+            $N = 29 \cdot 29 \cdot 10 \cdot 10 \cdot 10 = 841000$
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
+\pagebreak
+
+\begin{note}
+\begin{enumerate}[leftmargin=*]
+    \item [1)] {
+        \textcolor{myb}{\textbf{Ziehen \texthl{mit Zurücklegen} und mit \texthl{Beachtung der Reihenfolge}}}
+        \begin{itemize}[leftmargin=*]
+            \item alles was schon mal da war, darf nochmal verwendet werden
+        \end{itemize}
+        \begin{Example}{Zahlenschloss}{}
+            Zahlenschloss mit 3 Rädern \'{a} 10 Ziffern (0-9)\\[1.0ex]
+            \begin{tabularx}{0.5\linewidth}{X X}
+                1. Rädchen: & 10 Möglichkeiten\\
+                2. Rädchen: & 10 Möglichkeiten\\
+                3. Rädchen: & 10 Möglichkeiten\\
+            \end{tabularx}\\[1.5ex]
+            $N = 10 \cdot 10 \cdot 10 = 10^3 = 1000$ verschiedene Kombinationen
+        \end{Example}
+        \begin{Corollary}{}{}
+            k-maliges Ziehen aus n Möglichkeiten ergibt \textbf{$\highlight[yellow]{N = n^k}$} mögliche Ergebnisse
+        \end{Corollary}
+        }
+\end{enumerate}
+\end{note}
+
+\begin{Exercise}{S. 194/3}{}
+\begin{enumerate}[leftmargin=*]
+    \item [3.]{
+        \begin{itemize}[leftmargin=*]
+            \item Passwort Mona: 5 Zeichen; Ziffern und Groß-/Kleinbuchstaben ohne Sonderzeichen
+            \item Passwort Philip: 13 Zeichen; Kleinbuchstaben
+        \end{itemize}
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+                \begin{itemize}[leftmargin=*]
+                    \item Passwort Mona: \quad $N = (10 + 29 + 29)^5 = 68^5 = \SI{1453933568}{}$
+                    \item Passwort Philip: \quad $N = 29^{13} = \SI{10260628710000000000}{}$
+                \end{itemize}
+                }
+            \item[b)] {
+                \begin{itemize}[leftmargin=*]
+                    \item Passwort Mona: \quad $t = \dfrac{68^5}{\SI{1000}{\per\second} \cdot \SI{3600}{\second\per\hour}} = \SI{404}{\hour}$\\
+                    \item Passwort Philip: \quad $t = \dfrac{29^{13}}{\SI{1000}{\per\second} \cdot \SI{3600}{\second\per\hour} \cdot \SI{24}{\hour\per\day} \cdot \SI{365}{\day\per a}} = \SI{7808697651}{a}$
+                \end{itemize}
+                }
+        \end{enumerate}
+        }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 194/6}{}
+\begin{enumerate}[leftmargin=*]
+    \item [6.]{
+        \begin{itemize}[leftmargin=*]
+            \item 1 Frage: \quad $N = 2^{6} = 64$
+            \item 10 Fragen: \quad $N = 2^{6 \cdot 10} = 2^{60} = \SI{1.15e18}{}$
+        \end{itemize}
+    }
+\end{enumerate}
+\end{Exercise}
+\pagebreak
+
+\begin{note}
+\begin{enumerate}[leftmargin=*]
+    \item [2)] {
+        \textcolor{myb}{\textbf{Ziehen \texthl{ohne Zurücklegen} und mit \texthl{Beachtung der Reihenfolge} (Variation)}}
+        \begin{itemize}[leftmargin=*]
+            \item Anzahl der Möglichkeiten verringert sich mit jedem Zug
+        \end{itemize}
+        \begin{Example}{Staffellauf}{}
+            Beim Staffellauf werden 4 von 6 mögliche Läufer ausgewählt. Wie viele Aufstellungen sind möglich? \\[1.0ex]
+            \begin{tabularx}{0.5\linewidth}{X X}
+                1. Läufer: & 6 Möglichkeiten\\
+                2. Läufer: & 5 Möglichkeiten\\
+                3. Läufer: & 4 Möglichkeiten\\
+                4. Läufer: & 3 Möglichkeiten\\
+            \end{tabularx}\\[1.5ex]
+            $N = 6 \cdot 5 \cdot 4 \cdot 3 = 360$ verschiedene Aufstellungen
+        \end{Example}
+        \begin{Definition}{Fakultät}{}
+            Für eine natürliche Zahl $n$ ist das \texthl{\textbf{Produkt aller natürlichen Zahlen von 1 bis $n$}} die Fakultät von $n$ und wird mit $n!$ bezeichnet.\\[1.0ex]
+            \[
+                n! = n \cdot (n - 1) \cdot (n - 2) \cdots 3 \cdot 2 \cdot 1
+            \]
+            \[
+                0! = 1
+            \]
+            \begin{Example}{Beispiel Fakultät}{}
+                $5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$           
+            \end{Example}
+        \end{Definition}
+        \begin{align*}
+            N &= n \cdot (n - 1) \cdot (n - 2) \cdots (n - k  + 1) = \dfrac{n!}{(n - k)!} \\[1.0ex]
+              &= \dfrac{n \cdot (n - 1) \cdot (n - 2) \cdots (n - k + 1) \cdot (n - k) \cdots}{(n - k) \cdot (n - k - 1) \cdots}
+        \end{align*}
+        \begin{Corollary}{}{}
+            k-maliges Ziehen aus n-elementiger Menge ergibt 
+            \begin{equation*}
+                \highlight[yellow]{N = \dfrac{n!}{(n - k)!}} 
+            \end{equation*}
+            mögliche Ergebnisse.\\[1.0ex]
+            Sonderfall \texthl{\textbf{Permutation}}: \textbf{Alle} n Elemente werden verteilt (d. h. $k = n$); \quad $\highlight[yellow]{N = n!}$
+        \end{Corollary}
+        }
+\end{enumerate}
+\end{note}
+
+\begin{Exercise}{S. 194/2}{}
+\begin{enumerate}[leftmargin=*]
+    \item [2.]{
+        4 Personen verteilt auf 4 Parkplätze\\[1.0ex]
+        $N = 4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24$
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{note}
+\begin{enumerate}[leftmargin=*]
+    \item [3)] {
+        \textcolor{myb}{\textbf{Ziehen \texthl{ohne Zurücklegen} und ohne \texthl{Beachtung der Reihenfolge} (Kombination)}}
+        \begin{itemize}[leftmargin=*]
+            \item Reihenfolge ist nicht entscheidend
+            \item Anzahl der Möglichkeiten verringert sich mit jedem Zug
+        \end{itemize}
+        \begin{Example}{Lottospiel}{}
+            Beim Lottospiel werden 3 von 7 mögliche Zahlen ausgewählt. Wie viele Kombinationen sind möglich? \\[1.0ex]
+            Falls die Reihenfolge eine Rolle spielen würde (Variation):\\
+            \begin{equation*}
+                N = \dfrac{7!}{(7 - 3)!} = 7 \cdot 6 \cdot 5 = 210 \text{ verschiedene Tipps}
+            \end{equation*}
+            Davon sind ohne Beachtung der Reihenfolge der Tipps gleich:\\
+            \begin{equation*}
+                \text{z. B.}: \quad (1 / 2 / 3) = (1 / 3 / 2) = (2 / 1 / 3) = (2 / 3 / 1) = (3 / 1 / 2) = (3 / 2 / 1)
+            \end{equation*}
+            Wie viele Möglichkeiten gibt es, um 3 Zahlen auf 3 Plätze zu verteilen?\\[1.0ex]
+            \begin{equation*}
+                N = 3! = 3 \cdot 2 \cdot 1 = 6 \text{ Möglichkeiten}
+            \end{equation*}
+            $\Rightarrow$ Von den 210 möglichen Tipps (falls die Reihenfolge relevant wäre) sind \underline{jeweils 6 Tipps identisch}, falls die Reihenfolge keine Rolle spielt.\\[1.0ex]
+            \begin{equation*}
+                N = \dfrac{7!}{(7 - 3)! \cdot 3!} = \dfrac{7 \cdot 6 \cdot 5}{3 \cdot 2 \cdot 1} = 35 \text{ verschiedene Tipps}
+            \end{equation*}
+        \end{Example}
+            \begin{Corollary}{}{}
+            k-maliges Ziehen aus n-elementiger Menge ergibt 
+            \begin{equation*}
+                \underbrace{\highlight[yellow]{N = \dfrac{n!}{(n - k)! \cdot k!} = \binom{n}{k}}}_{\textcolor{myg}{\text{Binomialkoeffizient; } k \text{ aus } n}}
+            \end{equation*}
+            mögliche Ergebnisse.\\[1.0ex]
+            Der Taschenrechner hat eine spezielle Taste für den Binomialkoeffizienten: \quad \texttt{nCr}
+        \end{Corollary}
+        \begin{Example}{Beispiel Binomialkoeffizient}{}
+            $\displaystyle \binom{8}{3} = \dfrac{8!}{(8 - 3)! \cdot 3!} = \dfrac{8 \cdot 7 \cdot 6}{3 \cdot 2 \cdot 1} = 56$
+        \end{Example}
+        }
+\end{enumerate}
+\end{note}
+
+\pagebreak
+
+\begin{Exercise}{S. 194/4}{}
+\begin{enumerate}[leftmargin=*]
+    \item [4.]{
+        4 Kinder; 2 Karten\\[1.0ex]
+        $\displaystyle \binom{4}{2} = \dfrac{4!}{(4 - 2)! \cdot 2!} = 6$
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 194/5}{}
+\begin{enumerate}[leftmargin=*]
+    \item [5.]{
+        15 Schüler; 4 Karten; n = 15; k = 4\\[1.0ex]
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+                $\displaystyle \binom{15}{4} = \dfrac{15!}{(15 - 4)! \cdot 4!} = 1365$\\
+                }
+            \item[b)] {
+                $\dfrac{15!}{(15-4)!} = 32760$\\
+                }
+            \item[c)] {
+                $15^{4} = 50625$
+                }
+        \end{enumerate}
+        }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 195/11}{}
+\begin{enumerate}[leftmargin=*]
+    \item [11.]{
+        \begin{itemize}
+            \item Belgien: \quad $\displaystyle \binom{42}{6} = \SI{5245786}{}$
+            \item Sweden: \quad $\displaystyle \binom{35}{7} = \SI{6724520}{}$
+        \end{itemize}
+        $\Rightarrow$ Gewinnchance in Belgien sind besser\\[1.0ex]
+        Weitere Kriterien:
+        \begin{itemize}
+            \item Gewinnsumme
+            \item Teilgewinnsummen bei z. B. nur 4 richtigen
+            \item Kosten pro Tipp
+        \end{itemize}
+    }
+\end{enumerate}
+\end{Exercise}
+
+\pagebreak
+
+\begin{note}
+\begin{enumerate}[leftmargin=*]
+    \item [4)] {
+        \textcolor{myb}{\textbf{Mississippi-Problem}}\\[1.0ex]
+        Bestimmen Sie, wie viele verschiedene Anordnungen man aus den Buchstaben des Wortes MISSISSIPPI bilden kann (alle sollen verwendet werden).\\[1.0ex]
+        Annahme: alle 11 Buchstaben sind unterscheidbar $\Rightarrow 11!$ mögliche Anordnungen\\[1.0ex]
+        Verschiedene Möglichkeiten aber nur falls alle Buchstaben unterscheidbar sind.\\
+        Es gibt:
+        \begin{itemize}[leftmargin=*]
+            \item $4!$ Möglichkeiten I zu tauschen
+            \item $4!$ Möglichkeiten S zu tauschen
+            \item $2!$ Möglichkeiten P zu tauschen
+        \end{itemize}
+        Sind gleiche Buchstaben nicht zu unterscheiden, so gibt es:
+        \begin{equation*}
+            \dfrac{{11!}}{4! \cdot 4! \cdot 2!} = \dfrac{11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5}{4 \cdot 3 \cdot 2 \cdot 4 \cdot 3 \cdot 2 \cdot 2} = 34650
+        \end{equation*}
+        }
+\end{enumerate}
+\end{note}
+
+\begin{Exercise}{S. 195/13}{}
+\begin{enumerate}[leftmargin=*]
+    \item [13.]{
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+                HOF\\[0.5ex]
+                $N = \dfrac{3!}{1! \cdot 1! \cdot 1!} = 6$\\
+                }
+            \item[b)] {
+                PASSAU\\[0.5ex]
+                $N = \dfrac{6!}{1! \cdot 2! \cdot 2! \cdot 1!} = 180$\\
+                }
+            \item[c)] {
+                REGENSBURG\\[0.5ex]
+                $N = \dfrac{10!}{2! \cdot 2! \cdot 2!} = 453600$\\
+                }
+        \end{enumerate}
+        }
+\end{enumerate}
+\end{Exercise}

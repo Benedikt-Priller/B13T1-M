@@ -24,6 +24,10 @@
 
 - [Wahrscheinlichkeiten](./LB07-Wahrscheinlichkeit/02_Wahrscheinlichkeiten.pdf)
 
+### LB08-Kombinatorik
+
+- [Kombinatorik](./LB08-Kombinatorik/03_Kombinatorik.pdf)
+
 ### Zusammenfassung
 
 - [Zusammenfassung](./Zusammenfassung/Zusammenfassung_Mathe.pdf)

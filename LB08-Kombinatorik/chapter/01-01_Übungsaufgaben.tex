@@ -1,0 +1,98 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 195/16}{}
+\begin{enumerate}[leftmargin=*]
+    \item [16.]{
+        13 Spiele \'{a} 3 Möglichkeiten\\[1.0ex]
+        $3^{13}=1594323$ mögliche Ergebnisse
+    }
+\end{enumerate}
+\end{Exercise}
+\pagebreak
+
+\begin{Exercise}{S. 195/18}{}
+\begin{enumerate}[leftmargin=*]
+    \item [18.]{
+        Insgesamt stehen 6 verschiedene Kugeln zur Verfügung: B, G, R, S, V, W\\[1.0ex]
+        \begin{tabularx}{0.5\linewidth}{@{}l | X | X | X @{}}
+            & a) & b) & c) \\[1.0ex]
+            1 & $5!$ & $4!$ & $3!$ \\[1.5ex]
+            2 & $\dfrac{5!}{2!}$ & $\dfrac{4!}{2!}$ & $\dfrac{3!}{2!}$\\[1.5ex]
+            3 & $6^{3}$ & $6^{2}$ & $6^{1}$\\
+        \end{tabularx}
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 196/4}{}
+\begin{enumerate}[leftmargin=*]
+    \item [4.]{
+        20 Kunden; 2 Möglichkeiten (schmeckt / schmeckt nicht)
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+                Kombination ohne Reihenfolge: \quad \begin{minipage}[t]{\linewidth}
+                    $n = 20; \quad k = 15$\\[1.5ex]
+                    $N = \dfrac{20!}{(20-15)! \cdot 15!} = 15504$\\
+                \end{minipage}
+                }
+            \item[b)] {
+                3 Kunden, denen es nicht schmeckt, bei 20 Kunden hintereinander anzuordnen erlaubt $20 - 3 + 1 = 18$ Möglichkeiten. Spätestens beim 18. Kunden muss die Serie beginnen.\\[1.5ex]
+                $N = 18$\\
+                }
+            \item[c)] {
+                Kombination ohne Reihenfolge: \quad \begin{minipage}[t]{\linewidth}
+                    $n = 20; \quad k_{1} = 0; \quad k_{2} = 1; \quad k_{3} = 2$\\[1.5ex]
+                    $N = \displaystyle \binom{20}{0} + \binom{20}{1} + \binom{20}{2} = 211$\\
+                \end{minipage}
+                }
+        \end{enumerate}
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 196/7}{}
+\begin{enumerate}[leftmargin=*]
+    \item [7.]{
+        24 Männer; 20 Frauen\\[1.0ex]
+        Auswahl von 3 Männer und 2 Frauen
+        \begin{itemize}[leftmargin=*]
+            \item Männer: \quad \begin{minipage}[t]{\linewidth}
+                Kombination ohne Reihenfolge; \quad $n = 24; \quad k = 3$\\[1.5ex]
+                $N_{M} = \displaystyle \binom{24}{3} = 2024$\\
+            \end{minipage}
+            \item Frauen: \quad \begin{minipage}[t]{\linewidth}
+                Kombination ohne Reihenfolge; \quad $n = 20; \quad k = 2$\\[1.5ex]
+                $N_{F} = \displaystyle \binom{20}{2} = 190$\\
+            \end{minipage}
+        \end{itemize}
+        Alle Möglichkeiten, die bei der Wahl entstehen können: $N = N_{M} \cdot N_{F} = 2024 \cdot 190 = 384560$\\
+    }
+\end{enumerate}
+\end{Exercise}
+\pagebreak
+
+\begin{Exercise}{S. 196/8}{}
+\begin{enumerate}[leftmargin=*]
+    \item [8.]{
+        Urnenmodell: \quad \begin{minipage}[t]{0.75\linewidth}
+            \begin{itemize}[leftmargin=*]
+                \item ohne zurücklegen (nochmal das gleiche Müsli beläuft sich auf eine schon berücksichtigte Kombination)
+                \item ohne Reihenfolge (Im Müsli wird eh alles vermischt)
+            \end{itemize}
+            $n = 20; \quad k_{min} = 0; \quad k_{max} = 20$\\[1.5ex]
+            $N = \displaystyle \sum_{k=0}^{20} \binom{20}{k} = 2^{20} = 1048576$\\
+        \end{minipage}\\[1.0ex]
+        Alternativ: \quad \begin{minipage}[t]{0.75\linewidth}
+            20 Entscheidungen mit jeweils 2 Möglichkeiten (ja / nein)
+            \begin{itemize}[leftmargin=*]
+                \item mit zurücklegen (nächste Sorte Müsli wieder die gleichen Möglichkeiten: nehmen oder nicht nehmen)
+                \item mit Reihenfolge (Unterscheidung der verschiedenen Sorten)
+            \end{itemize}
+            $n = 2$; \quad $k = 20$\\[1.5ex]
+            $N = 2^{20} = 1048576$\\
+        \end{minipage}
+    }
+\end{enumerate}
+\end{Exercise}
