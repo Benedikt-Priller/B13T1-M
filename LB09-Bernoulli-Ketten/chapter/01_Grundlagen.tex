@@ -1,0 +1,198 @@
+% LTeX: language=de
+
+\subsection{Grundlagen}
+
+\begin{note}
+    Ein ZE mit genau 2 möglichen Ergebnissen nennt man \texthl{\textbf{Bernoulli-Experiment (BE).}}\\[1.0ex]
+    z. B. Treffer (mit \textbf{Wahrscheinlichkeit $p$}) oder Niete (mit \textbf{Wahrscheinlichkeit $q = 1 - p$})\\[2.0ex]
+    \underline{Jedes} Zufallsexperiment kann als BE aufgefasst werden. \\[1.0ex]
+    z. B. Würfelwurf mit $\Omega = \{1, 2, 3, 4, 5, 6\}$\\[1.0ex]
+    $\rightarrow \quad \Omega = \{ 6, \overline{6}\}$ \quad mit \quad \begin{minipage}[t]{\linewidth}
+        $P(6) = \dfrac{1}{6}$\\[1.5ex]
+        $P(\overline{6}) = \dfrac{5}{6}$
+    \end{minipage}\\[2.0ex]
+    Wird ein BE $n$-mal unabhängig durchgeführt (d. h. mit zurücklegen, womit die Wahrscheinlichkeit $p$ konstant bleibt), so spricht man von einer \texthl{\textbf{Bernoulli-Kette}} der Länge $n$.
+    \begin{Example}{Münzwurf}{}
+        5 x hintereinander eine Münze werfen (Kopf oder Zahl)
+    \end{Example}
+    \begin{Example}{Polizeikontrolle}{}
+        Eine Polizeikontrolle prüft, ob ein Autofahrer angeschnallt ist.\\[1.0ex]
+        $X$: Anzahl angeschnallter Fahrer\\[1.0ex]
+        5 Autofahrer werden überprüft. Dabei ist jeder mit einer Wahscheinlichkeit von $p = \SI{0.60}{}$ angeschnallt. Wie hoch ist die Wahrscheinlichkeit, dass genau 3 angeschnallt sind?\\[3.0ex]
+        \begin{equation*}
+            P_{\tikzmarknode{p}{}\SI{0.60}{}}^{\tikzmarknode{n}{}5} \left(X = \tikzmarknode{x}{}3\right) = \tikzmarknode{y}{\fcolorbox{myorange}{white}{$\SI{0.3456}{}$}}
+        \end{equation*}\\[5.0ex]
+        \begin{tikzpicture}[remember picture, overlay,font=\footnotesize, color=myg]
+            \node[align=left, text width=4.2cm] 
+                (label1) at ([xshift=-3.0cm, yshift=0.5cm] n.west) {
+                    \footnotesize Kettenlänge $n$
+            };
+
+            \draw[-latex]
+                ([anchor=west, xshift=1cm]label1) 
+                to[out=0, in=140, looseness=1.2]
+                ([anchor=north, yshift=2mm]n);
+            
+            \node[align=left, text width=4.2cm] 
+                (label2) at ([xshift=-3.0cm, yshift=-1.0cm] p.west) {
+                    \footnotesize Einzelwahrscheinlichkeit $p$;\\
+                    jeder einzelne Autofahrer ist mit $p = \SI{0.60}{}$ angeschnallt
+            };
+
+            \draw[-latex]
+                ([anchor=east, xshift=0cm]label2) 
+                to[out=0, in=250, looseness=1.2]
+                ([anchor=south, yshift=-2mm, xshift=2mm]p);
+
+            \node[align=left, text width=5.5cm] 
+                (label3) at ([xshift=4.0cm, yshift=0.7cm] x.east) {
+                    \footnotesize genau 3 der Fahrer sind angeschnallt
+            };
+
+            \draw[-latex]
+                ([anchor=west, xshift=-1cm]label3) 
+                to[out=180, in=45, looseness=1.2]
+                ([anchor=north, yshift=3mm]x);
+
+            \node[align=left, text width=6.5cm] 
+                (label4) at ([xshift=1.8cm, yshift=-1.2cm] y.east) {
+                    \footnotesize \textcolor{myorange}{gesuchte Wahrscheinlichkeit:}\\
+                    \textcolor{myorange}{mit einer Wahrscheinlichkeit von $P = \SI{0.3456}{}$}\\
+                    \textcolor{myorange}{sind genau 3 der 5 Fahrer angeschnallt}
+            };
+        \end{tikzpicture}
+        \raisebox{-\height}{
+        \begin{forest}
+        for tree={
+            grow'=0,                % grow to the right
+            parent anchor=east, 
+            child anchor=west,
+            tier/.option=level, 
+            l sep=18mm,             % level distance
+            s sep=2mm,              % minimal sibling separation (can be auto-fitted)
+            font=\footnotesize,
+            rectangle, rounded corners, draw,
+            align=center,
+            edge+={-},
+            edge label={node[midway, font=\footnotesize, fill=white, inner sep=1pt]{}} % default empty
+        },
+        [{}, draw=none, name=root  % root for data
+        [$A$, edge label={node[midway, above] {$\SI{0.60}{}$}}, name=a1
+            [$A$, edge label={node[midway, above] {$\SI{0.60}{}$}}, name=a2]
+            [$\overline{A}$, edge label={node[midway, below] {$\SI{0.40}{}$}}, name=a2b]
+        ]
+        [$\overline{A}$, edge label={node[midway, below] {$\SI{0.40}{}$}}, name=b1
+            [$A$, edge label={node[midway, above] {$\SI{0.60}{}$}}, name=b2]
+            [$\overline{A}$, edge label={node[midway, below] {$\SI{0.40}{}$}}, name=b2b]
+        ]
+        ]
+        \node[draw=none, font=\footnotesize, font=\bfseries] at (a1 |- a2.north) [yshift=5mm] {1. Fahrer};
+        \node[draw=none, font=\footnotesize, font=\bfseries] at (a2 |- a2.north) [yshift=5mm] {2. Fahrer};
+        \node[draw=none, font=\footnotesize, font=\bfseries] at (a2 |- a2.north) [xshift=25mm, yshift=5mm]{\dots};
+        \end{forest}
+        }\\[2.0ex]
+        $\Omega = \{AAAAA; AAAA\overline{A}; \quad \dots \quad; \overline{A}\overline{A}\overline{A}\overline{A}\overline{A}\} \qquad \qquad |\Omega| = 2^5 = 32$
+    \end{Example}
+\end{note}
+
+\subsubsection*{Mögliche Varianten der Aufgabenstellung}
+
+\begin{Example}{}{}
+    \begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            A: Alle 5 Fahrer sind angeschnallt\\[-2.0ex]
+            \begin{align*}
+                P\left(A\right) &= P_{\SI{0.60}{}}^{5} \left(X = 5\right) = \SI{0.60}{}^{5} = \SI{0.07776}{}
+            \end{align*}
+            }
+        \item[b)] {
+            B: Kein Fahrer ist angeschnallt\\[-2.0ex]
+            \begin{align*}
+                P\left(B\right) &= P_{\SI{0.60}{}}^{5} \left(X = 0\right) = \SI{0.40}{}^{5} = \SI{0.01024}{}
+            \end{align*}
+            }
+        \item[c)] {
+            C: 1., 2. und 4. Fahrer sind angeschnallt; der Rest nicht\\[-2.0ex]
+            \begin{align*}
+                P\left(C\right) &= \SI{0.60}{}^{3} \cdot \SI{0.40}{}^{2} = \SI{0.03456}{}
+            \end{align*}
+            }
+        \item[d)] {
+            D: genau 3 angeschnallte Fahrer \underline{hintereinander}\\[1.0ex]
+            \textcolor{myr}{Reihenfolge spielt \textbf{eine} Rolle}\\[-2.0ex]
+            \begin{align*}
+                P\left(D\right) &= P (AAA\overline{A}\overline{A}) + P (\overline{A}AAA\overline{A}) + P (\overline{A}\overline{A}AAA)\\
+                &= \underbrace{\SI{0.60}{}^{3} \cdot \SI{0.40}{}^{2}}_{\text{\footnotesize \textcolor{myg}{Wahrscheinlichkeiten}}} \cdot \underbrace{(5 - 3 + 1)}_{\text{\footnotesize \textcolor{myg}{Anordnungsmöglichkeiten}}} = \SI{0.10368}{}
+            \end{align*}
+            }
+        \item[e)] {
+            E: genau 3 angeschnallte Fahrer\\[1.0ex]
+            \textcolor{myr}{Reihenfolge spielt \textbf{keine} Rolle}\\[-2.0ex]
+            \begin{align*}
+                P\left(E\right) &= P_{\SI{0.60}{}}^{5} \left(X = 3\right)\\
+                &= \SI{0.60}{}^{3} \cdot \SI{0.40}{}^{2} \cdot \binom{5}{3} = \SI{0.3456}{}
+            \end{align*}
+            }
+        \item[f)] {
+            F: der erste und 2 der restlichen 4 Fahrer sind angeschnallt\\[-2.0ex]
+            \begin{align*}
+                P\left(F\right) &= \SI{0.60}{} \cdot P_{\SI{0.60}{}}^{4} \left(X = 2\right)\\
+                &= \SI{0.60}{} \cdot \SI{0.60}{}^{2} \cdot \SI{0.40}{}^{2} \cdot \binom{4}{2} = \SI{0.20736}{}
+            \end{align*}
+            }
+        \item[g)] {
+            G: mindestens ein Autofahrer ist angeschnallt\\[-2.0ex]
+            \begin{align*}
+                P\left(G\right) &= P_{\SI{0.60}{}}^{5} \left(X \geq 1 \right) = P_{\SI{0.60}{}}^{5} \left(X = 1 \right) + \quad \dots \quad + P_{\SI{0.60}{}}^{5} \left(X = 5 \right) \\[1.5ex]
+                &= 1 - P_{\SI{0.60}{}}^{5} \left(X = 0 \right) \\
+                &= 1 - \SI{0.60}{}^{0} \cdot \SI{0.40}{}^{5} \cdot \binom{5}{0}\\
+                &= 1 - \SI{0.01024}{}\\
+                &= \SI{0.98976}{}
+            \end{align*}
+            }
+        \item[h)] {
+            H: höchstens 3 Fahrer sind angeschnallt\\[-2.0ex]
+            \begin{align*}
+                P\left(H\right) &= P_{\SI{0.60}{}}^{5} \left(X \leq 3 \right) \qquad \left[= P_{\SI{0.60}{}}^{5} \left(X < 4 \right)\right] \\[1.5ex]
+                &= P_{\SI{0.60}{}}^{5} \left(X = 0 \right) + \quad \dots \quad + P_{\SI{0.60}{}}^{5} \left(X = 3 \right) \\[1.5ex]
+                &= F_{\SI{0.60}{}}^{5}\left(3\right) = \displaystyle\Sigma_{i = 0}^{3} \, B(5; \SI{0.60}{}; i)\\[1.5ex]
+                &= \SI{0.66304}{}
+            \end{align*}
+            }
+        \item[i)] {
+            I: mehr als 1 Autofahrer und weniger als 5 Autofahrer sind angeschnallt\\[-2.0ex]
+            \begin{align*}
+                P\left(I\right) &= P_{\SI{0.60}{}}^{5} \left(2 \leq X \leq 4 \right)\\[1.5ex]
+                &= P_{\SI{0.60}{}}^{5} \left(X = 2 \right) + P_{\SI{0.60}{}}^{5} \left(X = 3 \right) + P_{\SI{0.60}{}}^{5} \left(X = 4 \right) \\[1.5ex]
+                &\overset{\text{TW}}{=} \SI{0.23040}{} + \SI{0.34560}{} + \SI{0.25920}{}\\[1.5ex]
+                &= P_{\SI{0.60}{}}^{5} \left(X \leq 4 \right) - P_{\SI{0.60}{}}^{5} \left(X \leq 2 \right)\\[1.5ex]
+                &\overset{\text{TW}}{=} \SI{0.9224}{} - \SI{0.08704}{}\\[1.0ex]
+                &= \SI{0.83520}{}
+            \end{align*}
+            }
+        \item[j)] {
+            Wie groß muss die Wahrscheinlichkeit $\tilde{p}$, mit der ein Fahrer angeschnallt ist, \underline{mindestens} sein, damit sich unter 5 Fahrern mit einer Wahrscheinlichkeit von \underline{mindestens} \SI{90}{\percent} \underline{mindestens} ein angeschnallter Fahrer befindet?\\[-2.0ex]
+            \begin{align*}
+                P_{\tilde{p}}^{5} \left(X \geq 1\right) &\geq \SI{0.90}{}\\[1.5ex]
+                1 - P_{\tilde{p}}^{5} \left(X = 0\right) &\geq \SI{0.90}{}\\[1.5ex]
+                1 - (1-\tilde{p})^{5} &\geq \SI{0.90}{}\\[1.5ex]
+                (1-\tilde{p})^{5} &\leq \SI{0.10}{}\\[1.5ex]
+                1 - \tilde{p} &\leq \sqrt[5]{\SI{0.10}{}}\\[1.5ex]
+                \tilde{p} &\geq 1 - \sqrt[5]{\SI{0.10}{}} = \SI{0.36905}{}
+            \end{align*}
+            }
+        \item[k)] {
+            Es gilt: $p = \SI{0.60}{}$. Ermitteln Sie, wie viele Fahrer \underline{mindestens} kontrolliert werden müssen, damit mit einer Wahrscheinlichkeit von \underline{mindestens} \SI{85}{\percent} \underline{mindestens} ein angeschnallter Fahrer dabei ist.\\[-2.0ex]
+            \begin{align*}
+                P_{\SI{0.60}{}}^{n} \left(X \geq 1\right) &\geq \SI{0.85}{}\\[1.5ex]
+                1 - P_{\SI{0.60}{}}^{n} \left(X = 0\right) &\geq \SI{0.85}{}\\[1.5ex]
+                1 - \SI{0.60}{}^{0} \cdot \SI{0.40}{}^{n-0} \cdot \binom{n}{0} &\geq \SI{0.85}{}\\[1.5ex]
+                1-\SI{0.40}{}^{n} &\geq \SI{0.85}{}\\[1.5ex]
+                \SI{0.40}{}^{n} &\leq \SI{0.15}{}\\[1.5ex]
+                n &\geq log_{\SI{0.40}{}} \left(\SI{0.15}{}\right) = \SI{2.07}{}
+            \end{align*}
+            $\Rightarrow$ Es müssen mindestens 3 Fahrer kontrolliert werden.
+            }
+    \end{enumerate}
+\end{Example}
+\pagebreak

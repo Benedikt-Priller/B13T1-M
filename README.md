@@ -28,6 +28,10 @@
 
 - [Kombinatorik](./LB08-Kombinatorik/03_Kombinatorik.pdf)
 
+### LB09-Bernoulli-Ketten
+
+- [Bernoulli-Ketten](./LB09-Bernoulli-Ketten/04_Bernoulli-Ketten.pdf)
+
 ### Zusammenfassung
 
 - [Zusammenfassung](./Zusammenfassung/Zusammenfassung_Mathe.pdf)

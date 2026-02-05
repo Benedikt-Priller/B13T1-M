@@ -1,0 +1,301 @@
+% LTeX: language=de
+
+\subsubsection{Aufgaben}
+
+\begin{Exercise}{S. 206/1}{}
+\begin{enumerate}[leftmargin=*]
+    \item [1.]{
+        $n = 11$; \quad $p = \SI{0.43}{}$\\[1.0ex]
+        \begin{align*}
+            P\left(A\right) &= P_{\SI{0.43}{}}^{11}\left(X = 2\right)\\[1.5ex]
+            &= \SI{0.43}{^2} \cdot \left(\SI{1}{} - \SI{0.43}{}\right)^{11-2} \cdot \binom{11}{2} = \uuline{\SI{0.06459}{}}\\[2.0ex]
+            P\left(B\right) &= P_{\SI{0.43}{}}^{11}\left(X > 9\right)\\[1.5ex]
+            &= P_{\SI{0.43}{}}^{11}\left(X = 10\right) + P_{\SI{0.43}{}}^{11}\left(X = 11\right)\\[1.5ex]
+            &= \SI{0.43}{^{10}} \cdot \left(\SI{1}{} - \SI{0.43}{}\right)^{11-10} \cdot \binom{11}{10} + \SI{0.43}{^{11}} \cdot \left(\SI{1}{} - \SI{0.43}{}\right)^{11-11} \cdot \binom{11}{11}\\[1.5ex]
+            &= \uuline{\SI{0.00144}{}}\\[2.0ex]
+            P\left(C\right) &= P_{\SI{0.43}{}}^{11}\left(X = 10\right) + P_{\SI{0.43}{}}^{11}\left(X = 11\right)\\[1.5ex]
+            &= \uuline{\SI{0.00144}{}}\\[2.0ex]
+            P\left(D\right) &= P_{\SI{0.43}{}}^{11}\left(X \geq 1\right)\\[1.5ex]
+            &= 1 - P_{\SI{0.43}{}}^{11}\left(X = 0\right)\\[1.5ex]
+            &= 1 - \SI{0.43}{^0} \cdot \left(\SI{1}{} - \SI{0.43}{}\right)^{11-0} \cdot \binom{11}{0} = \uuline{\SI{0.99794}{}}\\[2.0ex]
+            P\left(E\right) &= P\left(C\right) = \uuline{\SI{0.00144}{}}\\[2.0ex]
+            P\left(F\right) &= \SI{0.43}{}^{7} \cdot \left(\SI{1}{} - \SI{0.43}{}\right)^{7} \cdot \left(11 - 7 + 1 \right) = \uuline{\SI{0.00143}{}}
+        \end{align*}
+    }
+\end{enumerate}
+\end{Exercise}
+\pagebreak
+
+\begin{Exercise}{S. 206/2}{}
+\begin{enumerate}[leftmargin=*]
+    \item [2.]{
+        10 Kugeln: 1 x B, 4 x G, 5 x R\\[-2.0ex]
+        \begin{align*}
+            &X_{1}: \text{Anzahl roter Kugeln}\\[1.0ex]
+            P\left(A\right) &= P_{\frac{5}{10}}^{10}\left(X_{1} = 3\right) = \SI{0.5}{}^{3} \cdot \left(\SI{1}{} - \SI{0.5}{}\right)^{10-3} \cdot \binom{10}{3} = \uuline{\SI{0.11710}{}}\\[2.0ex]
+            &X_{2}: \text{Anzahl nicht blauer Kugeln}\\[1.0ex]
+            P\left(B\right) &= P_{\frac{9}{10}}^{10}\left(X_{2} = 6\right) = \SI{0.9}{}^{6} \cdot \left(\SI{1}{} - \SI{0.9}{}\right)^{10-6} \cdot \binom{10}{6} = \uuline{\SI{0.01116}{}}\\[2.0ex]
+            &X_{3}: \text{Anzahl roter Kugeln}\\[1.0ex]
+            P\left(C\right) &= P_{\frac{5}{10}}^{10}\left(X_{3} \geq 2\right) = 1 - P_{\frac{5}{10}}^{10}\left(X_{3} \leq 1\right)\\[1.5ex]
+            &= 1 - \left[P_{\frac{5}{10}}^{10}\left(X_{3} = 0\right) + P_{\frac{5}{10}}^{10}\left(X_{3} = 1\right)\right]\\[1.5ex]
+            &= 1 - \left[\SI{0.5}{}^{0} \cdot \SI{0.5}{}^{10} \cdot \binom{10}{0} + \SI{0.5}{}^{1} \cdot \SI{0.5}{}^{10-1} \cdot \binom{10}{1}\right] = \uuline{\SI{0.98926}{}}\\[2.0ex]
+            &X_{4}: \text{Anzahl blauer Kugeln}\\[1.0ex]
+            P\left(C\right) &= \dfrac{4}{10} \cdot \dfrac{4}{10} \cdot P_{\frac{1}{10}}^{8}\left(X_{4} = 2\right)\\[1.5ex]
+            &= \SI{0.4}{} \cdot \SI{0.4}{} \cdot \SI{0.1}{^2} \cdot \left(\SI{1}{} - \SI{0.1}{}\right)^{8-2} \cdot \binom{8}{2} = \uuline{\SI{0.02381}{}}
+        \end{align*}
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 206/3}{}
+\begin{enumerate}[leftmargin=*]
+    \item [3.]{
+        50 Schüler; \quad $p = \SI{0.10}{}$; \quad $n = 50$\\[-1.0ex]
+        \begin{itemize}[leftmargin=*]
+            \item A: Genau 7 Linkshänder
+            \item B: Genau 36 Linkshänder
+            \item C: Höchstens 2 Linkshänder
+            \item D: 5 Linkshänder hintereinander; der Rest ausschließlich Rechtshänder
+            \item E: Alternierende Lateralitäten
+            \item F: Mindestens 2 Linkshänder
+            \item G: 40 Rechtshänder, davon die ersten 10 hintereinander
+            \item H: Keine Linkshänder
+            \item I: 7 Linkshänder; der Rest ausschließlich Rechtshänder
+        \end{itemize}
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 206/4}{}
+\begin{enumerate}[leftmargin=*]
+    \item [4.]{
+        \begin{align*}
+            P_{\tilde{p}}^{2} \left(X \leq 1\right) &= \SI{0.99}{}\\[1.5ex]
+            P_{\tilde{p}}^{2} \left(X = 0\right) + P_{\tilde{p}}^{2} \left(X = 1\right) &= \SI{0.99}{}\\[1.5ex]
+            \tilde{p}^{0} \cdot \left(1 - \tilde{p}\right)^{2} \cdot \binom{2}{0} + \tilde{p}^{1} \cdot \left(1 - \tilde{p}\right)^{2-1} \cdot \binom{2}{1} &= \SI{0.99}{}\\[1.5ex]
+            \left(1 - \tilde{p}\right)^{2} + 2 \cdot \tilde{p} \cdot \left(1 - \tilde{p}\right) &= \SI{0.99}{}\\[1.5ex]
+            -\tilde{p}^{2} + 1  &= \SI{0.99}{}\\[1.5ex]
+            \tilde{p}^{2} &= \SI{0.01}{}\\[1.5ex]
+            \tilde{p} &= \pm\sqrt{\SI{0.01}{}} = \pm\SI{0.1}{}
+        \end{align*}
+        Da $\tilde{p} > 0$: \quad $\SI{10}{\%}$ der Kugeln, also \uuline{$\SI{10}{}$} Stück sind grün.
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 206/5}{}
+\begin{enumerate}[leftmargin=*]
+    \item [5.]{
+        \begin{align*}
+            P_{\tilde{p}}^{35} \left(X \geq 1\right) &= \SI{0.50}{}\\[1.5ex]
+            1 - P_{\tilde{p}}^{35} \left(X = 0\right) &= \SI{0.50}{}\\[1.5ex]
+            1 - \tilde{p}^{0} \cdot \left(1 - \tilde{p}\right)^{35} \cdot \binom{35}{0} &= \SI{0.50}{}\\[1.5ex]
+            1 -\left(1 - \tilde{p}\right)^{35} &= \SI{0.50}{}\\[1.5ex]
+            \left(1 - \tilde{p}\right)^{35} &= \SI{0.50}{}\\[1.5ex]
+            1 - \tilde{p} &= \sqrt[35]{\SI{0.50}{}}\\[1.5ex]
+            \tilde{p} &= 1 - \sqrt[35]{\SI{0.50}{}} = \SI{0.01961}{}
+        \end{align*}
+        Die Wahrscheinlichkeit, dass ein Paket beschädigt wird, liegt bei \uuline{$\SI{1.961}{\%}$}.
+    }
+\end{enumerate}
+\end{Exercise}
+\pagebreak
+
+\begin{Exercise}{S. 207/3}{}
+\begin{enumerate}[leftmargin=*]
+    \item [3.]{
+        Zahlen von 0 bis 36; \quad $n_{Gesamt} = 37$\\[1.0ex]
+        0 = grün (1); \quad gerade Zahlen = schwarz (18); \quad ungerade Zahlen = rot (18); \quad $n = 7$\\[-1.0ex]
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a1)] {
+                A: genau 5-mal rot; \qquad $X_{1} =$ Anzahl roter Kugeln\\[-1.0ex]
+                \begin{align*}
+                    P\left(A\right) &= P_{\frac{18}{37}}^{7}\left(X_{1} = 5\right)\\[1.5ex]
+                    &= \left(\dfrac{18}{37}\right)^{5} \cdot \left(1 - \dfrac{18}{37}\right)^{7-5} \cdot \binom{7}{5} = \uuline{\SI{0.1509}{}}
+                \end{align*}
+                }
+            \item[a2)] {
+                B: höchstens 5-mal rot; \qquad $X_{2} =$ Anzahl roter Kugeln\\[-1.0ex]
+                \begin{align*}
+                    P\left(B\right) &= P_{\frac{18}{37}}^{7}\left(X_{2} \leq 5\right)\\[1.5ex]
+                    &= 1 - \left[P_{\frac{18}{37}}^{7}\left(X_{2} = 6\right) + P_{\frac{18}{37}}^{7}\left(X_{2} = 7\right)\right]\\[1.5ex]
+                    &= 1 - \left[\left(\dfrac{18}{37}\right)^{6} \cdot \left(1 - \dfrac{18}{37}\right)^{7-6} \cdot \binom{7}{6} + \left(\dfrac{18}{37}\right)^{7} \cdot \left(1 - \dfrac{18}{37}\right)^{7-7} \cdot \binom{7}{7}\right] = \uuline{\SI{0.9459}{}}
+                \end{align*}
+                }
+            \item[a3)] {
+                C: Genau beim ersten, dritten und fünten rot; \qquad $X_{3} =$ Anzahl roter Kugeln\\[-1.0ex]
+                \begin{align*}
+                    P\left(C\right) &= \dfrac{18}{37} \cdot \dfrac{19}{37} \cdot \dfrac{18}{37} \cdot \dfrac{19}{37} \cdot \dfrac{18}{37} \cdot \dfrac{19}{37} \cdot \dfrac{19}{37}\\[1.5ex]
+                    &= \dfrac{18}{37}^{3} \cdot \dfrac{19}{37}^{4} = \uuline{\SI{0.0080}{}}
+                \end{align*}
+                }
+        \end{enumerate}
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[b1)] {
+                \begin{align*}
+                    P_{\frac{12}{37}}^{2}\left(X \geq 1\right) &= 1 - P_{\frac{12}{37}}^{2}\left(X = 0\right)\\[1.5ex]
+                    &= 1 - \left(\dfrac{12}{37}^{0} \cdot \left(1 - \dfrac{12}{37}\right)^{2} \cdot \binom{2}{0}\right) = \uuline{\SI{0.5435}{}}
+                \end{align*}
+                }
+            \item[b2)] {
+                \begin{align*}
+                    P_{\frac{12}{37}}^{2}\left(X < 2\right) &= 1 - 12 \cdot P_{\frac{1}{37}}^{2}\left(X = 2\right)\\[1.5ex]
+                    &= 1 - 12 \cdot \left(\dfrac{1}{37}\right)^{2} \cdot \left(1 - \dfrac{1}{37}\right)^{2-2} \cdot \binom{2}{2} = \uuline{\SI{0.9912}{}}
+                \end{align*}
+                }
+        \end{enumerate}
+    }
+\end{enumerate}
+\end{Exercise}
+\pagebreak
+
+\begin{Exercise}{S. 207/4}{}
+\begin{enumerate}[leftmargin=*]
+    \item [4.]{
+        4 x Gelb; 8 x Grün; \quad $n = 14$\\[-1.0ex]
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+                \begin{align*}
+                    P\left(A\right) &= P_{\frac{8}{12}}^{14}\left(X = 7\right)\\[1.5ex]
+                    &= \left(\dfrac{8}{12}\right)^{7} \cdot \left(1 - \dfrac{8}{12}\right)^{14-7} \cdot \binom{14}{7} = \uuline{\SI{0.09185}{}}
+                \end{align*}
+                }
+            \item[b)] {
+                \begin{align*}
+                    P\left(B\right) &= P_{\frac{4}{12}}^{14}\left(X \leq 1\right) = P_{\frac{4}{12}}^{14}\left(X = 0\right) + P_{\frac{4}{12}}^{14}\left(X = 1\right)\\[1.5ex]
+                    &= \left(\dfrac{4}{12}\right)^{0} \cdot \left(1 - \dfrac{4}{12}\right)^{14} \cdot \binom{14}{0} + \left(\dfrac{4}{12}\right)^{1} \cdot \left(1 - \dfrac{4}{12}\right)^{14-1} \cdot \binom{14}{1} = \uuline{\SI{0.02740}{}}
+                \end{align*}
+                }
+            \item[c)] {
+                \begin{align*}
+                    P\left(C\right) &= \dfrac{4}{12}^{3} \cdot \dfrac{8}{12}^{11} = \uuline{\SI{0.00043}{}}
+                \end{align*}
+                }
+            \item[d)] {
+                \begin{align*}
+                    P\left(D\right) &= \dfrac{4}{12}^{7} \cdot \dfrac{8}{12}^{7} \cdot 2 = \uuline{\SI{0.00005}{}}
+                \end{align*}
+                }
+            \item[e)] {
+                \begin{align*}
+                    P\left(E\right) &= \dfrac{8}{12}^{5} \cdot \dfrac{4}{12}^{9} \cdot (14 - 5 + 1) = \uuline{\SI{0.00007}{}}
+                \end{align*}
+                }
+        \end{enumerate}
+    }
+\end{enumerate}
+\end{Exercise}
+\pagebreak
+
+\begin{Exercise}{S. 207/5}{}
+\begin{enumerate}[leftmargin=*]
+    \item [5.]{
+        $n = 4$; \quad A: "Bernie gewinnt genau einmal"; \quad B: "Bernie gewinnt nie"\\[1.0ex]
+        $P(A) = 2 \cdot P(B)$\\[-1.0ex]
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+                \begin{align*}
+                    P_{\tilde{p}}^{4}\left(X = 1\right) &= 2 \cdot P_{\tilde{p}}^{4}\left(X = 0\right)\\[1.5ex]
+                    \tilde{p}^{1} \cdot \left(1 - \tilde{p}\right)^{4-1} \cdot \binom{4}{1} &= 2 \cdot \tilde{p}^{0} \cdot \left(1 - \tilde{p}\right)^{4} \cdot \binom{4}{0}\\[1.5ex]
+                    4 \cdot \tilde{p} \cdot \left(1 - \tilde{p}\right)^{3} &= 2 \cdot \left(1 - \tilde{p}\right)^{4}\\[1.5ex]
+                    2 \cdot \tilde{p} \cdot \left(1 - \tilde{p}\right)^{3} &= \left(1 - \tilde{p}\right)^{4}\\[1.5ex]
+                    2 \cdot \tilde{p} &= 1 - \tilde{p}\\[1.5ex]
+                    3 \cdot \tilde{p} &= 1\\[1.5ex]
+                    \tilde{p} &= \uuline{\dfrac{1}{3}}
+                \end{align*}
+                }
+            \item[b)] {
+                \begin{align*}
+                    P\left(E\right) &= P_{\frac{1}{3}}^{4}\left(X = 2\right)\\[1.5ex]
+                    &= \left(\dfrac{1}{3}\right)^{2} \cdot \left(1 - \dfrac{1}{3}\right)^{4-2} \cdot \binom{4}{2} = \dfrac{8}{27} = \uuline{\SI{0.29630}{}}\\[2.0ex]
+                    P\left(F\right) &= P_{\frac{1}{3}}^{4}\left(X \leq 1\right)\\[1.5ex]
+                    &= P_{\frac{1}{3}}^{4}\left(X = 0\right) + P_{\frac{1}{3}}^{4}\left(X = 1\right)\\[1.5ex]
+                    &= \left(\dfrac{1}{3}\right)^{0} \cdot \left(1 - \dfrac{1}{3}\right)^{4} \cdot \binom{4}{0} + \left(\dfrac{1}{3}\right)^{1} \cdot \left(1 - \dfrac{1}{3}\right)^{4-1} \cdot \binom{4}{1}\\[1.5ex]
+                    &= \left(\dfrac{2}{3}\right)^{4} + 4 \cdot \dfrac{1}{3} \cdot \left(\dfrac{2}{3}\right)^{3} = \dfrac{16}{27} = \uuline{\SI{0.59259}{}}
+                \end{align*}
+                }
+        \end{enumerate}
+    }
+\end{enumerate}
+\end{Exercise}
+\pagebreak
+
+\begin{Exercise}{S. 208/7}{}
+\begin{enumerate}[leftmargin=*]
+    \item [7.]{
+        $n = 30$; \quad Je eine richtige Antwort von 5 möglichen Antworten; \quad $p = \dfrac{1}{5}$\\[1.0ex]
+        X: \quad Anzahl richtiger Antworten\\[-2.0ex]
+        \begin{align*}
+            P\left(A\right) &= P_{\frac{1}{5}}^{30}\left(X = 0\right)\\[1.5ex]
+            &= \left(\dfrac{1}{5}\right)^{0} \cdot \left(1 - \dfrac{1}{5}\right)^{30} \cdot \binom{30}{0} = \uuline{\SI{0.00124}{}}\\[2.0ex]
+            P\left(B\right) &= \dfrac{1}{5}^{5} \cdot \dfrac{4}{5}^{25} \cdot (30 - 5 + 1) = \uuline{\SI{0.00003}{}}\\[2.0ex]
+            P\left(C\right) &= P_{\frac{1}{5}}^{30}\left(8 < X < 11\right)\\[1.5ex]
+            &= P_{\frac{1}{5}}^{30}\left(X \leq 10\right) - P_{\frac{1}{5}}^{30}\left(X \leq 8\right)\\[1.5ex]
+            &= P_{\frac{1}{5}}^{30}\left(X = 9\right) + P_{\frac{1}{5}}^{30}\left(X = 10\right)\\[1.5ex]
+            &= \left(\dfrac{1}{5}\right)^{9} \cdot \left(1 - \dfrac{1}{5}\right)^{30-9} \cdot \binom{30}{9} + \left(\dfrac{1}{5}\right)^{10} \cdot \left(1 - \dfrac{1}{5}\right)^{30-10} \cdot \binom{30}{10} = \uuline{\SI{0.10303}{}}
+        \end{align*}
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 208/8}{}
+\begin{enumerate}[leftmargin=*]
+    \item [8.]{
+        $p = \dfrac{1}{3}$; \quad $n = 2$; \quad $X_{1} =$ Anzahl Treffer auf grüner Fläche\\[-1.0ex]
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+                \vspace{-2.0ex}
+                \begin{align*}
+                    P\left(E\right) &= P_{\frac{1}{3}}^{2}\left(X_{1} = 1\right)\\[1.5ex]
+                    &= \left(\dfrac{1}{3}\right)^{1} \cdot \left(1 - \dfrac{1}{3}\right)^{2-1} \cdot \binom{2}{1} = \dfrac{4}{9} = \uuline{\SI{0.44444}{}}
+                \end{align*}
+                }
+            \item[b)] {
+                \vspace{-2.0ex}
+                \begin{align*}
+                    P\left(E\right) &= \dfrac{1}{2}\\[1.5ex]
+                    P_{\tilde{p}}^{2}\left(X_{1} = 1\right) &= \dfrac{1}{2}\\[1.5ex]
+                    \tilde{p}^{1} \cdot \left(1 - \tilde{p}\right)^{2-1} \cdot \binom{2}{1} &= \dfrac{1}{2}\\[1.5ex]
+                    2 \cdot \tilde{p} \cdot \left(1 - \tilde{p}\right) &= \dfrac{1}{2}\\[1.0ex]
+                    \tilde{p} &= \uuline{\SI{0.5}{}}
+                \end{align*}
+                Die Farbverteilung muss sich von jeweils anteilig $\dfrac{1}{3}$ auf $\dfrac{1}{2}$ für grün erhöhen und für die beiden anderen Farben entsprechend verringern (deren Verteilung untereinander unerheblich für Ereignis E ist). 
+                }
+        \end{enumerate}
+    }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 208/9}{}
+\begin{enumerate}[leftmargin=*]
+    \item [9.]{
+        $p = \SI{0.90}{}$; \quad $n = 15$; \quad $X_{1} =$ Anzahl Treffer\\[-1.0ex]
+        \begin{enumerate}[label=\alph*),leftmargin=*]
+            \item[a)] {
+                A: Genau 14 mal Treffer\\[-2.0ex]
+                \begin{align*}
+                    P\left(A\right) &= P_{\SI{0.90}{}}^{15}\left(X_{1} = 14\right)\\[1.5ex]
+                    &= \SI{0.90}{^{14}} \cdot \left(\SI{1}{} - \SI{0.90}{}\right)^{15-14} \cdot \binom{15}{14} = \uuline{\SI{0.34315}{}}
+                \end{align*}
+                }
+            \item[b)] {
+                B: Mindestens 14 mal Treffer\\[-2.0ex]
+                 \begin{align*}
+                    P\left(B\right) &= P_{\SI{0.90}{}}^{15}\left(X_{1} \geq 14\right)\\[1.5ex]
+                    &= P_{\SI{0.90}{}}^{15}\left(X_{1} = 14\right) + P_{\SI{0.90}{}}^{15}\left(X_{1} = 15\right)\\[1.5ex]
+                    &= \SI{0.90}{^{14}} \cdot \left(\SI{1}{} - \SI{0.90}{}\right)^{15-14} \cdot \binom{15}{14} + \SI{0.90}{^{15}} \cdot \left(\SI{1}{} - \SI{0.90}{}\right)^{15-15} \cdot \binom{15}{15} = \uuline{\SI{0.54904}{}}
+                \end{align*}
+                }
+            \item[c)] {
+                C: Mehr als 11 und höchstens 14 Treffer\\[-2.0ex]
+                 \begin{align*}
+                    P\left(C\right) &= P_{\SI{0.90}{}}^{15}\left(11 < X_{1} \leq 14\right)\\[1.5ex]
+                    &= P_{\SI{0.90}{}}^{15}\left(X_{1} = 12\right) + P_{\SI{0.90}{}}^{15}\left(X_{1} = 13\right) + P_{\SI{0.90}{}}^{15}\left(X_{1} = 14\right)\\[1.5ex]
+                    &= \SI{0.90}{^{12}} \cdot \left(\SI{0.10}{}\right)^{3} \cdot \binom{15}{12} + \SI{0.90}{^{13}} \cdot \left(\SI{0.10}{}\right)^{2} \cdot \binom{15}{13} + \SI{0.90}{^{14}} \cdot \left(\SI{0.10}{}\right)^{1} \cdot \binom{15}{14}\\[1.5ex]
+                    &= \uuline{\SI{0.73855}{}}
+                \end{align*}
+                }
+        \end{enumerate}
+    }
+\end{enumerate}
+\end{Exercise}
