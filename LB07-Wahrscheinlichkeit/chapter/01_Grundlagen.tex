@@ -1,3 +1,93 @@
 % LTeX: language=de
 
 \subsection{Grundlagen}
+
+\begin{Example}{500 x Würfeln}{}
+    Ein Würfel wird 500 mal geworfen. Es wird notiert, wie oft eine Augenzahl auftritt.\\[1.0ex]
+    $\Omega = \left\{ 1; 2; 3; 4; 5; 6 \right\}$\\[1.5ex]
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l|Y|Y|Y|Y|Y|Y@{}}
+        Elementarereignis & $\left\{ 1 \right\}$ & $\left\{ 2 \right\}$ & $\left\{ 3 \right\}$ & $\left\{ 4 \right\}$ & $\left\{ 5 \right\}$ & $\left\{ 6 \right\}$ \\
+        \hline
+        absolute Häufigkeit & 96 & 60 & 90 & 78 & 94 & 82 \\
+        \hline
+        \multirow{2}{*}{relative Häufigkeit} & $\frac{96}{500}$ & $\frac{60}{500}$ & $\frac{90}{500}$ & $\frac{78}{500}$ & $\frac{94}{500}$ & $\frac{82}{500}$ \\[0.5ex]
+        & $= \SI{0.192}{}$ & $= \SI{0.12}{}$ & $= \SI{0.18}{}$ & $= \SI{0.156}{}$ & $= \SI{0.188}{}$ & $= \SI{0.164}{}$ \\
+    \end{tabularx}
+\end{Example}
+
+\begin{note}
+    \texthl{\textbf{Vierfeldertafel}}: stellt den Zusammenhang \texthl{\textbf{zweier} Ereignisse} $A$ und $B$ her
+    \begin{tightcenter}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{0.3\linewidth}[t]{@{} Y|Y|Y @{}}
+        & $A$ & $\overline{A}$\\ \hline
+        $B$ & $A \cap B$ & $\overline{A} \cap B$ \\ \hline
+        $\overline{B}$ & $A \cap \overline{B}$ & $\overline{A} \cap \overline{B}$
+    \end{tabularx}
+    \end{tightcenter}
+\end{note}
+
+\begin{Exercise}{S. 164/2}{}
+\begin{enumerate}[leftmargin=*]
+    \item [2.] {
+        A: bestitzt Autoführerschein;\quad M: besitzt Motorradführerschein\\[1.0ex]
+        \begin{minipage}[t]{0.35\linewidth}
+            4-Felder Tafel mit absoluten Häufigkeiten:
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.6\linewidth}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabularx}{0.8\linewidth}[t]{@{} Y|Y|Y|Y @{}}
+            $\Omega$ & $A$ & $\overline{A}$ & $\Sigma$ \\ \hline
+            $M$ & \cellcolor{mylightgray}$\SI{23}{}$ & $\SI{32}{}$ & \cellcolor{mylightgray} $\SI{55}{}$\\ \hline
+            $\overline{M}$ & $\SI{157}{}$ & $\SI{38}{}$ & $\SI{195}{}$ \\ \hline
+            $\Sigma$ & \cellcolor{mylightgray}$\SI{180}{}$ & $\SI{70}{}$ & \cellcolor{mylightorange}\tikzmarknode{sum}{$\SI{250}{}$}
+        \end{tabularx}
+
+        \begin{tikzpicture}[remember picture, overlay,font=\footnotesize, color=myg]
+
+            \node[align=left, text width=3.2cm] 
+                (label1) at ([xshift=2.5cm, yshift=0.0cm] sum.east) {
+                    \footnotesize Gesamtzahl
+            };
+
+            \draw[-latex]
+                ([anchor=west, xshift=0cm]label1) 
+                to[out=180, in=0, looseness=1.2]
+                ([anchor=east, yshift=0mm, xshift=0.4cm]sum);
+
+        \end{tikzpicture}
+        \end{minipage}\\[1.0ex]
+        $\left|\overline{A} \cap \overline{M}\right| = 38$\qquad \qquad $\left|A \cup M\right| = \left|\overline{\overline{A} \cap \overline{M}}\right| = 212$
+        }
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}{S. 164/3}{}
+\begin{enumerate}[leftmargin=*]
+    \item [3.]\begin{enumerate}[label=\alph*),leftmargin=*]
+        \item[a)] {
+            \begin{minipage}[t]{0.35\linewidth}
+            4-Felder Tafel mit relativen Häufigkeiten/Wahrscheinlichkeiten:
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{0.6\linewidth}
+            \renewcommand{\arraystretch}{1.2}
+            \begin{tabularx}{0.8\linewidth}[t]{@{} Y|Y|Y|Y @{}}
+                $\Omega$ & $D$ & $\overline{D}$ & $\Sigma$ \\ \hline
+                $F$ & \cellcolor{mylightgray}$\frac{4}{50}$ & $\frac{17}{50}$ & \cellcolor{mylightgray} $\frac{21}{50}$\\ \hline
+                $\overline{F}$ & $\frac{24}{50}$ & $\frac{5}{50}$ & $\frac{29}{50}$ \\ \hline
+                $\Sigma$ & \cellcolor{mylightgray}$\frac{28}{50}$ & $\frac{22}{50}$ & \cellcolor{mylightorange}\tikzmarknode{sum}{$\frac{50}{50}$}
+            \end{tabularx}
+            \end{minipage}
+            }
+        \item [b)] {
+            $\left|\overline{F} \cap \overline{D}\right| = 50$
+            }
+        \item [c)] {
+            $\left|\overline{F} \cap \overline{D}\right| = \left|F \cup D\right| = 450$ \qquad $P(F \cup D) = \frac{450}{500} = \SI{90}{\%}$
+            }
+    \end{enumerate}
+\end{enumerate}
+\end{Exercise}
